@@ -16,5 +16,6 @@ Setup:
 4. If your game shall not have a Lobby, you can check out the Common Room Scene straight away.
 
 
-IMPORTANT NOTES:
+IMPORTANT NOTES / TROUBLESHOOTING:
 - do NOT change the VRTK SDK Setup Settings! If changed, they might cause connection problems with Photon.
+- if you have trouble connecting, try changing the wifi connection you're using, e.g. eduroam usually doesn't work.

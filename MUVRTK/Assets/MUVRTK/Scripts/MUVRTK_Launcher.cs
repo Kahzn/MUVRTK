@@ -11,6 +11,13 @@ namespace MUVRTK
 
     public class MUVRTK_Launcher : MonoBehaviourPunCallbacks
     {
+        #region Public Fields
+
+        public bool debug;
+
+        #endregion
+
+
         #region Private Serializable Fields
 
         /// <summary>
@@ -73,7 +80,7 @@ namespace MUVRTK
 
         public override void OnConnectedToMaster()
         {
-
+            if(debug)
             Debug.Log("MUVRTK_Launcher: OnConnectedToMaster() was called by PUN");
 
             if (isConnecting)
@@ -90,11 +97,13 @@ namespace MUVRTK
             progressLabel.SetActive(false);
             controlPanel.SetActive(true);
 
+            if(debug)
             Debug.LogWarningFormat("Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
         }
 
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
+            if(debug)
             Debug.Log("Launcher:OnJoinRandomFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom");
 
             // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
@@ -107,6 +116,8 @@ namespace MUVRTK
             // #Critical
             // Load the Room Level.
             PhotonNetwork.LoadLevel("02 - Common Room");
+
+            if(debug)
             Debug.Log("Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
         }
 

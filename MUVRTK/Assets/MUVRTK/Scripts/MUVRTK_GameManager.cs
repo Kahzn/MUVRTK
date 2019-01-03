@@ -87,7 +87,7 @@
             if (debug)
                 Debug.Log(this.name + " PhotonNetwork : Loading Common Room");
 
-            PhotonNetwork.LoadLevel("Level 1");
+            PhotonNetwork.LoadLevel("02 - Common Room");
 
         }
 
