@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MUVRTK/Examples/01 - Lobby.unity
+    guid: 7bf4c02a71d470f47aa710982b8a11ea
+  - enabled: 1
+    path: Assets/MUVRTK/Examples/02 - Common Room.unity
+    guid: 0d791042ee290c04d85f23f77f8b1971
   m_configObjects: {}
