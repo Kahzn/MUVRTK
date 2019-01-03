@@ -1568,6 +1568,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 1
+  playerPrefab: {fileID: 9134103080250105971, guid: e412f916107374a4785c2fc294dfea98,
+    type: 3}
 --- !u!4 &464546337
 Transform:
   m_ObjectHideFlags: 0
@@ -2793,6 +2795,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerDummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134103080250105971, guid: e412f916107374a4785c2fc294dfea98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9134103080250105980, guid: e412f916107374a4785c2fc294dfea98,
         type: 3}
@@ -7757,6 +7764,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere
       objectReference: {fileID: 0}
+    - target: {fileID: 9134103080250105971, guid: e412f916107374a4785c2fc294dfea98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9134103080250105980, guid: e412f916107374a4785c2fc294dfea98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7815,6 +7827,11 @@ PrefabInstance:
     - target: {fileID: 9134103080250105977, guid: e412f916107374a4785c2fc294dfea98,
         type: 3}
       propertyPath: viewIdField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134103080250105977, guid: e412f916107374a4785c2fc294dfea98,
+        type: 3}
+      propertyPath: InstantiationId
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
