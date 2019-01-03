@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_GameManager.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_Launcher.cs" />
+    <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_PlayerNameInputField.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />

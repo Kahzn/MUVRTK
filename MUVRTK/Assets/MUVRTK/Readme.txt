@@ -1,4 +1,4 @@
-Last Update of this Readme: 02.01.2019
+Last Update of this Readme: 03.01.2019
 
 === ENGLISH ===
 
@@ -11,7 +11,7 @@ Pre-requisites:
 
 Setup:
 1. Sign up or Login at PhotonEngine for free to get your AppId (necessary for setting up online games): https://www.photonengine.com/
-2. Enter your AppId into the field of the PUN Setup Wizard (in Unity: Window -> Photon Unity Networking -> PUN Wizard)
+2. Enter your AppId into the field of the PUN Setup Wizard (in Unity: Window -> Photon Unity Networking -> PUN Wizard). 
 3. Open MUVRTK -> Examples -> "01 - Lobby" for some example implementations of MUVRTK
 4. If your game shall not have a Lobby, you can check out the Common Room Scene straight away.
 
@@ -19,3 +19,5 @@ Setup:
 IMPORTANT NOTES / TROUBLESHOOTING:
 - do NOT change the VRTK SDK Setup Settings! If changed, they might cause connection problems with Photon.
 - if you have trouble connecting, try changing the wifi connection you're using, e.g. eduroam usually doesn't work.
+- Do NOT use the same AppId for two different games you develop. 
+(The Server distinguishes different games from another by checking their AppIds. If you reuse them and both games run at the same time from different machines, it will cause errors.)

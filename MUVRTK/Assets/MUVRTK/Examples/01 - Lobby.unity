@@ -5068,7 +5068,7 @@ RectTransform:
   - {fileID: 414583077}
   - {fileID: 259016640}
   m_Father: {fileID: 1285760098}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5374,9 +5374,9 @@ RectTransform:
   m_Children:
   - {fileID: 1796143544}
   - {fileID: 1068648968}
+  - {fileID: 1687639744}
   - {fileID: 1808408698}
   - {fileID: 1248772145}
-  - {fileID: 1687639744}
   m_Father: {fileID: 24172724}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7322,7 +7322,7 @@ RectTransform:
   m_Children:
   - {fileID: 902586832}
   m_Father: {fileID: 1285760098}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7823,6 +7823,7 @@ GameObject:
   - component: {fileID: 1796143547}
   - component: {fileID: 1796143546}
   - component: {fileID: 1796143545}
+  - component: {fileID: 1796143548}
   m_Layer: 5
   m_Name: Name Input
   m_TagString: Untagged
@@ -7905,7 +7906,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1796143548}
+        m_MethodName: SetPlayerName
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
@@ -7952,6 +7964,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796143543}
   m_CullTransparentMesh: 0
+--- !u!114 &1796143548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796143543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f26d19a64af1e74ea7f4abfb10e8036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1808408697
 GameObject:
   m_ObjectHideFlags: 0
@@ -7984,7 +8008,7 @@ RectTransform:
   m_Children:
   - {fileID: 737189758}
   m_Father: {fileID: 1285760098}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

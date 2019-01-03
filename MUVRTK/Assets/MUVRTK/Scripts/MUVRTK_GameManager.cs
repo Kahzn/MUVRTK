@@ -33,7 +33,8 @@
 
         public override void OnPlayerEnteredRoom(Player other)
         {
-
+            if (debug)
+                Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
 
             if (PhotonNetwork.IsMasterClient)
             {
@@ -48,7 +49,8 @@
 
         public override void OnPlayerLeftRoom(Player other)
         {
-
+            if(debug)
+            Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName); // seen when other disconnects
 
             if (PhotonNetwork.IsMasterClient)
             {

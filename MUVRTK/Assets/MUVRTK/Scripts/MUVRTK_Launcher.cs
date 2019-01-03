@@ -104,7 +104,7 @@ namespace MUVRTK
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
             if(debug)
-            Debug.Log("Launcher:OnJoinRandomFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom");
+            Debug.Log("MUVRTK_Launcher:OnJoinRandomFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom");
 
             // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
             PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
@@ -118,7 +118,7 @@ namespace MUVRTK
             PhotonNetwork.LoadLevel("02 - Common Room");
 
             if(debug)
-            Debug.Log("Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
+            Debug.Log("MUVRTK_Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
         }
 
         #endregion
