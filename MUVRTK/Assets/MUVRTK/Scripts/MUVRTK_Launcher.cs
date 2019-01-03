@@ -33,6 +33,12 @@ namespace MUVRTK
         [Tooltip("The UI Label to inform the user that the connection is in progress")]
         [SerializeField]
         private GameObject progressLabel;
+        [Tooltip("The UI input field for creating a new room")]
+        [SerializeField]
+        private GameObject enterRoomName;
+        [Tooltip("The viewport for the room lobby and UI input field for joining a room")]
+        [SerializeField]
+        private GameObject joinRoomPanel;
 
         #endregion
 
@@ -44,7 +50,11 @@ namespace MUVRTK
         /// Typically this is used for the OnConnectedToMaster() callback.
         /// </summary>
         bool isConnecting;
+
         bool joinRandomRoom = true;
+
+
+        private string roomName;
 
         /// <summary>
         /// This client's version number. Users are separated from each other by gameVersion (which allows you to make breaking changes).
@@ -71,6 +81,8 @@ namespace MUVRTK
 
             progressLabel.SetActive(false);
             controlPanel.SetActive(true);
+            enterRoomName.SetActive(false);
+            joinRoomPanel.SetActive(false);
 
         }
 
@@ -86,7 +98,8 @@ namespace MUVRTK
             if (isConnecting)
             {
                 // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
-                PhotonNetwork.JoinRandomRoom();
+                // PhotonNetwork.JoinRandomRoom();
+                Connect();
             }
         }
 
@@ -96,8 +109,10 @@ namespace MUVRTK
 
             progressLabel.SetActive(false);
             controlPanel.SetActive(true);
+            enterRoomName.SetActive(false);
+            joinRoomPanel.SetActive(false);
 
-            if(debug)
+            if (debug)
             Debug.LogWarningFormat("Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
         }
 
@@ -131,15 +146,30 @@ namespace MUVRTK
 
             progressLabel.SetActive(true);
             controlPanel.SetActive(false);
+            enterRoomName.SetActive(false);
+            joinRoomPanel.SetActive(false);
 
             // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
             if (PhotonNetwork.IsConnected)
             {
                 // #Critical we need at this point to attempt joining a Random Room. If it fails, we'll get notified in OnJoinRandomFailed() and we'll create one.
+
                 if (joinRandomRoom)
                 {
                     PhotonNetwork.JoinRandomRoom();
+                    if (debug)
+                        Debug.Log("MUVRTK_Launcher: JoinRandomRoom() called by PUN.");
+
                 }
+
+                else
+                {
+                    PhotonNetwork.JoinOrCreateRoom(roomName, new RoomOptions(), new TypedLobby());
+
+                    if (debug)
+                        Debug.Log("MUVRTK_Launcher: JoinOrCreateRoom() called by PUN with Room Name: " + roomName);
+                }
+                
                 
             }
             else
@@ -148,6 +178,31 @@ namespace MUVRTK
                 PhotonNetwork.GameVersion = gameVersion;
                 PhotonNetwork.ConnectUsingSettings();
             }
+        }
+
+        public void SetRoomName(string value)
+        {
+            roomName = value;
+        }
+
+        public void CreateRoomUI()
+        {
+            progressLabel.SetActive(false);
+            controlPanel.SetActive(false);
+            enterRoomName.SetActive(true);
+            joinRoomPanel.SetActive(false);
+
+            joinRandomRoom = false;
+        }
+
+        public void JoinRoomUI()
+        {
+            progressLabel.SetActive(false);
+            controlPanel.SetActive(false);
+            enterRoomName.SetActive(false);
+            joinRoomPanel.SetActive(true);
+
+            joinRandomRoom = false;
         }
 
         #endregion
