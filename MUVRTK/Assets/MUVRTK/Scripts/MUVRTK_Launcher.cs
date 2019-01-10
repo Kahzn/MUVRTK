@@ -79,10 +79,7 @@ namespace MUVRTK
         void Start()
         {
 
-            progressLabel.SetActive(false);
-            controlPanel.SetActive(true);
-            enterRoomName.SetActive(false);
-            joinRoomPanel.SetActive(false);
+            ControlUI();
 
         }
 
@@ -203,6 +200,16 @@ namespace MUVRTK
             joinRoomPanel.SetActive(true);
 
             joinRandomRoom = false;
+        }
+
+        public void ControlUI()
+        {
+            progressLabel.SetActive(false);
+            controlPanel.SetActive(true);
+            enterRoomName.SetActive(false);
+            joinRoomPanel.SetActive(false);
+
+            joinRandomRoom = true;
         }
 
         #endregion

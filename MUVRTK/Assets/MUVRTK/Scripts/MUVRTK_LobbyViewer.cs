@@ -36,7 +36,7 @@ namespace MUVRTK
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
             Debug.Log("room length : " + roomList.Count);
-            lobbyOutput.text += "/n Number of Rooms: " + roomList.Count;
+            lobbyOutput.text += "\n Number of Rooms: " + roomList.Count;
         }
 
         #endregion
