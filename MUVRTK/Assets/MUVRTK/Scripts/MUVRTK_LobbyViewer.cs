@@ -24,7 +24,7 @@ namespace MUVRTK
         void Start()
         {
             lobbyOutput.text = "no Rooms available";
-
+            Debug.Log(this + ": No Rooms available at the moment.");
 
         }
 
@@ -36,6 +36,7 @@ namespace MUVRTK
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
             Debug.Log("room length : " + roomList.Count);
+            lobbyOutput.text += "/n Number of Rooms: " + roomList.Count;
         }
 
         #endregion
