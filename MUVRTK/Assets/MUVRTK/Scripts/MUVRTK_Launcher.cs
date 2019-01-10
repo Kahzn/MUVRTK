@@ -49,7 +49,8 @@ namespace MUVRTK
         /// we need to keep track of this to properly adjust the behavior when we receive call back by Photon.
         /// Typically this is used for the OnConnectedToMaster() callback.
         /// </summary>
-        bool isConnecting;
+        bool isConnectingToRoom;
+
 
         bool joinRandomRoom = true;
 
@@ -80,6 +81,7 @@ namespace MUVRTK
         {
 
             ControlUI();
+            ConnectToMaster();
 
         }
 
@@ -92,12 +94,20 @@ namespace MUVRTK
             if(debug)
             Debug.Log("MUVRTK_Launcher: OnConnectedToMaster() was called by PUN");
 
-            if (isConnecting)
+            if (isConnectingToRoom)
             {
                 // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
                 // PhotonNetwork.JoinRandomRoom();
-                Connect();
+                ConnectToRoom();
             }
+            else
+            {
+                PhotonNetwork.JoinLobby();
+                if(debug)
+                    Debug.Log("MUVRTK_Launcher: JoinLobby() was called by PUN");
+            }
+            
+
         }
 
 
@@ -110,7 +120,7 @@ namespace MUVRTK
             joinRoomPanel.SetActive(false);
 
             if (debug)
-            Debug.LogWarningFormat("Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
+            Debug.LogWarningFormat("MUVRTK_Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
         }
 
         public override void OnJoinRandomFailed(short returnCode, string message)
@@ -119,7 +129,7 @@ namespace MUVRTK
             Debug.Log("MUVRTK_Launcher:OnJoinRandomFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom");
 
             // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
-            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
+            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = maxPlayersPerRoom }, TypedLobby.Default);
         }
 
         public override void OnJoinedRoom()
@@ -133,13 +143,14 @@ namespace MUVRTK
             Debug.Log("MUVRTK_Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
         }
 
+
         #endregion
 
         #region Public Methods
 
-        public void Connect()
+        public void ConnectToRoom()
         {
-            isConnecting = true;
+            isConnectingToRoom = true;
 
             progressLabel.SetActive(true);
             controlPanel.SetActive(false);
@@ -161,7 +172,7 @@ namespace MUVRTK
 
                 else
                 {
-                    PhotonNetwork.JoinOrCreateRoom(roomName, new RoomOptions(), new TypedLobby());
+                    PhotonNetwork.JoinOrCreateRoom(roomName, new RoomOptions(), TypedLobby.Default);
 
                     if (debug)
                         Debug.Log("MUVRTK_Launcher: JoinOrCreateRoom() called by PUN with Room Name: " + roomName);
@@ -171,9 +182,21 @@ namespace MUVRTK
             }
             else
             {
+               ConnectToMaster();
+            }
+        }
+
+        public void ConnectToMaster()
+        {
+            if (!PhotonNetwork.IsConnected)
+            {
                 // #Critical, we must first and foremost connect to Photon Online Server.
                 PhotonNetwork.GameVersion = gameVersion;
                 PhotonNetwork.ConnectUsingSettings();
+            }
+            else
+            {
+                PhotonNetwork.JoinLobby();
             }
         }
 

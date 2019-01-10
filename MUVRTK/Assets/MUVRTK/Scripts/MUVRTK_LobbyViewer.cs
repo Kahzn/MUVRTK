@@ -1,4 +1,6 @@
 ﻿
+using System.Linq;
+
 namespace MUVRTK
 {
     using System.Collections;
@@ -20,15 +22,6 @@ namespace MUVRTK
 
         #region Monobehaviour Callbacks
 
-        // Start is called before the first frame update
-        void Start()
-        {
-            lobbyOutput.text = "no Rooms available";
-            Debug.Log(this + ": No Rooms available at the moment.");
-
-        }
-        
-
 
         #endregion
 
@@ -36,8 +29,26 @@ namespace MUVRTK
         
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
-            Debug.Log("room length : " + roomList.Count);
-            lobbyOutput.text += "\n Number of Rooms: " + roomList.Count;
+            if (roomList.Count.Equals(0))
+            {
+                lobbyOutput.text = "No Rooms available at the moment";
+            }
+            else if(roomList.Count.Equals(1))
+            {
+                Debug.Log("room length : " + roomList.Count);
+                lobbyOutput.text = "";
+                lobbyOutput.text += roomList.First().Name + " " + roomList.First().PlayerCount;
+            }
+            else
+            {
+                Debug.Log("room length : " + roomList.Count);
+                foreach (RoomInfo ri in roomList)
+                {
+                    lobbyOutput.text += "\n" + ri.Name + " " + ri.PlayerCount;
+                }
+            }
+            
+            
         }
 
         #endregion
