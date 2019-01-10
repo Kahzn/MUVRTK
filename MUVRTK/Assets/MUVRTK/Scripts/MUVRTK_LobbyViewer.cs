@@ -33,15 +33,11 @@ namespace MUVRTK
             {
                 lobbyOutput.text = "No Rooms available at the moment";
             }
-            if(roomList.Count == 1)
+
+            if(roomList.Count > 0 )
             {
                 Debug.Log("MUVRTK_LobbyViewer Rooms Count : " + roomList.Count);
                 lobbyOutput.text = "";
-                lobbyOutput.text += roomList.First().Name + " " + roomList.First().PlayerCount;
-            }
-            if(roomList.Count> 1)
-            {
-                Debug.Log("MUVRTK_LobbyViewer Rooms Number : " + roomList.Count);
                 foreach (RoomInfo ri in roomList)
                 {
                     lobbyOutput.text += "\n" + ri.Name + " " + ri.PlayerCount;
