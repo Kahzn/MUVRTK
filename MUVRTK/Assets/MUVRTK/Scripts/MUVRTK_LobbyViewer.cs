@@ -29,19 +29,19 @@ namespace MUVRTK
         
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
-            if (roomList.Count.Equals(0))
+            if (roomList.Count == 0)
             {
                 lobbyOutput.text = "No Rooms available at the moment";
             }
-            else if(roomList.Count.Equals(1))
+            if(roomList.Count == 1)
             {
-                Debug.Log("room length : " + roomList.Count);
+                Debug.Log("MUVRTK_LobbyViewer Rooms Count : " + roomList.Count);
                 lobbyOutput.text = "";
                 lobbyOutput.text += roomList.First().Name + " " + roomList.First().PlayerCount;
             }
-            else
+            if(roomList.Count> 1)
             {
-                Debug.Log("room length : " + roomList.Count);
+                Debug.Log("MUVRTK_LobbyViewer Rooms Number : " + roomList.Count);
                 foreach (RoomInfo ri in roomList)
                 {
                     lobbyOutput.text += "\n" + ri.Name + " " + ri.PlayerCount;
