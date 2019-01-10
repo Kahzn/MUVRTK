@@ -27,12 +27,13 @@ namespace MUVRTK
             Debug.Log(this + ": No Rooms available at the moment.");
 
         }
+        
 
 
         #endregion
 
         #region Photon Callbacks
-
+        
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
             Debug.Log("room length : " + roomList.Count);

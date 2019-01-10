@@ -181,7 +181,10 @@ namespace MUVRTK
         {
             roomName = value;
         }
-
+        
+        /// <summary>
+        /// Called when the CreateRoomPanel is toggled. Open
+        /// </summary>
         public void CreateRoomUI()
         {
             progressLabel.SetActive(false);
@@ -191,7 +194,10 @@ namespace MUVRTK
 
             joinRandomRoom = false;
         }
-
+        
+        /// <summary>
+        /// Called when the JoinRoomPanel is toggled. Opens the LobbyView.
+        /// </summary>
         public void JoinRoomUI()
         {
             progressLabel.SetActive(false);
@@ -202,6 +208,9 @@ namespace MUVRTK
             joinRandomRoom = false;
         }
 
+        /// <summary>
+        /// Called when the Control Panel is toggled.
+        /// </summary>
         public void ControlUI()
         {
             progressLabel.SetActive(false);
