@@ -81,6 +81,10 @@
         // Start is called before the first frame update
         void Start()
         {
+            //Hotfix. Should be updated for Optimization!!!
+            controller_right = GameObject.Find("Controller (right)");
+            controller_left = GameObject.Find("Controller (left)");
+
             if (broadcastToAllOthers)
             {
                 rpcTarget = RpcTarget.Others;

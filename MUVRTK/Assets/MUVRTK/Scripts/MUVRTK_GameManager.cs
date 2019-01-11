@@ -19,6 +19,9 @@
         private GameObject playerPrefab;
 
         [SerializeField]
+        private GameObject[] MUVRTK_InteractionElements;
+
+        [SerializeField]
         private string gameVersion;
 
 
@@ -49,6 +52,8 @@
                 PhotonNetwork.GameVersion = gameVersion;
                 PhotonNetwork.ConnectUsingSettings();
             }
+
+            InstantiateInteractiveElements();
         }
 
         private void Update()
@@ -194,6 +199,13 @@
 
         }
 
+        void InstantiateInteractiveElements()
+        {
+            foreach(GameObject go in MUVRTK_InteractionElements)
+            {
+                PhotonNetwork.Instantiate(go.name, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0), 0);
+            }
+        }
 
 
         #endregion
