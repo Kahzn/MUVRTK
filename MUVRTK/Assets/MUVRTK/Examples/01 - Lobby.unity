@@ -4819,7 +4819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lobbyOutput: {fileID: 1213615979}
-  debug: 1
+  debug: 0
 --- !u!4 &959416544
 Transform:
   m_ObjectHideFlags: 0
@@ -6549,7 +6549,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.1, y: -4.9}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 131, y: 32}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1213615977
 MonoBehaviour:
@@ -6717,7 +6717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1219295057
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7233,7 +7233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1285760098
 RectTransform:
   m_ObjectHideFlags: 0

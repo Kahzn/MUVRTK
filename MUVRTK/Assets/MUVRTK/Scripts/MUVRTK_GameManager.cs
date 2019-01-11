@@ -10,12 +10,16 @@
 
     public class MUVRTK_GameManager : MonoBehaviourPunCallbacks
     {
-        #region Public Fields
+        #region Private Serializable Fields
 
         public bool debug;
 
         [Tooltip("The prefab to use for representing the player")]
-        public GameObject playerPrefab;
+        [SerializeField]
+        private GameObject playerPrefab;
+
+        [SerializeField]
+        private string gameVersion;
 
 
         #endregion
@@ -30,6 +34,35 @@
 
         #region Photon Callbacks
 
+        public override void OnConnectedToMaster()
+        {
+            PhotonNetwork.JoinRandomRoom();
+        }
+
+        public override void OnJoinedRoom()
+        {
+
+            /// Player Instantiation
+            if (playerPrefab == null)
+            {
+                Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
+            }
+            else
+            {
+                Debug.LogFormat("We are Instantiating LocalPlayer from {0}", Application.loadedLevelName);
+                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+                if (mainCamera != null)
+                {
+                    instantiatedPlayer = PhotonNetwork.Instantiate(playerPrefab.name, mainCamera.transform.position, mainCamera.transform.rotation, 0);
+                }
+                else
+                {
+                    instantiatedPlayer = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0, 0, 0), Quaternion.identity, 0);
+                }
+
+
+            }
+        }
 
         /// <summary>
         /// Called when the local player left the room. We need to load the launcher scene.
@@ -54,8 +87,6 @@
                 if (debug)
                     Debug.LogFormat(this.name + "OnPlayerEnteredRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
 
-
-               // LoadArena();
             }
         }
 
@@ -70,9 +101,22 @@
                 if (debug)
                     Debug.LogFormat(this.name + "OnPlayerLeftRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
 
-
-                //LoadArena();
             }
+        }
+
+        public override void OnDisconnected(DisconnectCause cause)
+        {
+            if (debug)
+                Debug.LogWarningFormat("MUVRTK_GameManager: OnDisconnected() was called by PUN with reason {0}", cause);
+        }
+
+        public override void OnJoinRandomFailed(short returnCode, string message)
+        {
+            if (debug)
+                Debug.Log("MUVRTK_GameManager:OnJoinRandomFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom");
+
+            // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
+            PhotonNetwork.CreateRoom(null, new RoomOptions(), TypedLobby.Default);
         }
 
         #endregion
@@ -89,25 +133,16 @@
 
         private void Start()
         {
-            if (playerPrefab == null)
+            if (!PhotonNetwork.IsConnected)
             {
-                Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
+                // #Critical, we must first and foremost connect to Photon Online Server.
+                PhotonNetwork.GameVersion = gameVersion;
+                PhotonNetwork.ConnectUsingSettings();
             }
-            else
-            {
-                Debug.LogFormat("We are Instantiating LocalPlayer from {0}", Application.loadedLevelName);
-                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                if (mainCamera != null)
-                {
-                   instantiatedPlayer = PhotonNetwork.Instantiate(playerPrefab.name, mainCamera.transform.position, mainCamera.transform.rotation, 0);
-                }
-                else
-                {
-                    instantiatedPlayer = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0,0,0), Quaternion.identity, 0);
-                }
 
 
-            }
+
+           
         }
 
         private void Update()
@@ -117,8 +152,11 @@
                 if(mainCamera == null && Camera.main != null)
                 {
                     mainCamera = Camera.main;
-                    instantiatedPlayer.transform.parent = mainCamera.transform;
-                    cameraLoaded = true;
+                    if(instantiatedPlayer != null)
+                    {
+                        instantiatedPlayer.transform.parent = mainCamera.transform;
+                        cameraLoaded = true;
+                    }
                 }
             }
         }

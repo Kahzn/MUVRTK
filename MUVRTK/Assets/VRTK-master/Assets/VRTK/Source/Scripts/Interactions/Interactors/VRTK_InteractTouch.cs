@@ -531,7 +531,7 @@ namespace VRTK
         protected virtual void CreateTouchRigidBody()
         {
             touchRigidBody = (GetComponent<Rigidbody>() != null ? GetComponent<Rigidbody>() : gameObject.AddComponent<Rigidbody>());
-            touchRigidBody.isKinematic = true;
+            //touchRigidBody.isKinematic = true;
             touchRigidBody.useGravity = false;
             touchRigidBody.constraints = RigidbodyConstraints.FreezeAll;
             touchRigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
