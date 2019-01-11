@@ -106,7 +106,7 @@
                     VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controller_left), 10f, 1f, 0.02f);
                 }
 
-                if (broadcastToAllOthers)
+                if (broadcastToAll)
                 {
                     if (Input.GetKeyDown(keyMapping[0].ToString()))
                     {
