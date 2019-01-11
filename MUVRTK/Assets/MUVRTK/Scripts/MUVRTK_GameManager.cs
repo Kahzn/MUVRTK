@@ -26,9 +26,55 @@
 
         #region Private Fields
 
-        private bool cameraLoaded;
+        private bool cameraLoaded = false;
         private Camera mainCamera;
         private GameObject instantiatedPlayer;
+
+        #endregion
+
+        #region MonoBehaviour Callbacks
+
+        void Awake()
+        {
+            // #Critical
+            // this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
+            PhotonNetwork.AutomaticallySyncScene = true;
+        }
+
+        private void Start()
+        {
+            if (!PhotonNetwork.IsConnected)
+            {
+                // #Critical, we must first and foremost connect to Photon Online Server.
+                PhotonNetwork.GameVersion = gameVersion;
+                PhotonNetwork.ConnectUsingSettings();
+            }
+        }
+
+        private void Update()
+        {
+            if (!cameraLoaded)
+            {
+                if (Camera.main != null)
+                {
+                    mainCamera = Camera.main;
+                    if (instantiatedPlayer != null)
+                    {
+                        if (debug)
+                            Debug.Log("Setting Player Parent Object to Camera");
+
+                        instantiatedPlayer.transform.parent = mainCamera.transform;
+
+                        //resetting the Playerprefabs transform values to center it on the camera
+                        instantiatedPlayer.transform.localPosition = new Vector3(0, 0, 0);
+                        instantiatedPlayer.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                        cameraLoaded = true;
+                    }
+
+                }
+            }
+        }
+
 
         #endregion
 
@@ -41,27 +87,12 @@
 
         public override void OnJoinedRoom()
         {
+            if (debug)
+                Debug.Log("MUVRTK_GameManager: OnJoinedRoom() called by PUN. Now this client is in the Room.");
 
-            /// Player Instantiation
-            if (playerPrefab == null)
-            {
-                Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
-            }
-            else
-            {
-                Debug.LogFormat("We are Instantiating LocalPlayer from {0}", Application.loadedLevelName);
-                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                if (mainCamera != null)
-                {
-                    instantiatedPlayer = PhotonNetwork.Instantiate(playerPrefab.name, mainCamera.transform.position, mainCamera.transform.rotation, 0);
-                }
-                else
-                {
-                    instantiatedPlayer = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0, 0, 0), Quaternion.identity, 0);
-                }
+            InstantiatePlayer();
+           
 
-
-            }
         }
 
         /// <summary>
@@ -121,54 +152,7 @@
 
         #endregion
 
-        #region MonoBehaviour Callbacks
-
-        void Awake()
-        {
-            // #Critical
-            // this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
-            PhotonNetwork.AutomaticallySyncScene = true;
-
-        }
-
-        private void Start()
-        {
-            if (!PhotonNetwork.IsConnected)
-            {
-                // #Critical, we must first and foremost connect to Photon Online Server.
-                PhotonNetwork.GameVersion = gameVersion;
-                PhotonNetwork.ConnectUsingSettings();
-            }
-
-
-
-           
-        }
-
-        private void Update()
-        {
-            if (!cameraLoaded)
-            {
-                if(mainCamera == null && Camera.main != null)
-                {
-                    mainCamera = Camera.main;
-                    if(instantiatedPlayer != null)
-                    {
-                        instantiatedPlayer.transform.parent = mainCamera.transform;
-                        cameraLoaded = true;
-                    }
-                    else
-                    {
-                        OnJoinedRoom();
-                        instantiatedPlayer.transform.parent = mainCamera.transform;
-                        cameraLoaded = true;
-                    }
-                }
-            }
-        }
-
-
-        #endregion
+       
 
         #region Private Methods
 
@@ -183,6 +167,24 @@
                 Debug.Log(this.name + " PhotonNetwork : Loading Common Room");
 
             PhotonNetwork.LoadLevel("02 - Common Room");
+
+        }
+
+        void InstantiatePlayer()
+        {
+            /// Player Instantiation
+            if (playerPrefab == null)
+            {
+                Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
+            }
+            else
+            {
+                Debug.LogFormat("We are Instantiating LocalPlayer from {0}", Application.loadedLevelName);
+                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+
+                instantiatedPlayer = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0,0,0), Quaternion.Euler(0, 0, 0), 0);
+
+            }
 
         }
 
