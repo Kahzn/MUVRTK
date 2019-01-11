@@ -157,6 +157,12 @@
                         instantiatedPlayer.transform.parent = mainCamera.transform;
                         cameraLoaded = true;
                     }
+                    else
+                    {
+                        OnJoinedRoom();
+                        instantiatedPlayer.transform.parent = mainCamera.transform;
+                        cameraLoaded = true;
+                    }
                 }
             }
         }
