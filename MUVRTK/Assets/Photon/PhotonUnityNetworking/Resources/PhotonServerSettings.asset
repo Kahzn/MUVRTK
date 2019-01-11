@@ -33,4 +33,5 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - CallTriggerHapticPulse
+  - BroadcastHapticPulse
   DisableAutoOpenWizard: 1

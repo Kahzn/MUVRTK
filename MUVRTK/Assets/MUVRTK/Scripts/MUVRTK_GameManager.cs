@@ -72,6 +72,8 @@
                     }
                     if(PhotonNetwork.InRoom && instantiatedPlayer == null)
                     {
+                        if (debug)
+                            Debug.Log("MUVRTK_GameManager: Update()-Method didn't find any Player, so InstantiatePlayer() was called.");
                         InstantiatePlayer();
                     }
 
