@@ -12,18 +12,17 @@ namespace MUVRTK
 
     public class MUVRTK_LobbyViewer : MonoBehaviourPunCallbacks
     {
-        #region Public Fields
+        #region Private Fields
+        [Tooltip("Add a UI-Text-Component from a Scroll View here. ")]
+        [SerializeField]
+        private Text lobbyOutput;
 
-        public Text lobbyOutput;
-
-        #endregion
-
-        
-
-        #region Monobehaviour Callbacks
-
+        [SerializeField]
+        private bool debug;
 
         #endregion
+
+      
 
         #region Photon Callbacks
         
@@ -36,7 +35,16 @@ namespace MUVRTK
 
             if(roomList.Count > 0 )
             {
-                Debug.Log("MUVRTK_LobbyViewer Rooms Count : " + roomList.Count);
+                if (debug)
+                {
+                    Debug.Log("MUVRTK_LobbyViewer Rooms Count : " + roomList.Count);
+                    Debug.Log("Number of Rooms from Statistics:" + PhotonNetwork.CountOfRooms);
+                    Debug.Log("Number of Players on Master: " + PhotonNetwork.CountOfPlayersOnMaster);
+                    Debug.Log("Number of Players in Rooms: " + PhotonNetwork.CountOfPlayersInRooms);
+                    Debug.Log("Total number of Players: " + PhotonNetwork.CountOfPlayers);
+                    Debug.Log("Current Lobby name: " + PhotonNetwork.CurrentLobby.Name);
+                }
+                
                 lobbyOutput.text = "";
                 foreach (RoomInfo ri in roomList)
                 {

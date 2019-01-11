@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerEvents: {fileID: 1408711850}
-  quickSelect: 2
+  quickSelect: 1
   triggerButtonEvents: 1
   gripButtonEvents: 1
   touchpadButtonEvents: 1
@@ -7229,7 +7229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerEvents: {fileID: 109582313}
-  quickSelect: 2
+  quickSelect: 1
   triggerButtonEvents: 1
   gripButtonEvents: 1
   touchpadButtonEvents: 1
