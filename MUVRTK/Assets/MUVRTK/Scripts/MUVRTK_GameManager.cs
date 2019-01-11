@@ -70,6 +70,10 @@
                         instantiatedPlayer.transform.localRotation = Quaternion.Euler(0, 0, 0);
                         cameraLoaded = true;
                     }
+                    if(PhotonNetwork.InRoom && instantiatedPlayer == null)
+                    {
+                        InstantiatePlayer();
+                    }
 
                 }
             }
