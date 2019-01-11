@@ -4819,6 +4819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lobbyOutput: {fileID: 1213615979}
+  debug: 1
 --- !u!4 &959416544
 Transform:
   m_ObjectHideFlags: 0
@@ -6563,6 +6564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lobbyOutput: {fileID: 1213615979}
+  debug: 0
 --- !u!114 &1213615978
 MonoBehaviour:
   m_ObjectHideFlags: 0
