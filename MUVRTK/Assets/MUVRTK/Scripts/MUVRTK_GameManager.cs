@@ -1,4 +1,6 @@
-﻿namespace MUVRTK
+﻿using System.Numerics;
+
+namespace MUVRTK
 {
     using System.Collections;
     using System.Collections.Generic;
@@ -17,6 +19,14 @@
         [Tooltip("The prefab to use for representing the player")]
         [SerializeField]
         private GameObject playerPrefab;
+        
+        [Tooltip("The prefab to use for representing the right Controller Scripts")]
+        [SerializeField]
+        private GameObject rightControllerScriptAlias;
+        
+        [Tooltip("The prefab to use for representing the left Controller Scripts")]
+        [SerializeField]
+        private GameObject leftControllerScriptAlias;
 
         [SerializeField]
         private GameObject[] MUVRTK_InteractionElements;
@@ -80,6 +90,7 @@
                         if (debug)
                             Debug.Log("MUVRTK_GameManager: Update()-Method didn't find any Player, so InstantiatePlayer() was called.");
                         InstantiatePlayer();
+                        InstantiateControllerScriptAliases();
                     }
 
                 }
@@ -102,6 +113,7 @@
                 Debug.Log("MUVRTK_GameManager: OnJoinedRoom() called by PUN. Now this client is in the Room.");
 
             InstantiatePlayer();
+            InstantiateControllerScriptAliases();
            
 
         }
@@ -204,6 +216,19 @@
             foreach(GameObject go in MUVRTK_InteractionElements)
             {
                 PhotonNetwork.Instantiate(go.name, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0), 0);
+            }
+        }
+
+        void InstantiateControllerScriptAliases()
+        {
+            if (rightControllerScriptAlias != null)
+            {
+                PhotonNetwork.Instantiate(rightControllerScriptAlias.name, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            
+            if (leftControllerScriptAlias != null)
+            {
+                PhotonNetwork.Instantiate(leftControllerScriptAlias.name, new Vector3(0, 0, 0), Quaternion.identity);
             }
         }
 

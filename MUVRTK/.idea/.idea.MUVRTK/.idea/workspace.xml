@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a076696e-6859-467f-963a-9cb2af34b682" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/PlayerDummy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/PlayerDummy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/SharedResources/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUVRTK.sln" beforeDir="false" afterPath="$PROJECT_DIR$/MUVRTK.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonChat.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonChat.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonRealtime.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonRealtime.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.Culling.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.Culling.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonWebSocket.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonWebSocket.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Examples/02 - Common Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Examples/02 - Common Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/LeftControllerScriptAlias.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/LeftControllerScriptAlias.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/RightControllerScriptAlias.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/RightControllerScriptAlias.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonChat.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonChat.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonRealtime.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonRealtime.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Editor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Editor.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Utilities.Culling.Editor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Utilities.Culling.Editor.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Utilities.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Utilities.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonWebSocket.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonWebSocket.csprojAssemblyReference.cache" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,18 +30,19 @@
         <counts>
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="1100" />
+          <entry key="cs" value="1323" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="1100" />
+          <entry key="C#" value="1323" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -60,7 +62,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_LobbyViewer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
+            <state relative-caret-position="799">
               <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
               <folding>
                 <marker date="1547207257129" expanded="true" signature="37:1758" ph="{...}" />
@@ -76,33 +78,82 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_ControllerHaptics.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
-                <marker date="1547228923016" expanded="true" signature="16:4975" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="29:147" ph="..." />
-                <marker date="1547228923016" expanded="true" signature="153:337" ph="/// This class combines interactions between Players regarding Controller Haptics. ... " />
-                <marker date="1547228923016" expanded="true" signature="398:4973" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="414:2602" ph="Private Fields" />
-                <marker date="1547228923016" expanded="true" signature="2612:4156" ph="MonoBehaviour Callbacks" />
-                <marker date="1547228923016" expanded="true" signature="2722:2942" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="2770:2844" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="2861:2932" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="3008:4136" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="3053:4125" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="3116:3300" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="3350:3531" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="3568:3800" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="3654:3782" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="3860:4095" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="3946:4077" ph="{...}" />
-                <marker date="1547228923016" expanded="false" signature="4166:4720" ph="PUN Callbacks" />
-                <marker date="1547228923016" expanded="true" signature="4241:4536" ph="{...}" />
-                <marker date="1547228923016" expanded="true" signature="4624:4700" ph="{...}" />
-                <marker date="1547228923016" expanded="false" signature="4730:4967" ph="Public Methods" />
-                <marker date="1547228923016" expanded="true" signature="4804:4947" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="29:147" ph="..." />
+                <marker date="1547733279328" expanded="true" signature="153:337" ph="/// This class combines interactions between Players regarding Controller Haptics. ... " />
+                <marker date="1547733279328" expanded="true" signature="398:5172" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="414:2602" ph="Private Fields" />
+                <marker date="1547733279328" expanded="true" signature="2612:4355" ph="MonoBehaviour Callbacks" />
+                <marker date="1547733279328" expanded="true" signature="2722:3141" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="2969:3043" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="3060:3131" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="3207:4335" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="3252:4324" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="3315:3499" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="3549:3730" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="3767:3999" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="3853:3981" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="4059:4294" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="4145:4276" ph="{...}" />
+                <marker date="1547733279328" expanded="false" signature="4365:4919" ph="PUN Callbacks" />
+                <marker date="1547733279328" expanded="true" signature="4440:4735" ph="{...}" />
+                <marker date="1547733279328" expanded="true" signature="4823:4899" ph="{...}" />
+                <marker date="1547733279328" expanded="false" signature="4929:5166" ph="Public Methods" />
+                <marker date="1547733279328" expanded="true" signature="5003:5146" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="195" column="30" selection-start-line="195" selection-start-column="13" selection-end-line="195" selection-end-column="30" />
+              <folding>
+                <marker date="1547743719399" expanded="true" signature="40:7846" ph="{...}" />
+                <marker date="1547743719399" expanded="false" signature="53:221" ph="..." />
+                <marker date="1547743719399" expanded="true" signature="287:7844" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="302:1011" ph="Private Serializable Fields" />
+                <marker date="1547743719399" expanded="false" signature="1021:1189" ph="Private Fields" />
+                <marker date="1547743719399" expanded="false" signature="1199:3158" ph="MonoBehaviour Callbacks" />
+                <marker date="1547743719399" expanded="true" signature="1252:1507" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="1275:1440" ph="/* ##Critical ... */" />
+                <marker date="1547743719399" expanded="true" signature="1537:1877" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="1591:1820" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="1908:3137" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="1949:3127" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="2004:3113" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="2120:2696" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="2771:3094" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="3168:5778" ph="Photon Callbacks" />
+                <marker date="1547743719399" expanded="true" signature="3244:3308" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="3353:3605" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="3615:3743" ph="/// Called when the local player left the room. We need to load the launcher scene. ... " />
+                <marker date="1547743719399" expanded="true" signature="3785:4067" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="4131:4554" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="4333:4544" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="4616:5015" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="4797:5005" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="5083:5247" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="5330:5758" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="5797:7691" ph="Private Methods" />
+                <marker date="1547743719399" expanded="true" signature="5847:6210" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="5904:6039" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="6244:6926" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="6329:6502" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="6519:6915" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="6973:7190" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="7048:7180" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="7241:7670" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="7303:7450" ph="{...}" />
+                <marker date="1547743719399" expanded="true" signature="7514:7660" ph="{...}" />
+                <marker date="1547743719399" expanded="false" signature="7701:7837" ph="Public Methods" />
+                <marker date="1547743719399" expanded="true" signature="7757:7816" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -189,6 +240,8 @@
     <findStrings>
       <find>joinRandomRoom</find>
       <find>isConnecting</find>
+      <find>instantiate</find>
+      <find>instantiatePlayer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -199,6 +252,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_LobbyViewer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/VRTK-master/Assets/VRTK/Prefabs/ConsoleViewerCanvas/VRTK_ConsoleViewer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_ControllerHaptics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -206,6 +260,7 @@
         <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Launcher.cs" />
         <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_LobbyViewer.cs" />
         <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_ControllerHaptics.cs" />
+        <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager.cs" />
       </list>
     </option>
   </component>
@@ -228,11 +283,11 @@
     </navigator>
     <panes>
       <pane id="FileSystemExplorer" />
-      <pane id="UnityExplorer">
-        <option name="show-hidden-items" value="false" />
-      </pane>
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="UnityExplorer">
+        <option name="show-hidden-items" value="false" />
       </pane>
     </panes>
   </component>
@@ -282,11 +337,12 @@
       <updated>1547134725553</updated>
       <workItem from="1547134729499" duration="9713000" />
       <workItem from="1547229002439" duration="144000" />
+      <workItem from="1547743287139" duration="432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9857000" />
+    <option name="totallyTimeSpent" value="10289000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -299,8 +355,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1688" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18581907" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18826406" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -347,7 +404,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_LobbyViewer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
+        <state relative-caret-position="799">
           <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
           <folding>
             <marker date="1547207257129" expanded="true" signature="37:1758" ph="{...}" />
@@ -437,28 +494,75 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <marker date="1547228923016" expanded="true" signature="16:4975" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="29:147" ph="..." />
-            <marker date="1547228923016" expanded="true" signature="153:337" ph="/// This class combines interactions between Players regarding Controller Haptics. ... " />
-            <marker date="1547228923016" expanded="true" signature="398:4973" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="414:2602" ph="Private Fields" />
-            <marker date="1547228923016" expanded="true" signature="2612:4156" ph="MonoBehaviour Callbacks" />
-            <marker date="1547228923016" expanded="true" signature="2722:2942" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="2770:2844" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="2861:2932" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="3008:4136" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="3053:4125" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="3116:3300" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="3350:3531" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="3568:3800" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="3654:3782" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="3860:4095" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="3946:4077" ph="{...}" />
-            <marker date="1547228923016" expanded="false" signature="4166:4720" ph="PUN Callbacks" />
-            <marker date="1547228923016" expanded="true" signature="4241:4536" ph="{...}" />
-            <marker date="1547228923016" expanded="true" signature="4624:4700" ph="{...}" />
-            <marker date="1547228923016" expanded="false" signature="4730:4967" ph="Public Methods" />
-            <marker date="1547228923016" expanded="true" signature="4804:4947" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="29:147" ph="..." />
+            <marker date="1547733279328" expanded="true" signature="153:337" ph="/// This class combines interactions between Players regarding Controller Haptics. ... " />
+            <marker date="1547733279328" expanded="true" signature="398:5172" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="414:2602" ph="Private Fields" />
+            <marker date="1547733279328" expanded="true" signature="2612:4355" ph="MonoBehaviour Callbacks" />
+            <marker date="1547733279328" expanded="true" signature="2722:3141" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="2969:3043" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="3060:3131" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="3207:4335" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="3252:4324" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="3315:3499" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="3549:3730" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="3767:3999" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="3853:3981" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="4059:4294" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="4145:4276" ph="{...}" />
+            <marker date="1547733279328" expanded="false" signature="4365:4919" ph="PUN Callbacks" />
+            <marker date="1547733279328" expanded="true" signature="4440:4735" ph="{...}" />
+            <marker date="1547733279328" expanded="true" signature="4823:4899" ph="{...}" />
+            <marker date="1547733279328" expanded="false" signature="4929:5166" ph="Public Methods" />
+            <marker date="1547733279328" expanded="true" signature="5003:5146" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="195" column="30" selection-start-line="195" selection-start-column="13" selection-end-line="195" selection-end-column="30" />
+          <folding>
+            <marker date="1547743719399" expanded="true" signature="40:7846" ph="{...}" />
+            <marker date="1547743719399" expanded="false" signature="53:221" ph="..." />
+            <marker date="1547743719399" expanded="true" signature="287:7844" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="302:1011" ph="Private Serializable Fields" />
+            <marker date="1547743719399" expanded="false" signature="1021:1189" ph="Private Fields" />
+            <marker date="1547743719399" expanded="false" signature="1199:3158" ph="MonoBehaviour Callbacks" />
+            <marker date="1547743719399" expanded="true" signature="1252:1507" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="1275:1440" ph="/* ##Critical ... */" />
+            <marker date="1547743719399" expanded="true" signature="1537:1877" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="1591:1820" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="1908:3137" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="1949:3127" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="2004:3113" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="2120:2696" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="2771:3094" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="3168:5778" ph="Photon Callbacks" />
+            <marker date="1547743719399" expanded="true" signature="3244:3308" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="3353:3605" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="3615:3743" ph="/// Called when the local player left the room. We need to load the launcher scene. ... " />
+            <marker date="1547743719399" expanded="true" signature="3785:4067" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="4131:4554" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="4333:4544" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="4616:5015" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="4797:5005" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="5083:5247" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="5330:5758" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="5797:7691" ph="Private Methods" />
+            <marker date="1547743719399" expanded="true" signature="5847:6210" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="5904:6039" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="6244:6926" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="6329:6502" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="6519:6915" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="6973:7190" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="7048:7180" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="7241:7670" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="7303:7450" ph="{...}" />
+            <marker date="1547743719399" expanded="true" signature="7514:7660" ph="{...}" />
+            <marker date="1547743719399" expanded="false" signature="7701:7837" ph="Public Methods" />
+            <marker date="1547743719399" expanded="true" signature="7757:7816" ph="{...}" />
           </folding>
         </state>
       </provider>

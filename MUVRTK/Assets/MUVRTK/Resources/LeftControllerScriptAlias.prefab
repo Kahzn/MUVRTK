@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8623963408292656803}
-  - component: {fileID: 8623963408292656826}
-  - component: {fileID: 8623963408292656805}
+  - component: {fileID: 7163333786500312807}
+  - component: {fileID: 3642333007352936769}
   - component: {fileID: 8623963408292656800}
   - component: {fileID: 8623963408292656806}
   - component: {fileID: 8623963408292656801}
@@ -37,7 +37,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8623963408292656826
+--- !u!114 &7163333786500312807
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,11 +55,11 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 8623963408292656805}
-  viewIdField: 3
-  InstantiationId: 3
+  - {fileID: 3642333007352936769}
+  viewIdField: 5
+  InstantiationId: 5
   isRuntimeInstantiated: 0
---- !u!114 &8623963408292656805
+--- !u!114 &3642333007352936769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
