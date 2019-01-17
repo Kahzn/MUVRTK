@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.ComponentModel;
+using System.Numerics;
 
 namespace MUVRTK
 {
@@ -14,7 +15,18 @@ namespace MUVRTK
     {
         #region Private Serializable Fields
 
-        public bool debug;
+        [Tooltip("Log the debug messages for this script in the console.")]
+        [SerializeField]
+        private bool debug;
+        
+        [Tooltip("Show Other Player Controllers in the scene.")]
+        [SerializeField]
+        private bool showControllersOfOtherPlayers;
+
+        [Tooltip("List of Controller Model Objects. If not set, the Script will search the scene hierarchy for the models, which may be detrimental to performance.")] 
+        [SerializeField]
+        private GameObject[] controllerModelsToSynchronize;
+
 
         [Tooltip("The prefab to use for representing the player")]
         [SerializeField]
@@ -64,6 +76,30 @@ namespace MUVRTK
             }
 
             InstantiateInteractiveElements();
+            
+            // add a PhotonView Component to the Controller Models at runtime so we don't get conflicting View IDs (identifying the GameObject on the network).
+            if (showControllersOfOtherPlayers)
+            {
+                if (controllerModelsToSynchronize.Length > 0)
+                {
+                    Debug.Log(name + " AddPhotonTransformView called on Controller Models."); 
+                    
+                    foreach (GameObject model in controllerModelsToSynchronize)
+                    {
+                        AddPhotonTransformView(model);
+                    }
+                }
+                else
+                {
+                    Debug.Log(name + " AddPhotonTransformView called on Controller Models.");
+                    
+                    foreach (GameObject model in GameObject.FindGameObjectsWithTag("Model"))
+                    {
+                        AddPhotonTransformView(model);
+                    }
+                    
+                }
+            }
         }
 
         private void Update()
@@ -230,6 +266,13 @@ namespace MUVRTK
             {
                 PhotonNetwork.Instantiate(leftControllerScriptAlias.name, new Vector3(0, 0, 0), Quaternion.identity);
             }
+        }
+
+        void AddPhotonTransformView(GameObject go)
+        {
+            PhotonView pv = go.AddComponent<PhotonView>();
+            PhotonTransformView ptv = go.AddComponent<PhotonTransformView>();
+            pv.ObservedComponents.Add(ptv);
         }
 
 

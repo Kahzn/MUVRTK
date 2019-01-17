@@ -1597,6 +1597,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 1
+  showControllersOfOtherPlayers: 1
+  controllerModelsToSynchronize:
+  - {fileID: 1406599096}
+  - {fileID: 1406599096}
   playerPrefab: {fileID: 9134103080250105971, guid: e412f916107374a4785c2fc294dfea98,
     type: 3}
   rightControllerScriptAlias: {fileID: 1251795316485554009, guid: ba516ff52d4da2348a4c92ffc32b2083,
@@ -5585,6 +5589,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 323797066}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: viewIdField
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InstantiationId
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: viewIdField
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InstantiationId
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 420908, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5625,28 +5645,15 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 55
       objectReference: {fileID: 0}
-    - target: {fileID: 4360731934950444978, guid: 4d293c8e162f3874b982baadd71153d2,
-        type: 3}
-      propertyPath: viewIdField
-      value: 7
+    - target: {fileID: 192944, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_TagString
+      value: Model
       objectReference: {fileID: 0}
-    - target: {fileID: 4360731934950444978, guid: 4d293c8e162f3874b982baadd71153d2,
-        type: 3}
-      propertyPath: InstantiationId
-      value: 6
+    - target: {fileID: 147176, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_TagString
+      value: Model
       objectReference: {fileID: 0}
-    - target: {fileID: 6960290600351017669, guid: 4d293c8e162f3874b982baadd71153d2,
-        type: 3}
-      propertyPath: viewIdField
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6960290600351017669, guid: 4d293c8e162f3874b982baadd71153d2,
-        type: 3}
-      propertyPath: InstantiationId
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11420968, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
 --- !u!4 &1406599092 stripped
 Transform:

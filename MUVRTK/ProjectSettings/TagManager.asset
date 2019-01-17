@@ -9,6 +9,7 @@ TagManager:
   - projectile
   - FxTemporaire
   - TeleportIgnore
+  - Model
   layers:
   - Default
   - TransparentFX
