@@ -3,6 +3,7 @@ using System.Numerics;
 
 namespace MUVRTK
 {
+
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
@@ -18,6 +19,8 @@ namespace MUVRTK
         [Tooltip("Log the debug messages for this script in the console.")]
         [SerializeField]
         private bool debug;
+
+        [Header("Controller Section")]
 
         [Tooltip("Show Other Player Controllers in the scene.")]
         [SerializeField]
@@ -36,28 +39,18 @@ namespace MUVRTK
         [SerializeField]
         private GameObject rightController;
 
+        [SerializeField]
+        private GameObject LeftControllerScriptAlias;
+
+        [SerializeField]
+        private GameObject RightControllerScriptAlias;
+
+        [Header("Player Section")]
 
         [Tooltip("The prefab to use for representing the player")]
         [SerializeField]
         private GameObject playerPrefab;
 
-        /***
-        [Tooltip("Controller-Scriptalias-GameObject from the hierarchy, if there are any")]
-        [SerializeField]
-        private GameObject[] currentControllerScriptAliasesInHierarchy;
-
-        [Tooltip("The prefab to use for representing the right Controller Scripts on the Network. Do NOT use the GameObjects from the hierarchy as they do not have a PhotonView-Component!")]
-        [SerializeField]
-        private GameObject networkedRightControllerScriptAliasPrefab;
-
-        [Tooltip("The prefab to use for representing the left Controller Scripts over the Network. Do NOT use the GameObjects from the hierarchy as they do not have a PhotonView-Component!")]
-        [SerializeField]
-        private GameObject networkedLeftControllerScriptAliasPrefab;
-
-        [Tooltip("The SDK-Manager GameObject in the Hierarchy.")]
-        [SerializeField]
-        private VRTK_SDKManager SDKManager;
-        ***/
 
         [SerializeField]
         private GameObject[] MUVRTK_InteractionElements;
@@ -71,6 +64,7 @@ namespace MUVRTK
         #region Private Fields
 
         private bool cameraLoaded = false;
+        private bool modelLoaded = false;
         private Camera mainCamera;
         private GameObject instantiatedPlayer;
         private GameObject networkedLeftControllerModel;
@@ -95,17 +89,7 @@ namespace MUVRTK
                 PhotonNetwork.GameVersion = gameVersion;
                 PhotonNetwork.ConnectUsingSettings();
             }
-            /**
-            else
-            {
-                InstantiateInteractiveElements();
 
-                // if the User chooses to show the Player Controllers via network, this method deactivates the standard models and replaces them by networked ones.
-                if (showControllersOfOtherPlayers)
-                {
-                    InstantiateNetworkedControllerModels();
-                }
-            }**/
 
         }
 
@@ -138,6 +122,45 @@ namespace MUVRTK
 
                 }
             }
+
+            if (!modelLoaded)
+            {
+                // deactivate default Controller Model body Meshes in Hierarchy
+
+                if (controllerModels.Length == 0)
+                {
+                    controllerModels = new GameObject[2];
+
+                    if (debug)
+                        Debug.Log(name + "No Controller Models set in Editor, creating new GameObject Array.");
+
+                    if (leftController != null)
+                    {
+                        controllerModels[0] = leftController.transform.GetChild(0).gameObject;
+                    }
+
+                    if (rightController != null)
+                    {
+                        controllerModels[1] = rightController.transform.GetChild(0).gameObject;
+                    }
+                }
+                else
+                {
+                    if (controllerModels[0].transform.childCount > 0 )
+                    {
+                        foreach (GameObject model in controllerModels)
+                        {
+                            model.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = false;
+
+                            if (debug)
+                                Debug.Log(name + "Default Controller " + model.transform.GetChild(1).name + " deactivated");
+                        }
+
+                        modelLoaded = true;
+                    }
+                    
+                }
+            }
         }
 
 
@@ -157,18 +180,18 @@ namespace MUVRTK
 
             InstantiatePlayerOverNetwork();
 
-
-
             InstantiateInteractiveElements();
 
 
             // if the User chooses to show the Player Controllers via network, this method deactivates the standard models and replaces them by networked ones.
             if (showControllersOfOtherPlayers)
             {
-                //InstantiateNetworkedControllerScriptAliases();
                 InstantiateNetworkedControllerModels();
             }
 
+            //TODO: Generalize this shit!!!
+            RightControllerScriptAlias.GetComponent<MUVRTK_SetViewIDAtRuntime>().AddPhotonView();
+            LeftControllerScriptAlias.GetComponent<MUVRTK_SetViewIDAtRuntime>().AddPhotonView();
 
         }
 
@@ -273,46 +296,6 @@ namespace MUVRTK
             }
         }
 
-        /// <summary>
-        /// Deactivates the default Controller-ScriptAliases and replaces them by networked ones.
-        /// </summary>
-/**
-        void InstantiateNetworkedControllerScriptAliases()
-        {
-            //Get Current ControllerScriptAliases in the Hierarchy if available and deactivate them.
-            if(currentControllerScriptAliasesInHierarchy.Length >0)
-            {
-                currentControllerScriptAliasesInHierarchy[0].SetActive(false);
-                if (currentControllerScriptAliasesInHierarchy.Length > 1)
-                    currentControllerScriptAliasesInHierarchy[1].SetActive(false);
-            }
-            else{
-                GameObject.Find("LeftControllerScriptAlias") ? .SetActive(false);
-                GameObject.Find("RightControllerScriptAlias") ? .SetActive(false);
-            }
-
-            if (debug)
-                Debug.Log(name + " Default Controller Script Aliases deactivated");
-
-            //Instantiate the networked Prefabs of the Controllers and bind them to the SDK-Manager
-
-            if (networkedRightControllerScriptAliasPrefab != null)
-            {
-                SDKManager.scriptAliasRightController = PhotonNetwork.Instantiate(networkedRightControllerScriptAliasPrefab.name, new Vector3(0, 0, 0), Quaternion.identity);
-
-                if (debug)
-                    Debug.Log(name + " Networked Right Controller Script Alias Instantiated and connected to SDK-Manager");
-            }
-            
-            if (networkedLeftControllerScriptAliasPrefab != null)
-            {
-                SDKManager.scriptAliasLeftController = PhotonNetwork.Instantiate(networkedLeftControllerScriptAliasPrefab.name, new Vector3(0, 0, 0), Quaternion.identity);
-
-                if (debug)
-                    Debug.Log(name + " Networked Right Controller Script Alias Instantiated and connected to SDK-Manager");
-            }
-
-        }**/
 
 
         /// <summary>
@@ -331,39 +314,6 @@ namespace MUVRTK
             {
                 rightController = GameObject.Find("Controller (right)");
             }
-
-
-            // deactivate default Controller Model body Meshes in Hierarchy
-            
-            if(controllerModels.Length == 0)
-            {
-                controllerModels = new GameObject[2];
-
-                if (debug)
-                    Debug.Log(name + "No Controller Models set in Editor, creating new GameObject Array.");
-
-                if (leftController != null)
-                {
-                    controllerModels[0] = leftController.transform.GetChild(0).gameObject;
-                }
-                
-                if(rightController != null)
-                {
-                    controllerModels[1] = rightController.transform.GetChild(0).gameObject;
-                }
-            }
-            else
-            {
-                foreach (GameObject model in controllerModels)
-                {
-                    model.transform.GetChild(1).GetComponent <MeshRenderer>().enabled = false;
-
-                    if (debug)
-                        Debug.Log(name + "Default Controller " +  model.transform.GetChild(1).name + " deactivated");
-                }
-            }
-
-          
 
 
             // Instantiate Networked Models
