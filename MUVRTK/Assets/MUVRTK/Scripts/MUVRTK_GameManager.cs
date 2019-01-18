@@ -9,7 +9,7 @@ namespace MUVRTK
     using UnityEngine.SceneManagement;
     using Photon.Pun;
     using Photon.Realtime;
-
+    using VRTK;
 
     public class MUVRTK_GameManager : MonoBehaviourPunCallbacks
     {
@@ -18,27 +18,46 @@ namespace MUVRTK
         [Tooltip("Log the debug messages for this script in the console.")]
         [SerializeField]
         private bool debug;
-        
+
         [Tooltip("Show Other Player Controllers in the scene.")]
         [SerializeField]
         private bool showControllersOfOtherPlayers;
 
-        [Tooltip("List of Controller Model Objects. If not set, the Script will search the scene hierarchy for the models, which may be detrimental to performance.")] 
+        [Tooltip("List of Controller Model Objects. If not set, the Script will search the scene hierarchy for the models, which may be detrimental to performance.")]
         [SerializeField]
-        private GameObject[] controllerModelsToSynchronize;
+        private GameObject[] controllerModels;
+
+        [Tooltip("Left Controller Object in the SDK-Setup. If not set, the Script will search the scene hierarchy for the models, which may be detrimental to performance.")]
+        [SerializeField]
+        private GameObject leftController;
+
+
+        [Tooltip("Right Controller Object in the SDK-Setup. If not set, the Script will search the scene hierarchy for the models, which may be detrimental to performance.")]
+        [SerializeField]
+        private GameObject rightController;
 
 
         [Tooltip("The prefab to use for representing the player")]
         [SerializeField]
         private GameObject playerPrefab;
-        
-        [Tooltip("The prefab to use for representing the right Controller Scripts")]
+
+        /***
+        [Tooltip("Controller-Scriptalias-GameObject from the hierarchy, if there are any")]
         [SerializeField]
-        private GameObject rightControllerScriptAlias;
-        
-        [Tooltip("The prefab to use for representing the left Controller Scripts")]
+        private GameObject[] currentControllerScriptAliasesInHierarchy;
+
+        [Tooltip("The prefab to use for representing the right Controller Scripts on the Network. Do NOT use the GameObjects from the hierarchy as they do not have a PhotonView-Component!")]
         [SerializeField]
-        private GameObject leftControllerScriptAlias;
+        private GameObject networkedRightControllerScriptAliasPrefab;
+
+        [Tooltip("The prefab to use for representing the left Controller Scripts over the Network. Do NOT use the GameObjects from the hierarchy as they do not have a PhotonView-Component!")]
+        [SerializeField]
+        private GameObject networkedLeftControllerScriptAliasPrefab;
+
+        [Tooltip("The SDK-Manager GameObject in the Hierarchy.")]
+        [SerializeField]
+        private VRTK_SDKManager SDKManager;
+        ***/
 
         [SerializeField]
         private GameObject[] MUVRTK_InteractionElements;
@@ -54,6 +73,8 @@ namespace MUVRTK
         private bool cameraLoaded = false;
         private Camera mainCamera;
         private GameObject instantiatedPlayer;
+        private GameObject networkedLeftControllerModel;
+        private GameObject networkedRightControllerModel;
 
         #endregion
 
@@ -74,32 +95,18 @@ namespace MUVRTK
                 PhotonNetwork.GameVersion = gameVersion;
                 PhotonNetwork.ConnectUsingSettings();
             }
-
-            InstantiateInteractiveElements();
-            
-            // add a PhotonView Component to the Controller Models at runtime so we don't get conflicting View IDs (identifying the GameObject on the network).
-            if (showControllersOfOtherPlayers)
+            /**
+            else
             {
-                if (controllerModelsToSynchronize.Length > 0)
+                InstantiateInteractiveElements();
+
+                // if the User chooses to show the Player Controllers via network, this method deactivates the standard models and replaces them by networked ones.
+                if (showControllersOfOtherPlayers)
                 {
-                    Debug.Log(name + " AddPhotonTransformView called on Controller Models."); 
-                    
-                    foreach (GameObject model in controllerModelsToSynchronize)
-                    {
-                        AddPhotonTransformView(model);
-                    }
+                    InstantiateNetworkedControllerModels();
                 }
-                else
-                {
-                    Debug.Log(name + " AddPhotonTransformView called on Controller Models.");
-                    
-                    foreach (GameObject model in GameObject.FindGameObjectsWithTag("Model"))
-                    {
-                        AddPhotonTransformView(model);
-                    }
-                    
-                }
-            }
+            }**/
+
         }
 
         private void Update()
@@ -121,12 +128,12 @@ namespace MUVRTK
                         instantiatedPlayer.transform.localRotation = Quaternion.Euler(0, 0, 0);
                         cameraLoaded = true;
                     }
-                    if(PhotonNetwork.InRoom && instantiatedPlayer == null)
+                    if (PhotonNetwork.InRoom && instantiatedPlayer == null)
                     {
                         if (debug)
                             Debug.Log("MUVRTK_GameManager: Update()-Method didn't find any Player, so InstantiatePlayer() was called.");
-                        InstantiatePlayer();
-                        InstantiateControllerScriptAliases();
+                        InstantiatePlayerOverNetwork();
+
                     }
 
                 }
@@ -148,9 +155,20 @@ namespace MUVRTK
             if (debug)
                 Debug.Log("MUVRTK_GameManager: OnJoinedRoom() called by PUN. Now this client is in the Room.");
 
-            InstantiatePlayer();
-            InstantiateControllerScriptAliases();
-           
+            InstantiatePlayerOverNetwork();
+
+
+
+            InstantiateInteractiveElements();
+
+
+            // if the User chooses to show the Player Controllers via network, this method deactivates the standard models and replaces them by networked ones.
+            if (showControllersOfOtherPlayers)
+            {
+                //InstantiateNetworkedControllerScriptAliases();
+                InstantiateNetworkedControllerModels();
+            }
+
 
         }
 
@@ -183,8 +201,8 @@ namespace MUVRTK
 
         public override void OnPlayerLeftRoom(Player other)
         {
-            if(debug)
-            Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName); // seen when other disconnects
+            if (debug)
+                Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName); // seen when other disconnects
 
             if (PhotonNetwork.IsMasterClient)
             {
@@ -211,7 +229,7 @@ namespace MUVRTK
 
         #endregion
 
-       
+
 
         #region Private Methods
 
@@ -229,7 +247,7 @@ namespace MUVRTK
 
         }
 
-        void InstantiatePlayer()
+        void InstantiatePlayerOverNetwork()
         {
             /// Player Instantiation
             if (playerPrefab == null)
@@ -255,25 +273,154 @@ namespace MUVRTK
             }
         }
 
-        void InstantiateControllerScriptAliases()
+        /// <summary>
+        /// Deactivates the default Controller-ScriptAliases and replaces them by networked ones.
+        /// </summary>
+/**
+        void InstantiateNetworkedControllerScriptAliases()
         {
-            if (rightControllerScriptAlias != null)
+            //Get Current ControllerScriptAliases in the Hierarchy if available and deactivate them.
+            if(currentControllerScriptAliasesInHierarchy.Length >0)
             {
-                PhotonNetwork.Instantiate(rightControllerScriptAlias.name, new Vector3(0, 0, 0), Quaternion.identity);
+                currentControllerScriptAliasesInHierarchy[0].SetActive(false);
+                if (currentControllerScriptAliasesInHierarchy.Length > 1)
+                    currentControllerScriptAliasesInHierarchy[1].SetActive(false);
+            }
+            else{
+                GameObject.Find("LeftControllerScriptAlias") ? .SetActive(false);
+                GameObject.Find("RightControllerScriptAlias") ? .SetActive(false);
+            }
+
+            if (debug)
+                Debug.Log(name + " Default Controller Script Aliases deactivated");
+
+            //Instantiate the networked Prefabs of the Controllers and bind them to the SDK-Manager
+
+            if (networkedRightControllerScriptAliasPrefab != null)
+            {
+                SDKManager.scriptAliasRightController = PhotonNetwork.Instantiate(networkedRightControllerScriptAliasPrefab.name, new Vector3(0, 0, 0), Quaternion.identity);
+
+                if (debug)
+                    Debug.Log(name + " Networked Right Controller Script Alias Instantiated and connected to SDK-Manager");
             }
             
-            if (leftControllerScriptAlias != null)
+            if (networkedLeftControllerScriptAliasPrefab != null)
             {
-                PhotonNetwork.Instantiate(leftControllerScriptAlias.name, new Vector3(0, 0, 0), Quaternion.identity);
+                SDKManager.scriptAliasLeftController = PhotonNetwork.Instantiate(networkedLeftControllerScriptAliasPrefab.name, new Vector3(0, 0, 0), Quaternion.identity);
+
+                if (debug)
+                    Debug.Log(name + " Networked Right Controller Script Alias Instantiated and connected to SDK-Manager");
             }
+
+        }**/
+
+
+        /// <summary>
+        /// Deactivates the current Controller Models and replaces them by Networked ones.
+        /// </summary>
+        void InstantiateNetworkedControllerModels()
+        {
+            //Get Controller GameObjects in Hierarchy to add the new Networked Models onto them.
+            if(leftController == null)
+            {
+                 leftController = GameObject.Find("Controller (left)");
+            }
+            
+
+            if (rightController == null)
+            {
+                rightController = GameObject.Find("Controller (right)");
+            }
+
+
+            // deactivate default Controller Models in Hierarchy
+
+            if(controllerModels.Length == 0)
+            {
+                controllerModels = new GameObject[2];
+
+                if (debug)
+                    Debug.Log(name + "No Controller Models set in Editor, creating new GameObject Array.");
+
+                if (leftController != null)
+                {
+                    controllerModels[0] = leftController.transform.GetChild(0).gameObject;
+                }
+                
+                if(rightController != null)
+                {
+                    controllerModels[1] = rightController.transform.GetChild(0).gameObject;
+                }
+            }
+            else
+            {
+                foreach (GameObject model in controllerModels)
+                {
+                    model.SetActive(false);
+
+                    if (debug)
+                        Debug.Log(name + "Default Controller Models deactivated");
+                }
+            }
+
+            
+
+
+            // Instantiate Networked Models
+            networkedLeftControllerModel = PhotonNetwork.Instantiate("Model", new Vector3(0, 0, 0), Quaternion.identity);
+            networkedRightControllerModel = PhotonNetwork.Instantiate("Model", new Vector3(0, 0, 0), Quaternion.identity);
+
+            // bind their movement to the Controllers by making them their parents and resetting their local transform values.
+
+            //left
+            if(leftController != null)
+            {
+                networkedLeftControllerModel.transform.parent = leftController.transform;
+                networkedLeftControllerModel.transform.localPosition = new Vector3(0, 0, 0);
+                networkedLeftControllerModel.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+                /// Strange Steam VR_Render Model - Bug Workaround: Somwtimes, SteamVR/VRTK doesn't set the Model Index correctly. 
+                /// the following Code-Snippet makes sure that the index of the new Model is updated correctly.
+
+                networkedLeftControllerModel.SetActive(false);
+                networkedLeftControllerModel.GetComponent<SteamVR_RenderModel>().index = leftController.GetComponent<SteamVR_TrackedObject>().index;
+                networkedLeftControllerModel.SetActive(true);
+
+                if (debug)
+                    Debug.Log(name + "Left Controller Model Instantiation Finished!");
+            }
+            else
+            {
+                if (debug)
+                    Debug.Log(this.name + "No Left Controller found!");
+            }
+
+            //right
+            if (rightController != null)
+            {
+                networkedRightControllerModel.transform.parent = rightController.transform;
+                networkedRightControllerModel.transform.localPosition = new Vector3(0, 0, 0);
+                networkedRightControllerModel.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+                /// Strange Steam VR_Render Model - Bug Workaround: Somwtimes, SteamVR/VRTK doesn't set the Model Index correctly. 
+                /// the following Code-Snippet makes sure that the index of the new Model is updated correctly.
+
+                networkedRightControllerModel.SetActive(false);
+                networkedRightControllerModel.GetComponent<SteamVR_RenderModel>().index = rightController.GetComponent<SteamVR_TrackedObject>().index;
+                networkedRightControllerModel.SetActive(true);
+
+                if (debug)
+                    Debug.Log(name + "Right Controller Model Instantiation Finished!");
+            }
+            else
+            {
+                if (debug)
+                    Debug.Log(this.name + "Not Right Controller found!");
+            }
+
         }
 
-        void AddPhotonTransformView(GameObject go)
-        {
-            PhotonView pv = go.AddComponent<PhotonView>();
-            PhotonTransformView ptv = go.AddComponent<PhotonTransformView>();
-            pv.ObservedComponents.Add(ptv);
-        }
+
 
 
         #endregion
@@ -281,7 +428,7 @@ namespace MUVRTK
         #region Public Methods
 
 
-        public void LeaveRoom()
+                    public void LeaveRoom()
         {
             PhotonNetwork.LeaveRoom();
         }
