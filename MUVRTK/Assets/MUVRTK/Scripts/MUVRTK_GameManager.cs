@@ -333,8 +333,8 @@ namespace MUVRTK
             }
 
 
-            // deactivate default Controller Models in Hierarchy
-
+            // deactivate default Controller Model body Meshes in Hierarchy
+            
             if(controllerModels.Length == 0)
             {
                 controllerModels = new GameObject[2];
@@ -356,19 +356,19 @@ namespace MUVRTK
             {
                 foreach (GameObject model in controllerModels)
                 {
-                    model.SetActive(false);
+                    model.transform.GetChild(1).GetComponent <MeshRenderer>().enabled = false;
 
                     if (debug)
-                        Debug.Log(name + "Default Controller Models deactivated");
+                        Debug.Log(name + "Default Controller " +  model.transform.GetChild(1).name + " deactivated");
                 }
             }
 
-            
+          
 
 
             // Instantiate Networked Models
-            networkedLeftControllerModel = PhotonNetwork.Instantiate("Model", new Vector3(0, 0, 0), Quaternion.identity);
-            networkedRightControllerModel = PhotonNetwork.Instantiate("Model", new Vector3(0, 0, 0), Quaternion.identity);
+            networkedLeftControllerModel = PhotonNetwork.Instantiate("Controller_body", new Vector3(0, 0, 0), Quaternion.identity);
+            networkedRightControllerModel = PhotonNetwork.Instantiate("Controller_body", new Vector3(0, 0, 0), Quaternion.identity);
 
             // bind their movement to the Controllers by making them their parents and resetting their local transform values.
 
@@ -377,14 +377,7 @@ namespace MUVRTK
             {
                 networkedLeftControllerModel.transform.parent = leftController.transform;
                 networkedLeftControllerModel.transform.localPosition = new Vector3(0, 0, 0);
-                networkedLeftControllerModel.transform.localRotation = Quaternion.Euler(0, 0, 0);
-
-                /// Strange Steam VR_Render Model - Bug Workaround: Somwtimes, SteamVR/VRTK doesn't set the Model Index correctly. 
-                /// the following Code-Snippet makes sure that the index of the new Model is updated correctly.
-
-                networkedLeftControllerModel.SetActive(false);
-                networkedLeftControllerModel.GetComponent<SteamVR_RenderModel>().index = leftController.GetComponent<SteamVR_TrackedObject>().index;
-                networkedLeftControllerModel.SetActive(true);
+                networkedLeftControllerModel.transform.localRotation = Quaternion.Euler(0, 180, 0);
 
                 if (debug)
                     Debug.Log(name + "Left Controller Model Instantiation Finished!");
@@ -400,14 +393,9 @@ namespace MUVRTK
             {
                 networkedRightControllerModel.transform.parent = rightController.transform;
                 networkedRightControllerModel.transform.localPosition = new Vector3(0, 0, 0);
-                networkedRightControllerModel.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                networkedRightControllerModel.transform.localRotation = Quaternion.Euler(0, 180, 0);
 
-                /// Strange Steam VR_Render Model - Bug Workaround: Somwtimes, SteamVR/VRTK doesn't set the Model Index correctly. 
-                /// the following Code-Snippet makes sure that the index of the new Model is updated correctly.
 
-                networkedRightControllerModel.SetActive(false);
-                networkedRightControllerModel.GetComponent<SteamVR_RenderModel>().index = rightController.GetComponent<SteamVR_TrackedObject>().index;
-                networkedRightControllerModel.SetActive(true);
 
                 if (debug)
                     Debug.Log(name + "Right Controller Model Instantiation Finished!");
