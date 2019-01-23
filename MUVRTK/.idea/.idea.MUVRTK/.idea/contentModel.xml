@@ -12,12 +12,15 @@
           <e p="Scripts" t="Include">
             <e p="MUVRTK_ControllerHaptics.cs" t="Include" />
             <e p="MUVRTK_GameManager.cs" t="Include" />
+            <e p="MUVRTK_Instantiate.cs" t="Include" />
             <e p="MUVRTK_Launcher.cs" t="Include" />
             <e p="MUVRTK_LobbyViewer.cs" t="Include" />
             <e p="MUVRTK_PlayerNameInputField.cs" t="Include" />
             <e p="MUVRTK_RoomNameInputField.cs" t="Include" />
+            <e p="MUVRTK_SetViewIDAtRuntime.cs" t="Include" />
           </e>
         </e>
+        <e p="MUVRTK_GameManager_base.cs" t="Include" />
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
             <e p="Code" t="Include">

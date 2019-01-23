@@ -89,8 +89,6 @@ namespace MUVRTK
                 PhotonNetwork.GameVersion = gameVersion;
                 PhotonNetwork.ConnectUsingSettings();
             }
-
-
         }
 
         private void Update()
@@ -366,7 +364,7 @@ namespace MUVRTK
         #region Public Methods
 
 
-                    public void LeaveRoom()
+        public void LeaveRoom()
         {
             PhotonNetwork.LeaveRoom();
         }
