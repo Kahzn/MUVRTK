@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 2076424888254320762}
   - component: {fileID: 1305184444913759517}
   m_Layer: 0
-  m_Name: Simple_VRTK_SDK_Manager
+  m_Name: SDK_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,6 +356,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 159396, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_TagString
+      value: RightController
+      objectReference: {fileID: 0}
+    - target: {fileID: 124034, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_TagString
+      value: LeftController
+      objectReference: {fileID: 0}
     - target: {fileID: 2082592, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 55
@@ -423,6 +431,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[VRSimulator_CameraRig]'
       objectReference: {fileID: 0}
+    - target: {fileID: 1538727058887424, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
+      propertyPath: m_TagString
+      value: LeftController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391022766006510, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
+      propertyPath: m_TagString
+      value: RightController
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011401111930, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -467,6 +483,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20938510069535118, guid: be540b97364be0a4890e39e62ac89ed1,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 224903114965417368, guid: be540b97364be0a4890e39e62ac89ed1,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -496,11 +517,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20938510069535118, guid: be540b97364be0a4890e39e62ac89ed1,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 224587334084441624, guid: be540b97364be0a4890e39e62ac89ed1,
         type: 3}
