@@ -63,8 +63,8 @@ namespace MUVRTK
 
         #region Private Fields
 
-        private bool cameraLoaded = false;
-        private bool modelLoaded = false;
+        private bool cameraLoaded;
+        private bool modelLoaded;
         private Camera mainCamera;
         private GameObject instantiatedPlayer;
         private GameObject networkedLeftControllerModel;
