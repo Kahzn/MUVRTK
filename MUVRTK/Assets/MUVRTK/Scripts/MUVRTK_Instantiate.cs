@@ -1,4 +1,6 @@
-﻿using System.Numerics;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.Serialization;
@@ -37,7 +39,7 @@ namespace MUVRTK
         [Tooltip("The Array of Models for the Controllers. If you want to use the same for both, add it only once. Otherwise: First Left, Second Right.")]
         [SerializeField] 
         private GameObject[] controllerModels;
-        
+
         [FormerlySerializedAs("objectsToInstantiate")]
         [Tooltip("All networked player objects. NOTE: Every networked Prefab needs a Photon View!")]
         [SerializeField]
@@ -56,6 +58,7 @@ namespace MUVRTK
         private GameObject leftControllerInstance;
         private GameObject rightControllerInstance;
         private GameObject[] controllerModelInstances;
+        
         
         
         #endregion
@@ -180,17 +183,20 @@ namespace MUVRTK
             }
             if (PhotonNetwork.IsConnected)
             {
+
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
-                    PhotonNetwork.Instantiate(go.name, new Vector3(0, 0, 0), Quaternion.identity);
+                    PhotonNetwork.Instantiate(go.name, transform.position, transform.rotation);
                 }
+                
             }
             else
             {
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
-                    Instantiate(go, new Vector3(0, 0, 0), Quaternion.identity);
+                    Instantiate(go, transform.position, transform.rotation);
                 }
+                
             }
            
         }

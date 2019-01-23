@@ -10,6 +10,8 @@ TagManager:
   - FxTemporaire
   - TeleportIgnore
   - Model
+  - LeftController
+  - RightController
   layers:
   - Default
   - TransparentFX
