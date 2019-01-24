@@ -45,12 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPopulateObjectReferences: 1
-  actualBoundaries: {fileID: 919007259076637334}
-  actualHeadset: {fileID: 920658813818079986}
-  actualLeftController: {fileID: 920426251376632560}
-  actualRightController: {fileID: 920850450027663646}
-  modelAliasLeftController: {fileID: 920879272645744956}
-  modelAliasRightController: {fileID: 920358326153030072}
+  actualBoundaries: {fileID: 0}
+  actualHeadset: {fileID: 0}
+  actualLeftController: {fileID: 0}
+  actualRightController: {fileID: 0}
+  modelAliasLeftController: {fileID: 0}
+  modelAliasRightController: {fileID: 0}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
@@ -120,8 +120,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoManageScriptDefines: 1
   activeScriptingDefineSymbolsWithoutSDKClasses: []
-  scriptAliasLeftController: {fileID: 0}
-  scriptAliasRightController: {fileID: 0}
+  scriptAliasLeftController: {fileID: 8623963408292656802, guid: 4f582c9009f95da4e883d63d504fb30a,
+    type: 3}
+  scriptAliasRightController: {fileID: 1251795316485554009, guid: ba516ff52d4da2348a4c92ffc32b2083,
+    type: 3}
   autoManageVRSettings: 1
   autoLoadSetup: 1
   setups:
@@ -212,12 +214,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPopulateObjectReferences: 1
-  actualBoundaries: {fileID: 919708191439565121}
-  actualHeadset: {fileID: 919708191439546859}
-  actualLeftController: {fileID: 919708191439611927}
-  actualRightController: {fileID: 919708191439577649}
-  modelAliasLeftController: {fileID: 7355214453698638406}
-  modelAliasRightController: {fileID: 919708191439551781}
+  actualBoundaries: {fileID: 0}
+  actualHeadset: {fileID: 0}
+  actualLeftController: {fileID: 0}
+  actualRightController: {fileID: 0}
+  modelAliasLeftController: {fileID: 0}
+  modelAliasRightController: {fileID: 0}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
@@ -364,10 +366,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: LeftController
       objectReference: {fileID: 0}
-    - target: {fileID: 2082592, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 55
-      objectReference: {fileID: 0}
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -376,47 +374,15 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2082592, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
---- !u!1 &919708191439565121 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 146900, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 919708191439686805}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &919708191439315129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 420908, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 919708191439686805}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &919708191439611927 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 124034, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 919708191439686805}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7355214453698638406 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7697088446866734803, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 919708191439686805}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &919708191439577649 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 159396, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 919708191439686805}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &919708191439551781 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 192944, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 919708191439686805}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &919708191439546859 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 189822, guid: 4d293c8e162f3874b982baadd71153d2,
     type: 3}
   m_PrefabInstance: {fileID: 919708191439686805}
   m_PrefabAsset: {fileID: 0}
@@ -430,14 +396,6 @@ PrefabInstance:
     - target: {fileID: 1000013941130086, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
       propertyPath: m_Name
       value: '[VRSimulator_CameraRig]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 1538727058887424, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
-      propertyPath: m_TagString
-      value: LeftController
-      objectReference: {fileID: 0}
-    - target: {fileID: 1391022766006510, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
-      propertyPath: m_TagString
-      value: RightController
       objectReference: {fileID: 0}
     - target: {fileID: 4000011401111930, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -483,10 +441,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 20938510069535118, guid: be540b97364be0a4890e39e62ac89ed1,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 55
+    - target: {fileID: 1538727058887424, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
+      propertyPath: m_TagString
+      value: LeftController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391022766006510, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
+      propertyPath: m_TagString
+      value: RightController
       objectReference: {fileID: 0}
     - target: {fileID: 224903114965417368, guid: be540b97364be0a4890e39e62ac89ed1,
         type: 3}
@@ -517,6 +478,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20938510069535118, guid: be540b97364be0a4890e39e62ac89ed1,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 224587334084441624, guid: be540b97364be0a4890e39e62ac89ed1,
         type: 3}
@@ -550,45 +516,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
---- !u!1 &919007259076637334 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000013941130086, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 919708191795704304}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &922464174487296138 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011401111930, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 919708191795704304}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &920658813818079986 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1587602180963074, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 919708191795704304}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &920426251376632560 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1538727058887424, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 919708191795704304}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &920879272645744956 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1384746914293964, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 919708191795704304}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &920850450027663646 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1391022766006510, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 919708191795704304}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &920358326153030072 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1883185261795400, guid: be540b97364be0a4890e39e62ac89ed1,
     type: 3}
   m_PrefabInstance: {fileID: 919708191795704304}
   m_PrefabAsset: {fileID: 0}

@@ -6,6 +6,7 @@ using Photon.Pun;
 using UnityEngine.Serialization;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
+using VRTK;
 
 namespace MUVRTK
 {
@@ -39,6 +40,11 @@ namespace MUVRTK
         [Tooltip("The Array of Models for the Controllers. If you want to use the same for both, add it only once. Otherwise: First Left, Second Right.")]
         [SerializeField] 
         private GameObject[] controllerModels;
+
+        [Tooltip("The Array of Scriptaliases for the Controllers. If you want to use the same for both, add it only once. Otherwise: First Left, Second Right.")]
+        [SerializeField]
+        private GameObject[] controllerScriptAliases;
+
 
         [FormerlySerializedAs("objectsToInstantiate")]
         [Tooltip("All networked player objects. NOTE: Every networked Prefab needs a Photon View!")]
@@ -77,9 +83,7 @@ namespace MUVRTK
 
         void Update()
         {
-            
-            // and this, ladies in gentlemen, is the most awful flight of if-stairs I've ever seen. But I'm quite too stupid to do it any better, and this works. So I guess you'll have to live with it. Sorry!
-            // also: This waits for the vrm and model-instantiation and then binds the two together in holy matrimony. 
+            // This waits for the vrm and model-instantiation and then binds the two together in holy matrimony. 
             if (!cameraLoaded)
             {
                 if (vrmInstance != null)
@@ -149,14 +153,20 @@ namespace MUVRTK
         
         public void Instantiate_GameObjects()
         {
+
+            // first: instantiate the sdk-manager and the correlated setup-switcher
+
             vrmInstance = Instantiate(vr_Manager, spawnPoint.position, Quaternion.identity);
            Instantiate(sdkSetupSwitcher, transform.position, transform.rotation);
 
+
+            //Player Model Instantiation
             if (playerModel != null)
             {
                 playerModelInstance = PhotonNetwork.Instantiate(playerModel.name, transform.position, transform.rotation);
             }
 
+            //Networked Controller Model Instantiation
             if (controllerModels.Length > 0)
             {
                 //If you want the same Model applied to both Controllers
@@ -176,14 +186,21 @@ namespace MUVRTK
                     controllerModelInstances[1] = PhotonNetwork.Instantiate(controllerModels[1].name,
                         transform.position, transform.rotation); 
                 }
-                else
-                {
-                    Debug.LogWarning(name + ": Too many Controllermodels added to Array. Which ones shall I choose?");
-                }
+
             }
+
+
+            //All other Networked Objects Instantiation, including Controller Script Aliases
+
             if (PhotonNetwork.IsConnected)
             {
+                //Controler Script Aliases
 
+                vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasLeftController = PhotonNetwork.Instantiate(controllerScriptAliases[0].name, transform.position, transform.rotation);
+                vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasRightController = PhotonNetwork.Instantiate(controllerScriptAliases[1].name, transform.position, transform.rotation);
+
+
+                //All else (interactive objects and the like)
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
                     PhotonNetwork.Instantiate(go.name, transform.position, transform.rotation);
@@ -192,6 +209,14 @@ namespace MUVRTK
             }
             else
             {
+                //Controller Script Aliases
+                foreach (GameObject go in controllerScriptAliases)
+                {
+                    Instantiate(go, transform.position, transform.rotation);
+
+                }
+
+                //All else
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
                     Instantiate(go, transform.position, transform.rotation);
