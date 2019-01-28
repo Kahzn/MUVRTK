@@ -443,11 +443,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1538727058887424, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
       propertyPath: m_TagString
-      value: LeftController
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1391022766006510, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
       propertyPath: m_TagString
-      value: RightController
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 224903114965417368, guid: be540b97364be0a4890e39e62ac89ed1,
         type: 3}

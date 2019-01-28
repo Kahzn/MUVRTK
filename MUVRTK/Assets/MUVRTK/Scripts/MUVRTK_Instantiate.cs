@@ -286,9 +286,14 @@ namespace MUVRTK
         /// <param name="controllerInstance"></param>
         private void DeactivateCurrentControllerModel(GameObject controllerInstance)
         {
+            if (controllerInstance.transform.childCount > 0)
+            {
 
-            GameObject originalModel = controllerInstance.transform.GetChild(0).gameObject;
-            originalModel.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = false;
+                Debug.Log(controllerInstance.name + " has this number of children: " + controllerInstance.transform.childCount);
+                GameObject originalModel = controllerInstance.transform.GetChild(0).gameObject;
+                originalModel.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = false;
+            }
+           
         }
         
         #endregion
