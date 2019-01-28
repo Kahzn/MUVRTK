@@ -34,4 +34,6 @@ MonoBehaviour:
   - RespawnSpaceship
   - CallTriggerHapticPulse
   - BroadcastHapticPulse
+  - TouchHighlightObject
+  - TouchUnHighlightObject
   DisableAutoOpenWizard: 1
