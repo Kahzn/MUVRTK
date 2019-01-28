@@ -90,13 +90,13 @@ namespace MUVRTK
         private void Networked_TouchHighlightObject(object sender, InteractableObjectEventArgs e)
         {
             Debug.Log("Networked_TouchHighlightObject passed");
-            TouchHighlightObject_RPC(sender, e);
+            pv.RPC("TouchHighlightObject_RPC", RpcTarget.All, sender, e);
         }
 
         private void Networked_TouchUnHighlightObjectRPC(object sender, InteractableObjectEventArgs e)
         {
             Debug.Log("Networked_TouchUnhighlightObject passed");
-            TouchUnHighlightObject_RPC(sender, e);
+            pv.RPC("TouchUnhighlightObject_RPC", RpcTarget.All, sender, e);
         }
         #endregion
 
