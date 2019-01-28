@@ -127,7 +127,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 4554241591757525744}
-  viewIdField: 0
+  viewIdField: 6
   InstantiationId: 6
   isRuntimeInstantiated: 0
 --- !u!114 &4554241591757525744
@@ -165,6 +165,7 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
+  debug: 0
 --- !u!114 &3147399814174075709
 MonoBehaviour:
   m_ObjectHideFlags: 0

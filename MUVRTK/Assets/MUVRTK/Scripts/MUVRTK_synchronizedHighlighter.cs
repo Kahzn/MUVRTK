@@ -90,13 +90,25 @@ namespace MUVRTK
         private void Networked_TouchHighlightObject(object sender, InteractableObjectEventArgs e)
         {
             Debug.Log("Networked_TouchHighlightObject passed");
-            pv.RPC("TouchHighlightObject_RPC", RpcTarget.All, sender, e);
+
+            //converting the method parameters into an object array sothat Photon can serialize them.
+            Object[] obj = new Object[2];
+            obj[0] = (Object)sender;
+            obj[1] = InteractableObjectEventArgsUnpacker(e);
+
+            pv.RPC("TouchHighlightObject_RPC", RpcTarget.All, obj);
         }
 
         private void Networked_TouchUnHighlightObjectRPC(object sender, InteractableObjectEventArgs e)
         {
             Debug.Log("Networked_TouchUnhighlightObject passed");
-            pv.RPC("TouchUnhighlightObject_RPC", RpcTarget.All, sender, e);
+
+            //converting the method parameters into an object array sothat Photon can serialize them.
+            Object[] obj = new Object[2];
+            obj[0] = (Object)sender;
+            obj[1] = InteractableObjectEventArgsUnpacker(e);
+
+            pv.RPC("TouchUnhighlightObject_RPC", RpcTarget.All, obj);
         }
         #endregion
 
@@ -106,22 +118,45 @@ namespace MUVRTK
          * */
 
         [PunRPC]
-        private void TouchHighlightObject_RPC(object sender, InteractableObjectEventArgs e)
+        private void TouchHighlightObject_RPC(Object[] obj)
         {
             Debug.Log("TouchHighlighObject_RPC passed");
+
+            //casting the object array given by the RPC-caller-method into the needed form.
+            object sender = obj[0];
+            InteractableObjectEventArgs e = new InteractableObjectEventArgs();
+            e.interactingObject = (GameObject)obj[1];
+
             TouchHighlightObject(sender, e);
         }
 
         [PunRPC]
-        private void TouchUnHighlightObject_RPC(object sender, InteractableObjectEventArgs e)
+        private void TouchUnHighlightObject_RPC(Object[] obj)
         {
             Debug.Log("TouchUnhighlighObject_RPC passed");
+
+            //casting the object array given by the RPC-caller-method into the needed form.
+            object sender = obj[0];
+            InteractableObjectEventArgs e = new InteractableObjectEventArgs();
+            e.interactingObject = (GameObject)obj[1];
+
             TouchUnHighlightObject(sender, e);
         }
         #endregion
 
+        #region private Helper Classes
+
+        private Object InteractableObjectEventArgsUnpacker(InteractableObjectEventArgs e)
+        {
+            return (Object)e.interactingObject;
+
+        }
+
+        #endregion
+
 
     }
+
 }
 
 
