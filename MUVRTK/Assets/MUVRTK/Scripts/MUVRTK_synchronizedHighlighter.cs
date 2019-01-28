@@ -18,6 +18,7 @@ namespace MUVRTK
         private void Start()
         {
             renderer = gameObject.GetComponent<MeshRenderer>();
+            color = new Color();
         }
 
 

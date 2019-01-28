@@ -58,7 +58,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 2906039972200357522}
-  viewIdField: 8
+  viewIdField: 0
   InstantiationId: 8
   isRuntimeInstantiated: 0
 --- !u!114 &2906039972200357522
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251795316485554009}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
   m_Name: 
