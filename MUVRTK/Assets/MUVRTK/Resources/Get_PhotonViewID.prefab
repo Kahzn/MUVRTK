@@ -129,7 +129,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4554241591757525744}
   - {fileID: 4958575578436583645}
-  viewIdField: 0
+  viewIdField: 6
   InstantiationId: 6
   isRuntimeInstantiated: 0
 --- !u!114 &4958575578436583645
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2751f40bd64ec6e4ab1a3aaf55a204d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
+  debug: 0
 --- !u!114 &4554241591757525744
 MonoBehaviour:
   m_ObjectHideFlags: 0

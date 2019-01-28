@@ -36,7 +36,12 @@ namespace MUVRTK
         [Tooltip("The SDK-Setup-Switcher Panel. Mandatory!")]
         [SerializeField] 
         private GameObject sdkSetupSwitcher;
-        
+
+
+        [Tooltip("tick yes if you want to exchange the default controller Models for networked ones. DONT TICK IF YOU'RE USING THE SIMULATOR.")]
+        [SerializeField]
+        private bool exchangeControllerModels;
+
         [Tooltip("The Array of Models for the Controllers. If you want to use the same for both, add it only once. Otherwise: First Left, Second Right.")]
         [SerializeField] 
         private GameObject[] controllerModels;
@@ -45,14 +50,16 @@ namespace MUVRTK
         [SerializeField]
         private GameObject[] controllerScriptAliases;
 
-
-        [FormerlySerializedAs("objectsToInstantiate")]
         [Tooltip("All networked player objects. NOTE: Every networked Prefab needs a Photon View!")]
         [SerializeField]
         private GameObject [] objectsToInstantiateOverTheNetwork;
-    
+
+        [Tooltip("offset by which an object can be instantiated randomly from the center of the map.")]
+        [SerializeField]
+        private float offset;
+
         #endregion
-        
+
         #region Private Fields
 
         private bool cameraLoaded;
@@ -103,7 +110,7 @@ namespace MUVRTK
             if (!leftControllerModelLoaded)
             {
                 //only replace the current controller meshes if any new models have been added to the array
-                if (controllerModels.Length > 0)
+                if (controllerModels.Length > 0 && exchangeControllerModels)
                 {
                     if (leftControllerInstance != null)
                     {
@@ -126,7 +133,7 @@ namespace MUVRTK
             if (!rightControllerModelLoaded)
             {
                 //only replace the current controller meshes if any new models have been added to the array
-                if (controllerModels.Length > 0)
+                if (controllerModels.Length > 0 && exchangeControllerModels)
                 {
                     if (rightControllerInstance != null)
                     {
@@ -167,10 +174,10 @@ namespace MUVRTK
             }
 
             //Networked Controller Model Instantiation
-            if (controllerModels.Length > 0)
+            if (controllerModels.Length > 0 && exchangeControllerModels)
             {
                 //If you want the same Model applied to both Controllers
-                if (controllerModels.Length == 1)
+                if (controllerModels.Length == 1 )
                 {
                     controllerModelInstances[0] = PhotonNetwork.Instantiate(controllerModels[0].name,
                         transform.position, transform.rotation);
@@ -203,7 +210,7 @@ namespace MUVRTK
                 //All else (interactive objects and the like)
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
-                    PhotonNetwork.InstantiateSceneObject(go.name, transform.position, transform.rotation);
+                    PhotonNetwork.InstantiateSceneObject(go.name, Random.insideUnitCircle * offset, Random.rotation);
                 }
                 
             }
@@ -219,7 +226,7 @@ namespace MUVRTK
                 //All else
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
-                    Instantiate(go, transform.position, transform.rotation);
+                    Instantiate(go, Random.insideUnitCircle * offset, Random.rotation);
                 }
                 
             }
@@ -295,6 +302,7 @@ namespace MUVRTK
             }
            
         }
+
         
         #endregion
     }
