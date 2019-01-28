@@ -203,7 +203,7 @@ namespace MUVRTK
                 //All else (interactive objects and the like)
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
-                    PhotonNetwork.Instantiate(go.name, transform.position, transform.rotation);
+                    PhotonNetwork.InstantiateSceneObject(go.name, transform.position, transform.rotation);
                 }
                 
             }
