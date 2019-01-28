@@ -144,7 +144,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2751f40bd64ec6e4ab1a3aaf55a204d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0.02736405, g: 1, b: 0.0039215684, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!114 &4554241591757525744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +207,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3303631938020766807}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc4b5dd2be1cea4aaea2850b910d3f9, type: 3}
   m_Name: 
