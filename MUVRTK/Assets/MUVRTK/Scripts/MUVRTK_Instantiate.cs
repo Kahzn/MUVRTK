@@ -162,8 +162,11 @@ namespace MUVRTK
         {
 
             // first: instantiate the sdk-manager and the correlated setup-switcher
-
-            vrmInstance = Instantiate(vr_Manager, spawnPoint.position, Quaternion.identity);
+            if (spawnPoint)
+            {
+                vrmInstance = Instantiate(vr_Manager, spawnPoint.position, Quaternion.identity);
+            }
+            else vrmInstance = Instantiate(vr_Manager, Random.insideUnitCircle*5, Quaternion.identity);
            Instantiate(sdkSetupSwitcher, transform.position, transform.rotation);
 
 
