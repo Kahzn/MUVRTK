@@ -4,6 +4,9 @@ using UnityEngine;
 using Photon.Pun;
 using VRTK;
 using VRTK.Highlighters;
+using Photon.Realtime;
+using ExitGames.Client.Photon;
+using System.Text;
 
 namespace MUVRTK
 {
@@ -28,6 +31,10 @@ namespace MUVRTK
         {
             // Get PhotonView Component. Necessary for RPCs.
             pv = PhotonView.Get(this);
+
+            MyCustomInteractableObjectEventArgs.Register();
+            MyCustomInteractableObject.Register();
+
         }
 
         #endregion
@@ -91,24 +98,16 @@ namespace MUVRTK
         {
             Debug.Log("Networked_TouchHighlightObject passed");
 
-            //converting the method parameters into an object array sothat Photon can serialize them.
-            Object[] obj = new Object[2];
-            obj[0] = (Object)sender;
-            obj[1] = InteractableObjectEventArgsUnpacker(e);
 
-            pv.RPC("TouchHighlightObject_RPC", RpcTarget.All, obj);
+            pv.RPC("TouchHighlightObject_RPC", RpcTarget.All, sender, e);
         }
 
         private void Networked_TouchUnHighlightObjectRPC(object sender, InteractableObjectEventArgs e)
         {
             Debug.Log("Networked_TouchUnhighlightObject passed");
 
-            //converting the method parameters into an object array sothat Photon can serialize them.
-            Object[] obj = new Object[2];
-            obj[0] = (Object)sender;
-            obj[1] = InteractableObjectEventArgsUnpacker(e);
 
-            pv.RPC("TouchUnhighlightObject_RPC", RpcTarget.All, obj);
+            pv.RPC("TouchUnHighlightObject_RPC", RpcTarget.All, sender, e);
         }
         #endregion
 
@@ -118,27 +117,21 @@ namespace MUVRTK
          * */
 
         [PunRPC]
-        private void TouchHighlightObject_RPC(Object[] obj)
+        private void TouchHighlightObject_RPC(object sender, InteractableObjectEventArgs e)
         {
             Debug.Log("TouchHighlighObject_RPC passed");
 
-            //casting the object array given by the RPC-caller-method into the needed form.
-            object sender = obj[0];
-            InteractableObjectEventArgs e = new InteractableObjectEventArgs();
-            e.interactingObject = (GameObject)obj[1];
+
+
 
             TouchHighlightObject(sender, e);
         }
 
         [PunRPC]
-        private void TouchUnHighlightObject_RPC(Object[] obj)
+        private void TouchUnHighlightObject_RPC(object sender, InteractableObjectEventArgs e)
         {
-            Debug.Log("TouchUnhighlighObject_RPC passed");
+            Debug.Log("TouchUnHighlighObject_RPC passed");
 
-            //casting the object array given by the RPC-caller-method into the needed form.
-            object sender = obj[0];
-            InteractableObjectEventArgs e = new InteractableObjectEventArgs();
-            e.interactingObject = (GameObject)obj[1];
 
             TouchUnHighlightObject(sender, e);
         }
@@ -146,15 +139,74 @@ namespace MUVRTK
 
         #region private Helper Classes
 
-        private Object InteractableObjectEventArgsUnpacker(InteractableObjectEventArgs e)
-        {
-            return (Object)e.interactingObject;
 
-        }
 
         #endregion
 
 
+    }
+
+    internal class MyCustomInteractableObjectEventArgs 
+    {
+       
+
+        internal static void Register()
+        {
+            Debug.Log("MyCustomInteractableObjectEventArgs registration completed: " + PhotonPeer.RegisterType(typeof(InteractableObjectEventArgs), (byte) 'I', Serialize, Deserialize));
+        }
+
+        #region Custom De/Serializer Methods
+
+
+        public byte Id { get; set; }
+        public InteractableObjectEventArgs args;
+
+        public static object Deserialize(byte[] data)
+        {
+            var result = new MyCustomInteractableObjectEventArgs();
+            result.Id = data[0];
+            return result;
+        }
+
+        public static byte[] Serialize(object customType)
+        {
+
+            var c = new MyCustomInteractableObjectEventArgs();
+            c.args = (InteractableObjectEventArgs)customType;
+            return new byte[] { c.Id };
+        }
+        #endregion
+    }
+
+    internal class MyCustomInteractableObject
+    {
+
+        internal static void Register()
+        {
+            Debug.Log("MyCustomInteractableObject registration completed: " + PhotonPeer.RegisterType(typeof(VRTK_InteractableObject), (byte)'J', Serialize, Deserialize));
+        }
+
+        #region Custom De/Serializer Methods
+
+
+        public byte Id { get; set; }
+        public VRTK_InteractableObject interactable;
+
+        public static object Deserialize(byte[] data)
+        {
+            var result = new MyCustomInteractableObject();
+            result.Id = data[0];
+            return result;
+        }
+
+        public static byte[] Serialize(object customType)
+        {
+
+            var c = new MyCustomInteractableObject();
+            c.interactable= (VRTK_InteractableObject)customType;
+            return new byte[] { c.Id };
+        }
+        #endregion
     }
 
 }

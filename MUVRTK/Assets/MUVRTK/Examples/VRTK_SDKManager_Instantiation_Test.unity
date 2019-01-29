@@ -163,8 +163,7 @@ MonoBehaviour:
   sdkSetupSwitcher: {fileID: 3617113462096005219, guid: 7a79726f235b43a42b2ec50929dc7533,
     type: 3}
   exchangeControllerModels: 0
-  controllerModels:
-  - {fileID: 5905369102832125037, guid: eb018668f53a87e459055bde54b70919, type: 3}
+  controllerModels: []
   controllerScriptAliases:
   - {fileID: 8623963408292656802, guid: 4f582c9009f95da4e883d63d504fb30a, type: 3}
   - {fileID: 1251795316485554009, guid: ba516ff52d4da2348a4c92ffc32b2083, type: 3}
