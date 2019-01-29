@@ -99,7 +99,7 @@ namespace MUVRTK
             Debug.Log("Networked_TouchHighlightObject passed");
 
 
-            pv.RPC("TouchHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
+            GetComponent<PhotonView>().RPC("TouchHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
         }
 
         private void Networked_TouchUnHighlightObjectRPC(object sender, InteractableObjectEventArgs e)
@@ -107,7 +107,7 @@ namespace MUVRTK
             Debug.Log("Networked_TouchUnhighlightObject passed");
 
 
-            pv.RPC("TouchUnHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
+            GetComponent<PhotonView>().RPC("TouchUnHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
         }
         #endregion
 
