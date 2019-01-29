@@ -80,10 +80,6 @@ namespace MUVRTK
 
         void Start()
         {
-            if (spawnPoint == null)
-            {
-                spawnPoint = transform;
-            }
             
             controllerModelInstances = new GameObject[2];
         }
@@ -166,7 +162,7 @@ namespace MUVRTK
             {
                 vrmInstance = Instantiate(vr_Manager, spawnPoint.position, Quaternion.identity);
             }
-            else vrmInstance = Instantiate(vr_Manager, Random.insideUnitCircle*5, Quaternion.identity);
+            else vrmInstance = Instantiate(vr_Manager, Random.insideUnitCircle * 5, Quaternion.identity);
            Instantiate(sdkSetupSwitcher, transform.position, transform.rotation);
 
 

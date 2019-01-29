@@ -117,23 +117,23 @@ namespace MUVRTK
          * */
 
         [PunRPC]
-        private void TouchHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
+        private void TouchHighlightObject_RPC(int viewID, object sender, object e)
         {
             Debug.Log("TouchHighlighObject_RPC passed");
 
 
             if(pv.ViewID.Equals(viewID))
-                TouchHighlightObject(sender, e); 
+                TouchHighlightObject(sender, (InteractableObjectEventArgs)e); 
             
         }
 
         [PunRPC]
-        private void TouchUnHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
+        private void TouchUnHighlightObject_RPC(int viewID, object sender, object e)
         {
             Debug.Log("TouchUnHighlighObject_RPC passed");
 
             if (pv.ViewID.Equals(viewID)) 
-                TouchUnHighlightObject(sender, e);
+                TouchUnHighlightObject(sender, (InteractableObjectEventArgs)e);
         }
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
