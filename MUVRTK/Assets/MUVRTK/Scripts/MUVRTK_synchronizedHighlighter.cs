@@ -12,7 +12,7 @@ namespace MUVRTK
 {
     [RequireComponent(typeof(PhotonView))]
 
-    public class MUVRTK_synchronizedHighlighter : VRTK_InteractObjectHighlighter
+    public class MUVRTK_synchronizedHighlighter : VRTK_InteractObjectHighlighter, IPunObservable
     {
         #region Private Serialized Fields
         [SerializeField] private bool debug;
@@ -134,6 +134,11 @@ namespace MUVRTK
 
             if (this.pv.ViewID.Equals(viewID)) 
                 TouchUnHighlightObject(sender, e);
+        }
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+
         }
         #endregion
 
