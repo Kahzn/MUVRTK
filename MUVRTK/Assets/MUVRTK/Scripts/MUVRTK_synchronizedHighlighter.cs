@@ -128,6 +128,17 @@ namespace MUVRTK
         }
 
         [PunRPC]
+        private void TouchHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
+        {
+            Debug.Log("TouchHighlighObject_RPC passed");
+
+
+            if (pv.ViewID.Equals(viewID))
+                TouchHighlightObject((object)sender, e.args);
+
+        }
+
+        [PunRPC]
         private void TouchUnHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
         {
             Debug.Log("TouchUnHighlighObject_RPC passed");
@@ -138,17 +149,23 @@ namespace MUVRTK
 
         }
 
+        [PunRPC]
+        private void TouchUnHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
+        {
+            Debug.Log("TouchUnHighlighObject_RPC passed");
+
+            if (pv.ViewID.Equals(viewID))
+                TouchUnHighlightObject((object)sender, e.args);
+
+
+        }
+
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
 
         }
         #endregion
 
-        #region private Helper Classes
-
-
-
-        #endregion
 
 
     }
