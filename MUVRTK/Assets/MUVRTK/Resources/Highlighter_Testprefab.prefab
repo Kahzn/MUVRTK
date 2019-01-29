@@ -158,10 +158,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8880bd075eaf4249a1175c02d984661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  nearTouchHighlight: {r: 0.9926069, g: 1, b: 0, a: 0}
   touchHighlight: {r: 0.03127098, g: 1, b: 0, a: 0}
-  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
-  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0.92941177, a: 0}
+  useHighlight: {r: 1, g: 0.051886797, b: 0.051886797, a: 0}
   objectToMonitor: {fileID: 3147399814174075709}
   objectToHighlight: {fileID: 3303631938020766807}
   objectHighlighter: {fileID: 0}
@@ -183,7 +183,7 @@ MonoBehaviour:
   allowedNearTouchControllers: 0
   allowedTouchControllers: 0
   ignoredColliders: []
-  isGrabbable: 0
+  isGrabbable: 1
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
@@ -191,7 +191,7 @@ MonoBehaviour:
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
-  isUsable: 0
+  isUsable: 1
   holdButtonToUse: 1
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
