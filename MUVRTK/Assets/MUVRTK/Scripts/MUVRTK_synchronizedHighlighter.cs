@@ -99,7 +99,7 @@ namespace MUVRTK
             Debug.Log("Networked_TouchHighlightObject passed");
 
 
-            pv.RPC("TouchHighlightObject_RPC", RpcTarget.All, sender, e);
+            pv.RPC("TouchHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
         }
 
         private void Networked_TouchUnHighlightObjectRPC(object sender, InteractableObjectEventArgs e)
@@ -107,7 +107,7 @@ namespace MUVRTK
             Debug.Log("Networked_TouchUnhighlightObject passed");
 
 
-            pv.RPC("TouchUnHighlightObject_RPC", RpcTarget.All, sender, e);
+            pv.RPC("TouchUnHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
         }
         #endregion
 
@@ -117,23 +117,23 @@ namespace MUVRTK
          * */
 
         [PunRPC]
-        private void TouchHighlightObject_RPC(object sender, InteractableObjectEventArgs e)
+        private void TouchHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
         {
             Debug.Log("TouchHighlighObject_RPC passed");
 
 
-
-
-            TouchHighlightObject(sender, e);
+            if(this.pv.ViewID.Equals(viewID))
+                TouchHighlightObject(sender, e); 
+            
         }
 
         [PunRPC]
-        private void TouchUnHighlightObject_RPC(object sender, InteractableObjectEventArgs e)
+        private void TouchUnHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
         {
             Debug.Log("TouchUnHighlighObject_RPC passed");
 
-
-            TouchUnHighlightObject(sender, e);
+            if (this.pv.ViewID.Equals(viewID)) 
+                TouchUnHighlightObject(sender, e);
         }
         #endregion
 
