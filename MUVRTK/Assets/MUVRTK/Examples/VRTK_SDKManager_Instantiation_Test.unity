@@ -416,5 +416,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 1
-  gameVersion: 1
+  gameVersion: 
   instantiator: {fileID: 219793351}
