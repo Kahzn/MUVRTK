@@ -155,13 +155,9 @@ namespace MUVRTK
             Debug.Log("TouchUnHighlighObject_RPC with Custom Types passed");
 
             if (pv.ViewID.Equals(viewID))
-                if(!e.args.Equals(null) && !sender.Equals(null))
-                {
-                    TouchUnHighlightObject((object)sender, e.args);
-                }
-                else
-                {
-                    Unhighlight();
+            {
+                /// Workaround: Calling the TouchUnHighlightObject-Method in this context would cause Nullreference-Exceptions on the sender-side.
+                Unhighlight();
                 }
                 
 
