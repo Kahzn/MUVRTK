@@ -15,10 +15,10 @@ GameObject:
   - component: {fileID: 3303631938020766800}
   - component: {fileID: 92734888848183953}
   - component: {fileID: 4554241591757525744}
-  - component: {fileID: 4958575578436583645}
+  - component: {fileID: 7038201560870186195}
   - component: {fileID: 3147399814174075709}
   m_Layer: 0
-  m_Name: Get_PhotonViewID
+  m_Name: Highlighter_Testprefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,8 +127,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 4554241591757525744}
-  - {fileID: 4958575578436583645}
-  viewIdField: 6
+  - {fileID: 7038201560870186195}
+  viewIdField: 0
   InstantiationId: 6
   isRuntimeInstantiated: 0
 --- !u!114 &4554241591757525744
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
---- !u!114 &4958575578436583645
+--- !u!114 &7038201560870186195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,18 +155,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 3303631938020766807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2751f40bd64ec6e4ab1a3aaf55a204d8, type: 3}
+  m_Script: {fileID: 11500000, guid: c8880bd075eaf4249a1175c02d984661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0.02736405, g: 1, b: 0.0039215684, a: 0}
+  touchHighlight: {r: 0.03127098, g: 1, b: 0, a: 0}
   grabHighlight: {r: 0, g: 0, b: 0, a: 0}
   useHighlight: {r: 0, g: 0, b: 0, a: 0}
-  objectToMonitor: {fileID: 0}
-  objectToHighlight: {fileID: 0}
+  objectToMonitor: {fileID: 3147399814174075709}
+  objectToHighlight: {fileID: 3303631938020766807}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
-  debug: 0
+  debug: 1
 --- !u!114 &3147399814174075709
 MonoBehaviour:
   m_ObjectHideFlags: 0

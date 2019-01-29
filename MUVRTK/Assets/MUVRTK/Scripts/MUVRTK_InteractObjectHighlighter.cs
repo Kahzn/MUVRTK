@@ -12,11 +12,11 @@ namespace MUVRTK
 {
     [RequireComponent(typeof(PhotonView))]
 
-    public class MUVRTK_synchronizedHighlighter : VRTK_InteractObjectHighlighter, IPunObservable
+    public class MUVRTK_InteractObjectHighlighter : VRTK_InteractObjectHighlighter, IPunObservable
     {
         #region Private Serialized Fields
         [SerializeField] private bool debug;
-        
+
         #endregion
 
         #region private fields
@@ -50,7 +50,7 @@ namespace MUVRTK
                 objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.NearUntouch, NearTouchUnHighlightObject);
 
                 objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, Networked_TouchHighlightObject);
-                objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Untouch, Networked_TouchUnHighlightObjectRPC);
+                objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Untouch, Networked_TouchUnHighlightObject);
 
                 objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Grab, GrabHighlightObject);
                 objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Ungrab, GrabUnHighlightObject);
@@ -74,7 +74,7 @@ namespace MUVRTK
                 objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.NearUntouch, NearTouchUnHighlightObject);
 
                 objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, Networked_TouchHighlightObject);
-                objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Untouch, Networked_TouchUnHighlightObjectRPC);
+                objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Untouch, Networked_TouchUnHighlightObject);
 
                 objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Grab, GrabHighlightObject);
                 objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Ungrab, GrabUnHighlightObject);
@@ -102,7 +102,7 @@ namespace MUVRTK
             pv.RPC("TouchHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
         }
 
-        private void Networked_TouchUnHighlightObjectRPC(object sender, InteractableObjectEventArgs e)
+        private void Networked_TouchUnHighlightObject(object sender, InteractableObjectEventArgs e)
         {
             Debug.Log("Networked_TouchUnhighlightObject passed");
 
@@ -114,6 +114,7 @@ namespace MUVRTK
         #region RPCs
         /**
          *  All methods in this region are RPC-mediators in order to call the same method on all client machines in a network.
+         *  Every RPC-Method has a second overload for that takes the custom type parameters as input.
          * */
 
         [PunRPC]
@@ -122,9 +123,9 @@ namespace MUVRTK
             Debug.Log("TouchHighlighObject_RPC passed");
 
 
-            if(pv.ViewID.Equals(viewID))
-                TouchHighlightObject(sender, e); 
-            
+            if (pv.ViewID.Equals(viewID))
+                TouchHighlightObject(sender, e);
+
         }
 
         [PunRPC]
@@ -158,8 +159,8 @@ namespace MUVRTK
             {
                 /// Workaround: Calling the TouchUnHighlightObject-Method in this context would cause Nullreference-Exceptions on the sender-side.
                 Unhighlight();
-                }
-                
+            }
+
 
 
         }
@@ -174,13 +175,13 @@ namespace MUVRTK
 
     }
 
-    internal class MyCustomInteractableObjectEventArgs 
+    internal class MyCustomInteractableObjectEventArgs
     {
-       
+
 
         internal static void Register()
         {
-            Debug.Log("MyCustomInteractableObjectEventArgs registration completed: " + PhotonPeer.RegisterType(typeof(InteractableObjectEventArgs), (byte) 'I', Serialize, Deserialize));
+            Debug.Log("MyCustomInteractableObjectEventArgs registration completed: " + PhotonPeer.RegisterType(typeof(InteractableObjectEventArgs), (byte)'I', Serialize, Deserialize));
         }
 
         #region Custom De/Serializer Methods
@@ -199,7 +200,7 @@ namespace MUVRTK
         public static byte[] Serialize(object customType)
         {
             var c = new MyCustomInteractableObjectEventArgs();
-                c.args = (InteractableObjectEventArgs)customType;
+            c.args = (InteractableObjectEventArgs)customType;
             return new byte[] { c.Id };
         }
         #endregion
@@ -230,7 +231,7 @@ namespace MUVRTK
         {
 
             var c = new MyCustomInteractableObject();
-            c.interactable= (VRTK_InteractableObject)customType;
+            c.interactable = (VRTK_InteractableObject)customType;
             return new byte[] { c.Id };
         }
         #endregion
