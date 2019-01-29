@@ -209,7 +209,7 @@ namespace MUVRTK
                 //All else (interactive objects and the like)
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
-                    PhotonNetwork.InstantiateSceneObject(go.name, Random.insideUnitCircle * offset, Quaternion.Euler(0, 0, 0));
+                    PhotonNetwork.InstantiateSceneObject(go.name, new Vector3 (Random.value * offset, Random.value, Random.value * offset), Quaternion.Euler(0, 0, 0));
                 }
                 
             }
@@ -225,7 +225,7 @@ namespace MUVRTK
                 //All else
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
-                    Instantiate(go, Random.insideUnitCircle * offset, Quaternion.Euler(0,0,0));
+                    Instantiate(go, new Vector3(Random.value * offset, 1, Random.value * offset), Quaternion.Euler(0,0,0));
                 }
                 
             }

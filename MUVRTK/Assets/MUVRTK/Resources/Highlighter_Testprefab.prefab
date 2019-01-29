@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 3303631938020766803}
   - component: {fileID: 3303631938020766802}
   - component: {fileID: 3303631938020766801}
-  - component: {fileID: 3303631938020766800}
   - component: {fileID: 92734888848183953}
   - component: {fileID: 4554241591757525744}
   - component: {fileID: 7038201560870186195}
   - component: {fileID: 3147399814174075709}
+  - component: {fileID: 3241432283923612659}
   m_Layer: 0
   m_Name: Highlighter_Testprefab
   m_TagString: Untagged
@@ -96,18 +96,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3303631938020766800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3303631938020766807}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8da5c28de8089b4d8d40eb1429aeb85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &92734888848183953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +116,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4554241591757525744}
   - {fileID: 7038201560870186195}
-  viewIdField: 5
+  viewIdField: 0
   InstantiationId: 5
   isRuntimeInstantiated: 0
 --- !u!114 &4554241591757525744
@@ -200,3 +188,21 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
+--- !u!114 &3241432283923612659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303631938020766807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 0
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
