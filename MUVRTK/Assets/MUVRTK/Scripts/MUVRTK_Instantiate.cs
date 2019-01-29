@@ -162,7 +162,7 @@ namespace MUVRTK
             {
                 vrmInstance = Instantiate(vr_Manager, spawnPoint.position, Quaternion.identity);
             }
-            else vrmInstance = Instantiate(vr_Manager, Random.insideUnitCircle * 5, Quaternion.identity);
+            else vrmInstance = Instantiate(vr_Manager, new Vector3(Random.value * 5, 0.5f, Random.value * 5), Quaternion.identity);
            Instantiate(sdkSetupSwitcher, transform.position, transform.rotation);
 
 
@@ -209,7 +209,7 @@ namespace MUVRTK
                 //All else (interactive objects and the like)
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
-                    PhotonNetwork.InstantiateSceneObject(go.name, Random.insideUnitCircle * offset, Random.rotation);
+                    PhotonNetwork.InstantiateSceneObject(go.name, Random.insideUnitCircle * offset, Quaternion.Euler(0, 0, 0));
                 }
                 
             }
@@ -225,7 +225,7 @@ namespace MUVRTK
                 //All else
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
-                    Instantiate(go, Random.insideUnitCircle * offset, Random.rotation);
+                    Instantiate(go, Random.insideUnitCircle * offset, Quaternion.Euler(0,0,0));
                 }
                 
             }

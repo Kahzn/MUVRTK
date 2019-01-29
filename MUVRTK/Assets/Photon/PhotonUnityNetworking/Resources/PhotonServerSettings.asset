@@ -38,4 +38,10 @@ MonoBehaviour:
   - TouchUnHighlightObject
   - TouchHighlightObject_RPC
   - TouchUnHighlightObject_RPC
+  - NearTouchHighlightObject_RPC
+  - NearTouchUnHighlightObject_RPC
+  - GrabHighlightObject_RPC
+  - GrabUnHighlightObject_RPC
+  - UseHighlightObject_RPC
+  - UseUnHighlightObject_RPC
   DisableAutoOpenWizard: 1
