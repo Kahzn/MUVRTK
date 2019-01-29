@@ -155,11 +155,21 @@ namespace MUVRTK
             Debug.Log("TouchUnHighlighObject_RPC with Custom Types passed");
 
             if (pv.ViewID.Equals(viewID))
-                TouchUnHighlightObject((object)sender, e.args);
+                if(!e.args.Equals(null))
+                {
+                    TouchUnHighlightObject((object)sender, e.args);
+                }
+                else
+                {
+                    Unhighlight();
+                }
+                
 
 
         }
+        #endregion
 
+        #region IPunObservable Implementation
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
 
@@ -192,9 +202,8 @@ namespace MUVRTK
 
         public static byte[] Serialize(object customType)
         {
-
             var c = new MyCustomInteractableObjectEventArgs();
-            c.args = (InteractableObjectEventArgs)customType;
+                c.args = (InteractableObjectEventArgs)customType;
             return new byte[] { c.Id };
         }
         #endregion
