@@ -130,7 +130,7 @@ namespace MUVRTK
         [PunRPC]
         private void TouchHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
         {
-            Debug.Log("TouchHighlighObject_RPC passed");
+            Debug.Log("TouchHighlighObject_RPC with Custom Types passed");
 
 
             if (pv.ViewID.Equals(viewID))
@@ -152,7 +152,7 @@ namespace MUVRTK
         [PunRPC]
         private void TouchUnHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
         {
-            Debug.Log("TouchUnHighlighObject_RPC passed");
+            Debug.Log("TouchUnHighlighObject_RPC with Custom Types passed");
 
             if (pv.ViewID.Equals(viewID))
                 TouchUnHighlightObject((object)sender, e.args);
@@ -165,8 +165,6 @@ namespace MUVRTK
 
         }
         #endregion
-
-
 
     }
 
