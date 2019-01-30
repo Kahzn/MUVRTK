@@ -2787,11 +2787,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 101641546}
     m_Modifications:
-    - target: {fileID: 3617113462096005219, guid: 7a79726f235b43a42b2ec50929dc7533,
-        type: 3}
-      propertyPath: m_Name
-      value: NetworkedSDKSetupSwitcher
-      objectReference: {fileID: 0}
     - target: {fileID: 3617113462096005216, guid: 7a79726f235b43a42b2ec50929dc7533,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2896,6 +2891,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617113462096005219, guid: 7a79726f235b43a42b2ec50929dc7533,
+        type: 3}
+      propertyPath: m_Name
+      value: NetworkedSDKSetupSwitcher
       objectReference: {fileID: 0}
     - target: {fileID: 2438766117453031136, guid: 7a79726f235b43a42b2ec50929dc7533,
         type: 3}
