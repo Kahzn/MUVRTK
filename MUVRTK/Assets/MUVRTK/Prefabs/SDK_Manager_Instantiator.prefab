@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1773877050947683940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1773877050947683943}
+  - component: {fileID: 1773877050947683942}
+  m_Layer: 0
+  m_Name: SDK_Manager_Instantiator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1773877050947683943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773877050947683940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1773877050947683942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773877050947683940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c3c6982cf233b4e892dd44430fb417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vr_Manager: {fileID: 919708191555333131, guid: ff930b4f02bacd04693f73716bc64c0d,
+    type: 3}
+  spawnPoint: {fileID: 0}
+  playerModel: {fileID: 9134103080250105971, guid: e412f916107374a4785c2fc294dfea98,
+    type: 3}
+  sdkSetupSwitcher: {fileID: 3617113462096005219, guid: 7a79726f235b43a42b2ec50929dc7533,
+    type: 3}
+  exchangeControllerModels: 0
+  controllerModels: []
+  controllerScriptAliases:
+  - {fileID: 8623963408292656802, guid: 4f582c9009f95da4e883d63d504fb30a, type: 3}
+  - {fileID: 1251795316485554009, guid: ba516ff52d4da2348a4c92ffc32b2083, type: 3}
+  objectsToInstantiateOverTheNetwork:
+  - {fileID: 3303631938020766807, guid: 139f5cd80dc20e34aaa38ea034979716, type: 3}
+  offset: 10

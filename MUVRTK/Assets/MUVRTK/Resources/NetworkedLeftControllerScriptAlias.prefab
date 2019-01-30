@@ -60,7 +60,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3642333007352936769}
-  viewIdField: 7
+  viewIdField: 0
   InstantiationId: 7
   isRuntimeInstantiated: 0
 --- !u!114 &3642333007352936769
@@ -147,11 +147,11 @@ MonoBehaviour:
   holdButtonToActivate: 1
   activateOnEnable: 0
   activationDelay: 0
-  selectionButton: 3
-  selectOnPress: 1
+  selectionButton: 10
+  selectOnPress: 0
   selectionDelay: 0
   selectAfterHoverDuration: 0
-  interactWithObjects: 1
+  interactWithObjects: 0
   grabToPointerTip: 0
   attachedTo: {fileID: 0}
   controllerEvents: {fileID: 0}

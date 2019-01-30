@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a076696e-6859-467f-963a-9cb2af34b682" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Examples/VRTK_SDKManager_Instantiation_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Examples/VRTK_SDKManager_Instantiation_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/Controller_body.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/Controller_body.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="a076696e-6859-467f-963a-9cb2af34b682" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +12,7 @@
     <session id="253657513">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
@@ -469,12 +461,12 @@
       <workItem from="1547134729499" duration="9713000" />
       <workItem from="1547229002439" duration="144000" />
       <workItem from="1547743287139" duration="2452000" />
-      <workItem from="1548242242857" duration="15535000" />
+      <workItem from="1548242242857" duration="15661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27844000" />
+    <option name="totallyTimeSpent" value="27970000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -487,7 +479,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1688" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19070904" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
