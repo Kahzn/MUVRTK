@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 139967895}
   - component: {fileID: 139967894}
   - component: {fileID: 139967893}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: 'Touchable Text '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 518219955}
   - component: {fileID: 518219954}
   - component: {fileID: 518219953}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Grabbable Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +933,7 @@ GameObject:
   - component: {fileID: 764771744}
   - component: {fileID: 764771743}
   - component: {fileID: 764771742}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Multi Player Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1144,6 +1144,7 @@ GameObject:
   - component: {fileID: 813270191}
   - component: {fileID: 813270197}
   - component: {fileID: 813270196}
+  - component: {fileID: 813270198}
   m_Layer: 0
   m_Name: Grabbable
   m_TagString: Untagged
@@ -1314,10 +1315,26 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
+  - {fileID: 813270198}
   - {fileID: 813270196}
   viewIdField: 9
   InstantiationId: 9
   isRuntimeInstantiated: 0
+--- !u!114 &813270198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813270189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1 &815524768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,7 +1348,7 @@ GameObject:
   - component: {fileID: 815524772}
   - component: {fileID: 815524771}
   - component: {fileID: 815524770}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: 'Usable Text '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1780,7 +1797,7 @@ GameObject:
   - component: {fileID: 906610029}
   - component: {fileID: 906610028}
   - component: {fileID: 906610027}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: 'Touchable Text '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2763,7 +2780,7 @@ GameObject:
   - component: {fileID: 1740085923}
   - component: {fileID: 1740085922}
   - component: {fileID: 1740085921}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: 'Usable Text '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3202,7 +3219,7 @@ GameObject:
   - component: {fileID: 1895169254}
   - component: {fileID: 1895169253}
   - component: {fileID: 1895169252}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Single Player Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3411,7 +3428,9 @@ GameObject:
   - component: {fileID: 1933051935}
   - component: {fileID: 1933051934}
   - component: {fileID: 1933051933}
-  m_Layer: 10
+  - component: {fileID: 1933051938}
+  - component: {fileID: 1933051937}
+  m_Layer: 0
   m_Name: 'Teleport '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3606,6 +3625,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1933051937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933051931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+--- !u!114 &1933051938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933051931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 1933051937}
+  viewIdField: 12
+  InstantiationId: 12
+  isRuntimeInstantiated: 0
 --- !u!1 &1935085384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3657,7 +3713,7 @@ GameObject:
   - component: {fileID: 2061052869}
   - component: {fileID: 2061052868}
   - component: {fileID: 2061052867}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: 'Grababble Text '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
