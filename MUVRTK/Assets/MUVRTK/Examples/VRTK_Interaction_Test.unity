@@ -592,8 +592,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 498248414}
-  viewIdField: 5
-  InstantiationId: 5
+  viewIdField: 8
+  InstantiationId: 8
   isRuntimeInstantiated: 0
 --- !u!1 &518219951
 GameObject:
@@ -2068,7 +2068,7 @@ PrefabInstance:
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: objectsToInstantiateOverTheNetwork.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
@@ -2086,6 +2086,12 @@ PrefabInstance:
       propertyPath: offset
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: objectsToInstantiateOverTheNetwork.Array.data[0]
+      value: 
+      objectReference: {fileID: 7316797750302878619, guid: 911dfc91899e03a43b50194298398afd,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef1df230d4c5a564bb2ba070eaa49ade, type: 3}
 --- !u!4 &962273114 stripped

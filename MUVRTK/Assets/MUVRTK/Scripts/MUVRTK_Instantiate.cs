@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using Photon.Pun;
+using UnityEditor;
 using UnityEngine.Serialization;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
@@ -18,6 +19,8 @@ namespace MUVRTK
     {
         
         #region Private Serialize Fields
+
+        [SerializeField] private bool debug;
         
         [Header("VR Manager Section")]
         
@@ -49,10 +52,18 @@ namespace MUVRTK
         [Tooltip("The Array of Scriptaliases for the Controllers. If you want to use the same for both, add it only once. Otherwise: First Left, Second Right.")]
         [SerializeField]
         private GameObject[] controllerScriptAliases;
+        
+        [Tooltip("tick yes if you want to Basic Teleport on your controller Script Aliases.")]
+        [SerializeField]
+        private bool enableTeleport;
 
         [Tooltip("All networked player objects. NOTE: Every networked Prefab needs a Photon View!")]
         [SerializeField]
         private GameObject [] objectsToInstantiateOverTheNetwork;
+        
+        [Tooltip("All non-networked player objects. Photon Views not necessary. These objects can only be seen and manipulated by the local Player.")]
+        [SerializeField]
+        private GameObject [] objectsToInstantiateLocally;
 
         [Tooltip("offset by which an object can be instantiated randomly from the center of the map.")]
         [SerializeField]
@@ -65,6 +76,7 @@ namespace MUVRTK
         private bool cameraLoaded;
         private bool leftControllerModelLoaded;
         private bool rightControllerModelLoaded;
+        private bool playareascriptloaded;
 
         private GameObject vrmInstance;
         private GameObject playerModelInstance;
@@ -82,6 +94,11 @@ namespace MUVRTK
         {
             
             controllerModelInstances = new GameObject[2];
+
+            if (enableTeleport)
+            {
+                TeleportEnable();
+            }
         }
 
         void Update()
@@ -231,7 +248,42 @@ namespace MUVRTK
             }
            
         }
-        
+
+        public void TeleportEnable()
+        {
+            foreach (GameObject go in controllerScriptAliases)
+            {
+                if (!go.GetComponent<VRTK_ControllerEvents>())
+                {
+                    go.AddComponent<VRTK_ControllerEvents>();
+                    
+                }
+                
+                if (!go.GetComponent<VRTK_Pointer>())
+                {
+                    go.AddComponent<VRTK_Pointer>();
+                }
+                VRTK_Pointer pointer = go.GetComponent<VRTK_Pointer>();
+                pointer.enableTeleport = true;
+                pointer.holdButtonToActivate = true;
+                
+                if (!go.GetComponent<VRTK_StraightPointerRenderer>() && !go.GetComponent<VRTK_BezierPointerRenderer>())
+                {
+                    go.AddComponent<VRTK_StraightPointerRenderer>();
+                }
+
+                if (!playareascriptloaded)
+                {
+                    GameObject PlayArea =
+                        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/MUVRTK/Prefabs/PlayAreaScript.prefab");
+                    Instantiate(PlayArea, transform.position, transform.rotation);
+                    playareascriptloaded = true;
+                }
+               
+
+            }
+        }
+
         #endregion
         
         #region Private Methods
@@ -286,7 +338,7 @@ namespace MUVRTK
         }
 
         /// <summary>
-        /// Searches the Controller Hierarchy for the Model Body and deactivates its Mesh Renderer Component sothat we don't render two models on top of each other.
+        /// Searches the Controller Hierarchy for the Model Body and deactivates its Mesh Renderer Component so that we don't render two models on top of each other.
         /// Only necessary if controller models need to be synchronized over network.
         /// </summary>
         /// <param name="controllerInstance"></param>
