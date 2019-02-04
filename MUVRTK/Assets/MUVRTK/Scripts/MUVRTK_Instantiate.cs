@@ -32,9 +32,9 @@ namespace MUVRTK
         [SerializeField] 
         private Transform spawnPoint;
         
-        [Tooltip("The Playermodel that you need attached to your VR-Manager.")]
+        [Tooltip("The Player Avatar that you need attached to your VR-Manager.")]
         [SerializeField] 
-        private GameObject playerModel;
+        private GameObject playerAvatar;
        
         [Tooltip("The SDK-Setup-Switcher Panel. Mandatory!")]
         [SerializeField] 
@@ -184,9 +184,9 @@ namespace MUVRTK
 
 
             //Player Model Instantiation
-            if (playerModel != null)
+            if (playerAvatar != null)
             {
-                playerModelInstance = PhotonNetwork.Instantiate(playerModel.name, transform.position, transform.rotation);
+                playerModelInstance = PhotonNetwork.Instantiate(playerAvatar.name, transform.position, transform.rotation);
             }
 
             //Networked Controller Model Instantiation
