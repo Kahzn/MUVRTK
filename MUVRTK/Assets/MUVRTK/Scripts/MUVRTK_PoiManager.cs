@@ -11,8 +11,7 @@
     /// </summary>
     public class MUVRTK_PoiManager : MUVRTK_SceneObject
     {
-        [SerializeField]
-        private int lifeSpanInMinutes;
+
 
         private MeshRenderer meshRenderer;
 

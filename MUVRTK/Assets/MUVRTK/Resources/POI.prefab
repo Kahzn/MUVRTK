@@ -141,18 +141,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7514380413642254856}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2ba827fa50a17348b1fdd2327760196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  touch: 0
-  pointer: 0
-  use: 0
-  grab: 0
-  spawn: 0
-  collision: 0
+  lifetimeInSeconds: -99
+  points: 100
+  health: 1
+  destroyInteraction: 0
+  triggerInteractions: 0
   playAudioClip: 0
   audioClip: {fileID: 0}
   triggerHapticPulse: 0
@@ -224,12 +223,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  touch: 0
-  pointer: 0
-  use: 0
-  grab: 0
-  spawn: 0
-  collision: 0
+  lifetimeInSeconds: -99
+  points: 100
+  health: 1
+  destroyInteraction: 0
+  triggerInteractions: 0
   playAudioClip: 0
   audioClip: {fileID: 0}
   triggerHapticPulse: 0

@@ -16,6 +16,14 @@ namespace MUVRTK
     [RequireComponent(typeof(VRTK_InteractableObject))]
     public abstract class MUVRTK_SceneObject : MonoBehaviour
     {
+        #region Public Enums
+
+        public enum DestroyInteractions { Touch, Point, Select, Activate, Use, Grab, Collide};
+
+        public enum TriggerInteractions { Touch, Point, Select, Activate, Use, Grab, Collide, Spawn };
+
+        #endregion
+
         #region Public Fields
 
         public bool debug;
@@ -23,34 +31,35 @@ namespace MUVRTK
         #endregion
 
         #region Protected Serialize Fields
+        [Header("Object values")]
 
-        [Header("How to trigger the interacton")]
-
-        [Tooltip("Tick this if the Action shall be triggered on Touch.")]
+        [Tooltip("Lifetime of the object in the scene. As soon as this time has passed, the object destroys itself. If you don't want your object to destroy itself automatically, set this value to -99.")]
         [SerializeField]
-        protected bool touch;
+        protected int lifetimeInSeconds = -99;
 
-        [Tooltip("Tick this if the Action shall be triggered on Pointer Touch.")]
+        [Tooltip("Points a Player can earn by destroying this object. Also a blueprint for values that are increased on the Player's side.")]
         [SerializeField]
-        protected bool pointer;
+        protected int points = 100;
 
-        [Tooltip("Tick this if the Action shall be triggered on Use.")]
+        [Tooltip("The object health parameter. Also a blueprint for values that are decreased on the object's side.")]
         [SerializeField]
-        protected bool use;
+        protected float health = 1;
 
-        [Tooltip("Tick this if the Action shall be triggered on Grab.")]
+        [Header("Destroy Interactions")]
+
+        [Tooltip("The interaction that shall be used to destroy this object.")]
         [SerializeField]
-        protected bool grab;
+        protected DestroyInteractions destroyInteraction = DestroyInteractions.Use;
 
-        [Tooltip("Tick this if the Action shall be triggered on Spawn.")]
+        [Header("Interaction triggered by the object - controls")]
+
+        [Tooltip("The interaction with this object that shall trigger a broadcast action on all other players. ")]
         [SerializeField]
-        protected bool spawn;
+        protected TriggerInteractions triggerInteractions = TriggerInteractions.Spawn;
 
-        [Tooltip("Tick this if the Action shall be triggered on Collision.")]
-        [SerializeField]
-        protected bool collision;
+       
 
-        [Header("Broadcast Action")]
+        [Header("Broadcast Interaction")]
 
         // Audio
 
@@ -102,7 +111,7 @@ namespace MUVRTK
         private void Start()
         {
             #region trigger interaction setup
-            if (touch || use || grab || pointer)
+            if (triggerInteractions == TriggerInteractions.Touch || triggerInteractions == TriggerInteractions.Grab || triggerInteractions == TriggerInteractions.Use)
             {
 
                 if (GetComponent<VRTK_InteractableObject>())
@@ -116,7 +125,7 @@ namespace MUVRTK
 
                 else if (GetComponentInParent<VRTK_InteractableObject>())
                 {
-                    interactable = GetComponent<VRTK_InteractableObject>();
+                    interactable = GetComponentInParent<VRTK_InteractableObject>();
                     if (debug)
                         Debug.Log(name + " : Interactable found in Parent!");
                 }
@@ -130,7 +139,7 @@ namespace MUVRTK
                 }
             }
 
-            if(pointer)
+            if(triggerInteractions == TriggerInteractions.Point || triggerInteractions == TriggerInteractions.Activate || triggerInteractions == TriggerInteractions.Select)
             {
                 if(FindObjectsOfType<VRTK_Pointer>() != null)
                 {
@@ -166,12 +175,12 @@ namespace MUVRTK
                
             }
 
-            if (spawn)
+            if (triggerInteractions == TriggerInteractions.Spawn)
             {
                 StartAction();
             }
 
-            if (collision)
+            if (triggerInteractions == TriggerInteractions.Collide)
             {
                 if (GetComponents<Collider>() != null)
                 {
@@ -183,6 +192,8 @@ namespace MUVRTK
                 }
 
             }
+
+            
 
             #endregion
 
@@ -256,7 +267,20 @@ namespace MUVRTK
             #endregion
 
 
+        }
 
+        private void Update()
+        {
+            if(lifetimeInSeconds > 0)
+            {
+                if(lifetimeInSeconds < Time.time)
+                {
+                    if (debug)
+                        Debug.Log(name + " : Lifespan of this object has passed! Destroying it now.");
+
+                    DestroyObject();
+                }
+            }
         }
 
         #endregion
@@ -283,6 +307,14 @@ namespace MUVRTK
             {
                 //TODO implementation (maybe new Simple_Highlighter-Method?)
             }
+        }
+
+        private void DestroyObject()
+        {
+            PhotonNetwork.Destroy(GetComponent<PhotonView>());
+
+            if (debug)
+                Debug.Log(name + " : DestroyObject was called.");
         }
 
         #endregion
