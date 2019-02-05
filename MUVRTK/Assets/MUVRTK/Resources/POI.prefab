@@ -146,16 +146,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ba827fa50a17348b1fdd2327760196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
-  lifetimeInSeconds: 3
+  debug: 1
+  lifetimeInSeconds: -2
   points: 100
   health: 1
-  destroyInteraction: 0
-  triggerInteractions: 0
+  destroyInteraction: 3
+  triggerInteractions: 9
+  pointerRendering: 1
   playAudioClip: 0
   audioClip: {fileID: 0}
   triggerHapticPulse: 0
-  controllerHapticsComponent: []
   highlightObject: 0
   interactObjectHighlighterComponent: {fileID: 0}
 --- !u!114 &5118154105218614862
@@ -221,15 +221,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ba827fa50a17348b1fdd2327760196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
+  debug: 1
   lifetimeInSeconds: -99
   points: 100
   health: 1
-  destroyInteraction: 0
-  triggerInteractions: 0
+  destroyInteraction: 6
+  triggerInteractions: 9
+  pointerRendering: 1
   playAudioClip: 0
   audioClip: {fileID: 0}
   triggerHapticPulse: 0
-  controllerHapticsComponent: []
   highlightObject: 0
   interactObjectHighlighterComponent: {fileID: 0}

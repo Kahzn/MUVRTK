@@ -275,7 +275,7 @@ namespace MUVRTK
                 if (!playareascriptloaded)
                 {
                     GameObject PlayArea =
-                        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/MUVRTK/Prefabs/PlayAreaScript.prefab");
+                        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/MUVRTK/Local_Resources/PlayAreaScript.prefab");
                     Instantiate(PlayArea, transform.position, transform.rotation);
                     playareascriptloaded = true;
                 }

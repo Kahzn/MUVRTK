@@ -16,13 +16,12 @@ GameObject:
   - component: {fileID: 8623963408292656801}
   - component: {fileID: 8623963408292656807}
   - component: {fileID: 8623963408292656804}
-  - component: {fileID: 9038614809574630259}
   - component: {fileID: 2330849004262445946}
   - component: {fileID: 3588338923400512841}
   - component: {fileID: 8399150609148456266}
   m_Layer: 0
   m_Name: NetworkedLeftControllerScriptAlias
-  m_TagString: Untagged
+  m_TagString: ScriptAlias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,8 +59,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3642333007352936769}
-  viewIdField: 5
-  InstantiationId: 5
+  viewIdField: 7
+  InstantiationId: 7
   isRuntimeInstantiated: 0
 --- !u!114 &3642333007352936769
 MonoBehaviour:
@@ -233,18 +232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customColliderContainer: {fileID: 0}
---- !u!114 &9038614809574630259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8623963408292656802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8da5c28de8089b4d8d40eb1429aeb85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2330849004262445946
 MonoBehaviour:
   m_ObjectHideFlags: 0

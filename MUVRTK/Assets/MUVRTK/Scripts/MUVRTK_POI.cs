@@ -24,7 +24,7 @@
 
         public void SpawnPOI()
         {
-            PhotonNetwork.Instantiate(poi.name, transform.position, transform.rotation);
+            PhotonNetwork.Instantiate(poi.name, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), transform.rotation);
         }
 
         #endregion

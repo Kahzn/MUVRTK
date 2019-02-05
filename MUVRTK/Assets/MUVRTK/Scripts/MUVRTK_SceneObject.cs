@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
+using VRTK.UnityEventHelper;
 
 namespace MUVRTK
 {
@@ -18,9 +19,15 @@ namespace MUVRTK
     {
         #region Public Enums
 
-        public enum DestroyInteractions { Touch, Point, Select, Activate, Use, Grab, Collide};
+        // Interactions that shall be possible to use on an object in order to destroy it. For example, if I choose "Touch" the object shall be destroyed when my Player touches it with his controller.
+        public enum DestroyInteractions { Touch, Point, Select, Activate, Use, Grab, Collide, None};
 
-        public enum TriggerInteractions { Touch, Point, Select, Activate, Use, Grab, Collide, Spawn };
+        // Interactions with the object that shall trigger a broadcast reaction on all Players in a room. 
+        //For example, when you choose "Grab", then all Players get a haptic feedback on their controllers as soon as you grab that object.
+        // "Spawn" and "Destroy" are Interactions that are triggered when the object is spawned or destroyed (this applies to the automatic self-destruct as well).
+        public enum TriggerInteractions { Touch, Point, Select, Activate, Use, Grab, Collide, Spawn, Destroy, None };
+
+        public enum pointerRenderer { Straight, Bezier};
 
         #endregion
 
@@ -33,7 +40,7 @@ namespace MUVRTK
         #region Protected Serialize Fields
         [Header("Object values")]
 
-        [Tooltip("Lifetime of the object in the scene. As soon as this time has passed, the object destroys itself. If you don't want your object to destroy itself automatically, set this value to -99.")]
+        [Tooltip("Lifetime of the object in the scene. As soon as this time has passed, the object destroys itself. If you don't want your object to destroy itself automatically, set this value to a whole negative number.")]
         [SerializeField]
         protected int lifetimeInSeconds = -99;
 
@@ -57,7 +64,10 @@ namespace MUVRTK
         [SerializeField]
         protected TriggerInteractions triggerInteractions = TriggerInteractions.Spawn;
 
-       
+        [Header("Pointer Rendering Options")]
+        [SerializeField]
+        protected pointerRenderer pointerRendering = pointerRenderer.Bezier;
+
 
         [Header("Broadcast Interaction")]
 
@@ -76,8 +86,6 @@ namespace MUVRTK
         [SerializeField]
         protected bool triggerHapticPulse;
 
-        [SerializeField]
-        protected MUVRTK_ControllerHaptics[] controllerHapticsComponent;
 
         // Highlight
 
@@ -102,6 +110,11 @@ namespace MUVRTK
         private Collider[] collider;
         private AudioSource audioSource;
         private float timeSinceSpawn = 0f;
+        private GameObject[] controllerScriptAliases;
+        private object[] triggerInteractionEvents;
+        private bool destructionSetupCompleted;
+        private bool interactionSetupCompleted;
+
 
         #endregion
 
@@ -109,71 +122,270 @@ namespace MUVRTK
         #region Monobehaviour Callbacks
 
         //setting up all components
-        private void Start()
+        void OnEnable()
         {
-            #region trigger interaction setup
-            if (triggerInteractions == TriggerInteractions.Touch || triggerInteractions == TriggerInteractions.Grab || triggerInteractions == TriggerInteractions.Use)
+            SetupControllerScriptAliases();
+
+            SetupInteractableObject();
+
+            SetupInteractionTrigger();
+
+            SetupDestructionTrigger();
+
+            SetupBroadcastActions();
+
+
+        }
+
+        private void Update()
+        {
+            timeSinceSpawn += Time.deltaTime;
+
+            if(lifetimeInSeconds > 0)
             {
-
-                if (GetComponent<VRTK_InteractableObject>())
+                if(lifetimeInSeconds < timeSinceSpawn)
                 {
-                    interactable = GetComponent<VRTK_InteractableObject>();
-
                     if (debug)
-                        Debug.Log(name + " : Interactable found!");
-                }
+                        Debug.Log(name + " : Lifespan of this object has passed! Destroying it now.");
 
-
-                else if (GetComponentInParent<VRTK_InteractableObject>())
-                {
-                    interactable = GetComponentInParent<VRTK_InteractableObject>();
-                    if (debug)
-                        Debug.Log(name + " : Interactable found in Parent!");
-                }
-
-
-                else
-                {
-                    gameObject.AddComponent<VRTK_InteractableObject>();
-                    if (debug)
-                        Debug.Log(name + " : Interactable not found. Added missing Component VRTK_InteractableObject.");
+                    DestroyObject();
                 }
             }
 
-            if(triggerInteractions == TriggerInteractions.Point || triggerInteractions == TriggerInteractions.Activate || triggerInteractions == TriggerInteractions.Select)
+            if (!destructionSetupCompleted)
             {
-                if(FindObjectsOfType<VRTK_Pointer>() != null)
-                {
-                    pointers = FindObjectsOfType<VRTK_Pointer>();
-                    Debug.Log(name + " : Pointers set.");
-                }
-                else
-                {
-                    GameObject[] controllerScriptAliases = GameObject.FindGameObjectsWithTag("ScriptAlias");
+                SetupDestructionTrigger();
+            }
+        }
 
-                    if(controllerScriptAliases != null)
-                    {
-                        foreach (GameObject go in controllerScriptAliases)
+        private void OnCollisionEnter(Collision collision)
+        {
+            if(destroyInteraction == DestroyInteractions.Collide)
+            {
+                if (collision.gameObject.tag.Equals("Floor"))
+                {
+                    DestroyObject();
+                }
+            }
+
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void SetupControllerScriptAliases()
+        {
+            if(GameObject.FindGameObjectsWithTag("ScriptAlias") != null)
+            controllerScriptAliases = GameObject.FindGameObjectsWithTag("ScriptAlias");
+
+            else
+            {
+                Debug.Log(name + " SetControllerScriptAliases: No ControllerScriptAliases found! Did you forget to set the tag?");
+            }
+
+        }
+
+
+
+        /// <summary>
+        /// Called in Start-Method.
+        /// Binds the chosen 
+        /// </summary>
+        private void SetupDestructionTrigger()
+        {
+            switch (destroyInteraction)
+            { 
+                case DestroyInteractions.Touch:
+
+                        if(interactable != null)
                         {
-                            go.AddComponent<VRTK_Pointer>();
-                            go.AddComponent<VRTK_BezierPointerRenderer>();
-                            Debug.Log(name + " : Pointers and Renderers could not be loaded. Setting them anew.");
+                            interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, DestroyObject);
+
+                            destructionSetupCompleted = true;
                         }
+                        else
+                        {
+                            if (debug)
+                                Debug.Log("Interactable Object missing! Waiting for Setup.");
+                        }
+                    break;
+                case DestroyInteractions.Point:
+                    /// WIP: Script-side setup postponed due to bug that I cannot fix at the moment.
+                    /// workaround: Add a Pointer Renderer Manually to your ScriptAliases and do the setup you need manually (interactwithObjects = true, etc.)
+                    /// 
+                    //Controller-side: Setup the pointer.
+
+                    /**
+                    SetupPointer();
+                    foreach(VRTK_Pointer point in pointers)
+                    {
+                        point.interactWithObjects = true;
+                    }**/
+
+                    //Object-side: Setup the behaviour on the object.
+                    if (interactable != null)
+                    {
+                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, DestroyObject);
+
+                        destructionSetupCompleted = true;
                     }
                     else
                     {
-                        Debug.Log(name + " : No ControllerScriptAliases found! Did you forget to set the tag?");
+                        if (debug)
+                            Debug.Log("Interactable Object missing! Waiting for Setup.");
+                    }
+                    break;
+                case DestroyInteractions.Select:
+                    //SetupPointer();
+
+                    destructionSetupCompleted = true;
+                    break;
+                case DestroyInteractions.Activate:
+                    //SetupPointer();
+
+                    destructionSetupCompleted = true;
+                    break;
+                case DestroyInteractions.Use:
+                    if (interactable != null)
+                    {
+                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Use, DestroyObject);
+
+                        destructionSetupCompleted = true;
+                    }
+                    else
+                    {
+                        if (debug)
+                            Debug.Log("Interactable Object missing! Waiting for Setup.");
+                    }
+                    break;
+                case DestroyInteractions.Grab:
+                    if (interactable != null)
+                    {
+                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Grab, DestroyObject);
+
+                        destructionSetupCompleted = true;
+                    }
+                    else
+                    {
+                        if (debug)
+                            Debug.Log("Interactable Object missing! Waiting for Setup.");
+                    }
+                    break;
+                case DestroyInteractions.Collide:
+                    SetupCollider();
+
+                    Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+                    rb.useGravity = false;
+
+                    destructionSetupCompleted = true;
+                    break;
+                default:
+                    break;
+
+            }
+        }
+
+        private void SetupCollider()
+        {
+            if (GetComponents<Collider>() != null)
+                collider = GetComponents<Collider>();
+            if (GetComponentsInChildren<Collider>() != null)
+                collider = GetComponentsInChildren<Collider>();
+            else collider[0] = gameObject.AddComponent<Collider>();
+        }
+
+
+        /// <summary>
+        /// Retrieves the VRTK_InteractableObject Component of the SceneObject this script is on.
+        /// Needed for all kinds of VRTK-Interactions: Touch, Grab, Use, Point.
+        /// </summary>
+        private void SetupInteractableObject()
+        {
+            if (GetComponent<VRTK_InteractableObject>())
+            {
+                interactable = GetComponent<VRTK_InteractableObject>();
+
+                if (debug)
+                    Debug.Log(name + " : Interactable found!");
+            }
+
+
+            else if (GetComponentInParent<VRTK_InteractableObject>())
+            {
+                interactable = GetComponentInParent<VRTK_InteractableObject>();
+                if (debug)
+                    Debug.Log(name + " : Interactable found in Parent!");
+            }
+
+
+            else
+            {
+                gameObject.AddComponent<VRTK_InteractableObject>();
+                if (debug)
+                    Debug.Log(name + " : Interactable not found. Added missing Component VRTK_InteractableObject.");
+            }
+        }
+
+        //TODO: Fix Pointer Setup  Bug! (Nullreference-Exception)
+
+        /// <summary>
+        /// Retrieves or Sets the Pointer and PointerRenderer Components from the ControllerScriptAliases of both Controllers.
+        /// </summary>
+        private void SetupPointer()
+        {
+            if (controllerScriptAliases != null)
+            {
+                for (int i = 0; i < controllerScriptAliases.Length; i++)
+                {
+                    if (controllerScriptAliases[i].GetComponent<VRTK_Pointer>() != null)
+                    {
+                        /// BUG: causes Nullreference-Exceptions at the moment. No idea why.
+                        pointers[i] = controllerScriptAliases[i].GetComponent<VRTK_Pointer>();
+                    }
+                    else
+                    {
+                        pointers[i] = controllerScriptAliases[i].AddComponent<VRTK_Pointer>();
+                    }
+
+                    if (controllerScriptAliases[i].GetComponent<VRTK_BasePointerRenderer>() != null)
+                    {
+                        pointerRenderers[i] = controllerScriptAliases[i].GetComponent<VRTK_BasePointerRenderer>();
+                    }
+                    else
+                    {
+                        if(pointerRendering == pointerRenderer.Bezier)
+                        {
+                            pointerRenderers[i] = controllerScriptAliases[i].AddComponent<VRTK_BezierPointerRenderer>();
+                        }
+                        else
+                        {
+                            pointerRenderers[i] = controllerScriptAliases[i].AddComponent<VRTK_StraightPointerRenderer>();
+                        }
+                        
                     }
                 }
+            }
+            else
+            {
+                Debug.Log(name + " SetupInteractionTrigger: No ControllerScriptAliases found! Did you forget to set the tag?");
+            }
+        }
+       
 
-                if (FindObjectsOfType<VRTK_BasePointerRenderer>() != null)
-                {
-                    pointerRenderers = FindObjectsOfType<VRTK_BasePointerRenderer>();
-                    
-                    if(debug)
-                        Debug.Log(name + " : Pointer Renderers set.");
-                }
-               
+        private void SetupInteractionTrigger()
+        {
+            if (triggerInteractions == TriggerInteractions.Touch || triggerInteractions == TriggerInteractions.Grab || triggerInteractions == TriggerInteractions.Use)
+            {
+
+            }
+
+            if (triggerInteractions == TriggerInteractions.Point || triggerInteractions == TriggerInteractions.Activate || triggerInteractions == TriggerInteractions.Select)
+            {
+
+                SetupPointer();
+
+
             }
 
             if (triggerInteractions == TriggerInteractions.Spawn)
@@ -189,20 +401,16 @@ namespace MUVRTK
 
                     if (debug)
                         Debug.Log(name + " : Collider set.");
-                        
+
                 }
-
             }
+        }
 
-            
-
-            #endregion
-
-            #region Action setup
-
+        private void SetupBroadcastActions()
+        {
             if (playAudioClip)
             {
-                if(audioClip == null)
+                if (audioClip == null)
                 {
                     Debug.LogWarning(name + ": Play Audio Clip was selected, but no AudioClip was found.");
                 }
@@ -226,23 +434,14 @@ namespace MUVRTK
 
             if (triggerHapticPulse)
             {
-                if(controllerHapticsComponent == null)
-                {
-                    if (FindObjectsOfType<MUVRTK_ControllerHaptics>() != null)
-                    {
-                        controllerHapticsComponent = FindObjectsOfType<MUVRTK_ControllerHaptics>();
 
-                        if (debug)
-                            Debug.Log(name + " : controllerHapticsComponent found");
-                    }
-                    
-                }
+                
 
             }
 
             if (highlightObject)
             {
-                if(interactObjectHighlighterComponent == null)
+                if (interactObjectHighlighterComponent == null)
                 {
                     if (GetComponent<MUVRTK_InteractObjectHighlighter>())
                     {
@@ -264,31 +463,9 @@ namespace MUVRTK
             {
                 Debug.Log(name + " : No Action selected!");
             }
-
-            #endregion
-
-
         }
 
-        private void Update()
-        {
-            timeSinceSpawn += Time.deltaTime;
-
-            if(lifetimeInSeconds > 0)
-            {
-                if(lifetimeInSeconds < timeSinceSpawn)
-                {
-                    if (debug)
-                        Debug.Log(name + " : Lifespan of this object has passed! Destroying it now.");
-
-                    DestroyObject();
-                }
-            }
-        }
-
-        #endregion
-
-        #region Private Methods
+       
 
         private void StartAction()
         {
@@ -319,6 +496,19 @@ namespace MUVRTK
             if (debug)
                 Debug.Log(name + " : DestroyObject was called.");
         }
+
+
+        /// <summary>
+        /// Overload for use with VRTK Interaction Events
+        /// </summary>
+        private void DestroyObject(object o, InteractableObjectEventArgs e)
+        {
+            PhotonNetwork.Destroy(GetComponent<PhotonView>());
+
+            if (debug)
+                Debug.Log(name + " : DestroyObject was called.");
+        }
+
 
         #endregion
     }

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 2602652609489817036}
   m_Layer: 0
   m_Name: NetworkedRightControllerScriptAlias
-  m_TagString: Untagged
+  m_TagString: ScriptAlias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 2906039972200357522}
-  viewIdField: 6
-  InstantiationId: 6
+  viewIdField: 8
+  InstantiationId: 8
   isRuntimeInstantiated: 0
 --- !u!114 &2906039972200357522
 MonoBehaviour:
@@ -166,7 +166,7 @@ MonoBehaviour:
   selectOnPress: 1
   selectionDelay: 0
   selectAfterHoverDuration: 0
-  interactWithObjects: 0
+  interactWithObjects: 1
   grabToPointerTip: 0
   attachedTo: {fileID: 0}
   controllerEvents: {fileID: 0}

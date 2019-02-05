@@ -12,6 +12,15 @@ TagManager:
   - Model
   - LeftController
   - RightController
+  - ScriptAlias
+  - Leg
+  - SnapCube
+  - Arm
+  - SnapCylinder
+  - Saucers
+  - Torso
+  - Head
+  - Floor
   layers:
   - Default
   - TransparentFX
