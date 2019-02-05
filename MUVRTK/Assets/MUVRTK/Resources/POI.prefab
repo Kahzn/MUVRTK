@@ -116,8 +116,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 7638348834199150956}
-  viewIdField: 0
-  InstantiationId: 8
+  viewIdField: 1
+  InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &7638348834199150956
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  lifetimeInSeconds: -99
+  lifetimeInSeconds: 3
   points: 100
   health: 1
   destroyInteraction: 0
@@ -158,7 +158,6 @@ MonoBehaviour:
   controllerHapticsComponent: []
   highlightObject: 0
   interactObjectHighlighterComponent: {fileID: 0}
-  lifeSpanInMinutes: 0
 --- !u!114 &5118154105218614862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,4 +233,3 @@ MonoBehaviour:
   controllerHapticsComponent: []
   highlightObject: 0
   interactObjectHighlighterComponent: {fileID: 0}
-  lifeSpanInMinutes: 0

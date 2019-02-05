@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028377, g: 0.22571409, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -443,6 +443,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
+      propertyPath: controllerModels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
       propertyPath: enableTeleport
       value: 1
       objectReference: {fileID: 0}
@@ -463,6 +468,12 @@ PrefabInstance:
       propertyPath: vr_Manager
       value: 
       objectReference: {fileID: 919708191555333131, guid: ff930b4f02bacd04693f73716bc64c0d,
+        type: 3}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: controllerModels.Array.data[0]
+      value: 
+      objectReference: {fileID: 5905369102832125037, guid: eb018668f53a87e459055bde54b70919,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef1df230d4c5a564bb2ba070eaa49ade, type: 3}

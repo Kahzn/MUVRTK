@@ -101,6 +101,7 @@ namespace MUVRTK
         private MUVRTK_Instantiate instantiate;
         private Collider[] collider;
         private AudioSource audioSource;
+        private float timeSinceSpawn = 0f;
 
         #endregion
 
@@ -271,9 +272,11 @@ namespace MUVRTK
 
         private void Update()
         {
+            timeSinceSpawn += Time.deltaTime;
+
             if(lifetimeInSeconds > 0)
             {
-                if(lifetimeInSeconds < Time.time)
+                if(lifetimeInSeconds < timeSinceSpawn)
                 {
                     if (debug)
                         Debug.Log(name + " : Lifespan of this object has passed! Destroying it now.");
