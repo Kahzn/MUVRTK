@@ -60,14 +60,18 @@ namespace MUVRTK
         [Tooltip("All networked player objects. NOTE: Every networked Prefab needs a Photon View!")]
         [SerializeField]
         private GameObject [] objectsToInstantiateOverTheNetwork;
-        
+
+        [Tooltip("offset by which an object can be instantiated randomly from the center of the map.")]
+        [SerializeField]
+        private float networkedOffset;
+
         [Tooltip("All non-networked player objects. Photon Views not necessary. These objects can only be seen and manipulated by the local Player.")]
         [SerializeField]
         private GameObject [] objectsToInstantiateLocally;
 
         [Tooltip("offset by which an object can be instantiated randomly from the center of the map.")]
         [SerializeField]
-        private float offset;
+        private float localOffset;
 
         #endregion
 
@@ -226,7 +230,7 @@ namespace MUVRTK
                 //All else (interactive objects and the like)
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
-                    PhotonNetwork.InstantiateSceneObject(go.name, new Vector3 (Random.value * offset, Random.value, Random.value * offset), Quaternion.Euler(0, 0, 0));
+                    PhotonNetwork.InstantiateSceneObject(go.name, new Vector3 (Random.value * networkedOffset, Random.value, Random.value * networkedOffset), Quaternion.Euler(0, 0, 0));
                 }
                 
             }
@@ -239,14 +243,20 @@ namespace MUVRTK
 
                 }
 
-                //All else
+                //All networked objects
                 foreach (GameObject go in objectsToInstantiateOverTheNetwork)
                 {
-                    Instantiate(go, new Vector3(Random.value * offset, 1, Random.value * offset), Quaternion.Euler(0,0,0));
+                    Instantiate(go, new Vector3(Random.value * networkedOffset, 1, Random.value * networkedOffset), Quaternion.Euler(0,0,0));
                 }
                 
             }
-           
+
+            //All local objects
+            foreach (GameObject go in objectsToInstantiateLocally)
+            {
+                Instantiate(go, new Vector3(Random.value * localOffset, 1, Random.value * localOffset), Quaternion.Euler(0, 0, 0));
+            }
+
         }
 
         public void TeleportEnable()

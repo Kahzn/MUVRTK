@@ -175,6 +175,11 @@ namespace MUVRTK
             {
                 SetupDestructionTrigger();
             }
+
+            if (!interactionSetupCompleted)
+            {
+                SetupInteractionTrigger();
+            }
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -390,35 +395,94 @@ namespace MUVRTK
 
         private void SetupInteractionTrigger()
         {
-            if (triggerInteractions == TriggerInteractions.Touch || triggerInteractions == TriggerInteractions.Grab || triggerInteractions == TriggerInteractions.Use)
+            switch (triggerInteractions)
             {
+                case TriggerInteractions.Collide:
+                    SetupCollider();
 
+                    Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+                    rb.useGravity = false;
+
+                    interactionSetupCompleted = true;
+                    break;
+
+                case TriggerInteractions.Destroy:
+                    //handled in DestroyObject-Method.
+                    interactionSetupCompleted = true;
+                    break;
+
+                case TriggerInteractions.Grab:
+                    if (interactable != null)
+                    {
+                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Grab, StartAction);
+
+                        interactionSetupCompleted = true;
+                    }
+                    else
+                    {
+                        if (debug)
+                            Debug.Log("Interactable Object missing! Waiting for Setup.");
+                    }
+                    break;
+
+                case TriggerInteractions.Point:
+                    if (interactable != null)
+                    {
+                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, StartAction);
+
+                        interactionSetupCompleted = true;
+                    }
+                    else
+                    {
+                        if (debug)
+                            Debug.Log("Interactable Object missing! Waiting for Setup.");
+                    }
+                    break;
+
+                case TriggerInteractions.Select:
+                    interactionSetupCompleted = true;
+                    break;
+
+                case TriggerInteractions.Spawn:
+                    StartAction();
+                    break;
+
+                case TriggerInteractions.Touch:
+                    if (interactable != null)
+                    {
+                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, StartAction);
+
+                        interactionSetupCompleted = true;
+                    }
+                    else
+                    {
+                        if (debug)
+                            Debug.Log("Interactable Object missing! Waiting for Setup.");
+                    }
+                    break;
+
+                case TriggerInteractions.Use:
+                    if (interactable != null)
+                    {
+                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Use, StartAction);
+
+                        interactionSetupCompleted = true;
+                    }
+                    else
+                    {
+                        if (debug)
+                            Debug.Log("Interactable Object missing! Waiting for Setup.");
+                    }
+                    break;
+
+                case TriggerInteractions.None:
+                    interactionSetupCompleted = true;
+                    break;
+
+                default:
+                    break;
             }
-
-            if (triggerInteractions == TriggerInteractions.Point ||  triggerInteractions == TriggerInteractions.Select)
-            {
-
-                SetupPointer();
-
-
-            }
-
-            if (triggerInteractions == TriggerInteractions.Spawn)
-            {
-                StartAction();
-            }
-
-            if (triggerInteractions == TriggerInteractions.Collide)
-            {
-                if (GetComponents<Collider>() != null)
-                {
-                    collider = GetComponents<Collider>();
-
-                    if (debug)
-                        Debug.Log(name + " : Collider set.");
-
-                }
-            }
+            
         }
 
         private void SetupBroadcastActions()
@@ -516,8 +580,42 @@ namespace MUVRTK
             }
         }
 
+        /// <summary>
+        /// Overload for use with VRTK Interaction Events
+        /// </summary>
+        private void StartAction(object o, InteractableObjectEventArgs e)
+        {
+            if (playAudioClip)
+            {
+                if (audioClip.isReadyToPlay)
+                {
+                    audioSource.clip = audioClip;
+                    audioSource.Play();
+                }
+            }
+
+            if (triggerHapticPulse)
+            {
+                foreach (GameObject go in controllerScriptAliases)
+                {
+                    Networked_TriggerHapticPulse(photonView, go.GetPhotonView().ViewID, vibrationStrength, duration, pulseInterval);
+                }
+
+            }
+
+            if (highlightObject)
+            {
+                //TODO implementation (maybe new Simple_Highlighter-Method?)
+            }
+        }
+
         private void DestroyObject()
         {
+            if (triggerInteractions.Equals(TriggerInteractions.Destroy))
+            {
+                StartAction();
+            }
+
             PhotonNetwork.Destroy(GetComponent<PhotonView>());
 
             if (debug)
@@ -530,6 +628,12 @@ namespace MUVRTK
         /// </summary>
         private void DestroyObject(object o, InteractableObjectEventArgs e)
         {
+
+            if (triggerInteractions.Equals(TriggerInteractions.Destroy))
+            {
+                StartAction();
+            }
+
             PhotonNetwork.Destroy(GetComponent<PhotonView>());
 
             if (debug)
