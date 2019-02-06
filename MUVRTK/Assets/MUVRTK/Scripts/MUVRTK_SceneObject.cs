@@ -15,17 +15,17 @@ namespace MUVRTK
    
     [RequireComponent(typeof(PhotonView))]
     [RequireComponent(typeof(VRTK_InteractableObject))]
-    public abstract class MUVRTK_SceneObject : MonoBehaviour
+    public abstract class MUVRTK_SceneObject : MonoBehaviourPun
     {
         #region Public Enums
 
         // Interactions that shall be possible to use on an object in order to destroy it. For example, if I choose "Touch" the object shall be destroyed when my Player touches it with his controller.
-        public enum DestroyInteractions { Touch, Point, Select, Activate, Use, Grab, Collide, None};
+        public enum DestroyInteractions { Touch, Point, Select,  Use, Grab, Collide, None};
 
         // Interactions with the object that shall trigger a broadcast reaction on all Players in a room. 
         //For example, when you choose "Grab", then all Players get a haptic feedback on their controllers as soon as you grab that object.
         // "Spawn" and "Destroy" are Interactions that are triggered when the object is spawned or destroyed (this applies to the automatic self-destruct as well).
-        public enum TriggerInteractions { Touch, Point, Select, Activate, Use, Grab, Collide, Spawn, Destroy, None };
+        public enum TriggerInteractions { Touch, Point, Select, Use, Grab, Collide, Spawn, Destroy, None };
 
         public enum pointerRenderer { Straight, Bezier};
 
@@ -69,7 +69,7 @@ namespace MUVRTK
         protected pointerRenderer pointerRendering = pointerRenderer.Bezier;
 
 
-        [Header("Broadcast Interaction")]
+        [Header("Broadcast Interaction - Audio")]
 
         // Audio
 
@@ -80,12 +80,30 @@ namespace MUVRTK
         [SerializeField]
         protected AudioClip audioClip;
 
+        [Header("Broadcast Interaction - Haptics")]
+
         // Haptics
 
         [Tooltip("Tick this if the Action shall trigger a Haptic Pulse on all Controllers.")]
         [SerializeField]
         protected bool triggerHapticPulse;
 
+        [Tooltip("Defines the duration of the Controller Vibration")]
+        [SerializeField]
+        [Range(0, 10)]
+        private float duration = 1f;
+
+        [Tooltip("Defines the pulse Interval of the controller Vibration")]
+        [SerializeField]
+        [Range(0f, 10f)]
+        private float pulseInterval = 0.1f;
+
+        [Tooltip("Defines the strength of the controller Vibration")]
+        [SerializeField]
+        [Range(0f, 20f)]
+        private float vibrationStrength = 10f;
+
+        [Header("Broadcast Interaction - Highlight")]
 
         // Highlight
 
@@ -107,6 +125,7 @@ namespace MUVRTK
         private VRTK_Pointer[] pointers;
         private VRTK_BasePointerRenderer[] pointerRenderers;
         private MUVRTK_Instantiate instantiate;
+        private MUVRTK_ControllerHaptics controllerHaptics;
         private Collider[] collider;
         private AudioSource audioSource;
         private float timeSinceSpawn = 0f;
@@ -190,7 +209,7 @@ namespace MUVRTK
 
         /// <summary>
         /// Called in Start-Method.
-        /// Binds the chosen 
+        /// Binds the chosen destruction trigger to the interaction.
         /// </summary>
         private void SetupDestructionTrigger()
         {
@@ -241,11 +260,7 @@ namespace MUVRTK
 
                     destructionSetupCompleted = true;
                     break;
-                case DestroyInteractions.Activate:
-                    //SetupPointer();
-
-                    destructionSetupCompleted = true;
-                    break;
+                
                 case DestroyInteractions.Use:
                     if (interactable != null)
                     {
@@ -380,7 +395,7 @@ namespace MUVRTK
 
             }
 
-            if (triggerInteractions == TriggerInteractions.Point || triggerInteractions == TriggerInteractions.Activate || triggerInteractions == TriggerInteractions.Select)
+            if (triggerInteractions == TriggerInteractions.Point ||  triggerInteractions == TriggerInteractions.Select)
             {
 
                 SetupPointer();
@@ -431,13 +446,21 @@ namespace MUVRTK
                 }
 
             }
-
+            /**
             if (triggerHapticPulse)
             {
 
-                
+                foreach(GameObject go in controllerScriptAliases)
+                {
+                    if (go.GetComponent<MUVRTK_ControllerHaptics>() == null)
+                    {
+                        controllerHaptics = go.AddComponent<MUVRTK_ControllerHaptics>();
+                    }
+                    else controllerHaptics = go.GetComponent<MUVRTK_ControllerHaptics>();
 
-            }
+                }
+
+            }**/
 
             if (highlightObject)
             {
@@ -480,7 +503,11 @@ namespace MUVRTK
 
             if (triggerHapticPulse)
             {
-                //TODO implementation
+                foreach(GameObject go in controllerScriptAliases)
+                {
+                    Networked_TriggerHapticPulse(photonView, go.GetPhotonView().ViewID, vibrationStrength, duration, pulseInterval);
+                }
+               
             }
 
             if (highlightObject)
@@ -511,6 +538,20 @@ namespace MUVRTK
 
 
         #endregion
+
+        #region Network Methods
+
+
+        public void Networked_TriggerHapticPulse(PhotonView pv, int viewIDOfController, float vibrationStrength, float duration, float pulseInterval)
+        {
+            pv.RPC("BroadcastHapticPulseOnViewID", RpcTarget.All, viewIDOfController, vibrationStrength, duration, pulseInterval);
+
+            Debug.Log("MUVRTK_StaticControllerHaptics : Networked_TriggerHapticPulse(5) was called.");
+        }
+
+        #endregion
+
+       
     }
 }
 

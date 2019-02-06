@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 8853931979999894351}
   - component: {fileID: 5118154105218614862}
   - component: {fileID: 3062018230488644314}
-  - component: {fileID: 3580737515859115066}
   m_Layer: 0
   m_Name: POI
   m_TagString: Untagged
@@ -116,7 +115,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 7638348834199150956}
-  viewIdField: 1
+  viewIdField: 0
   InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &7638348834199150956
@@ -150,12 +149,15 @@ MonoBehaviour:
   lifetimeInSeconds: -2
   points: 100
   health: 1
-  destroyInteraction: 3
-  triggerInteractions: 9
+  destroyInteraction: 1
+  triggerInteractions: 6
   pointerRendering: 1
   playAudioClip: 0
   audioClip: {fileID: 0}
-  triggerHapticPulse: 0
+  triggerHapticPulse: 1
+  duration: 1
+  pulseInterval: 0.1
+  vibrationStrength: 10
   highlightObject: 0
   interactObjectHighlighterComponent: {fileID: 0}
 --- !u!114 &5118154105218614862
@@ -209,27 +211,3 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
---- !u!114 &3580737515859115066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7514380413642254856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ba827fa50a17348b1fdd2327760196, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 1
-  lifetimeInSeconds: -99
-  points: 100
-  health: 1
-  destroyInteraction: 6
-  triggerInteractions: 9
-  pointerRendering: 1
-  playAudioClip: 0
-  audioClip: {fileID: 0}
-  triggerHapticPulse: 0
-  highlightObject: 0
-  interactObjectHighlighterComponent: {fileID: 0}

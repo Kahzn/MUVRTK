@@ -44,4 +44,5 @@ MonoBehaviour:
   - GrabUnHighlightObject_RPC
   - UseHighlightObject_RPC
   - UseUnHighlightObject_RPC
+  - BroadcastHapticPulseOnViewID
   DisableAutoOpenWizard: 1

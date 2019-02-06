@@ -12,8 +12,13 @@
     /// </summary>
     public class MUVRTK_ControllerHaptics : MonoBehaviourPun
     {
+        #region Public Fields
 
-        #region Private Fields
+        public bool debug;
+
+        #endregion
+
+        #region Private Serialize Fields
 
 
         [Header("Haptics Settings")]
@@ -50,11 +55,7 @@
         [SerializeField]
         private string keyMapping;
 
-        [Tooltip("Send the Impulse to all players in the room, including you. Default setting.")]
-        [SerializeField]
-        private bool broadcastToAll = true;
-
-        [Tooltip("Send the Impulse to all other players in the room.")]
+        [Tooltip("Send the Impulse to all other players in the room. If this is not set, then the impulse is send to all Players in the room, including yourself.")]
         [SerializeField]
         private bool broadcastToAllOthers = false;
 
@@ -78,12 +79,9 @@
 
         #region MonoBehaviour Callbacks
 
-        // Start is called before the first frame update
-        void Start()
+
+        void OnEnable()
         {
-            //Hotfix. Should be updated for Optimization.
-            controller_right = GameObject.Find("Controller (right)");
-            controller_left = GameObject.Find("Controller (left)");
 
             if (broadcastToAllOthers)
             {
@@ -102,15 +100,17 @@
             {
                 if (Input.GetKeyDown(KeyCode.K))
                 {
+                    SetupControllersIfNecessary();
                     VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controller_right), 15f, 0.5f, 0.01f);
                 }
 
                 if (Input.GetKeyDown(KeyCode.L))
                 {
+                    SetupControllersIfNecessary();
                     VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controller_left), 10f, 1f, 0.02f);
                 }
 
-                if (broadcastToAll)
+                if (!broadcastToAllOthers)
                 {
                     if (Input.GetKeyDown(keyMapping[0].ToString()))
                     {
@@ -133,7 +133,7 @@
 
         #endregion
 
-        #region PUN Callbacks
+        #region PUN RPCs
 
         [PunRPC]
         void BroadcastHapticPulse()
@@ -142,6 +142,8 @@
             VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controller_left), 10f, 1f, 0.02f);
         }
 
+        
+
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
             throw new System.NotImplementedException();
@@ -149,12 +151,43 @@
 
         #endregion
 
-        #region Public Methods
+        #region Network Methods
 
-        public void RemoteCallTriggerHapticPulse()
+        public void Networked_TriggerHapticPulse()
         {
-            if(broadcastToAll || broadcastToAllOthers)
             this.photonView.RPC("BroadcastHapticPulse", rpcTarget);
+
+            if (debug)
+                Debug.Log(name + " : Networked_TriggerHapticPulse(0) was called.");
+        }
+
+        public void Networked_TriggerHapticPulse(int viewIDOfController)
+        {
+            this.photonView.RPC("BroadcastHapticPulseOnViewID", rpcTarget, viewIDOfController, vibrationStrength, duration, pulseInterval);
+
+            if (debug)
+                Debug.Log(name + " : Networked_TriggerHapticPulse(1) was called.");
+        }
+
+        public void Networked_TriggerHapticPulse(int viewIDOfController, float vibrationStrength, float duration, float pulseInterval)
+        {
+            this.photonView.RPC("BroadcastHapticPulseOnViewID", rpcTarget, viewIDOfController, vibrationStrength, duration, pulseInterval);
+
+            if (debug)
+                Debug.Log(name + " : Networked_TriggerHapticPulse(4) was called.");
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void SetupControllersIfNecessary()
+        {
+            if(controller_left == null)
+            controller_left = GameObject.Find("Controller (left)");
+
+            if (controller_right == null)
+                controller_right = GameObject.Find("Controller (right)");
         }
 
         #endregion
