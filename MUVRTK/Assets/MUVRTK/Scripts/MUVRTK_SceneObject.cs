@@ -645,12 +645,25 @@ namespace MUVRTK
 
         #region Network Methods
 
+        /// <summary>
+        /// Calls RPC-Method on the child object. 
+        /// </summary>
+        /// <param name="pv"></param>
+        /// <param name="viewIDOfController"></param>
+        /// <param name="vibrationStrength"></param>
+        /// <param name="duration"></param>
+        /// <param name="pulseInterval"></param>
 
         public void Networked_TriggerHapticPulse(PhotonView pv, int viewIDOfController, float vibrationStrength, float duration, float pulseInterval)
         {
             pv.RPC("BroadcastHapticPulseOnViewID", RpcTarget.All, viewIDOfController, vibrationStrength, duration, pulseInterval);
 
             Debug.Log("MUVRTK_StaticControllerHaptics : Networked_TriggerHapticPulse(5) was called.");
+        }
+
+        public void Networked_TriggerAudioClip(PhotonView pv)
+        {
+            pv.RPC("BroadcastAudioClip", RpcTarget.All);
         }
 
         #endregion

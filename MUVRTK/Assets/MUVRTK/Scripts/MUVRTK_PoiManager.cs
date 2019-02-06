@@ -25,12 +25,13 @@
 
         #region PUN RPCs
 
-
+    
         [PunRPC]
         void BroadcastHapticPulseOnViewID(int viewIdOfController, float vibrationStrength, float duration, float pulseInterval)
         {
             VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(PhotonView.Find(viewIdOfController).gameObject), vibrationStrength, duration, pulseInterval);
         }
+
         #endregion
 
 
