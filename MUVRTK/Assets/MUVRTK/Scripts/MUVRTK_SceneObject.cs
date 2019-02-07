@@ -17,17 +17,17 @@ namespace MUVRTK
     [RequireComponent(typeof(VRTK_InteractableObject))]
     public abstract class MUVRTK_SceneObject : MonoBehaviourPun
     {
-        #region Public Enums
+        #region Protected Enums
 
         // Interactions that shall be possible to use on an object in order to destroy it. For example, if I choose "Touch" the object shall be destroyed when my Player touches it with his controller.
-        public enum DestroyInteractions { Touch, Point, Select,  Use, Grab, Collide, None};
+        protected enum DestroyInteractions { Touch, Point, Select,  Use, Grab, Collide, None};
 
         // Interactions with the object that shall trigger a broadcast reaction on all Players in a room. 
         //For example, when you choose "Grab", then all Players get a haptic feedback on their controllers as soon as you grab that object.
         // "Spawn" and "Destroy" are Interactions that are triggered when the object is spawned or destroyed (this applies to the automatic self-destruct as well).
-        public enum TriggerInteractions { Touch, Point, Select, Use, Grab, Collide, Spawn, Destroy, None };
+        protected enum TriggerInteractions { Touch, Point, Select, Use, Grab, Collide, Spawn, Destroy, None };
 
-        public enum pointerRenderer { Straight, Bezier};
+        protected enum pointerRenderer { Straight, Bezier};
 
         #endregion
 
@@ -576,7 +576,6 @@ namespace MUVRTK
 
             if (highlightObject)
             {
-                //TODO implementation (maybe new Simple_Highlighter-Method?)
             }
         }
 
@@ -585,6 +584,8 @@ namespace MUVRTK
         /// </summary>
         private void StartAction(object o, InteractableObjectEventArgs e)
         {
+
+            // fun fact: doesn't need to call an RPC because the AudioSource is on the SceneObjects and these are handled the same on all Clients, so the clip is played on each of them automatically.
             if (playAudioClip)
             {
                 if (audioClip.isReadyToPlay)
@@ -661,10 +662,7 @@ namespace MUVRTK
             Debug.Log("MUVRTK_StaticControllerHaptics : Networked_TriggerHapticPulse(5) was called.");
         }
 
-        public void Networked_TriggerAudioClip(PhotonView pv)
-        {
-            pv.RPC("BroadcastAudioClip", RpcTarget.All);
-        }
+
 
         #endregion
 

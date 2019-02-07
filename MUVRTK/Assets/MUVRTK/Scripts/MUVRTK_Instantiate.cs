@@ -183,7 +183,7 @@ namespace MUVRTK
             {
                 vrmInstance = Instantiate(vr_Manager, spawnPoint.position, Quaternion.identity);
             }
-            else vrmInstance = Instantiate(vr_Manager, new Vector3(Random.value * 5, 0.5f, Random.value * 5), Quaternion.identity);
+            else vrmInstance = Instantiate(vr_Manager, new Vector3(Random.value * 5, 0f, Random.value * 5), Quaternion.identity);
            Instantiate(sdkSetupSwitcher, transform.position, transform.rotation);
 
 
@@ -222,9 +222,21 @@ namespace MUVRTK
             if (PhotonNetwork.IsConnected)
             {
                 //Controler Script Aliases
-
-                vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasLeftController = PhotonNetwork.Instantiate(controllerScriptAliases[0].name, transform.position, transform.rotation);
-                vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasRightController = PhotonNetwork.Instantiate(controllerScriptAliases[1].name, transform.position, transform.rotation);
+                if (controllerScriptAliases.Length > 1)
+                {
+                    vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasLeftController = PhotonNetwork.Instantiate(controllerScriptAliases[0].name, transform.position, transform.rotation);
+                    vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasRightController = PhotonNetwork.Instantiate(controllerScriptAliases[1].name, transform.position, transform.rotation);
+                }
+                if(controllerScriptAliases.Length == 1)
+                {
+                    vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasLeftController = PhotonNetwork.Instantiate(controllerScriptAliases[0].name, transform.position, transform.rotation);
+                    vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasRightController = PhotonNetwork.Instantiate(controllerScriptAliases[0].name, transform.position, transform.rotation);
+                }
+                else
+                {
+                    Debug.LogWarning(name + ": No ControllerScriptAliases found!");
+                }
+               
 
 
                 //All else (interactive objects and the like)

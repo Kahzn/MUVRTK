@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 1794241305763765672}
   - component: {fileID: 2602652609489817036}
   m_Layer: 0
-  m_Name: '[PREFAB] NetworkedRightControllerScriptAlias'
+  m_Name: '[PREFAB] POI_Pointer_Interact_ScripAlias'
   m_TagString: ScriptAlias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 2906039972200357522}
   viewIdField: 0
-  InstantiationId: 6
+  InstantiationId: 7
   isRuntimeInstantiated: 0
 --- !u!114 &2906039972200357522
 MonoBehaviour:
@@ -161,7 +161,7 @@ MonoBehaviour:
   holdButtonToActivate: 1
   activateOnEnable: 0
   activationDelay: 0
-  selectionButton: 6
+  selectionButton: 7
   selectOnPress: 1
   selectionDelay: 0
   selectAfterHoverDuration: 0
