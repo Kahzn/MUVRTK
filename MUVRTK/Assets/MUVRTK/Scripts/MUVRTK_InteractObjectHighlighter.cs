@@ -43,13 +43,6 @@ namespace MUVRTK
             // Get PhotonView Component. Necessary for RPCs.
             pv = PhotonView.Get(this);
 
-
-            // In order for the VRTK_Interactions to work via Network (as RPC-Calls), two new Custom Types had to be Created to support Serialization via Photon. 
-            //You can find their respective definitions below in two internal classes.
-
-            MyCustomInteractableObjectEventArgs.Register();
-            MyCustomInteractableObject.Register();
-
         }
 
         #endregion
@@ -127,15 +120,6 @@ namespace MUVRTK
             pv.RPC("NearTouchHighlightObject_RPC", RpcTarget.All, pv.ViewID);
         }
 
-        /**
-        private void Networked_NearTouchUnHighlightObject(object sender, InteractableObjectEventArgs e)
-        {
-            if (debug)
-                Debug.Log("Networked_NearTouchUnhighlightObject passed");
-
-
-            pv.RPC("NearTouchUnHighlightObject_RPC", RpcTarget.All, pv.ViewID);
-        }**/
 
 
         /// TOUCH
@@ -149,15 +133,6 @@ namespace MUVRTK
             pv.RPC("TouchHighlightObject_RPC", RpcTarget.All, pv.ViewID);
         }
 
-        /**
-        private void Networked_TouchUnHighlightObject(object sender, InteractableObjectEventArgs e)
-        {
-            if(debug)
-                Debug.Log("Networked_TouchUnhighlightObject passed");
-
-
-            pv.RPC("TouchUnHighlightObject_RPC", RpcTarget.All, pv.ViewID);
-        }**/
 
         ///GRAB
 
@@ -167,19 +142,11 @@ namespace MUVRTK
                 Debug.Log("Networked_GrabHighlightObject passed");
 
 
-            //pv.RPC("GrabHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
-            pv.RPC("New_GrabHighlightObject_RPC", RpcTarget.All, pv.ViewID);
+
+            pv.RPC("GrabHighlightObject_RPC", RpcTarget.All, pv.ViewID);
         }
 
-        /**
-        private void Networked_GrabUnHighlightObject(object sender, InteractableObjectEventArgs e)
-        {
-            if (debug)
-                Debug.Log("Networked_GrabUnhighlightObject passed");
 
-
-            pv.RPC("GrabUnHighlightObject_RPC", RpcTarget.All, pv.ViewID);
-        }**/
 
         ///USE
         
@@ -191,15 +158,7 @@ namespace MUVRTK
 
             pv.RPC("UseHighlightObject_RPC", RpcTarget.All, pv.ViewID);
         }
-        /**
-        private void Networked_UseUnHighlightObject(object sender, InteractableObjectEventArgs e)
-        {
-            if (debug)
-                Debug.Log("Networked_UseUnhighlightObject passed");
 
-
-            pv.RPC("UseUnHighlightObject_RPC", RpcTarget.All, pv.ViewID);
-        }**/
 
         // General Unhighlight
         private void Networked_UnHighlightObject(object sender, InteractableObjectEventArgs e)
@@ -216,7 +175,7 @@ namespace MUVRTK
         #region RPCs
         /**
          *  All methods in this region are RPC-mediators in order to call the same method on all client machines in a network.
-         *  Every RPC-Method has a second overload function that takes the custom type parameters as input.
+         * 
          * */
 
         ///NEARTOUCH
@@ -234,55 +193,6 @@ namespace MUVRTK
 
         }
 
-        /**
-        [PunRPC]
-        private void NearTouchHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
-        {
-            if(debug)
-                Debug.Log(name + ": NearTouchHighlighObject_RPC passed");
-
-
-            if (pv.ViewID.Equals(viewID))
-                NearTouchHighlightObject(sender, e);
-
-        }
-
-        [PunRPC]
-        private void NearTouchHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
-        {
-            if(debug)
-                Debug.Log(name + ": NearTouchHighlighObject_RPC with Custom Types passed");
-
-
-            if (pv.ViewID.Equals(viewID))
-                NearTouchHighlightObject((object)sender, e.args);
-
-        }
-
-        [PunRPC]
-        private void NearTouchUnHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
-        {
-            if(debug)
-                Debug.Log(name + ": NearTouchUnHighlighObject_RPC passed");
-
-            if (pv.ViewID.Equals(viewID))
-                NearTouchUnHighlightObject(sender, e);
-
-
-        }
-
-        [PunRPC]
-        private void NearTouchUnHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
-        {
-            if(debug)
-                Debug.Log(name + ": NearTouchUnHighlighObject_RPC with Custom Types passed");
-
-            if (pv.ViewID.Equals(viewID))
-            {
-                /// Workaround: Calling the NearTouchUnHighlightObject-Method in this context would cause Nullreference-Exceptions on the sender-side.
-                Unhighlight();
-            }
-        }**/
 
         ///TOUCH
         ///
@@ -299,54 +209,6 @@ namespace MUVRTK
 
         }
 
-        /**
-        [PunRPC]
-        private void TouchHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
-        {
-            if(debug)
-                Debug.Log(name + ": TouchHighlighObject_RPC passed");
-
-
-            if (pv.ViewID.Equals(viewID))
-                TouchHighlightObject(sender, e);
-
-        }
-
-        [PunRPC]
-        private void TouchHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
-        {
-            if(debug)
-                Debug.Log("TouchHighlighObject_RPC with Custom Types passed");
-
-
-            if (pv.ViewID.Equals(viewID))
-                TouchHighlightObject((object)sender, e.args);
-
-        }
-
-        [PunRPC]
-        private void TouchUnHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
-        {
-            if(debug)
-                Debug.Log("TouchUnHighlighObject_RPC passed");
-
-            if (pv.ViewID.Equals(viewID))
-                TouchUnHighlightObject(sender, e);
-
-        }
-
-        [PunRPC]
-        private void TouchUnHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
-        {
-            if(debug)
-                Debug.Log("TouchUnHighlighObject_RPC with Custom Types passed");
-
-            if (pv.ViewID.Equals(viewID))
-            {
-                /// Workaround: Calling the TouchUnHighlightObject-Method in this context would cause Nullreference-Exceptions on the sender-side.
-                Unhighlight();
-            }
-        }**/
 
         /// GRAB
         /// 
@@ -361,54 +223,7 @@ namespace MUVRTK
                 Highlight(grabHighlight);
 
         }
-        /**
-        [PunRPC]
-        private void GrabHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
-        {
-            if (debug)
-                Debug.Log(name + ": GrabHighlighObject_RPC passed");
-
-
-            if (pv.ViewID.Equals(viewID))
-                GrabHighlightObject(sender, e);
-
-        }
-
-        [PunRPC]
-        private void GrabHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
-        {
-            if (debug)
-                Debug.Log(name + ": GrabHighlighObject_RPC with Custom Types passed");
-
-
-            if (pv.ViewID.Equals(viewID))
-                GrabHighlightObject((object)sender, e.args);
-
-        }
-
-        [PunRPC]
-        private void GrabUnHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
-        {
-            if (debug)
-                Debug.Log(name + ": GrabUnHighlighObject_RPC passed");
-
-            if (pv.ViewID.Equals(viewID))
-                GrabUnHighlightObject(sender, e);
-
-        }
-
-        [PunRPC]
-        private void GrabUnHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
-        {
-            if (debug)
-                Debug.Log(name + ": GrabUnHighlighObject_RPC with Custom Types passed");
-
-            if (pv.ViewID.Equals(viewID))
-            {
-                /// Workaround: Calling the TouchUnHighlightObject-Method in this context would cause Nullreference-Exceptions on the sender-side.
-                Unhighlight();
-            }
-        }**/
+        
         /// USE
 
 
@@ -423,55 +238,6 @@ namespace MUVRTK
                 Highlight(useHighlight);
 
         }
-
-        /**
-    [PunRPC]
-    private void UseHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
-    {
-        if (debug)
-            Debug.Log(name + ": UseHighlighObject_RPC passed");
-
-
-        if (pv.ViewID.Equals(viewID))
-            UseHighlightObject(sender, e);
-
-    }
-
-    [PunRPC]
-    private void UseHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
-    {
-        if (debug)
-            Debug.Log(name + ": UseHighlighObject_RPC with Custom Types passed");
-
-
-        if (pv.ViewID.Equals(viewID))
-            UseHighlightObject((object)sender, e.args);
-
-    }
-
-    [PunRPC]
-    private void UseUnHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
-    {
-        if (debug)
-            Debug.Log(name + ": UseUnHighlighObject_RPC passed");
-
-        if (pv.ViewID.Equals(viewID))
-            UseUnHighlightObject(sender, e);
-
-    }
-
-    [PunRPC]
-    private void UseUnHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
-    {
-        if (debug)
-            Debug.Log(name + ": UseUnHighlighObject_RPC with Custom Types passed");
-
-        if (pv.ViewID.Equals(viewID))
-        {
-            /// Workaround: Calling the TouchUnHighlightObject-Method in this context would cause Nullreference-Exceptions on the sender-side.
-            Unhighlight();
-        }
-    }**/
 
         // UNHIGHLIGHT FOR ALL
 
@@ -499,67 +265,6 @@ namespace MUVRTK
 
     }
 
-    internal class MyCustomInteractableObjectEventArgs
-    {
-
-
-        internal static void Register()
-        {
-            Debug.Log("MyCustomInteractableObjectEventArgs registration completed: " + PhotonPeer.RegisterType(typeof(InteractableObjectEventArgs), (byte)'I', Serialize, Deserialize));
-        }
-
-        #region Custom De/Serializer Methods
-
-
-        public byte Id { get; set; }
-        public InteractableObjectEventArgs args;
-
-        public static object Deserialize(byte[] data)
-        {
-            var result = new MyCustomInteractableObjectEventArgs();
-            result.Id = data[0];
-            return result;
-        }
-
-        public static byte[] Serialize(object customType)
-        {
-            var c = new MyCustomInteractableObjectEventArgs();
-            c.args = (InteractableObjectEventArgs)customType;
-            return new byte[] { c.Id };
-        }
-        #endregion
-    }
-
-    internal class MyCustomInteractableObject
-    {
-
-        internal static void Register()
-        {
-            Debug.Log("MyCustomInteractableObject registration completed: " + PhotonPeer.RegisterType(typeof(VRTK_InteractableObject), (byte)'J', Serialize, Deserialize));
-        }
-
-        #region Custom De/Serializer Methods
-
-
-        public byte Id { get; set; }
-        public VRTK_InteractableObject interactable;
-
-        public static object Deserialize(byte[] data)
-        {
-            var result = new MyCustomInteractableObject();
-            result.Id = data[0];
-            return result;
-        }
-
-        public static byte[] Serialize(object customType)
-        {
-
-            var c = new MyCustomInteractableObject();
-            c.interactable = (VRTK_InteractableObject)customType;
-            return new byte[] { c.Id };
-        }
-        #endregion
-    }
 
 }
 
