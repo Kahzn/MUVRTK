@@ -10,12 +10,12 @@
     /// This script has to be added onto the ControllerScript Alias and manages the Prefab instantiation over the network.
     /// <para>Created by Katharina Ziolkowski, 2019-02-04</para>
     /// </summary>
-    public class MUVRTK_POISpawner : MonoBehaviour
+    public class MUVRTK_SimpleSpawner : MonoBehaviour
     {
         #region private Serializable Fields
 
         [SerializeField]
-        private GameObject poi;
+        private GameObject objectToSpawn;
 
 
         #endregion
@@ -24,7 +24,7 @@
 
         public void SpawnPOI()
         {
-            PhotonNetwork.Instantiate(poi.name, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), transform.rotation);
+            PhotonNetwork.Instantiate(objectToSpawn.name, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), transform.rotation);
         }
 
         #endregion

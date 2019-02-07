@@ -283,7 +283,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 895b3f7c1546a7e42b4aec5edfd938ba, type: 2}
+  - {fileID: 2100000, guid: 77a2af9dbdbb5fe45927cc4cf5643b56, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -410,7 +410,7 @@ PrefabInstance:
     - target: {fileID: 4104828319383060071, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_Name
-      value: POI Text
+      value: Speech Bubbles Text
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060064, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
@@ -517,6 +517,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4104828319383060060, guid: 1eaef5e32e0bec740951a8fa881b1776,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a85daccd6072f524dad810f42eb7d730, type: 2}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -530,26 +535,25 @@ PrefabInstance:
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_text
-      value: 'Create POI Objects in the scene by pressing the trigger button on your
-        Controller.
+      value: 'Create Speech Bubbles in the scene by pressing the trigger button on
+        your Controller.
 
-        Set how to destroy the POI and what interaction it shall trigger in the POI-Manager
-        script.'
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 174
+      value: 86
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 29
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 30
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
@@ -700,7 +704,7 @@ PrefabInstance:
         type: 3}
       propertyPath: controllerScriptAliases.Array.data[0]
       value: 
-      objectReference: {fileID: 1251795316485554009, guid: ba516ff52d4da2348a4c92ffc32b2083,
+      objectReference: {fileID: 1251795316485554009, guid: 51d42bdffade5444b8c239f4057c27d9,
         type: 3}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}

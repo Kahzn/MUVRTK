@@ -15,11 +15,13 @@
     {
 
 
-        private MeshRenderer meshRenderer;
-
-        private void Start(){
-
-            meshRenderer = GetComponent<MeshRenderer>();
+        private void Start()
+        {
+            //SceneObject-Overrides
+            lifetimeInSeconds = 20;
+            destroyInteraction = DestroyInteractions.Point;
+            triggerInteraction = TriggerInteractions.Spawn;
+            triggerHapticPulse = true;
 
         }
 

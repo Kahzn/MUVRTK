@@ -62,7 +62,7 @@ namespace MUVRTK
 
         [Tooltip("The interaction with this object that shall trigger a broadcast action on all other players. ")]
         [SerializeField]
-        protected TriggerInteractions triggerInteractions = TriggerInteractions.Spawn;
+        protected TriggerInteractions triggerInteraction = TriggerInteractions.Spawn;
 
         [Header("Pointer Rendering Options")]
         [SerializeField]
@@ -395,7 +395,7 @@ namespace MUVRTK
 
         private void SetupInteractionTrigger()
         {
-            switch (triggerInteractions)
+            switch (triggerInteraction)
             {
                 case TriggerInteractions.Collide:
                     SetupCollider();
@@ -612,7 +612,7 @@ namespace MUVRTK
 
         private void DestroyObject()
         {
-            if (triggerInteractions.Equals(TriggerInteractions.Destroy))
+            if (triggerInteraction.Equals(TriggerInteractions.Destroy))
             {
                 StartAction();
             }
@@ -630,7 +630,7 @@ namespace MUVRTK
         private void DestroyObject(object o, InteractableObjectEventArgs e)
         {
 
-            if (triggerInteractions.Equals(TriggerInteractions.Destroy))
+            if (triggerInteraction.Equals(TriggerInteractions.Destroy))
             {
                 StartAction();
             }

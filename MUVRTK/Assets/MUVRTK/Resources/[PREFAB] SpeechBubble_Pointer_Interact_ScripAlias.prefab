@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 1794241305763765672}
   - component: {fileID: 2602652609489817036}
   m_Layer: 0
-  m_Name: '[PREFAB] POI_Pointer_Interact_ScripAlias'
+  m_Name: '[PREFAB] SpeechBubble_Pointer_Interact_ScripAlias'
   m_TagString: ScriptAlias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,8 +61,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 2906039972200357522}
-  viewIdField: 7
-  InstantiationId: 7
+  viewIdField: 13
+  InstantiationId: 13
   isRuntimeInstantiated: 0
 --- !u!114 &2906039972200357522
 MonoBehaviour:
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f139ee70374c1b4493f84e4528b91da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 7514380413642254856, guid: 8995d5b6fccc87248aad35213f93efff,
+  objectToSpawn: {fileID: 7514380413642254856, guid: b4f23e209f27aa340b6ea083555f65aa,
     type: 3}
 --- !u!114 &1251795316485554007
 MonoBehaviour:
