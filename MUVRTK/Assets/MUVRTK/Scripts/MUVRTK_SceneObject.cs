@@ -52,7 +52,7 @@ namespace MUVRTK
         [SerializeField]
         protected float health = 1;
 
-        [Header("Destroy Interactions")]
+        [Header("Interactions on the Object that destroy it.")]
 
         [Tooltip("The interaction that shall be used to destroy this object.")]
         [SerializeField]
@@ -133,6 +133,7 @@ namespace MUVRTK
         private object[] triggerInteractionEvents;
         private bool destructionSetupCompleted;
         private bool interactionSetupCompleted;
+        private bool firstSetupCompleted;
 
 
         #endregion
@@ -140,19 +141,43 @@ namespace MUVRTK
 
         #region Monobehaviour Callbacks
 
+        private void Start()
+        {
+            if (!firstSetupCompleted)
+            {
+
+                SetupControllerScriptAliases();
+
+                SetupInteractableObject();
+
+                SetupInteractionTrigger();
+
+                SetupDestructionTrigger();
+
+                SetupBroadcastActions();
+
+                firstSetupCompleted = true;
+            }
+        }
         //setting up all components
         void OnEnable()
         {
-            SetupControllerScriptAliases();
+            if (!firstSetupCompleted)
+            {
 
-            SetupInteractableObject();
+                SetupControllerScriptAliases();
 
-            SetupInteractionTrigger();
+                SetupInteractableObject();
 
-            SetupDestructionTrigger();
+                SetupInteractionTrigger();
 
-            SetupBroadcastActions();
+                SetupDestructionTrigger();
 
+                SetupBroadcastActions();
+
+
+                firstSetupCompleted = true;
+            }
 
         }
 
@@ -186,13 +211,22 @@ namespace MUVRTK
         {
             if(destroyInteraction == DestroyInteractions.Collide)
             {
-                if (collision.gameObject.tag.Equals("Floor"))
+                if (collision.gameObject.tag.Equals("Destroy"))
                 {
                     DestroyObject();
                 }
             }
 
+            if(triggerInteraction == TriggerInteractions.Collide)
+            {
+ 
+
+                StartAction();
+
+            }
+
         }
+
 
         #endregion
 
@@ -295,8 +329,7 @@ namespace MUVRTK
                 case DestroyInteractions.Collide:
                     SetupCollider();
 
-                    Rigidbody rb = gameObject.AddComponent<Rigidbody>();
-                    rb.useGravity = false;
+                    
 
                     destructionSetupCompleted = true;
                     break;
@@ -313,6 +346,20 @@ namespace MUVRTK
             if (GetComponentsInChildren<Collider>() != null)
                 collider = GetComponentsInChildren<Collider>();
             else collider[0] = gameObject.AddComponent<Collider>();
+
+            Rigidbody rb;
+            if (!GetComponent<Rigidbody>())
+            {
+                rb = gameObject.AddComponent<Rigidbody>();
+                rb.useGravity = false;
+            }
+            else
+            {
+                rb = GetComponent<Rigidbody>();
+                rb.useGravity = false;
+
+            }
+
         }
 
 
@@ -399,9 +446,6 @@ namespace MUVRTK
             {
                 case TriggerInteractions.Collide:
                     SetupCollider();
-
-                    Rigidbody rb = gameObject.AddComponent<Rigidbody>();
-                    rb.useGravity = false;
 
                     interactionSetupCompleted = true;
                     break;
@@ -510,21 +554,7 @@ namespace MUVRTK
                 }
 
             }
-            /**
-            if (triggerHapticPulse)
-            {
 
-                foreach(GameObject go in controllerScriptAliases)
-                {
-                    if (go.GetComponent<MUVRTK_ControllerHaptics>() == null)
-                    {
-                        controllerHaptics = go.AddComponent<MUVRTK_ControllerHaptics>();
-                    }
-                    else controllerHaptics = go.GetComponent<MUVRTK_ControllerHaptics>();
-
-                }
-
-            }**/
 
             if (highlightObject)
             {
@@ -554,7 +584,7 @@ namespace MUVRTK
 
        
 
-        private void StartAction()
+        protected void StartAction()
         {
             if (playAudioClip)
             {

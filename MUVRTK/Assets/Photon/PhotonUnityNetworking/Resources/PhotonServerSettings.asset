@@ -50,4 +50,5 @@ MonoBehaviour:
   - New_GrabHighlightObject_RPC
   - UnHighlightObject_RPC
   - SetSpeechBubbleText
+  - ChangeColor
   DisableAutoOpenWizard: 1

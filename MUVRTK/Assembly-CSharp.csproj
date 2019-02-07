@@ -76,6 +76,7 @@
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_RoomNameInputField.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SceneObject.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SetViewIDAtRuntime.cs" />
+    <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SharedAwareness.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SimpleSpawner.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SpeechBubble.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />

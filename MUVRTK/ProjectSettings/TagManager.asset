@@ -21,6 +21,8 @@ TagManager:
   - Torso
   - Head
   - Floor
+  - View
+  - Destroy
   layers:
   - Default
   - TransparentFX
