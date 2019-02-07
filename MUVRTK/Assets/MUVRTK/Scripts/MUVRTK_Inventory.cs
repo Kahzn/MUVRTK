@@ -1,14 +1,18 @@
-﻿ namespace VRTK.Examples
+﻿namespace MUVRTK
 {
+    using System.Collections;
+    using System.Collections.Generic;
     using UnityEngine;
     using UnityEngine.UI;
+    using VRTK;
 
-    public class PanelMenuSaucerGrid : MonoBehaviour
+    public class MUVRTK_Inventory : MonoBehaviour
     {
         public GridLayoutGroup gridLayoutGroup;
         public MeshRenderer changeObject;
         public VRTK_PanelMenuItemController panelMenuController;
         public Color[] colours = new Color[0];
+        public MUVRTK_SimpleSpawner simpleSpawner;
 
         protected int currentIndex = 0;
         protected readonly Color colorDefault = Color.white;
@@ -43,6 +47,8 @@
             {
                 changeObject.material.color = colours[currentIndex];
             }
+
+            simpleSpawner.Spawn();
         }
 
         protected virtual void PanelMenuItemSwipeRight(object sender, PanelMenuItemControllerEventArgs e)
@@ -126,3 +132,5 @@
         }
     }
 }
+
+

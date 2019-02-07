@@ -22,7 +22,7 @@
 
         #region Public Methods
 
-        public void SpawnPOI()
+        public void Spawn()
         {
             PhotonNetwork.Instantiate(objectToSpawn.name, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), transform.rotation);
         }

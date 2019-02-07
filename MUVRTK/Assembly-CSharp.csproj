@@ -67,6 +67,7 @@
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_IControllerHaptics.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_Instantiate.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_InteractObjectHighlighter.cs" />
+    <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_Inventory.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_Launcher.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_LobbyViewer.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_PlayerNameInputField.cs" />
