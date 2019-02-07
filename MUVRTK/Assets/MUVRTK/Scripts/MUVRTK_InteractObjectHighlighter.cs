@@ -165,7 +165,8 @@ namespace MUVRTK
                 Debug.Log("Networked_GrabHighlightObject passed");
 
 
-            pv.RPC("GrabHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
+            //pv.RPC("GrabHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
+            pv.RPC("New_GrabHighlightObject_RPC", RpcTarget.All, pv.ViewID);
         }
 
         private void Networked_GrabUnHighlightObject(object sender, InteractableObjectEventArgs e)
@@ -307,6 +308,18 @@ namespace MUVRTK
         }
 
         /// GRAB
+        /// 
+        [PunRPC]
+        private void New_GrabHighlightObject_RPC(int viewID)
+        {
+            if (debug)
+                Debug.Log(name + ": New_GrabHighlighObject_RPC passed");
+
+
+            if (pv.ViewID.Equals(viewID))
+                Highlight(grabHighlight);
+
+        }
 
         [PunRPC]
         private void GrabHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
