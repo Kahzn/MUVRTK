@@ -14,8 +14,8 @@
     {
         #region private Serializable Fields
 
-        [SerializeField]
-        private GameObject objectToSpawn;
+        public bool debug;
+        public GameObject objectToSpawn;
 
 
         #endregion
@@ -25,6 +25,41 @@
         public void Spawn()
         {
             PhotonNetwork.Instantiate(objectToSpawn.name, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), transform.rotation);
+
+            if (debug)
+                Debug.Log(name + " : Spawn(0) was called.");
+        }
+
+        public void Spawn(GameObject objectToSpawn)
+        {
+            PhotonNetwork.Instantiate(objectToSpawn.name, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), transform.rotation);
+
+            if (debug)
+                Debug.Log(name + " : Spawn(1) was called.");
+        }
+
+        public void Spawn(Vector3 position)
+        {
+            PhotonNetwork.Instantiate(objectToSpawn.name, position, transform.rotation);
+
+            if (debug)
+                Debug.Log(name + " : Spawn(1) was called.");
+        }
+
+        public void Spawn(Vector3 position, Quaternion rotation)
+        {
+            PhotonNetwork.Instantiate(objectToSpawn.name, position, rotation);
+
+            if (debug)
+                Debug.Log(name + " : Spawn(2) was called.");
+        }
+
+        public void Spawn(GameObject go, Vector3 position, Quaternion rotation)
+        {
+            PhotonNetwork.Instantiate(go.name, position, rotation);
+
+            if (debug)
+                Debug.Log(name + " : Spawn(3) was called.");
         }
 
         #endregion

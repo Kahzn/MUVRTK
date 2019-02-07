@@ -14,11 +14,10 @@ namespace MUVRTK
     /// </summary>
     public class MUVRTK_SpeechBubble : MUVRTK_SceneObject
     {
-        #region Private Serialize Fields
+        #region private Serializable Fields
 
         [Tooltip("Text in the Speechbubble-Content.")]
-        [SerializeField]
-        private TextMeshPro content;
+        public TextMeshPro content;
 
         #endregion
 
@@ -26,14 +25,22 @@ namespace MUVRTK
         // Start is called before the first frame update
         void Start()
         {
-            content.text = "OK!";
 
             lifetimeInSeconds = 10;
             destroyInteraction = DestroyInteractions.Touch;
 
         }
 
-        #endregion  
+        #endregion
+
+        #region Public Methods
+
+        public void SetText(string text)
+        {
+            content.text = text;
+        }
+
+        #endregion
 
         #region PUN RPCs
 

@@ -1,18 +1,25 @@
 ﻿namespace MUVRTK
-{
+{ 
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEngine.UI;
     using VRTK;
-
+    /// <summary>
+    /// Simple inventory based on VRTK's PanelMenuSaucerGrid.
+    /// <para> Created by Katharina Ziolkowski, 2019.02.04</para>
+    /// </summary>
     public class MUVRTK_Inventory : MonoBehaviour
     {
+
+        public bool debug;
+
         public GridLayoutGroup gridLayoutGroup;
         public MeshRenderer changeObject;
         public VRTK_PanelMenuItemController panelMenuController;
         public Color[] colours = new Color[0];
         public MUVRTK_SimpleSpawner simpleSpawner;
+        public MUVRTK_SpeechBubble speechBubble;
 
         protected int currentIndex = 0;
         protected readonly Color colorDefault = Color.white;
@@ -48,7 +55,22 @@
                 changeObject.material.color = colours[currentIndex];
             }
 
-            simpleSpawner.Spawn();
+            Transform selected = gridLayoutGroup.transform.GetChild(currentIndex);
+
+            if (selected != null)
+            {
+                speechBubble.content.text = selected.GetComponentInChildren<Text>().text.ToString();
+
+                if(debug)
+                Debug.Log(name + " : the Text of the current item is:  " + selected.GetComponentInChildren<Text>().text.ToString());
+            }
+            else
+            {
+                if(debug)
+                Debug.Log("No Selected Item!");
+            }
+
+            simpleSpawner.Spawn(speechBubble.gameObject, new Vector3(transform.position.x + 1f, transform.position.y, transform.position.z ), transform.rotation);
         }
 
         protected virtual void PanelMenuItemSwipeRight(object sender, PanelMenuItemControllerEventArgs e)

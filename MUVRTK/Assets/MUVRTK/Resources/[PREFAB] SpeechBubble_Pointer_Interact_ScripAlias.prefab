@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f139ee70374c1b4493f84e4528b91da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   objectToSpawn: {fileID: 7514380413642254856, guid: b4f23e209f27aa340b6ea083555f65aa,
     type: 3}
 --- !u!114 &1251795316485554007
@@ -351,8 +352,8 @@ MonoBehaviour:
   OnTriggerPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4376378393981794775}
-        m_MethodName: SpawnPOI
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
