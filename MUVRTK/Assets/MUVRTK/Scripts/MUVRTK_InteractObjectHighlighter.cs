@@ -67,16 +67,16 @@ namespace MUVRTK
             if (objectToMonitor != null)
             {
                 objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.NearTouch, Networked_NearTouchHighlightObject);
-                objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.NearUntouch, Networked_NearTouchUnHighlightObject);
+                objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.NearUntouch, Networked_UnHighlightObject);
 
                 objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, Networked_TouchHighlightObject);
-                objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Untouch, Networked_TouchUnHighlightObject);
+                objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Untouch, Networked_UnHighlightObject);
 
                 objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Grab, Networked_GrabHighlightObject);
-                objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Ungrab, Networked_GrabUnHighlightObject);
+                objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Ungrab, Networked_UnHighlightObject);
 
                 objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Use, Networked_UseHighlightObject);
-                objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Unuse, Networked_UseUnHighlightObject);
+                objectToMonitor.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Unuse, Networked_UnHighlightObject);
                 return true;
             }
             else if (throwError)
@@ -94,16 +94,16 @@ namespace MUVRTK
             if (objectToMonitor != null)
             {
                 objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.NearTouch, Networked_NearTouchHighlightObject);
-                objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.NearUntouch, Networked_NearTouchUnHighlightObject);
+                objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.NearUntouch, Networked_UnHighlightObject);
 
                 objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, Networked_TouchHighlightObject);
-                objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Untouch, Networked_TouchUnHighlightObject);
+                objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Untouch, Networked_UnHighlightObject);
 
                 objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Grab, Networked_GrabHighlightObject);
-                objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Ungrab, Networked_GrabUnHighlightObject);
+                objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Ungrab, Networked_UnHighlightObject);
 
                 objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Use, Networked_UseHighlightObject);
-                objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Unuse, Networked_UseUnHighlightObject);
+                objectToMonitor.UnsubscribeFromInteractionEvent(VRTK_InteractableObject.InteractionType.Unuse, Networked_UnHighlightObject);
             }
         }
 
@@ -124,17 +124,18 @@ namespace MUVRTK
                 Debug.Log("Networked_NearTouchHighlightObject passed");
 
 
-            pv.RPC("NearTouchHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
+            pv.RPC("NearTouchHighlightObject_RPC", RpcTarget.All, pv.ViewID);
         }
 
+        /**
         private void Networked_NearTouchUnHighlightObject(object sender, InteractableObjectEventArgs e)
         {
             if (debug)
                 Debug.Log("Networked_NearTouchUnhighlightObject passed");
 
 
-            pv.RPC("NearTouchUnHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
-        }
+            pv.RPC("NearTouchUnHighlightObject_RPC", RpcTarget.All, pv.ViewID);
+        }**/
 
 
         /// TOUCH
@@ -145,17 +146,18 @@ namespace MUVRTK
                 Debug.Log("Networked_TouchHighlightObject passed");
 
 
-            pv.RPC("TouchHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
+            pv.RPC("TouchHighlightObject_RPC", RpcTarget.All, pv.ViewID);
         }
 
+        /**
         private void Networked_TouchUnHighlightObject(object sender, InteractableObjectEventArgs e)
         {
             if(debug)
                 Debug.Log("Networked_TouchUnhighlightObject passed");
 
 
-            pv.RPC("TouchUnHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
-        }
+            pv.RPC("TouchUnHighlightObject_RPC", RpcTarget.All, pv.ViewID);
+        }**/
 
         ///GRAB
 
@@ -169,14 +171,15 @@ namespace MUVRTK
             pv.RPC("New_GrabHighlightObject_RPC", RpcTarget.All, pv.ViewID);
         }
 
+        /**
         private void Networked_GrabUnHighlightObject(object sender, InteractableObjectEventArgs e)
         {
             if (debug)
                 Debug.Log("Networked_GrabUnhighlightObject passed");
 
 
-            pv.RPC("GrabUnHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
-        }
+            pv.RPC("GrabUnHighlightObject_RPC", RpcTarget.All, pv.ViewID);
+        }**/
 
         ///USE
         
@@ -186,16 +189,26 @@ namespace MUVRTK
                 Debug.Log("Networked_UseHighlightObject passed");
 
 
-            pv.RPC("UseHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
+            pv.RPC("UseHighlightObject_RPC", RpcTarget.All, pv.ViewID);
         }
-
+        /**
         private void Networked_UseUnHighlightObject(object sender, InteractableObjectEventArgs e)
         {
             if (debug)
                 Debug.Log("Networked_UseUnhighlightObject passed");
 
 
-            pv.RPC("UseUnHighlightObject_RPC", RpcTarget.All, pv.ViewID, sender, e);
+            pv.RPC("UseUnHighlightObject_RPC", RpcTarget.All, pv.ViewID);
+        }**/
+
+        // General Unhighlight
+        private void Networked_UnHighlightObject(object sender, InteractableObjectEventArgs e)
+        {
+            if (debug)
+                Debug.Log("Networked_UnhighlightObject passed");
+
+
+            pv.RPC("UnHighlightObject_RPC", RpcTarget.All, pv.ViewID);
         }
 
         #endregion
@@ -207,7 +220,21 @@ namespace MUVRTK
          * */
 
         ///NEARTOUCH
+        ///
 
+        [PunRPC]
+        private void NearTouchHighlightObject_RPC(int viewID)
+        {
+            if (debug)
+                Debug.Log(name + ": New_NearTouchHighlighObject_RPC passed");
+
+
+            if (pv.ViewID.Equals(viewID))
+                Highlight(nearTouchHighlight);
+
+        }
+
+        /**
         [PunRPC]
         private void NearTouchHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
         {
@@ -255,10 +282,24 @@ namespace MUVRTK
                 /// Workaround: Calling the NearTouchUnHighlightObject-Method in this context would cause Nullreference-Exceptions on the sender-side.
                 Unhighlight();
             }
-        }
+        }**/
 
         ///TOUCH
+        ///
 
+        [PunRPC]
+        private void TouchHighlightObject_RPC(int viewID)
+        {
+            if (debug)
+                Debug.Log(name + ": New_TouchHighlighObject_RPC passed");
+
+
+            if (pv.ViewID.Equals(viewID))
+                Highlight(touchHighlight);
+
+        }
+
+        /**
         [PunRPC]
         private void TouchHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
         {
@@ -305,12 +346,12 @@ namespace MUVRTK
                 /// Workaround: Calling the TouchUnHighlightObject-Method in this context would cause Nullreference-Exceptions on the sender-side.
                 Unhighlight();
             }
-        }
+        }**/
 
         /// GRAB
         /// 
         [PunRPC]
-        private void New_GrabHighlightObject_RPC(int viewID)
+        private void GrabHighlightObject_RPC(int viewID)
         {
             if (debug)
                 Debug.Log(name + ": New_GrabHighlighObject_RPC passed");
@@ -320,7 +361,7 @@ namespace MUVRTK
                 Highlight(grabHighlight);
 
         }
-
+        /**
         [PunRPC]
         private void GrabHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
         {
@@ -367,61 +408,90 @@ namespace MUVRTK
                 /// Workaround: Calling the TouchUnHighlightObject-Method in this context would cause Nullreference-Exceptions on the sender-side.
                 Unhighlight();
             }
-        }
+        }**/
         /// USE
 
+
         [PunRPC]
-        private void UseHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
+        private void UseHighlightObject_RPC(int viewID)
         {
             if (debug)
-                Debug.Log(name + ": UseHighlighObject_RPC passed");
+                Debug.Log(name + ": New_GrabHighlighObject_RPC passed");
 
 
             if (pv.ViewID.Equals(viewID))
-                UseHighlightObject(sender, e);
+                Highlight(useHighlight);
 
         }
 
-        [PunRPC]
-        private void UseHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
+        /**
+    [PunRPC]
+    private void UseHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
+    {
+        if (debug)
+            Debug.Log(name + ": UseHighlighObject_RPC passed");
+
+
+        if (pv.ViewID.Equals(viewID))
+            UseHighlightObject(sender, e);
+
+    }
+
+    [PunRPC]
+    private void UseHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
+    {
+        if (debug)
+            Debug.Log(name + ": UseHighlighObject_RPC with Custom Types passed");
+
+
+        if (pv.ViewID.Equals(viewID))
+            UseHighlightObject((object)sender, e.args);
+
+    }
+
+    [PunRPC]
+    private void UseUnHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
+    {
+        if (debug)
+            Debug.Log(name + ": UseUnHighlighObject_RPC passed");
+
+        if (pv.ViewID.Equals(viewID))
+            UseUnHighlightObject(sender, e);
+
+    }
+
+    [PunRPC]
+    private void UseUnHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
+    {
+        if (debug)
+            Debug.Log(name + ": UseUnHighlighObject_RPC with Custom Types passed");
+
+        if (pv.ViewID.Equals(viewID))
         {
-            if (debug)
-                Debug.Log(name + ": UseHighlighObject_RPC with Custom Types passed");
-
-
-            if (pv.ViewID.Equals(viewID))
-                UseHighlightObject((object)sender, e.args);
-
+            /// Workaround: Calling the TouchUnHighlightObject-Method in this context would cause Nullreference-Exceptions on the sender-side.
+            Unhighlight();
         }
+    }**/
+
+        // UNHIGHLIGHT FOR ALL
 
         [PunRPC]
-        private void UseUnHighlightObject_RPC(int viewID, object sender, InteractableObjectEventArgs e)
+        private void UnHighlightObject_RPC(int viewID)
         {
             if (debug)
-                Debug.Log(name + ": UseUnHighlighObject_RPC passed");
-
-            if (pv.ViewID.Equals(viewID))
-                UseUnHighlightObject(sender, e);
-
-        }
-
-        [PunRPC]
-        private void UseUnHighlightObject_RPC(int viewID, MyCustomInteractableObject sender, MyCustomInteractableObjectEventArgs e)
-        {
-            if (debug)
-                Debug.Log(name + ": UseUnHighlighObject_RPC with Custom Types passed");
+                Debug.Log(name + ": UnHighlighObject_RPC passed");
 
             if (pv.ViewID.Equals(viewID))
             {
-                /// Workaround: Calling the TouchUnHighlightObject-Method in this context would cause Nullreference-Exceptions on the sender-side.
                 Unhighlight();
             }
         }
 
-        #endregion
 
-        #region IPunObservable Implementation
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+            #endregion
+
+            #region IPunObservable Implementation
+            public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
 
         }
