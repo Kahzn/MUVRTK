@@ -117,7 +117,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 7638348834199150956}
-  viewIdField: 0
+  viewIdField: 9
   InstantiationId: 9
   isRuntimeInstantiated: 0
 --- !u!114 &7638348834199150956
@@ -350,12 +350,12 @@ PrefabInstance:
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
@@ -390,7 +390,7 @@ PrefabInstance:
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_text
-      value: Please
+      value: Thanks
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
@@ -425,7 +425,7 @@ PrefabInstance:
     - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: viewIdField
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}

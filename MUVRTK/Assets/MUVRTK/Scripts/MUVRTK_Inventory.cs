@@ -1,5 +1,6 @@
 ﻿namespace MUVRTK
-{ 
+{
+    using Photon.Pun;
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
@@ -11,6 +12,7 @@
     /// </summary>
     public class MUVRTK_Inventory : MonoBehaviour
     {
+        #region Public Fields
 
         public bool debug;
 
@@ -21,10 +23,19 @@
         public MUVRTK_SimpleSpawner simpleSpawner;
         public MUVRTK_SpeechBubble speechBubble;
 
+        #endregion
+
+        #region Protected Fields
+
         protected int currentIndex = 0;
         protected readonly Color colorDefault = Color.white;
         protected readonly Color colorSelected = Color.green;
         protected readonly float colorAlpha = 0.25f;
+
+        #endregion
+
+        #region enums
+
         protected enum Direction
         {
             None,
@@ -33,6 +44,9 @@
             Left,
             Right
         }
+        #endregion
+
+        #region Monobehaviour Callbacks
 
         protected virtual void OnEnable()
         {
@@ -48,6 +62,10 @@
             SetGridLayoutItemSelectedState(currentIndex);
         }
 
+        #endregion
+
+        #region VRTK methods
+
         protected virtual void PanelMenuItemTriggerPressed(object sender, PanelMenuItemControllerEventArgs e)
         {
             if (currentIndex < colours.Length && changeObject != null)
@@ -59,7 +77,8 @@
 
             if (selected != null)
             {
-                speechBubble.content.text = selected.GetComponentInChildren<Text>().text.ToString();
+                string s = selected.GetComponentInChildren<Text>().text.ToString();
+                PhotonView.Get(this).RPC("SetSpeechBubbleText", RpcTarget.All, s);
 
                 if(debug)
                 Debug.Log(name + " : the Text of the current item is:  " + selected.GetComponentInChildren<Text>().text.ToString());
@@ -152,6 +171,19 @@
                     return currentIndex;
             }
         }
+
+        #endregion
+
+        #region PUN RPCS
+
+        [PunRPC]
+        public void SetSpeechBubbleText(string s)
+        {
+            speechBubble.content.text = s;
+        }
+
+        #endregion
+
     }
 }
 

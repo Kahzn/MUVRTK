@@ -799,6 +799,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9061988219737395905, guid: 9eb4eed14b61762478139a0478dd88a6,
+        type: 3}
+      propertyPath: viewIdField
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061988219737395905, guid: 9eb4eed14b61762478139a0478dd88a6,
+        type: 3}
+      propertyPath: InstantiationId
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eb4eed14b61762478139a0478dd88a6, type: 3}
 --- !u!4 &1083528922 stripped
