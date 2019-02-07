@@ -70,7 +70,7 @@
                 Debug.Log("No Selected Item!");
             }
 
-            simpleSpawner.Spawn(speechBubble.gameObject, new Vector3(transform.position.x + 1f, transform.position.y, transform.position.z ), transform.rotation);
+            simpleSpawner.Spawn(speechBubble.gameObject, new Vector3(e.interactableObject.transform.position.x , e.interactableObject.transform.position.y + 0.5f , e.interactableObject.transform.position.z  ), transform.rotation);
         }
 
         protected virtual void PanelMenuItemSwipeRight(object sender, PanelMenuItemControllerEventArgs e)
