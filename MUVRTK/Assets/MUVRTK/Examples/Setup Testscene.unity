@@ -355,6 +355,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8623963408292656802, guid: 4f582c9009f95da4e883d63d504fb30a,
         type: 3}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: controllerScriptAliases.Array.data[0]
+      value: 
+      objectReference: {fileID: 8623963408292656802, guid: d5f5ff9a82337ca4394cb861a0037cd9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef1df230d4c5a564bb2ba070eaa49ade, type: 3}
 --- !u!1 &1818459700
