@@ -24,7 +24,7 @@
 
         public void Spawn()
         {
-            PhotonNetwork.Instantiate(objectToSpawn.name, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), transform.rotation);
+            PhotonNetwork.Instantiate(objectToSpawn.name, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
 
             if (debug)
                 Debug.Log(name + " : Spawn(0) was called.");
@@ -32,7 +32,7 @@
 
         public void Spawn(GameObject objectToSpawn)
         {
-            PhotonNetwork.Instantiate(objectToSpawn.name, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), transform.rotation);
+            PhotonNetwork.Instantiate(objectToSpawn.name, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
 
             if (debug)
                 Debug.Log(name + " : Spawn(1) was called.");

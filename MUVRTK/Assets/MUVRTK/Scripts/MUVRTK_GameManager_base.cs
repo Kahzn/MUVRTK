@@ -54,8 +54,14 @@ namespace MUVRTK
         public override void OnJoinedRoom()
         {
             if (debug)
-                Debug.Log("MUVRTK_GameManager: OnJoinedRoom() called by PUN. Now this client is in the Room.");
-            instantiator.Instantiate_GameObjects();
+                Debug.Log(name + ": OnJoinedRoom() called by PUN. Now this client is in the Room.");
+            if(instantiator)
+                instantiator.Instantiate_GameObjects();
+            else
+            {
+                if (debug)
+                    Debug.Log(name + " : No Instantiator found!");
+            }
         }
         
         public override void OnLeftRoom()

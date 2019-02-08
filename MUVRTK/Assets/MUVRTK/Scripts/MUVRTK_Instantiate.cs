@@ -15,6 +15,7 @@ namespace MUVRTK
 /// Manages all Player Instantiation Issues in MUVRTK. 
 /// <para>created by Katharina Ziolkowski, 2019.01.23</para>
 /// </summary>
+
     public class MUVRTK_Instantiate: MonoBehaviour
     {
         
@@ -28,6 +29,10 @@ namespace MUVRTK
         [SerializeField] 
         private GameObject vr_Manager;
 
+        [Tooltip("The SDK-Setup-Switcher Panel. Mandatory!")]
+        [SerializeField]
+        private GameObject sdkSetupSwitcher;
+
         [Tooltip("Optional: The position where you want your VR Manager (and thus: Player) to spawn. If nothing is set, they will spawn at 0,0,0.")]
         [SerializeField] 
         private Transform spawnPoint;
@@ -36,14 +41,12 @@ namespace MUVRTK
         [SerializeField] 
         private GameObject playerAvatar;
        
-        [Tooltip("The SDK-Setup-Switcher Panel. Mandatory!")]
-        [SerializeField] 
-        private GameObject sdkSetupSwitcher;
+
 
 
         [Tooltip("tick yes if you want to exchange the default controller Models for networked ones. DONT TICK IF YOU'RE USING THE SIMULATOR.")]
         [SerializeField]
-        private bool exchangeControllerModels;
+        private bool showControllersOverNetwork;
 
         [Tooltip("The Array of Models for the Controllers. If you want to use the same for both, add it only once. Otherwise: First Left, Second Right.")]
         [SerializeField] 
@@ -127,7 +130,7 @@ namespace MUVRTK
             if (!leftControllerModelLoaded)
             {
                 //only replace the current controller meshes if any new models have been added to the array
-                if (controllerModels.Length > 0 && exchangeControllerModels)
+                if (controllerModels.Length > 0 && showControllersOverNetwork)
                 {
                     if (leftControllerInstance != null)
                     {
@@ -150,7 +153,7 @@ namespace MUVRTK
             if (!rightControllerModelLoaded)
             {
                 //only replace the current controller meshes if any new models have been added to the array
-                if (controllerModels.Length > 0 && exchangeControllerModels)
+                if (controllerModels.Length > 0 && showControllersOverNetwork)
                 {
                     if (rightControllerInstance != null)
                     {
@@ -194,7 +197,7 @@ namespace MUVRTK
             }
 
             //Networked Controller Model Instantiation
-            if (controllerModels.Length > 0 && exchangeControllerModels)
+            if (controllerModels.Length > 0 && showControllersOverNetwork)
             {
                 //If you want the same Model applied to both Controllers
                 if (controllerModels.Length == 1 )

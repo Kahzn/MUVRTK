@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3928964525218719672}
   - component: {fileID: 3928964525218719675}
   m_Layer: 0
-  m_Name: Simple_Game_Manager
+  m_Name: '[MUVRTK_GameManager]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3697f97db350b74419b15d56d5f7eefc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   gameVersion: 
   instantiator: {fileID: 0}
