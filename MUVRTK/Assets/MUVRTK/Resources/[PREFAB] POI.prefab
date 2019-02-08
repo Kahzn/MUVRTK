@@ -115,8 +115,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 7638348834199150956}
-  viewIdField: 5
-  InstantiationId: 5
+  viewIdField: 1
+  InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &7638348834199150956
 MonoBehaviour:
@@ -150,7 +150,7 @@ MonoBehaviour:
   points: 100
   health: 1
   destroyInteraction: 5
-  triggerInteraction: 8
+  triggerInteraction: 6
   pointerRendering: 1
   playAudioClip: 1
   audioClip: {fileID: 8300000, guid: 318e91dbcb0a86b4799043c5c7d4780d, type: 3}

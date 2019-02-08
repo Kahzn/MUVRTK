@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 469472364}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Floor
+  m_TagString: Destroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -809,6 +809,11 @@ PrefabInstance:
       propertyPath: InstantiationId
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 9044601737487482219, guid: 9eb4eed14b61762478139a0478dd88a6,
+        type: 3}
+      propertyPath: m_Text
+      value: Swipe on the touchpad to move and trigger press to spawn a speechbubble.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eb4eed14b61762478139a0478dd88a6, type: 3}
 --- !u!4 &1083528922 stripped
@@ -952,25 +957,26 @@ PrefabInstance:
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_text
-      value: 'Create Speech Bubbles in the scene by pressing the trigger button on
-        your Controller.
+      value: 'Speech bubbles.
 
-'
+
+        Pick up the cube on the table with your Grip-Buttons, then press Touchpad
+        (UP) to open the Speech bubble menu.'
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 86
+      value: 127
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 14
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 14
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
@@ -1017,61 +1023,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SDK_Manager_Instantiator
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
@@ -1144,6 +1095,61 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 611316382}
+    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef1df230d4c5a564bb2ba070eaa49ade, type: 3}
 --- !u!1001 &3928964524755190717
