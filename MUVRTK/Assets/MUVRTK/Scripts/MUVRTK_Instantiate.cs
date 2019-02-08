@@ -106,6 +106,12 @@ namespace MUVRTK
             {
                 TeleportEnable();
             }
+
+            //If you want to test offline, call Instantiate here. Else it will be called by the GameManager in the OnJoinedRoom-Method.
+            if (!PhotonNetwork.IsConnected)
+            {
+                Instantiate_GameObjects();
+            }
         }
 
         void Update()
@@ -193,11 +199,14 @@ namespace MUVRTK
             //Player Model Instantiation
             if (playerAvatar != null)
             {
+                if(PhotonNetwork.IsConnected)
                 playerModelInstance = PhotonNetwork.Instantiate(playerAvatar.name, transform.position, transform.rotation);
+
+                else playerModelInstance = Instantiate(playerAvatar, transform.position, transform.rotation);
             }
 
             //Networked Controller Model Instantiation
-            if (controllerModels.Length > 0 && showControllersOverNetwork)
+            if (controllerModels.Length > 0 && showControllersOverNetwork && PhotonNetwork.IsConnected)
             {
                 //If you want the same Model applied to both Controllers
                 if (controllerModels.Length == 1 )
