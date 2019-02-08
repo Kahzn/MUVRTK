@@ -71,7 +71,7 @@
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_LobbyViewer.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_PlayerNameInputField.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_PlayerOwnedObject.cs" />
-    <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_PoiManager.cs" />
+    <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_POI.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_RoomNameInputField.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SceneObject.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SetViewIDAtRuntime.cs" />

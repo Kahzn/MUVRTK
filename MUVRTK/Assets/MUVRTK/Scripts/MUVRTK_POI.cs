@@ -11,7 +11,7 @@
     /// The parent class MUVRTK_SceneObject contains different actions that can be triggered on object spawn and manages the destruction of the object.
     /// <para>Created by Katharina Ziolkowski, 2019-02-04</para>
     /// </summary>
-    public class MUVRTK_PoiManager : MUVRTK_SceneObject
+    public class MUVRTK_POI : MUVRTK_SceneObject
     {
 
 
