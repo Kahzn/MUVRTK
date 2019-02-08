@@ -287,7 +287,7 @@ PrefabInstance:
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: objectsToInstantiateOverTheNetwork.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
@@ -309,13 +309,13 @@ PrefabInstance:
         type: 3}
       propertyPath: controllerScriptAliases.Array.data[0]
       value: 
-      objectReference: {fileID: 4543453148029391638, guid: b95f68f408517a7469745c7b6fd97824,
+      objectReference: {fileID: 1251795316485554009, guid: 51d42bdffade5444b8c239f4057c27d9,
         type: 3}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: playerAvatar
       value: 
-      objectReference: {fileID: 9134103080250105971, guid: e412f916107374a4785c2fc294dfea98,
+      objectReference: {fileID: 9134103080250105971, guid: aea80b978bf04fc4ba9a73d301e32fbf,
         type: 3}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
@@ -332,7 +332,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objectsToInstantiateOverTheNetwork.Array.data[0]
       value: 
-      objectReference: {fileID: 3303631938020766807, guid: 139f5cd80dc20e34aaa38ea034979716,
+      objectReference: {fileID: 3303631938020766807, guid: d799d8c39ac522e4bbd7809e292264c7,
         type: 3}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
