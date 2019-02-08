@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4543453148029391634}
   - component: {fileID: 8819800150223690673}
   - component: {fileID: 5147706232273958024}
+  - component: {fileID: 2052852358758604860}
   m_Layer: 0
   m_Name: test_scriptAlias
   m_TagString: Untagged
@@ -410,3 +411,16 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: VRTK.UnityEventHelper.VRTK_ControllerEvents_UnityEvents+ControllerInteractionEvent,
       Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &2052852358758604860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4543453148029391638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e104da36bd3b04b90c6ae969ac66dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customColliderContainer: {fileID: 0}
