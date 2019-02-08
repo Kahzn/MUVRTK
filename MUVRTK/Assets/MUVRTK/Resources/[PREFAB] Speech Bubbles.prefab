@@ -417,20 +417,20 @@ PrefabInstance:
       propertyPath: m_inputSource
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4104828319383060066, guid: 1eaef5e32e0bec740951a8fa881b1776,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: viewIdField
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: InstantiationId
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104828319383060066, guid: 1eaef5e32e0bec740951a8fa881b1776,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eaef5e32e0bec740951a8fa881b1776, type: 3}
