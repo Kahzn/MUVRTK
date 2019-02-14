@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 using Photon.Pun;
+using Photon.Realtime;
 
 namespace MUVRTK
 {
@@ -21,7 +22,7 @@ namespace MUVRTK
         /// Interactions with the other Player that shall trigger the reaction.
         /// For example, when you choose "Pointer", then the Interaction shall be triggered when another player points at this object.
         /// </summary>
-        protected enum TriggerInteractions { Touch, Point, Select, Collide, None };
+        protected enum TriggerInteractions { Touch, Point, None };
 
         #endregion
 
@@ -71,16 +72,6 @@ namespace MUVRTK
         [Range(0f, 20f)]
         protected float vibrationStrength = 10f;
 
-
-        // Highlight
-
-        [Tooltip("Tick this if the Action shall trigger a Highlighting on the Object.")]
-        [SerializeField]
-        protected bool highlightObject;
-
-        [SerializeField]
-        protected MUVRTK_InteractObjectHighlighter interactObjectHighlighterComponent;
-
         protected VRTK_InteractableObject interactableObject;
         protected Collider[] collider;
         protected GameObject[] controllerScriptAliases;
@@ -103,7 +94,6 @@ namespace MUVRTK
             {
                 SetupTriggers();
 
-               
             }
 
         }
@@ -119,7 +109,46 @@ namespace MUVRTK
 
         #endregion
 
-        #region Protected Methods
+        #region StartAction Methods
+
+        protected virtual void StartAction()
+        {
+            Debug.Log(name + " StartAction was called on PhotonViewID: " + gameObject.GetPhotonView().ViewID);
+
+            if (triggerHapticPulse)
+            {
+                Debug.Log(name + " : Startaction(0) was called. TriggerHapticPulse selected.");
+                foreach (GameObject go in controllerScriptAliases)
+                    {
+                        Networked_TriggerHapticPulseOnPlayer(photonView, go.GetPhotonView().ViewID, vibrationStrength, duration, pulseInterval);
+                    }
+            }
+            else
+            {
+                Debug.Log("Haptic Pulse not selected!");
+            }
+        }
+
+        protected virtual void StartAction(object o, InteractableObjectEventArgs e)
+        {
+            if (triggerHapticPulse)
+            {
+                Debug.Log(name + " : Startaction(2) was called. TriggerHapticPulse selected.");
+                foreach (GameObject go in controllerScriptAliases)
+                {
+                    Networked_TriggerHapticPulseOnPlayer(photonView, go.GetPhotonView().ViewID, vibrationStrength, duration, pulseInterval);
+                }
+
+            }
+            else
+            {
+                Debug.Log("Haptic Pulse not selected!");
+            }
+        }
+
+        #endregion
+
+        #region Setup Triggers
 
         protected void SetupTriggers()
         {
@@ -144,11 +173,6 @@ namespace MUVRTK
                     }
                     break;
 
-                case (TriggerInteractions.Collide):
-                    SetupCollider();
-                    triggerSetupCompleted = true;
-                    Debug.Log(name + "Collider Trigger Setup complete!");
-                    break;
 
                 case (TriggerInteractions.Point):
                     //Pointer-Touch is handled like Interact_Touch in VRTK.
@@ -167,22 +191,6 @@ namespace MUVRTK
                     }
                     break;
 
-                case (TriggerInteractions.Select):
-                    SetupControllerScriptAliases();
-                    SetupInteractable();
-                    if (interactableObject != null)
-                    {
-                        interactableObject.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, StartAction);
-                        triggerSetupCompleted = true;
-                        Debug.Log(name + " Select Trigger Setup complete!");
-                    }
-                    else
-                    {
-                        if (debug)
-                            Debug.Log("Interactable Object missing! Waiting for Setup.");
-                    }
-                    break;
-
                 case (TriggerInteractions.None):
                     triggerSetupCompleted = true;
                     break;
@@ -193,9 +201,9 @@ namespace MUVRTK
             }
         }
 
-        protected void SetupCollide() { }
+        #endregion
 
-        protected void SetupSelect() { }
+        #region Basic Setup Methods
 
         void SetupInteractable()
         {
@@ -223,28 +231,6 @@ namespace MUVRTK
             }
         }
 
-        private void SetupCollider()
-        {
-            if (GetComponents<Collider>() != null)
-                collider = GetComponents<Collider>();
-            if (GetComponentsInChildren<Collider>() != null)
-                collider = GetComponentsInChildren<Collider>();
-            else collider[0] = gameObject.AddComponent<Collider>();
-
-            Rigidbody rb;
-            if (!GetComponent<Rigidbody>())
-            {
-                rb = gameObject.AddComponent<Rigidbody>();
-                rb.useGravity = false;
-            }
-            else
-            {
-                rb = GetComponent<Rigidbody>();
-                rb.useGravity = false;
-
-            }
-
-        }
 
         private void SetupControllerScriptAliases()
         {
@@ -258,43 +244,6 @@ namespace MUVRTK
 
         }
 
-        protected virtual void StartAction()
-        {
-            Debug.Log(name + " StartAction was called on PhotonViewID: " + gameObject.GetPhotonView().ViewID);
-
-            if (triggerHapticPulse)
-            {
-                if (gameObject.GetPhotonView().IsMine)
-                {
-                    foreach (GameObject go in controllerScriptAliases)
-                    {
-                        Networked_TriggerHapticPulse(photonView, go.GetPhotonView().ViewID, vibrationStrength, duration, pulseInterval);
-                    }
-                }
-            }
-            else
-            {
-                Debug.Log("Haptic Pulse not selected!");
-            }
-        }
-
-        protected virtual void StartAction(object o, InteractableObjectEventArgs e)
-        {
-            if (triggerHapticPulse)
-            {
-                if (gameObject.GetPhotonView().IsMine)
-                {
-                    foreach (GameObject go in controllerScriptAliases)
-                    {
-                        Networked_TriggerHapticPulse(photonView, go.GetPhotonView().ViewID, vibrationStrength, duration, pulseInterval);
-                    }
-                }
-            }
-            else
-            {
-                Debug.Log("Haptic Pulse not selected!");
-            }
-        }
 
         #endregion
 
@@ -309,11 +258,12 @@ namespace MUVRTK
         /// <param name="duration"></param>
         /// <param name="pulseInterval"></param>
 
-        public void Networked_TriggerHapticPulse(PhotonView pv, int viewIDOfController, float vibrationStrength, float duration, float pulseInterval)
+        public void Networked_TriggerHapticPulseOnPlayer(PhotonView pv, int viewIDOfController, float vibrationStrength, float duration, float pulseInterval)
         {
-            pv.RPC("BroadcastHapticPulseOnViewID", RpcTarget.All, viewIDOfController, vibrationStrength, duration, pulseInterval);
+            Player player = PhotonView.Find(viewIDOfController).Owner;
+            pv.RPC("BroadcastHapticPulseOnViewID", player, viewIDOfController, vibrationStrength, duration, pulseInterval);
 
-            Debug.Log(name + " : Networked_TriggerHapticPulse(5) was called.");
+            Debug.Log(name + " : Networked_TriggerHapticPulseOnPlayer(5) was called.");
         }
 
 

@@ -465,9 +465,6 @@ namespace MUVRTK
         }
 
 
-
-       
-
         private void SetupCollider()
         {
             if (GetComponents<Collider>() != null)
@@ -630,8 +627,9 @@ namespace MUVRTK
             }
         }
 
+        #endregion
 
-
+        #region StartAction Implementation
 
         protected void StartAction()
         {
