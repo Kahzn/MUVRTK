@@ -157,6 +157,11 @@ namespace MUVRTK
 
                 SetupBroadcastActions();
 
+                if (playAudioClip)
+                {
+                    SetupAudioSource();
+                }
+
                 firstSetupCompleted = true;
             }
         }
@@ -176,6 +181,10 @@ namespace MUVRTK
 
                 SetupBroadcastActions();
 
+                if (playAudioClip)
+                {
+                    SetupAudioSource();
+                }
 
                 firstSetupCompleted = true;
             }
@@ -231,21 +240,7 @@ namespace MUVRTK
 
         #endregion
 
-        #region Private Methods
-
-        private void SetupControllerScriptAliases()
-        {
-            if(GameObject.FindGameObjectsWithTag("ScriptAlias") != null)
-            controllerScriptAliases = GameObject.FindGameObjectsWithTag("ScriptAlias");
-
-            else
-            {
-                Debug.Log(name + " SetControllerScriptAliases: No ControllerScriptAliases found! Did you forget to set the tag?");
-            }
-
-        }
-
-
+        #region Setup Trigger Methods
 
         /// <summary>
         /// Called in Start-Method.
@@ -254,20 +249,20 @@ namespace MUVRTK
         private void SetupDestructionTrigger()
         {
             switch (destroyInteraction)
-            { 
+            {
                 case DestroyInteractions.Touch:
 
-                        if(interactable != null)
-                        {
-                            interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, DestroyObject);
+                    if (interactable != null)
+                    {
+                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, DestroyObject);
 
-                            destructionSetupCompleted = true;
-                        }
-                        else
-                        {
-                            if (debug)
-                                Debug.Log("Interactable Object missing! Waiting for Setup.");
-                        }
+                        destructionSetupCompleted = true;
+                    }
+                    else
+                    {
+                        if (debug)
+                            Debug.Log("Interactable Object missing! Waiting for Setup.");
+                    }
                     break;
                 case DestroyInteractions.Point:
                     /// WIP: Script-side setup postponed due to bug that I cannot fix at the moment.
@@ -300,7 +295,7 @@ namespace MUVRTK
 
                     destructionSetupCompleted = true;
                     break;
-                
+
                 case DestroyInteractions.Use:
                     if (interactable != null)
                     {
@@ -330,7 +325,7 @@ namespace MUVRTK
                 case DestroyInteractions.Collide:
                     SetupCollider();
 
-                    
+
 
                     destructionSetupCompleted = true;
                     break;
@@ -339,6 +334,139 @@ namespace MUVRTK
 
             }
         }
+
+        private void SetupInteractionTrigger()
+        {
+            switch (triggerInteraction)
+            {
+                case TriggerInteractions.Collide:
+                    SetupCollider();
+
+                    interactionSetupCompleted = true;
+                    break;
+
+                case TriggerInteractions.Destroy:
+                    //handled in DestroyObject-Method.
+                    interactionSetupCompleted = true;
+                    break;
+
+                case TriggerInteractions.Grab:
+                    if (interactable != null)
+                    {
+                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Grab, StartAction);
+
+                        interactionSetupCompleted = true;
+                    }
+                    else
+                    {
+                        if (debug)
+                            Debug.Log("Interactable Object missing! Waiting for Setup.");
+                    }
+                    break;
+
+                case TriggerInteractions.Point:
+                    if (interactable != null)
+                    {
+                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, StartAction);
+
+                        interactionSetupCompleted = true;
+                    }
+                    else
+                    {
+                        if (debug)
+                            Debug.Log("Interactable Object missing! Waiting for Setup.");
+                    }
+                    break;
+
+                case TriggerInteractions.Select:
+                    interactionSetupCompleted = true;
+                    break;
+
+                case TriggerInteractions.Spawn:
+                    if (playAudioClip)
+                    {
+                        if (audioSource == null)
+                        {
+                            SetupAudioSource();
+                        }
+                        else
+                        {
+                            interactionSetupCompleted = true;
+                            StartAction();
+                        }
+                    }
+                    if (triggerHapticPulse)
+                    {
+                        if(controllerScriptAliases.Length == 0)
+                        {
+                            SetupControllerScriptAliases();
+                        }
+                        else
+                        {
+                            interactionSetupCompleted = true;
+                            StartAction();
+                        }
+                    }
+
+                    break;
+
+                case TriggerInteractions.Touch:
+                    if (interactable != null)
+                    {
+                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, StartAction);
+
+                        interactionSetupCompleted = true;
+                    }
+                    else
+                    {
+                        if (debug)
+                            Debug.Log("Interactable Object missing! Waiting for Setup.");
+                    }
+                    break;
+
+                case TriggerInteractions.Use:
+                    if (interactable != null)
+                    {
+                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Use, StartAction);
+
+                        interactionSetupCompleted = true;
+                    }
+                    else
+                    {
+                        if (debug)
+                            Debug.Log("Interactable Object missing! Waiting for Setup.");
+                    }
+                    break;
+
+                case TriggerInteractions.None:
+                    interactionSetupCompleted = true;
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+
+        #endregion
+
+        #region Setup Basic Functionality
+
+        private void SetupControllerScriptAliases()
+        {
+            if(GameObject.FindGameObjectsWithTag("ScriptAlias") != null)
+            controllerScriptAliases = GameObject.FindGameObjectsWithTag("ScriptAlias");
+
+            else
+            {
+                Debug.Log(name + " SetControllerScriptAliases: No ControllerScriptAliases found! Did you forget to set the tag?");
+            }
+
+        }
+
+
+
+       
 
         private void SetupCollider()
         {
@@ -442,94 +570,7 @@ namespace MUVRTK
         }
        
 
-        private void SetupInteractionTrigger()
-        {
-            switch (triggerInteraction)
-            {
-                case TriggerInteractions.Collide:
-                    SetupCollider();
-
-                    interactionSetupCompleted = true;
-                    break;
-
-                case TriggerInteractions.Destroy:
-                    //handled in DestroyObject-Method.
-                    interactionSetupCompleted = true;
-                    break;
-
-                case TriggerInteractions.Grab:
-                    if (interactable != null)
-                    {
-                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Grab, StartAction);
-
-                        interactionSetupCompleted = true;
-                    }
-                    else
-                    {
-                        if (debug)
-                            Debug.Log("Interactable Object missing! Waiting for Setup.");
-                    }
-                    break;
-
-                case TriggerInteractions.Point:
-                    if (interactable != null)
-                    {
-                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, StartAction);
-
-                        interactionSetupCompleted = true;
-                    }
-                    else
-                    {
-                        if (debug)
-                            Debug.Log("Interactable Object missing! Waiting for Setup.");
-                    }
-                    break;
-
-                case TriggerInteractions.Select:
-                    interactionSetupCompleted = true;
-                    break;
-
-                case TriggerInteractions.Spawn:
-                    StartAction();
-                    break;
-
-                case TriggerInteractions.Touch:
-                    if (interactable != null)
-                    {
-                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, StartAction);
-
-                        interactionSetupCompleted = true;
-                    }
-                    else
-                    {
-                        if (debug)
-                            Debug.Log("Interactable Object missing! Waiting for Setup.");
-                    }
-                    break;
-
-                case TriggerInteractions.Use:
-                    if (interactable != null)
-                    {
-                        interactable.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Use, StartAction);
-
-                        interactionSetupCompleted = true;
-                    }
-                    else
-                    {
-                        if (debug)
-                            Debug.Log("Interactable Object missing! Waiting for Setup.");
-                    }
-                    break;
-
-                case TriggerInteractions.None:
-                    interactionSetupCompleted = true;
-                    break;
-
-                default:
-                    break;
-            }
-            
-        }
+       
 
         private void SetupBroadcastActions()
         {
@@ -584,17 +625,36 @@ namespace MUVRTK
             }
         }
 
-       
+        private void SetupAudioSource()
+        {
+            if(audioSource == null)
+            {
+                if(GetComponent<AudioSource>() != null)
+                {
+                    audioSource = GetComponent<AudioSource>();
+                }
+                else
+                {
+                    audioSource = gameObject.AddComponent<AudioSource>();
+
+                }
+            }
+        }
+
+
+
 
         protected void StartAction()
         {
             if (playAudioClip)
             {
-                if (audioClip.isReadyToPlay)
-                {
-                    audioSource.clip = audioClip;
-                    audioSource.Play();
-                }
+                    if (audioClip.isReadyToPlay)
+                    {
+                        audioSource.clip = audioClip;
+                        audioSource.Play();
+                    }
+                
+                
             }
 
             if (triggerHapticPulse)

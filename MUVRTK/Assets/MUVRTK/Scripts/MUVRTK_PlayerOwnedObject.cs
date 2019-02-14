@@ -135,6 +135,7 @@ namespace MUVRTK
                     {
                         interactableObject.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, StartAction);
                         triggerSetupCompleted = true;
+                        Debug.Log(name + " Touch Trigger Setup complete!");
                     }
                     else
                     {
@@ -146,6 +147,7 @@ namespace MUVRTK
                 case (TriggerInteractions.Collide):
                     SetupCollider();
                     triggerSetupCompleted = true;
+                    Debug.Log(name + "Collider Trigger Setup complete!");
                     break;
 
                 case (TriggerInteractions.Point):
@@ -156,6 +158,7 @@ namespace MUVRTK
                     {
                         interactableObject.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, StartAction);
                         triggerSetupCompleted = true;
+                        Debug.Log(name + "Pointer Trigger Setup complete!");
                     }
                     else
                     {
@@ -171,6 +174,7 @@ namespace MUVRTK
                     {
                         interactableObject.SubscribeToInteractionEvent(VRTK_InteractableObject.InteractionType.Touch, StartAction);
                         triggerSetupCompleted = true;
+                        Debug.Log(name + " Select Trigger Setup complete!");
                     }
                     else
                     {

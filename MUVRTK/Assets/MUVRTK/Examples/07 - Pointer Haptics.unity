@@ -611,7 +611,7 @@ PrefabInstance:
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: enableTeleport
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
