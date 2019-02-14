@@ -230,7 +230,7 @@ namespace MUVRTK
         }
 
 
-        private void SetupControllerScriptAliases()
+        protected void SetupControllerScriptAliases()
         {
             if (GameObject.FindGameObjectsWithTag("ScriptAlias") != null)
                 controllerScriptAliases = GameObject.FindGameObjectsWithTag("ScriptAlias");

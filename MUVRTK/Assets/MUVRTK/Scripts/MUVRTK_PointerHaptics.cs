@@ -12,17 +12,27 @@
     /// </summary>
     public class MUVRTK_PointerHaptics : MUVRTK_PlayerOwnedObject
     {
+        private bool controllerScriptAliasesSetup;
+
+        private void Update()
+        {
+            if (!controllerScriptAliasesSetup)
+            {
+                if (controllerScriptAliases.Length == 0)
+                {
+                    SetupControllerScriptAliases();
+                }
+                else
+                {
+                    controllerScriptAliasesSetup = true;
+                }
+            }
+        }
 
         #region PUN RPCs
 
 
-        [PunRPC]
-        void BroadcastHapticPulseOnViewID(int viewIdOfController, float vibrationStrength, float duration, float pulseInterval)
-        {
-            VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(PhotonView.Find(viewIdOfController).gameObject), vibrationStrength, duration, pulseInterval);
 
-            Debug.Log(name + " : RPC called on this ViewID:" + viewIdOfController);
-        }
 
         [PunRPC]
         void HapticPulseOnBothOwnedControllers(float vibrationStrength, float duration, float pulseInterval)
@@ -39,6 +49,8 @@
             }
             else
             {
+                SetupControllerScriptAliases();
+
                 Debug.Log(name + " : HapticPulseOnBothOwnedControllers-RPC: too few controllerScripAliases!");
             }
         }
