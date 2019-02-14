@@ -617,7 +617,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerAvatar
       value: 
-      objectReference: {fileID: 9134103080250105971, guid: e412f916107374a4785c2fc294dfea98,
+      objectReference: {fileID: 9134103080250105971, guid: cf6917793fc4eb64ea1ef41cc2637a22,
         type: 3}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
@@ -641,7 +641,7 @@ PrefabInstance:
         type: 3}
       propertyPath: controllerScriptAliases.Array.data[0]
       value: 
-      objectReference: {fileID: 1251795316485554009, guid: ba516ff52d4da2348a4c92ffc32b2083,
+      objectReference: {fileID: 8623963408292656802, guid: 4f582c9009f95da4e883d63d504fb30a,
         type: 3}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
@@ -664,6 +664,11 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 611316382}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: showControllersOverNetwork
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: m_LocalPosition.x
