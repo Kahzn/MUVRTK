@@ -145,10 +145,10 @@ GameObject:
   - component: {fileID: 9134103080250105977}
   - component: {fileID: 9134103080250105976}
   - component: {fileID: 9134103080250105981}
-  - component: {fileID: 6465165222794117827}
-  - component: {fileID: 2559018744195163789}
+  - component: {fileID: 5527385419461032337}
+  - component: {fileID: 1135706457885852998}
   m_Layer: 0
-  m_Name: '[MODEL] Player'
+  m_Name: '[MODEL] Test'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,7 +264,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6465165222794117827
+--- !u!114 &5527385419461032337
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,7 +297,7 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
---- !u!114 &2559018744195163789
+--- !u!114 &1135706457885852998
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -309,14 +309,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ba827fa50a17348b1fdd2327760196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   lifetimeInSeconds: -99
   points: 100
   health: 1
   destroyInteraction: 6
-  triggerInteraction: 1
-  playAudioClip: 0
-  audioClip: {fileID: 0}
+  triggerInteraction: 6
+  playAudioClip: 1
+  audioClip: {fileID: 8300000, guid: 318e91dbcb0a86b4799043c5c7d4780d, type: 3}
   triggerHapticPulse: 1
   duration: 1
   pulseInterval: 0.1
