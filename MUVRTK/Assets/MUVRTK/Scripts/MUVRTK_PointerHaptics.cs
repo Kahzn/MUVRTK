@@ -13,6 +13,7 @@
     public class MUVRTK_PointerHaptics : MUVRTK_PlayerOwnedObject
     {
         private bool controllerScriptAliasesSetup;
+        private bool audioSourceSetup;
 
         private void Update()
         {
@@ -27,11 +28,15 @@
                     controllerScriptAliasesSetup = true;
                 }
             }
+
+            if (!audioSourceSetup)
+            {
+                SetupAudioSource();
+                audioSourceSetup = true;
+            }
         }
 
         #region PUN RPCs
-
-
 
 
         [PunRPC]
@@ -52,6 +57,23 @@
                 SetupControllerScriptAliases();
 
                 Debug.Log(name + " : HapticPulseOnBothOwnedControllers-RPC: too few controllerScripAliases!");
+            }
+        }
+
+        [PunRPC]
+        void PlayAudioClip()
+        {
+            if (audioSource)
+            {
+                if (audioClip.isReadyToPlay)
+                {
+                    audioSource.clip = audioClip;
+                    audioSource.Play();
+                }
+            }
+            else
+            {
+                Debug.LogWarning(viewId + "missing AudioSource / AudioClip!");
             }
         }
 

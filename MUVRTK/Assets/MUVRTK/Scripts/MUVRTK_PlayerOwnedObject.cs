@@ -73,8 +73,9 @@ namespace MUVRTK
         protected float vibrationStrength = 10f;
 
         protected VRTK_InteractableObject interactableObject;
-        protected Collider[] collider;
         protected GameObject[] controllerScriptAliases;
+        protected AudioSource audioSource;
+        protected int viewId;
 
         #endregion
 
@@ -82,7 +83,7 @@ namespace MUVRTK
 
 
         private bool triggerSetupCompleted;
-        private int viewId;
+
 
 
         #endregion
@@ -129,11 +130,18 @@ namespace MUVRTK
                 //choosing the interaction option
                 if (triggerHapticPulse)
                 {
-                    Debug.Log(name + " : Startaction(2) was called. TriggerHapticPulse selected.");
+                    if(debug)
+                    Debug.Log(viewId + " : Startaction(2) was called. TriggerHapticPulse selected.");
 
                     //Calling networked method
                     Networked_HapticPulseOnBothOwnedControllers(photonView, vibrationStrength, duration, pulseInterval);
 
+                }
+                if (playAudioClip)
+                {
+                    if (debug)
+                        Debug.Log(viewId + " : Startaction(2) was called. PlayAudioClip selected.");
+                    Networked_PlayAudioClip(photonView);
                 }
                 else
                 {
@@ -141,11 +149,11 @@ namespace MUVRTK
                 }
 
                 if (debug)
-                    Debug.Log(photonView.ViewID + " (IF) Current touching object: " + e.interactingObject.name + " and its View ID: " + e.interactingObject.GetPhotonView().ViewID + ". Is it mine? " + e.interactingObject.GetPhotonView().IsMine);
+                    Debug.Log(viewId + " (IF) Current touching object: " + e.interactingObject.name + " and its View ID: " + e.interactingObject.GetPhotonView().ViewID + ". Is it mine? " + e.interactingObject.GetPhotonView().IsMine);
             }
             else{
                 if (debug)
-                    Debug.Log(photonView.ViewID + " (ELSE) Current touching object: " + e.interactingObject.name + " and its View ID: " + e.interactingObject.GetPhotonView().ViewID + ". Is it mine? " + e.interactingObject.GetPhotonView().IsMine);
+                    Debug.Log(viewId + " (ELSE) Current touching object: " + e.interactingObject.name + " and its View ID: " + e.interactingObject.GetPhotonView().ViewID + ". Is it mine? " + e.interactingObject.GetPhotonView().IsMine);
             }
             
         }
@@ -248,13 +256,36 @@ namespace MUVRTK
 
         }
 
+        protected void SetupAudioSource()
+        {
+            if (audioClip == null)
+            {
+                Debug.LogWarning(name + ": Play Audio Clip was selected, but no AudioClip was found.");
+            }
+
+            if (GetComponent<AudioSource>())
+            {
+                audioSource = GetComponent<AudioSource>();
+
+                if (debug)
+                    Debug.Log(name + " : AudioSource found and Set.");
+            }
+            else
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+
+                if (debug)
+                    Debug.Log(name + " : AudioSource not found. Added.");
+            }
+        }
+
 
         #endregion
 
         #region Network Methods
 
         /// <summary>
-        /// Calls RPC-Method on the child object. 
+        /// Calls RPC-Method on the child object. Child Object needs to have an implementation of [PunRPC] HapticPulseOnBothOwnedControllers!
         /// </summary>
         /// <param name="pv"></param>
         /// <param name="vibrationStrength"></param>
@@ -266,9 +297,16 @@ namespace MUVRTK
             Player player = photonView.Owner;
             pv.RPC("HapticPulseOnBothOwnedControllers", player, vibrationStrength, duration, pulseInterval);
 
+            if(debug)
             Debug.Log(name + " : Networked_TriggerHapticPulseOnPlayer(5) was called on this ViewID:" + photonView.ViewID);
         }
 
+        public void Networked_PlayAudioClip(PhotonView photonView)
+        {
+            Player player = photonView.Owner;
+            photonView.RPC("PlayAudioClip", player);
+
+        }
 
 
         #endregion
