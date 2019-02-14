@@ -256,6 +256,8 @@ namespace MUVRTK
 
         protected virtual void StartAction()
         {
+            Debug.Log(name + " StartAction was called on PhotonViewID: " + gameObject.GetPhotonView().ViewID);
+
             if (triggerHapticPulse)
             {
                 if (gameObject.GetPhotonView().IsMine)

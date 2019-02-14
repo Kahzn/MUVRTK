@@ -380,8 +380,9 @@ namespace MUVRTK
         {
             if (controllerInstance.transform.childCount > 0)
             {
-
+                if(debug)
                 Debug.Log(controllerInstance.name + " has this number of children: " + controllerInstance.transform.childCount);
+
                 GameObject originalModel = controllerInstance.transform.GetChild(0).gameObject;
                 originalModel.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = false;
             }
