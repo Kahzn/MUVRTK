@@ -261,9 +261,9 @@ namespace MUVRTK
         public void Networked_TriggerHapticPulseOnPlayer(PhotonView pv, int viewIDOfController, float vibrationStrength, float duration, float pulseInterval)
         {
             Player player = PhotonView.Find(viewIDOfController).Owner;
-            pv.RPC("BroadcastHapticPulseOnViewID", player, viewIDOfController, vibrationStrength, duration, pulseInterval);
+            pv.RPC("HapticPulseOnBothOwnedControllers", player, vibrationStrength, duration, pulseInterval);
 
-            Debug.Log(name + " : Networked_TriggerHapticPulseOnPlayer(5) was called.");
+            Debug.Log(name + " : Networked_TriggerHapticPulseOnPlayer(5) was called on this ViewID:" + viewIDOfController);
         }
 
 

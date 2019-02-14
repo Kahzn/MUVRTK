@@ -24,6 +24,24 @@
             Debug.Log(name + " : RPC called on this ViewID:" + viewIdOfController);
         }
 
+        [PunRPC]
+        void HapticPulseOnBothOwnedControllers(float vibrationStrength, float duration, float pulseInterval)
+        {
+            if (controllerScriptAliases.Length == 2)
+            {
+                int viewIdOfFirstController = controllerScriptAliases[0].GetPhotonView().ViewID;
+                int viewIdOfSecondController = controllerScriptAliases[1].GetPhotonView().ViewID;
+                VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(PhotonView.Find(viewIdOfFirstController).gameObject), vibrationStrength, duration, pulseInterval);
+                VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(PhotonView.Find(viewIdOfSecondController).gameObject), vibrationStrength, duration, pulseInterval);
+
+                Debug.Log(name + " : HapticPulseOnBothOwnedControllers-RPC worked as it should!");
+            }
+            else
+            {
+                Debug.Log(name + " : HapticPulseOnBothOwnedControllers-RPC: too few controllerScripAliases!");
+            }
+        }
+
         #endregion
 
     }
