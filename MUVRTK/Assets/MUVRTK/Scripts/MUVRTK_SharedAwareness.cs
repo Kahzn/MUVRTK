@@ -4,7 +4,12 @@
     using System.Collections.Generic;
     using UnityEngine;
     using Photon.Pun;
-
+    /// <summary>
+    /// This class describes the behaviour of a shared awareness object.
+    /// The object changes its color brightness when it is being looked at by a player closely.
+    /// This happens via a simple collision detection mechanism. For this to work, the player needs a Viewport-Collider tagged "view".
+    /// <para> Created by Katharina Ziolkowski, 2019-02-14</para>
+    /// </summary>
     public class MUVRTK_SharedAwareness : MUVRTK_SceneObject
     {
         private MeshRenderer renderer;

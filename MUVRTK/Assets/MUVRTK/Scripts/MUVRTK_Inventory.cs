@@ -8,6 +8,8 @@
     using VRTK;
     /// <summary>
     /// Simple inventory based on VRTK's PanelMenuSaucerGrid.
+    /// The object this script is on needs to have a InventoryPanelMenu-Object attached to it and alle references set accordingly.
+    /// When picked up (grabbed), this script toggles the display of the menu by pressing "up" on the Touchpad.
     /// <para> Created by Katharina Ziolkowski, 2019.02.04</para>
     /// </summary>
     public class MUVRTK_Inventory : MonoBehaviour

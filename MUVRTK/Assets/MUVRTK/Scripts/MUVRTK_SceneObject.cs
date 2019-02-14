@@ -27,7 +27,7 @@ namespace MUVRTK
         // "Spawn" and "Destroy" are Interactions that are triggered when the object is spawned or destroyed (this applies to the automatic self-destruct as well).
         protected enum TriggerInteractions { Touch, Point, Select, Use, Grab, Collide, Spawn, Destroy, None };
 
-        protected enum pointerRenderer { Straight, Bezier};
+        //protected enum pointerRenderer { Straight, Bezier};
 
         #endregion
 
@@ -64,9 +64,11 @@ namespace MUVRTK
         [SerializeField]
         protected TriggerInteractions triggerInteraction = TriggerInteractions.Spawn;
 
+        /**
         [Header("Pointer Rendering Options")]
         [SerializeField]
         protected pointerRenderer pointerRendering = pointerRenderer.Bezier;
+        **/
 
 
         [Header("Broadcast Interaction - Audio")]
@@ -114,7 +116,6 @@ namespace MUVRTK
         [SerializeField]
         protected MUVRTK_InteractObjectHighlighter interactObjectHighlighterComponent;
 
-        // TODO: UI Notification Option!
 
 
         #endregion
@@ -270,7 +271,7 @@ namespace MUVRTK
                     break;
                 case DestroyInteractions.Point:
                     /// WIP: Script-side setup postponed due to bug that I cannot fix at the moment.
-                    /// workaround: Add a Pointer Renderer Manually to your ScriptAliases and do the setup you need manually (interactwithObjects = true, etc.)
+                    /// workaround: Add a Pointer Renderer manually to your ScriptAliases and do the setup you need manually (interactwithObjects = true, etc.)
                     /// 
                     //Controller-side: Setup the pointer.
 
@@ -421,6 +422,7 @@ namespace MUVRTK
                     }
                     else
                     {
+                        /**
                         if(pointerRendering == pointerRenderer.Bezier)
                         {
                             pointerRenderers[i] = controllerScriptAliases[i].AddComponent<VRTK_BezierPointerRenderer>();
@@ -428,7 +430,7 @@ namespace MUVRTK
                         else
                         {
                             pointerRenderers[i] = controllerScriptAliases[i].AddComponent<VRTK_StraightPointerRenderer>();
-                        }
+                        }**/
                         
                     }
                 }
@@ -689,7 +691,7 @@ namespace MUVRTK
         {
             pv.RPC("BroadcastHapticPulseOnViewID", RpcTarget.All, viewIDOfController, vibrationStrength, duration, pulseInterval);
 
-            Debug.Log("MUVRTK_StaticControllerHaptics : Networked_TriggerHapticPulse(5) was called.");
+            Debug.Log(name + " : Networked_TriggerHapticPulse(5) was called.");
         }
 
 

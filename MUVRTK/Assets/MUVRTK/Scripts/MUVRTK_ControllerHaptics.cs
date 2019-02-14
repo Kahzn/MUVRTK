@@ -153,6 +153,7 @@
 
         #region Network Methods
 
+        //calls generalized RPC-method in here.
         public void Networked_TriggerHapticPulse()
         {
             this.photonView.RPC("BroadcastHapticPulse", rpcTarget);
@@ -161,6 +162,7 @@
                 Debug.Log(name + " : Networked_TriggerHapticPulse(0) was called.");
         }
 
+        // calls specialized RPC-method that has to be implemented ON THE CONTROLLER (SCRIPT ALIAS).
         public void Networked_TriggerHapticPulse(int viewIDOfController)
         {
             this.photonView.RPC("BroadcastHapticPulseOnViewID", rpcTarget, viewIDOfController, vibrationStrength, duration, pulseInterval);
@@ -169,6 +171,7 @@
                 Debug.Log(name + " : Networked_TriggerHapticPulse(1) was called.");
         }
 
+        // calls specialized RPC-method that has to be implemented ON THE CONTROLLER (SCRIPT ALIAS).
         public void Networked_TriggerHapticPulse(int viewIDOfController, float vibrationStrength, float duration, float pulseInterval)
         {
             this.photonView.RPC("BroadcastHapticPulseOnViewID", rpcTarget, viewIDOfController, vibrationStrength, duration, pulseInterval);
