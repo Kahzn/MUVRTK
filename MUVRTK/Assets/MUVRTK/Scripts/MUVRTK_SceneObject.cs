@@ -576,28 +576,14 @@ namespace MUVRTK
         {
             if (playAudioClip)
             {
-                if (audioClip == null)
-                {
-                    Debug.LogWarning(name + ": Play Audio Clip was selected, but no AudioClip was found.");
-                }
 
-                if (GetComponent<AudioSource>())
-                {
-                    audioSource = GetComponent<AudioSource>();
-
-                    if (debug)
-                        Debug.Log(name + " : AudioSource found and Set.");
-                }
-                else
-                {
-                    audioSource = gameObject.AddComponent<AudioSource>();
-
-                    if (debug)
-                        Debug.Log(name + " : AudioSource not found. Added.");
-                }
-
+                SetupAudioSource();
             }
 
+            if (triggerHapticPulse)
+            {
+                SetupControllerScriptAliases();
+            }
 
             if (highlightObject)
             {
@@ -619,25 +605,28 @@ namespace MUVRTK
                 }
             }
 
-            else
-            {
-                Debug.Log(name + " : No Action selected!");
-            }
         }
 
         private void SetupAudioSource()
         {
-            if(audioSource == null)
+            if (audioClip == null)
             {
-                if(GetComponent<AudioSource>() != null)
-                {
-                    audioSource = GetComponent<AudioSource>();
-                }
-                else
-                {
-                    audioSource = gameObject.AddComponent<AudioSource>();
+                Debug.LogWarning(name + ": Play Audio Clip was selected, but no AudioClip was found.");
+            }
 
-                }
+            if (GetComponent<AudioSource>())
+            {
+                audioSource = GetComponent<AudioSource>();
+
+                if (debug)
+                    Debug.Log(name + " : AudioSource found and Set.");
+            }
+            else
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+
+                if (debug)
+                    Debug.Log(name + " : AudioSource not found. Added.");
             }
         }
 
@@ -652,9 +641,7 @@ namespace MUVRTK
                     {
                         audioSource.clip = audioClip;
                         audioSource.Play();
-                    }
-                
-                
+                    }  
             }
 
             if (triggerHapticPulse)

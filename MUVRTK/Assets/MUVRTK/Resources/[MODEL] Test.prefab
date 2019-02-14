@@ -55,7 +55,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4622942390585573535}
   viewIdField: 0
-  InstantiationId: 18
+  InstantiationId: 7
   isRuntimeInstantiated: 0
 --- !u!114 &4622942390585573535
 MonoBehaviour:
@@ -234,7 +234,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 9134103080250105976}
   viewIdField: 0
-  InstantiationId: 10
+  InstantiationId: 5
   isRuntimeInstantiated: 0
 --- !u!114 &9134103080250105976
 MonoBehaviour:
@@ -315,7 +315,7 @@ MonoBehaviour:
   health: 1
   destroyInteraction: 6
   triggerInteraction: 1
-  playAudioClip: 1
+  playAudioClip: 0
   audioClip: {fileID: 8300000, guid: 318e91dbcb0a86b4799043c5c7d4780d, type: 3}
   triggerHapticPulse: 1
   duration: 1

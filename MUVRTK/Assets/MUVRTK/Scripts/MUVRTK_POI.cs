@@ -21,6 +21,7 @@
         [PunRPC]
         void BroadcastHapticPulseOnViewID(int viewIdOfController, float vibrationStrength, float duration, float pulseInterval)
         {
+            Debug.Log("Broadcast Haptic Pulse on this Controller: " + viewIdOfController);
             VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(PhotonView.Find(viewIdOfController).gameObject), vibrationStrength, duration, pulseInterval);
         }
 
