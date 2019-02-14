@@ -54,7 +54,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 4622942390585573535}
-  viewIdField: 7
+  viewIdField: 0
   InstantiationId: 7
   isRuntimeInstantiated: 0
 --- !u!114 &4622942390585573535
@@ -284,8 +284,6 @@ MonoBehaviour:
   duration: 1
   pulseInterval: 0.1
   vibrationStrength: 10
-  highlightObject: 0
-  interactObjectHighlighterComponent: {fileID: 0}
 --- !u!114 &6271115699533533751
 MonoBehaviour:
   m_ObjectHideFlags: 0

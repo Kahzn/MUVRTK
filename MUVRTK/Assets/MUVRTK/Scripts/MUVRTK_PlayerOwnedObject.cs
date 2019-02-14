@@ -131,10 +131,13 @@ namespace MUVRTK
                 {
                     Debug.Log("Haptic Pulse not selected!");
                 }
+
+                if (debug)
+                    Debug.Log(name + " Current touching object: " + e.interactingObject.name + " and its View ID: " + e.interactingObject.GetPhotonView().ViewID + ". Is it mine?" + e.interactingObject.GetPhotonView().IsMine);
             }
             else{
                 if (debug)
-                    Debug.Log("Touched by own PlayerObject!");
+                    Debug.Log(name + " Current touching object: " + e.interactingObject.name + " and its View ID: " + e.interactingObject.GetPhotonView().ViewID + ". Is it mine?" + e.interactingObject.GetPhotonView().IsMine);
             }
             
         }
