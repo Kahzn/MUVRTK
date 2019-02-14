@@ -133,11 +133,11 @@ namespace MUVRTK
                 }
 
                 if (debug)
-                    Debug.Log(name + " Current touching object: " + e.interactingObject.name + " and its View ID: " + e.interactingObject.GetPhotonView().ViewID + ". Is it mine?" + e.interactingObject.GetPhotonView().IsMine);
+                    Debug.Log(photonView.ViewID + " (IF) Current touching object: " + e.interactingObject.name + " and its View ID: " + e.interactingObject.GetPhotonView().ViewID + ". Is it mine? " + e.interactingObject.GetPhotonView().IsMine);
             }
             else{
                 if (debug)
-                    Debug.Log(name + " Current touching object: " + e.interactingObject.name + " and its View ID: " + e.interactingObject.GetPhotonView().ViewID + ". Is it mine?" + e.interactingObject.GetPhotonView().IsMine);
+                    Debug.Log(photonView.ViewID + " (ELSE) Current touching object: " + e.interactingObject.name + " and its View ID: " + e.interactingObject.GetPhotonView().ViewID + ". Is it mine? " + e.interactingObject.GetPhotonView().IsMine);
             }
             
         }
