@@ -82,6 +82,7 @@ namespace MUVRTK
 
 
         private bool triggerSetupCompleted;
+        private int viewId;
 
 
         #endregion
@@ -95,6 +96,9 @@ namespace MUVRTK
                 SetupTriggers();
 
             }
+            
+                viewId = gameObject.GetPhotonView().ViewID;
+            
 
         }
 
@@ -105,6 +109,8 @@ namespace MUVRTK
                 SetupTriggers();
 
             }
+
+            viewId = gameObject.GetPhotonView().ViewID;
         }
 
         #endregion
@@ -115,8 +121,10 @@ namespace MUVRTK
 
         protected virtual void StartAction(object o, InteractableObjectEventArgs e)
         {
+            PhotonView otherObject = e.interactingObject.GetPhotonView();
+
             //making sure that objects that are owned by the Player (like e.g. the Controller Models) don't count as Touching.
-            if (!e.interactingObject.GetPhotonView().IsMine)
+            if (!otherObject.Owner.Equals(photonView.Owner))
             {
                 //choosing the interaction option
                 if (triggerHapticPulse)
