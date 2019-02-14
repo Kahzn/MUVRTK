@@ -111,37 +111,32 @@ namespace MUVRTK
 
         #region StartAction Methods
 
-        protected virtual void StartAction()
-        {
-            Debug.Log(name + " StartAction was called on PhotonViewID: " + gameObject.GetPhotonView().ViewID);
-
-            if (triggerHapticPulse)
-            {
-                Debug.Log(name + " : Startaction(0) was called. TriggerHapticPulse selected.");
-
-                Networked_TriggerHapticPulseOnPlayer(photonView, vibrationStrength, duration, pulseInterval);
-                    
-            }
-            else
-            {
-                Debug.Log("Haptic Pulse not selected!");
-            }
-        }
+      
 
         protected virtual void StartAction(object o, InteractableObjectEventArgs e)
         {
-            if (triggerHapticPulse)
+            //making sure that objects that are owned by the Player (like e.g. the Controller Models) don't count as Touching.
+            if (!e.interactingObject.GetPhotonView().IsMine)
             {
-                Debug.Log(name + " : Startaction(2) was called. TriggerHapticPulse selected.");
-               
-                    Networked_TriggerHapticPulseOnPlayer(photonView, vibrationStrength, duration, pulseInterval);
-                
+                //choosing the interaction option
+                if (triggerHapticPulse)
+                {
+                    Debug.Log(name + " : Startaction(2) was called. TriggerHapticPulse selected.");
 
+                    //Calling networked method
+                    Networked_HapticPulseOnBothOwnedControllers(photonView, vibrationStrength, duration, pulseInterval);
+
+                }
+                else
+                {
+                    Debug.Log("Haptic Pulse not selected!");
+                }
             }
-            else
             {
-                Debug.Log("Haptic Pulse not selected!");
+                if (debug)
+                    Debug.Log("Touched by own PlayerObject!");
             }
+            
         }
 
         #endregion
@@ -255,7 +250,7 @@ namespace MUVRTK
         /// <param name="duration"></param>
         /// <param name="pulseInterval"></param>
 
-        public void Networked_TriggerHapticPulseOnPlayer(PhotonView pv, float vibrationStrength, float duration, float pulseInterval)
+        public void Networked_HapticPulseOnBothOwnedControllers(PhotonView pv, float vibrationStrength, float duration, float pulseInterval)
         {
             Player player = photonView.Owner;
             pv.RPC("HapticPulseOnBothOwnedControllers", player, vibrationStrength, duration, pulseInterval);
