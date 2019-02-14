@@ -76,6 +76,7 @@ namespace MUVRTK
         protected GameObject[] controllerScriptAliases;
         protected AudioSource audioSource;
         protected int viewId;
+        protected bool triggerSenderAndReceiver;
 
         #endregion
 
@@ -135,6 +136,12 @@ namespace MUVRTK
 
                     //Calling networked method
                     Networked_HapticPulseOnBothOwnedControllers(photonView, vibrationStrength, duration, pulseInterval);
+
+                    if (triggerSenderAndReceiver)
+                    {
+                        PhotonView pv = e.interactingObject.GetPhotonView();
+                        Networked_HapticPulseOnBothOwnedControllers(pv, vibrationStrength, duration, pulseInterval);
+                    }
 
                 }
                 if (playAudioClip)
@@ -294,13 +301,18 @@ namespace MUVRTK
 
         public void Networked_HapticPulseOnBothOwnedControllers(PhotonView pv, float vibrationStrength, float duration, float pulseInterval)
         {
-            Player player = photonView.Owner;
+            Player player = pv.Owner;
             pv.RPC("HapticPulseOnBothOwnedControllers", player, vibrationStrength, duration, pulseInterval);
 
             if(debug)
             Debug.Log(name + " : Networked_TriggerHapticPulseOnPlayer(5) was called on this ViewID:" + photonView.ViewID);
         }
 
+
+        /// <summary>
+        ///  Calls RPC-Method on the child object. Child Object needs to have an implementation of [PunRPC] PlayAudioClip.
+        /// </summary>
+        /// <param name="photonView"></param>
         public void Networked_PlayAudioClip(PhotonView photonView)
         {
             Player player = photonView.Owner;

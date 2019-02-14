@@ -64,7 +64,9 @@
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_GameManager.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_GameManager_base.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_Instantiate.cs" />
+    <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_InteractHaptics.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_InteractObjectHighlighter.cs" />
+    <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_interactTriggerBothSides.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_Inventory.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_Launcher.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_LobbyViewer.cs" />
@@ -72,7 +74,6 @@
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_PlayerNameInputField.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_PlayerOwnedObject.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_POI.cs" />
-    <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_PointerHaptics.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_RoomNameInputField.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SceneObject.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SetViewIDAtRuntime.cs" />

@@ -51,4 +51,6 @@ MonoBehaviour:
   - UnHighlightObject_RPC
   - SetSpeechBubbleText
   - ChangeColor
+  - HapticPulseOnBothOwnedControllers
+  - PlayAudioClip
   DisableAutoOpenWizard: 1
