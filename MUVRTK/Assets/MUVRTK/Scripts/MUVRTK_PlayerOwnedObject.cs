@@ -118,10 +118,9 @@ namespace MUVRTK
             if (triggerHapticPulse)
             {
                 Debug.Log(name + " : Startaction(0) was called. TriggerHapticPulse selected.");
-                foreach (GameObject go in controllerScriptAliases)
-                    {
-                        Networked_TriggerHapticPulseOnPlayer(photonView, go.GetPhotonView().ViewID, vibrationStrength, duration, pulseInterval);
-                    }
+
+                Networked_TriggerHapticPulseOnPlayer(photonView, vibrationStrength, duration, pulseInterval);
+                    
             }
             else
             {
@@ -134,10 +133,9 @@ namespace MUVRTK
             if (triggerHapticPulse)
             {
                 Debug.Log(name + " : Startaction(2) was called. TriggerHapticPulse selected.");
-                foreach (GameObject go in controllerScriptAliases)
-                {
-                    Networked_TriggerHapticPulseOnPlayer(photonView, go.GetPhotonView().ViewID, vibrationStrength, duration, pulseInterval);
-                }
+               
+                    Networked_TriggerHapticPulseOnPlayer(photonView, vibrationStrength, duration, pulseInterval);
+                
 
             }
             else
@@ -253,17 +251,16 @@ namespace MUVRTK
         /// Calls RPC-Method on the child object. 
         /// </summary>
         /// <param name="pv"></param>
-        /// <param name="viewIDOfController"></param>
         /// <param name="vibrationStrength"></param>
         /// <param name="duration"></param>
         /// <param name="pulseInterval"></param>
 
-        public void Networked_TriggerHapticPulseOnPlayer(PhotonView pv, int viewIDOfController, float vibrationStrength, float duration, float pulseInterval)
+        public void Networked_TriggerHapticPulseOnPlayer(PhotonView pv, float vibrationStrength, float duration, float pulseInterval)
         {
-            Player player = PhotonView.Find(viewIDOfController).Owner;
+            Player player = photonView.Owner;
             pv.RPC("HapticPulseOnBothOwnedControllers", player, vibrationStrength, duration, pulseInterval);
 
-            Debug.Log(name + " : Networked_TriggerHapticPulseOnPlayer(5) was called on this ViewID:" + viewIDOfController);
+            Debug.Log(name + " : Networked_TriggerHapticPulseOnPlayer(5) was called on this ViewID:" + photonView.ViewID);
         }
 
 

@@ -27,14 +27,15 @@
         [PunRPC]
         void HapticPulseOnBothOwnedControllers(float vibrationStrength, float duration, float pulseInterval)
         {
-            if (controllerScriptAliases.Length == 2)
+            if (controllerScriptAliases.Length > 0)
             {
-                int viewIdOfFirstController = controllerScriptAliases[0].GetPhotonView().ViewID;
-                int viewIdOfSecondController = controllerScriptAliases[1].GetPhotonView().ViewID;
-                VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(PhotonView.Find(viewIdOfFirstController).gameObject), vibrationStrength, duration, pulseInterval);
-                VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(PhotonView.Find(viewIdOfSecondController).gameObject), vibrationStrength, duration, pulseInterval);
+                foreach(GameObject go in controllerScriptAliases)
+                {
+                    VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(PhotonView.Find(go.GetPhotonView().ViewID).gameObject), vibrationStrength, duration, pulseInterval);
+                    Debug.Log(name + " : HapticPulseOnBothOwnedControllers-RPC worked as it should. Haptic Pulse Triggered on ViewID:" + go.GetPhotonView().ViewID);
+                }
 
-                Debug.Log(name + " : HapticPulseOnBothOwnedControllers-RPC worked as it should!");
+                
             }
             else
             {
