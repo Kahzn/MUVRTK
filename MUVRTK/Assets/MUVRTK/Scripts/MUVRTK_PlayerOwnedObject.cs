@@ -132,7 +132,7 @@ namespace MUVRTK
                     Debug.Log("Haptic Pulse not selected!");
                 }
             }
-            {
+            else{
                 if (debug)
                     Debug.Log("Touched by own PlayerObject!");
             }
