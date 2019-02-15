@@ -23,6 +23,8 @@ namespace MUVRTK
 
         [SerializeField] private bool debug;
         
+        [SerializeField] private bool testOffline;
+        
         [Header("VR Manager Section")]
         
         [Tooltip("The pure VR-Manager-Object without the Player Models. This needs to be instantiated locally because it is a singleton instance.")]
@@ -107,7 +109,7 @@ namespace MUVRTK
             }
 
             //If you want to test offline, call Instantiate here. Else it will be called by the GameManager in the OnJoinedRoom-Method.
-            if (!PhotonNetwork.IsConnected)
+            if (testOffline)
             {
                 Instantiate_GameObjects();
             }

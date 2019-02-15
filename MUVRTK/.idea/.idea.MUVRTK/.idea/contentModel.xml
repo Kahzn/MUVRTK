@@ -10,6 +10,7 @@
         <e p="MUVRTK" t="Include">
           <e p="Readme.txt" t="Include" />
           <e p="Scripts" t="Include">
+            <e p="MUVRTK_BackToLobby.cs" t="Include" />
             <e p="MUVRTK_ControllerHaptics.cs" t="Include" />
             <e p="MUVRTK_GameManager.cs" t="Include" />
             <e p="MUVRTK_GameManager_base.cs" t="Include" />
@@ -26,6 +27,7 @@
             <e p="MUVRTK_POI.cs" t="Include" />
             <e p="MUVRTK_RoomNameInputField.cs" t="Include" />
             <e p="MUVRTK_SceneObject.cs" t="Include" />
+            <e p="MUVRTK_SceneSwitcher.cs" t="Include" />
             <e p="MUVRTK_SetViewIDAtRuntime.cs" t="Include" />
             <e p="MUVRTK_SharedAwareness.cs" t="Include" />
             <e p="MUVRTK_SimpleSpawner.cs" t="Include" />

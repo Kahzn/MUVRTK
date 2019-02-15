@@ -15,6 +15,8 @@ namespace MUVRTK
 
         public bool debug;
 
+        public string sceneName;
+
         #endregion
 
 
@@ -137,7 +139,7 @@ namespace MUVRTK
 
             // #Critical
             // Load the Room Level.
-            PhotonNetwork.LoadLevel("02 - Common Room");
+            PhotonNetwork.LoadLevel(sceneName);
 
             if(debug)
             Debug.Log("MUVRTK_Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
