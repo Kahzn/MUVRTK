@@ -58,7 +58,7 @@ namespace MUVRTK
                 }
             }
         }
-        
+       /** 
         private void Start()
         {
             if (!PhotonNetwork.IsConnected)
@@ -81,7 +81,7 @@ namespace MUVRTK
                         Debug.Log(name + " : No Instantiator found!");
                 }
             }
-        }
+        }**/
         
         #endregion
         
