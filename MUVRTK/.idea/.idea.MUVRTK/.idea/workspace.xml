@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a076696e-6859-467f-963a-9cb2af34b682" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] Backside Indicator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] Backside Indicator.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs" afterDir="false" />
-    </list>
+    <list default="true" id="a076696e-6859-467f-963a-9cb2af34b682" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -511,12 +508,12 @@
       <workItem from="1547743287139" duration="2452000" />
       <workItem from="1548242242857" duration="15661000" />
       <workItem from="1548867578384" duration="1342000" />
-      <workItem from="1550238731138" duration="18592000" />
+      <workItem from="1550238731138" duration="19192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47904000" />
+    <option name="totallyTimeSpent" value="48504000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

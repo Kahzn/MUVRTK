@@ -102,7 +102,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 505794638935597960}
-  viewIdField: 2
+  viewIdField: 0
   InstantiationId: 2
   isRuntimeInstantiated: 0
 --- !u!114 &505794638935597960
@@ -213,8 +213,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.04235658, y: 0.0227441, z: 0.018056288}
-  m_Center: {x: 0.000088554625, y: 0.0000000019868218, z: 0.01952627}
+  m_Size: {x: 0.04235658, y: 0.0227441, z: 0.016458878}
+  m_Center: {x: 0.000088554625, y: 0.0000000019868216, z: 0.018727556}
 --- !u!65 &1427889172140134140
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -226,8 +226,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.009874306, y: 0.0227441, z: 0.010896226}
-  m_Center: {x: 0.016329765, y: 0.0000000019868218, z: 0.03445762}
+  m_Size: {x: 0.00825451, y: 0.0227441, z: 0.012284625}
+  m_Center: {x: 0.017139683, y: 0.0000000019868218, z: 0.033763383}
 --- !u!65 &2728755595359366239
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -239,5 +239,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.009486535, y: 0.0227441, z: 0.010896226}
-  m_Center: {x: -0.016171908, y: 0.0000000019868216, z: 0.034457598}
+  m_Size: {x: 0.0078667365, y: 0.0227441, z: 0.012400322}
+  m_Center: {x: -0.016981825, y: 0.0000000019868216, z: 0.033705506}
