@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -19,6 +20,8 @@ namespace MUVRTK
 
         [SerializeField] 
         private MUVRTK_Instantiate instantiator;
+
+        private bool instantiatorCalled;
         
         #endregion
         
@@ -31,6 +34,30 @@ namespace MUVRTK
             // this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
             PhotonNetwork.AutomaticallySyncScene = true;
         }
+
+        private void OnEnable()
+        {
+            if (!PhotonNetwork.IsConnected)
+            {
+                // #Critical, we must first and foremost connect to Photon Online Server.
+                PhotonNetwork.GameVersion = gameVersion;
+                PhotonNetwork.ConnectUsingSettings();
+            }
+            else
+            {
+                if (instantiator && !instantiatorCalled)
+                {
+                    instantiator.Instantiate_GameObjects();
+                    instantiatorCalled = true;
+                }
+                    
+                else
+                {
+                    if (debug)
+                        Debug.Log(name + " : No Instantiator found!");
+                }
+            }
+        }
         
         private void Start()
         {
@@ -42,8 +69,12 @@ namespace MUVRTK
             }
             else
             {
-                if(instantiator)
+                if (instantiator && !instantiatorCalled)
+                {
                     instantiator.Instantiate_GameObjects();
+                    instantiatorCalled = true;
+                }
+                    
                 else
                 {
                     if (debug)
@@ -65,8 +96,11 @@ namespace MUVRTK
         {
             if (debug)
                 Debug.Log(name + ": OnJoinedRoom() called by PUN. Now this client is in the Room.");
-            if(instantiator)
-                instantiator.Instantiate_GameObjects();
+                if (instantiator && !instantiatorCalled)
+                {
+                    instantiator.Instantiate_GameObjects();
+                    instantiatorCalled = true;
+                }
             else
             {
                 if (debug)
