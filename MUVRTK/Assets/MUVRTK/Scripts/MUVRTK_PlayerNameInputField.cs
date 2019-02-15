@@ -1,6 +1,4 @@
 ﻿
-
-
 namespace MUVRTK
 {
     using System.Collections;
