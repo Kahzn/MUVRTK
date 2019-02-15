@@ -116,8 +116,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 7638348834199150956}
-  viewIdField: 0
-  InstantiationId: 1
+  viewIdField: 7
+  InstantiationId: 7
   isRuntimeInstantiated: 0
 --- !u!114 &7638348834199150956
 MonoBehaviour:
@@ -154,7 +154,7 @@ MonoBehaviour:
   triggerInteraction: 6
   playAudioClip: 1
   audioClip: {fileID: 8300000, guid: 318e91dbcb0a86b4799043c5c7d4780d, type: 3}
-  triggerHapticPulse: 0
+  triggerHapticPulse: 1
   duration: 1
   pulseInterval: 0.1
   vibrationStrength: 10

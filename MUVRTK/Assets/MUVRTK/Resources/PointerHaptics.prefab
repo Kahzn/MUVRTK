@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5905369102832125037
+--- !u!1 &1736458079944321140
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,80 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7400165798551184795}
+  - component: {fileID: 4976999869699670763}
+  - component: {fileID: 8200500594139640338}
+  - component: {fileID: 6165615975611769171}
+  - component: {fileID: 5358108954389792798}
+  - component: {fileID: 505794638935597960}
+  - component: {fileID: 8430875124236263946}
+  - component: {fileID: 8700573425104514774}
+  - component: {fileID: 5586103398245595367}
   m_Layer: 0
-  m_Name: '[MODEL] High Five'
+  m_Name: PointerHaptics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7400165798551184795
+--- !u!4 &4976999869699670763
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5905369102832125037}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4353993652758731651}
+  m_GameObject: {fileID: 1736458079944321140}
+  m_LocalRotation: {x: -0.7071068, y: -0.000000015454312, z: -0.000000015454312, w: 0.7071068}
+  m_LocalPosition: {x: 4.420095, y: 0.99999994, z: 1.4856365}
+  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8397352498912920139
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4353993652758731651}
-  - component: {fileID: 2114266286626687943}
-  - component: {fileID: 123113484284858873}
-  - component: {fileID: 3658081444959411796}
-  - component: {fileID: 969447118807200578}
-  - component: {fileID: 6901246286088748500}
-  - component: {fileID: 5623669227640064836}
-  m_Layer: 0
-  m_Name: body_group1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4353993652758731651
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8397352498912920139}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7400165798551184795}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!33 &2114266286626687943
+--- !u!33 &8200500594139640338
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8397352498912920139}
-  m_Mesh: {fileID: 4300000, guid: 254411583d7787c409ec0ab68acc932f, type: 3}
---- !u!23 &123113484284858873
+  m_GameObject: {fileID: 1736458079944321140}
+  m_Mesh: {fileID: 4300000, guid: 328acf59f3048124ca8e4470985a207b, type: 3}
+--- !u!23 &6165615975611769171
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8397352498912920139}
+  m_GameObject: {fileID: 1736458079944321140}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -92,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 80975c253d525814fab69391f0f99153, type: 2}
+  - {fileID: 2100000, guid: 328acf59f3048124ca8e4470985a207b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,13 +82,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3658081444959411796
+--- !u!114 &5358108954389792798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8397352498912920139}
+  m_GameObject: {fileID: 1736458079944321140}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
@@ -130,17 +100,17 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 969447118807200578}
+  - {fileID: 505794638935597960}
   viewIdField: 0
-  InstantiationId: 7
+  InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &969447118807200578
+--- !u!114 &505794638935597960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8397352498912920139}
+  m_GameObject: {fileID: 1736458079944321140}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
@@ -149,33 +119,26 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
---- !u!114 &6901246286088748500
-MonoBehaviour:
+--- !u!135 &8430875124236263946
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8397352498912920139}
+  m_GameObject: {fileID: 1736458079944321140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 229330f3073aa834aa3aae69598c64bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 1
-  triggerInteraction: 0
-  playAudioClip: 1
-  audioClip: {fileID: 8300000, guid: 318e91dbcb0a86b4799043c5c7d4780d, type: 3}
-  triggerHapticPulse: 1
-  duration: 1
-  pulseInterval: 0.1
-  vibrationStrength: 10
---- !u!114 &5623669227640064836
+  serializedVersion: 2
+  m_Radius: 0.010879927
+  m_Center: {x: 0.0000000060535967, y: -4.3013392e-23, z: 0.0008799273}
+--- !u!114 &8700573425104514774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8397352498912920139}
+  m_GameObject: {fileID: 1736458079944321140}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
@@ -202,3 +165,23 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
+--- !u!114 &5586103398245595367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736458079944321140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64fdcab7bebe8864c8ad52c752b28890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  triggerInteraction: 1
+  playAudioClip: 1
+  audioClip: {fileID: 8300000, guid: 318e91dbcb0a86b4799043c5c7d4780d, type: 3}
+  triggerHapticPulse: 1
+  duration: 1
+  pulseInterval: 0.1
+  vibrationStrength: 10

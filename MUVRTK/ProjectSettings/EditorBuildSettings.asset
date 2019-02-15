@@ -11,4 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MUVRTK/Examples/02 - Common Room.unity
     guid: 0d791042ee290c04d85f23f77f8b1971
+  - enabled: 1
+    path: Assets/MUVRTK/Examples/03 - Interact Highlighter.unity
+    guid: 0a1a8cfa789341e44bed46b059dd4dc5
+  - enabled: 1
+    path: Assets/MUVRTK/Examples/04 - POIs.unity
+    guid: 4cbfeca99adfe1a449b5656f0d8377c9
+  - enabled: 1
+    path: Assets/MUVRTK/Examples/05 - Speech Bubbles.unity
+    guid: 82cbe13167cfb4e499ada82b0f7fe2fe
+  - enabled: 1
+    path: Assets/MUVRTK/Examples/06 - SharedAwareness.unity
+    guid: 3c790407a6db0df4497734bd24777b92
+  - enabled: 1
+    path: Assets/MUVRTK/Examples/07 - Pointer Haptics.unity
+    guid: 97233aafa8934fa45a831f4d74ac7877
+  - enabled: 1
+    path: Assets/MUVRTK/Examples/08 - High Five.unity
+    guid: 9dcdd9139b0979f48a19582d9d437d2c
   m_configObjects: {}
