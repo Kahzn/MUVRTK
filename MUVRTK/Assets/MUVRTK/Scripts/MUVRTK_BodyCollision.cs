@@ -42,8 +42,12 @@ namespace MUVRTK
         
         private void OnCollisionEnter(Collision other)
         {
-            Player otherPlayer = other.gameObject.GetPhotonView().Owner;
-            pv.RPC("PlayAudioClip", otherPlayer);
+            if (other.gameObject.tag == "ScriptAlias")
+            {
+                Player otherPlayer = other.gameObject.GetPhotonView().Owner;
+                pv.RPC("PlayAudioClip", otherPlayer);
+            }
+            
         }
         
         #region PUN RPCs

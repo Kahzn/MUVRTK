@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a076696e-6859-467f-963a-9cb2af34b682" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Examples/08 - High Five.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Examples/08 - High Five.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] High Five.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] High Five.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,12 +23,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="11714" />
+          <entry key="cs" value="11765" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="11714" />
+          <entry key="C#" value="11765" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -178,23 +174,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="35" column="73" selection-start-line="35" selection-start-column="73" selection-end-line="35" selection-end-column="73" />
+            <state relative-caret-position="416">
+              <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
               <folding>
-                <marker date="1550259934813" expanded="true" signature="18:1855" ph="{...}" />
-                <marker date="1550259934813" expanded="true" signature="36:181" ph="..." />
-                <marker date="1550259934813" expanded="true" signature="282:1853" ph="{...}" />
-                <marker date="1550259934813" expanded="true" signature="503:909" ph="{...}" />
-                <marker date="1550259934813" expanded="true" signature="583:899" ph="{...}" />
-                <marker date="1550259934813" expanded="true" signature="654:753" ph="{...}" />
-                <marker date="1550259934813" expanded="true" signature="774:884" ph="{...}" />
-                <marker date="1550259934813" expanded="true" signature="974:1117" ph="{...}" />
-                <marker date="1550259934813" expanded="true" signature="1135:1847" ph="PUN RPCs" />
-                <marker date="1550259934813" expanded="true" signature="1161:1282" ph="/// Implementation of &quot;PlayAudioClip&quot;. Necessary for all PlayerOwnedObjects! ... " />
-                <marker date="1550259934813" expanded="true" signature="1328:1827" ph="{...}" />
-                <marker date="1550259934813" expanded="true" signature="1367:1690" ph="{...}" />
-                <marker date="1550259934813" expanded="true" signature="1426:1676" ph="{...}" />
-                <marker date="1550259934813" expanded="true" signature="1707:1817" ph="{...}" />
+                <marker date="1550260783462" expanded="true" signature="18:1959" ph="{...}" />
+                <marker date="1550260783462" expanded="true" signature="36:181" ph="..." />
+                <marker date="1550260783462" expanded="true" signature="282:1957" ph="{...}" />
+                <marker date="1550260783462" expanded="true" signature="503:909" ph="{...}" />
+                <marker date="1550260783462" expanded="true" signature="583:899" ph="{...}" />
+                <marker date="1550260783462" expanded="true" signature="654:753" ph="{...}" />
+                <marker date="1550260783462" expanded="true" signature="774:884" ph="{...}" />
+                <marker date="1550260783462" expanded="true" signature="974:1221" ph="{...}" />
+                <marker date="1550260783462" expanded="true" signature="1039:1198" ph="{...}" />
+                <marker date="1550260783462" expanded="true" signature="1239:1951" ph="PUN RPCs" />
+                <marker date="1550260783462" expanded="true" signature="1265:1386" ph="/// Implementation of &quot;PlayAudioClip&quot;. Necessary for all PlayerOwnedObjects! ... " />
+                <marker date="1550260783462" expanded="true" signature="1432:1931" ph="{...}" />
+                <marker date="1550260783462" expanded="true" signature="1471:1794" ph="{...}" />
+                <marker date="1550260783462" expanded="true" signature="1530:1780" ph="{...}" />
+                <marker date="1550260783462" expanded="true" signature="1811:1921" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -544,12 +541,12 @@
       <workItem from="1547743287139" duration="2452000" />
       <workItem from="1548242242857" duration="15661000" />
       <workItem from="1548867578384" duration="1342000" />
-      <workItem from="1550238731138" duration="14600000" />
+      <workItem from="1550238731138" duration="15251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43912000" />
+    <option name="totallyTimeSpent" value="44563000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1293,23 +1290,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="35" column="73" selection-start-line="35" selection-start-column="73" selection-end-line="35" selection-end-column="73" />
+        <state relative-caret-position="416">
+          <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
           <folding>
-            <marker date="1550259934813" expanded="true" signature="18:1855" ph="{...}" />
-            <marker date="1550259934813" expanded="true" signature="36:181" ph="..." />
-            <marker date="1550259934813" expanded="true" signature="282:1853" ph="{...}" />
-            <marker date="1550259934813" expanded="true" signature="503:909" ph="{...}" />
-            <marker date="1550259934813" expanded="true" signature="583:899" ph="{...}" />
-            <marker date="1550259934813" expanded="true" signature="654:753" ph="{...}" />
-            <marker date="1550259934813" expanded="true" signature="774:884" ph="{...}" />
-            <marker date="1550259934813" expanded="true" signature="974:1117" ph="{...}" />
-            <marker date="1550259934813" expanded="true" signature="1135:1847" ph="PUN RPCs" />
-            <marker date="1550259934813" expanded="true" signature="1161:1282" ph="/// Implementation of &quot;PlayAudioClip&quot;. Necessary for all PlayerOwnedObjects! ... " />
-            <marker date="1550259934813" expanded="true" signature="1328:1827" ph="{...}" />
-            <marker date="1550259934813" expanded="true" signature="1367:1690" ph="{...}" />
-            <marker date="1550259934813" expanded="true" signature="1426:1676" ph="{...}" />
-            <marker date="1550259934813" expanded="true" signature="1707:1817" ph="{...}" />
+            <marker date="1550260783462" expanded="true" signature="18:1959" ph="{...}" />
+            <marker date="1550260783462" expanded="true" signature="36:181" ph="..." />
+            <marker date="1550260783462" expanded="true" signature="282:1957" ph="{...}" />
+            <marker date="1550260783462" expanded="true" signature="503:909" ph="{...}" />
+            <marker date="1550260783462" expanded="true" signature="583:899" ph="{...}" />
+            <marker date="1550260783462" expanded="true" signature="654:753" ph="{...}" />
+            <marker date="1550260783462" expanded="true" signature="774:884" ph="{...}" />
+            <marker date="1550260783462" expanded="true" signature="974:1221" ph="{...}" />
+            <marker date="1550260783462" expanded="true" signature="1039:1198" ph="{...}" />
+            <marker date="1550260783462" expanded="true" signature="1239:1951" ph="PUN RPCs" />
+            <marker date="1550260783462" expanded="true" signature="1265:1386" ph="/// Implementation of &quot;PlayAudioClip&quot;. Necessary for all PlayerOwnedObjects! ... " />
+            <marker date="1550260783462" expanded="true" signature="1432:1931" ph="{...}" />
+            <marker date="1550260783462" expanded="true" signature="1471:1794" ph="{...}" />
+            <marker date="1550260783462" expanded="true" signature="1530:1780" ph="{...}" />
+            <marker date="1550260783462" expanded="true" signature="1811:1921" ph="{...}" />
           </folding>
         </state>
       </provider>
