@@ -80,7 +80,7 @@ namespace MUVRTK
             {
                 
                 if(debug)
-                    Debug.Log(pv.ViewID + " : Collided with something that is not myself") ;
+                    Debug.Log(pv.ViewID + " : Collided with something that is not myself. Other GameObject tag: " + other.gameObject.tag) ;
                 if (other.gameObject.tag.Equals(collisionTag))
                 {
                     if (debug)
