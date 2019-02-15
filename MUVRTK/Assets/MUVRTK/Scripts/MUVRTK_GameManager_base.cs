@@ -34,7 +34,7 @@ namespace MUVRTK
             // this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
             PhotonNetwork.AutomaticallySyncScene = true;
         }
-
+        /**
         private void OnEnable()
         {
             if (!PhotonNetwork.IsConnected)
@@ -42,9 +42,14 @@ namespace MUVRTK
                 // #Critical, we must first and foremost connect to Photon Online Server.
                 PhotonNetwork.GameVersion = gameVersion;
                 PhotonNetwork.ConnectUsingSettings();
+                
+                if(debug)
+                    Debug.Log(name + ": No connection found. Connecting to Photon Network.");
             }
             else
             {
+                PhotonNetwork.JoinLobby();
+                
                 if (instantiator && !instantiatorCalled)
                 {
                     instantiator.Instantiate_GameObjects();
@@ -58,7 +63,7 @@ namespace MUVRTK
                 }
             }
         }
-       /** 
+       **/
         private void Start()
         {
             if (!PhotonNetwork.IsConnected)
@@ -74,15 +79,15 @@ namespace MUVRTK
                     instantiator.Instantiate_GameObjects();
                     instantiatorCalled = true;
                 }
-                    
+
                 else
                 {
                     if (debug)
                         Debug.Log(name + " : No Instantiator found!");
                 }
             }
-        }**/
-        
+        }
+
         #endregion
         
         #region Photon Callbacks
@@ -90,17 +95,21 @@ namespace MUVRTK
         public override void OnConnectedToMaster()
         {
             PhotonNetwork.JoinRandomRoom();
+            
+            if(debug)
+                Debug.Log(name + " : OnConnectedToMaster called");
         }
 
         public override void OnJoinedRoom()
         {
             if (debug)
                 Debug.Log(name + ": OnJoinedRoom() called by PUN. Now this client is in the Room.");
-                if (instantiator && !instantiatorCalled)
-                {
-                    instantiator.Instantiate_GameObjects();
-                    instantiatorCalled = true;
-                }
+            
+            if (instantiator && !instantiatorCalled)
+            {
+                instantiator.Instantiate_GameObjects();
+                instantiatorCalled = true;
+            }
             else
             {
                 if (debug)
