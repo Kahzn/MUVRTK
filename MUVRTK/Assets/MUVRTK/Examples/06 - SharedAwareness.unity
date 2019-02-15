@@ -395,36 +395,12 @@ Transform:
   m_Father: {fileID: 591052904}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &826350466 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3303631938020766807, guid: d799d8c39ac522e4bbd7809e292264c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 9037329716272446006}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &826350474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3303631938020766796, guid: d799d8c39ac522e4bbd7809e292264c7,
     type: 3}
   m_PrefabInstance: {fileID: 9037329716272446006}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &826350475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826350466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 0
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
 --- !u!1 &868030655
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +556,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerAvatar
       value: 
-      objectReference: {fileID: 9134103080250105971, guid: aea80b978bf04fc4ba9a73d301e32fbf,
+      objectReference: {fileID: 1736458079944321140, guid: 8793dbbb5d0b4c84186eb56dd6c2d13a,
         type: 3}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
@@ -591,8 +567,13 @@ PrefabInstance:
         type: 3}
       propertyPath: controllerScriptAliases.Array.data[0]
       value: 
-      objectReference: {fileID: 1251795316485554009, guid: ba516ff52d4da2348a4c92ffc32b2083,
+      objectReference: {fileID: 8623963408292656802, guid: d5f5ff9a82337ca4394cb861a0037cd9,
         type: 3}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: showControllersOverNetwork
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -924,7 +905,7 @@ PrefabInstance:
     - target: {fileID: 3928964525218719675, guid: 4b18e1b2a57bf794597ad045ed5073fd,
         type: 3}
       propertyPath: debug
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b18e1b2a57bf794597ad045ed5073fd, type: 3}
@@ -1080,6 +1061,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1342491
       objectReference: {fileID: 0}
+    - target: {fileID: 3303631938020766802, guid: d799d8c39ac522e4bbd7809e292264c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9407f79202540a14fb51f2d8a3aa544f, type: 2}
     - target: {fileID: 3303631938020766801, guid: d799d8c39ac522e4bbd7809e292264c7,
         type: 3}
       propertyPath: m_IsTrigger
@@ -1098,7 +1084,7 @@ PrefabInstance:
     - target: {fileID: 480424235493440384, guid: d799d8c39ac522e4bbd7809e292264c7,
         type: 3}
       propertyPath: destroyInteraction
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 480424235493440384, guid: d799d8c39ac522e4bbd7809e292264c7,
         type: 3}
@@ -1113,12 +1099,7 @@ PrefabInstance:
     - target: {fileID: 8973713126110459122, guid: d799d8c39ac522e4bbd7809e292264c7,
         type: 3}
       propertyPath: isGrabbable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3303631938020766802, guid: d799d8c39ac522e4bbd7809e292264c7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9407f79202540a14fb51f2d8a3aa544f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d799d8c39ac522e4bbd7809e292264c7, type: 3}
