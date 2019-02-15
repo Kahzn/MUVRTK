@@ -597,6 +597,87 @@ PrefabInstance:
       propertyPath: m_Name
       value: SDK_Manager_Instantiator
       objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: controllerModels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: controllerScriptAliases.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: objectsToInstantiateOverTheNetwork.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: enableTeleport
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: playerAvatar
+      value: 
+      objectReference: {fileID: 1736458079944321140, guid: 953ba923431c0bc42b33afb94ddee7b0,
+        type: 3}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: sdkSetupSwitcher
+      value: 
+      objectReference: {fileID: 3617113462096005219, guid: 7a79726f235b43a42b2ec50929dc7533,
+        type: 3}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: vr_Manager
+      value: 
+      objectReference: {fileID: 919708191555333131, guid: ff930b4f02bacd04693f73716bc64c0d,
+        type: 3}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: controllerModels.Array.data[0]
+      value: 
+      objectReference: {fileID: 5905369102832125037, guid: eb018668f53a87e459055bde54b70919,
+        type: 3}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: controllerScriptAliases.Array.data[0]
+      value: 
+      objectReference: {fileID: 1251795316485554009, guid: ba516ff52d4da2348a4c92ffc32b2083,
+        type: 3}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: networkedOffset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: controllerScriptAliases.Array.data[1]
+      value: 
+      objectReference: {fileID: 1251795316485554009, guid: ba516ff52d4da2348a4c92ffc32b2083,
+        type: 3}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: exchangeControllerModels
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 611316382}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: showControllersOverNetwork
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: debug
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -650,87 +731,6 @@ PrefabInstance:
     - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: controllerModels.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: controllerScriptAliases.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: objectsToInstantiateOverTheNetwork.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: enableTeleport
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: playerAvatar
-      value: 
-      objectReference: {fileID: 9134103080250105971, guid: e412f916107374a4785c2fc294dfea98,
-        type: 3}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: sdkSetupSwitcher
-      value: 
-      objectReference: {fileID: 3617113462096005219, guid: fb25ccce0bc793847a714f038fd2763d,
-        type: 3}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: vr_Manager
-      value: 
-      objectReference: {fileID: 919708191555333131, guid: ff930b4f02bacd04693f73716bc64c0d,
-        type: 3}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: controllerModels.Array.data[0]
-      value: 
-      objectReference: {fileID: 5905369102832125037, guid: eb018668f53a87e459055bde54b70919,
-        type: 3}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: controllerScriptAliases.Array.data[0]
-      value: 
-      objectReference: {fileID: 1251795316485554009, guid: ba516ff52d4da2348a4c92ffc32b2083,
-        type: 3}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: networkedOffset
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: controllerScriptAliases.Array.data[1]
-      value: 
-      objectReference: {fileID: 1251795316485554009, guid: ba516ff52d4da2348a4c92ffc32b2083,
-        type: 3}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: exchangeControllerModels
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: spawnPoint
-      value: 
-      objectReference: {fileID: 611316382}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: showControllersOverNetwork
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
-        type: 3}
-      propertyPath: debug
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
