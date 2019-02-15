@@ -18,7 +18,6 @@
             <e p="MUVRTK_Instantiate.cs" t="Include" />
             <e p="MUVRTK_InteractHaptics.cs" t="Include" />
             <e p="MUVRTK_InteractObjectHighlighter.cs" t="Include" />
-            <e p="MUVRTK_interactTriggerBothSides.cs" t="Include" />
             <e p="MUVRTK_Inventory.cs" t="Include" />
             <e p="MUVRTK_Launcher.cs" t="Include" />
             <e p="MUVRTK_LobbyViewer.cs" t="Include" />
