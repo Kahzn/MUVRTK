@@ -530,27 +530,29 @@ PrefabInstance:
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_text
-      value: Give the other player a High Five!
+      value: 'Give the other player a High Five!
+
+        If it works you''re both going to hear a sound.'
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 34
+      value: 81
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 6
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 7
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}

@@ -14,11 +14,41 @@ namespace MUVRTK
     public class MUVRTK_BodyCollision : MonoBehaviourPun
     {
         public bool debug;
-        public AudioSource audioSource;
-        public AudioClip audioClip;
+
+        // Audio
+        
+        [Tooltip("Tick this if the Action shall trigger an Audio Clip.")]
+        [SerializeField]
+        protected bool playAudioClip;
+
+        [SerializeField]
+        protected AudioClip audioClip;
+        
+        // Haptics
+
+        [Tooltip("Tick this if the Action shall trigger a Haptic Pulse on all Controllers.")]
+        [SerializeField]
+        protected bool triggerHapticPulse;
+
+        [Tooltip("Defines the duration of the Controller Vibration")]
+        [SerializeField]
+        [Range(0, 10)]
+        protected float duration = 1f;
+
+        [Tooltip("Defines the pulse Interval of the controller Vibration")]
+        [SerializeField]
+        [Range(0f, 10f)]
+        protected float pulseInterval = 0.1f;
+
+        [Tooltip("Defines the strength of the controller Vibration")]
+        [SerializeField]
+        [Range(0f, 20f)]
+        protected float vibrationStrength = 10f;
 
         private PhotonView pv;
+        private AudioSource audioSource;
 
+        #region MonoBehaviour Callbacks
 
         // Start is called before the first frame update
         void Start()
@@ -45,12 +75,34 @@ namespace MUVRTK
             if (other.gameObject.tag == "ScriptAlias")
             {
                 Player otherPlayer = other.gameObject.GetPhotonView().Owner;
+                if(playAudioClip)
                 pv.RPC("PlayAudioClip", otherPlayer);
+                
+                if(triggerHapticPulse)
+                    pv.RPC("HapticPulseOnCollidedController", otherPlayer);
             }
             
         }
         
+        #endregion
+        
         #region PUN RPCs
+
+        /// <summary>
+        /// Implementation of "HapticPulseOnBothOwnedControllers". 
+        /// This method is called on Interaction with a Player owned Object and triggers a haptic pulse on all active Controllers owned by this player.
+        /// The vibrationStrength, duration and pulseInterval are set in the PlayerOwnedObject-Script.
+        /// </summary>
+        /// <param name="vibrationStrength"></param>
+        /// <param name="duration"></param>
+        /// <param name="pulseInterval"></param>
+        [PunRPC]
+        void HapticPulseOnCollidedController()
+        {
+                    VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(pv.gameObject), vibrationStrength, duration, pulseInterval);
+                    Debug.Log(name + " : HapticPulseOnCollidedController-RPC worked as it should. Haptic Pulse Triggered on ViewID:" + pv.ViewID);
+           
+        }
 
         /// <summary>
         /// Implementation of "PlayAudioClip". Necessary for all PlayerOwnedObjects!
