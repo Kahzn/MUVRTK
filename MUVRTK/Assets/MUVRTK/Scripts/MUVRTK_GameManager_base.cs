@@ -40,6 +40,16 @@ namespace MUVRTK
                 PhotonNetwork.GameVersion = gameVersion;
                 PhotonNetwork.ConnectUsingSettings();
             }
+            else
+            {
+                if(instantiator)
+                    instantiator.Instantiate_GameObjects();
+                else
+                {
+                    if (debug)
+                        Debug.Log(name + " : No Instantiator found!");
+                }
+            }
         }
         
         #endregion

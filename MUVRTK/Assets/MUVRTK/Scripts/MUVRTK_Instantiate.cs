@@ -90,17 +90,31 @@ namespace MUVRTK
         private GameObject leftControllerInstance;
         private GameObject rightControllerInstance;
         private GameObject[] controllerModelInstances;
-        
+
+        private bool controllerModelContainerinitialized;
         
         
         #endregion
         
         #region MonoBehaviour Callbacks
 
+        private void OnEnable()
+        {
+            if (!controllerModelContainerinitialized)
+            {
+                controllerModelInstances = new GameObject[2];
+                controllerModelContainerinitialized = true;
+            }
+        }
+
         void Start()
         {
             
-            controllerModelInstances = new GameObject[2];
+            if (!controllerModelContainerinitialized)
+            {
+                controllerModelInstances = new GameObject[2];
+                controllerModelContainerinitialized = true;
+            }
 
             if (enableTeleport)
             {
