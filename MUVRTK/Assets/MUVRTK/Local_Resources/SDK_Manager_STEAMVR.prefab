@@ -118,10 +118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoManageScriptDefines: 1
   activeScriptingDefineSymbolsWithoutSDKClasses: []
-  scriptAliasLeftController: {fileID: 8623963408292656802, guid: 4f582c9009f95da4e883d63d504fb30a,
-    type: 3}
-  scriptAliasRightController: {fileID: 1251795316485554009, guid: ba516ff52d4da2348a4c92ffc32b2083,
-    type: 3}
+  scriptAliasLeftController: {fileID: 0}
+  scriptAliasRightController: {fileID: 0}
   autoManageVRSettings: 1
   autoLoadSetup: 1
   setups:

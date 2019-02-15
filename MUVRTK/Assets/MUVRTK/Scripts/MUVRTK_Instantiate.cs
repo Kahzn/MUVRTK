@@ -194,7 +194,7 @@ namespace MUVRTK
                 vrmInstance = Instantiate(vr_Manager, spawnPoint.position, Quaternion.identity);
             }
             else vrmInstance = Instantiate(vr_Manager, new Vector3(Random.value * 5, 0f, Random.value * 5), Quaternion.identity);
-           PhotonNetwork.Instantiate(sdkSetupSwitcher.name, transform.position, transform.rotation);
+           Instantiate(sdkSetupSwitcher, transform.position, transform.rotation);
 
 
             //Player Model Instantiation
