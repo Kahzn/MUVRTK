@@ -1690,7 +1690,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerAvatar
       value: 
-      objectReference: {fileID: 9134103080250105971, guid: e412f916107374a4785c2fc294dfea98,
+      objectReference: {fileID: 1736458079944321140, guid: 953ba923431c0bc42b33afb94ddee7b0,
         type: 3}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}

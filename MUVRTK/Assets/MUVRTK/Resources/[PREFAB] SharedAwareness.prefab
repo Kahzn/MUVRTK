@@ -114,7 +114,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 4554241591757525744}
-  viewIdField: 12
+  viewIdField: 0
   InstantiationId: 12
   isRuntimeInstantiated: 0
 --- !u!114 &4554241591757525744
@@ -150,7 +150,6 @@ MonoBehaviour:
   health: 1
   destroyInteraction: 5
   triggerInteraction: 8
-  pointerRendering: 0
   playAudioClip: 0
   audioClip: {fileID: 0}
   triggerHapticPulse: 0
