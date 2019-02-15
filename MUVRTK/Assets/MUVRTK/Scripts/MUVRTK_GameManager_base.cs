@@ -34,36 +34,7 @@ namespace MUVRTK
             // this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
             PhotonNetwork.AutomaticallySyncScene = true;
         }
-        /**
-        private void OnEnable()
-        {
-            if (!PhotonNetwork.IsConnected)
-            {
-                // #Critical, we must first and foremost connect to Photon Online Server.
-                PhotonNetwork.GameVersion = gameVersion;
-                PhotonNetwork.ConnectUsingSettings();
-                
-                if(debug)
-                    Debug.Log(name + ": No connection found. Connecting to Photon Network.");
-            }
-            else
-            {
-                PhotonNetwork.JoinLobby();
-                
-                if (instantiator && !instantiatorCalled)
-                {
-                    instantiator.Instantiate_GameObjects();
-                    instantiatorCalled = true;
-                }
-                    
-                else
-                {
-                    if (debug)
-                        Debug.Log(name + " : No Instantiator found!");
-                }
-            }
-        }
-       **/
+
         private void Start()
         {
             if (!PhotonNetwork.IsConnected)
