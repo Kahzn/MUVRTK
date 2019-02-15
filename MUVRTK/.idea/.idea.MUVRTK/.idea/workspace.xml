@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a076696e-6859-467f-963a-9cb2af34b682" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/BackToLobby.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/BackToLobby.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/Player.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/Player.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/SharedAwareness.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/SharedAwareness.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] Player.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] PointerHapticsPlayer.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] PointerHapticsPlayer.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] SharedAwarenessPlayer.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] SharedAwarenessPlayer.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,12 +35,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="11932" />
+          <entry key="cs" value="12125" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="11932" />
+          <entry key="C#" value="12125" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -66,7 +78,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="496">
@@ -137,30 +149,30 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1552">
-              <caret line="100" column="9" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+            <state relative-caret-position="624">
+              <caret line="78" column="57" selection-start-line="78" selection-start-column="57" selection-end-line="78" selection-end-column="57" />
               <folding>
-                <marker date="1550261440290" expanded="true" signature="18:4008" ph="{...}" />
-                <marker date="1550261440290" expanded="true" signature="36:181" ph="..." />
-                <marker date="1550261440290" expanded="true" signature="282:4006" ph="{...}" />
-                <marker date="1550261440290" expanded="true" signature="1319:2341" ph="MonoBehaviour Callbacks" />
-                <marker date="1550261440290" expanded="true" signature="1429:1835" ph="{...}" />
-                <marker date="1550261440290" expanded="true" signature="1509:1825" ph="{...}" />
-                <marker date="1550261440290" expanded="true" signature="1580:1679" ph="{...}" />
-                <marker date="1550261440290" expanded="true" signature="1700:1810" ph="{...}" />
-                <marker date="1550261440290" expanded="true" signature="1900:2313" ph="{...}" />
-                <marker date="1550261440290" expanded="true" signature="1965:2290" ph="{...}" />
-                <marker date="1550261440290" expanded="true" signature="2359:4000" ph="PUN RPCs" />
-                <marker date="1550261440290" expanded="true" signature="2385:2890" ph="/// Implementation of &quot;HapticPulseOnBothOwnedControllers&quot;.  ... " />
-                <marker date="1550261440290" expanded="true" signature="2954:3304" ph="{...}" />
-                <marker date="1550261440290" expanded="true" signature="3314:3435" ph="/// Implementation of &quot;PlayAudioClip&quot;. Necessary for all PlayerOwnedObjects! ... " />
-                <marker date="1550261440290" expanded="true" signature="3481:3980" ph="{...}" />
-                <marker date="1550261440290" expanded="true" signature="3520:3843" ph="{...}" />
-                <marker date="1550261440290" expanded="true" signature="3579:3829" ph="{...}" />
-                <marker date="1550261440290" expanded="true" signature="3860:3970" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="18:4229" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="36:181" ph="..." />
+                <marker date="1550263948822" expanded="true" signature="282:4227" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="1536:2562" ph="MonoBehaviour Callbacks" />
+                <marker date="1550263948822" expanded="true" signature="1646:2052" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="1726:2042" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="1797:1896" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="1917:2027" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="2117:2534" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="2186:2511" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="2580:4221" ph="PUN RPCs" />
+                <marker date="1550263948822" expanded="true" signature="2606:3111" ph="/// Implementation of &quot;HapticPulseOnBothOwnedControllers&quot;.  ... " />
+                <marker date="1550263948822" expanded="true" signature="3175:3525" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="3535:3656" ph="/// Implementation of &quot;PlayAudioClip&quot;. Necessary for all PlayerOwnedObjects! ... " />
+                <marker date="1550263948822" expanded="true" signature="3702:4201" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="3741:4064" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="3800:4050" ph="{...}" />
+                <marker date="1550263948822" expanded="true" signature="4081:4191" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -428,8 +440,8 @@
         <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_SceneSwitcher.cs" />
         <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BackToLobby.cs" />
         <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_PlayerOwnedObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs" />
+        <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs" />
       </list>
     </option>
   </component>
@@ -509,12 +521,12 @@
       <workItem from="1547743287139" duration="2452000" />
       <workItem from="1548242242857" duration="15661000" />
       <workItem from="1548867578384" duration="1342000" />
-      <workItem from="1550238731138" duration="16965000" />
+      <workItem from="1550238731138" duration="18107000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46277000" />
+    <option name="totallyTimeSpent" value="47419000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1162,33 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1552">
-          <caret line="100" column="9" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
-          <folding>
-            <marker date="1550261440290" expanded="true" signature="18:4008" ph="{...}" />
-            <marker date="1550261440290" expanded="true" signature="36:181" ph="..." />
-            <marker date="1550261440290" expanded="true" signature="282:4006" ph="{...}" />
-            <marker date="1550261440290" expanded="true" signature="1319:2341" ph="MonoBehaviour Callbacks" />
-            <marker date="1550261440290" expanded="true" signature="1429:1835" ph="{...}" />
-            <marker date="1550261440290" expanded="true" signature="1509:1825" ph="{...}" />
-            <marker date="1550261440290" expanded="true" signature="1580:1679" ph="{...}" />
-            <marker date="1550261440290" expanded="true" signature="1700:1810" ph="{...}" />
-            <marker date="1550261440290" expanded="true" signature="1900:2313" ph="{...}" />
-            <marker date="1550261440290" expanded="true" signature="1965:2290" ph="{...}" />
-            <marker date="1550261440290" expanded="true" signature="2359:4000" ph="PUN RPCs" />
-            <marker date="1550261440290" expanded="true" signature="2385:2890" ph="/// Implementation of &quot;HapticPulseOnBothOwnedControllers&quot;.  ... " />
-            <marker date="1550261440290" expanded="true" signature="2954:3304" ph="{...}" />
-            <marker date="1550261440290" expanded="true" signature="3314:3435" ph="/// Implementation of &quot;PlayAudioClip&quot;. Necessary for all PlayerOwnedObjects! ... " />
-            <marker date="1550261440290" expanded="true" signature="3481:3980" ph="{...}" />
-            <marker date="1550261440290" expanded="true" signature="3520:3843" ph="{...}" />
-            <marker date="1550261440290" expanded="true" signature="3579:3829" ph="{...}" />
-            <marker date="1550261440290" expanded="true" signature="3860:3970" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
@@ -1254,6 +1239,33 @@
             <marker date="1550262512918" expanded="true" signature="14590:14932" ph="/// Searches the Controller Hierarchy for the Model Body and deactivates its Mesh Renderer Component so that we d ... " />
             <marker date="1550262512918" expanded="true" signature="15017:15488" ph="{...}" />
             <marker date="1550262512918" expanded="true" signature="15088:15466" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_BodyCollision.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="78" column="57" selection-start-line="78" selection-start-column="57" selection-end-line="78" selection-end-column="57" />
+          <folding>
+            <marker date="1550263948822" expanded="true" signature="18:4229" ph="{...}" />
+            <marker date="1550263948822" expanded="true" signature="36:181" ph="..." />
+            <marker date="1550263948822" expanded="true" signature="282:4227" ph="{...}" />
+            <marker date="1550263948822" expanded="true" signature="1536:2562" ph="MonoBehaviour Callbacks" />
+            <marker date="1550263948822" expanded="true" signature="1646:2052" ph="{...}" />
+            <marker date="1550263948822" expanded="true" signature="1726:2042" ph="{...}" />
+            <marker date="1550263948822" expanded="true" signature="1797:1896" ph="{...}" />
+            <marker date="1550263948822" expanded="true" signature="1917:2027" ph="{...}" />
+            <marker date="1550263948822" expanded="true" signature="2117:2534" ph="{...}" />
+            <marker date="1550263948822" expanded="true" signature="2186:2511" ph="{...}" />
+            <marker date="1550263948822" expanded="true" signature="2580:4221" ph="PUN RPCs" />
+            <marker date="1550263948822" expanded="true" signature="2606:3111" ph="/// Implementation of &quot;HapticPulseOnBothOwnedControllers&quot;.  ... " />
+            <marker date="1550263948822" expanded="true" signature="3175:3525" ph="{...}" />
+            <marker date="1550263948822" expanded="true" signature="3535:3656" ph="/// Implementation of &quot;PlayAudioClip&quot;. Necessary for all PlayerOwnedObjects! ... " />
+            <marker date="1550263948822" expanded="true" signature="3702:4201" ph="{...}" />
+            <marker date="1550263948822" expanded="true" signature="3741:4064" ph="{...}" />
+            <marker date="1550263948822" expanded="true" signature="3800:4050" ph="{...}" />
+            <marker date="1550263948822" expanded="true" signature="4081:4191" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -15,6 +15,10 @@ namespace MUVRTK
     {
         public bool debug;
 
+        [Tooltip("Enter the name of the tag this Collision shall listen for. It will only trigger the reaction if the colliding object has this tag.")]
+        [SerializeField]
+        protected string collisionTag;
+
         // Audio
         
         [Tooltip("Tick this if the Action shall trigger an Audio Clip.")]
@@ -72,7 +76,7 @@ namespace MUVRTK
         
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.tag == "ScriptAlias")
+            if (other.gameObject.tag.Equals(collisionTag))
             {
                 Player otherPlayer = other.gameObject.GetPhotonView().Owner;
                 if(playAudioClip)

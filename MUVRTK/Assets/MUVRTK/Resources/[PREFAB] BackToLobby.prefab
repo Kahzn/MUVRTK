@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3174593229097224951}
   - component: {fileID: 8456280255822973219}
   m_Layer: 0
-  m_Name: BackToLobby
+  m_Name: '[PREFAB] BackToLobby'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -364,12 +364,12 @@ PrefabInstance:
     - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: viewIdField
-      value: 17
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: InstantiationId
-      value: 17
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060066, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
