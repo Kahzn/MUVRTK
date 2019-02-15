@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a076696e-6859-467f-963a-9cb2af34b682" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager_base.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager_base.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,12 +23,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="9926" />
+          <entry key="cs" value="9936" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="9926" />
+          <entry key="C#" value="9936" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -71,75 +71,72 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="227" column="44" selection-start-line="227" selection-start-column="20" selection-end-line="227" selection-end-column="44" />
+            <state relative-caret-position="242">
+              <caret line="100" column="18" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
               <folding>
-                <marker date="1550244738774" expanded="false" signature="6:263" ph="..." />
-                <marker date="1550244738774" expanded="true" signature="281:15953" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="284:429" ph="/// Manages all Player Instantiation Issues in MUVRTK.  ... " />
-                <marker date="1550244738774" expanded="true" signature="481:15951" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="505:3009" ph="Private Serialize Fields" />
-                <marker date="1550244738774" expanded="true" signature="3019:3560" ph="Private Fields" />
-                <marker date="1550244738774" expanded="true" signature="3578:7160" ph="MonoBehaviour Callbacks" />
-                <marker date="1550244738774" expanded="true" signature="3642:3866" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="3706:3856" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="3888:4472" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="3965:4115" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="4148:4210" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="4391:4462" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="4495:7125" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="4650:5152" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="4705:5138" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="4801:5120" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="4880:5098" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="5197:6134" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="5398:6120" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="5472:5921" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="5593:5897" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="5946:6081" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="6192:7115" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="6393:7101" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="6468:6921" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="6590:6897" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="6946:7083" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="7179:13185" ph="Public Methods" />
-                <marker date="1550244738774" expanded="true" signature="7256:11867" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="7379:7504" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="7816:8125" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="8285:9310" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="8423:8794" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="8845:9295" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="9449:11012" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="9562:9983" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="10039:10460" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="10481:10601" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="10759:10981" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="11029:11596" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="11154:11268" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="11387:11565" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="11696:11856" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="11905:13165" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="11978:13155" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="12055:12174" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="12245:12334" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="12643:12748" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="12792:13124" ph="{...}" />
-                <marker date="1550244738774" expanded="false" signature="13203:15945" ph="Private Methods" />
-                <marker date="1550244738774" expanded="true" signature="13244:13621" ph="/// Takes a Model Prefab, a vr-manager GameObject and a keyword and binds the model to the movements of the vrm. ... " />
-                <marker date="1550244738774" expanded="true" signature="13709:15008" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="13763:13928" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="13981:14409" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="14047:14227" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="14263:14378" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="14463:14864" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="14531:14712" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="14733:14849" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="15018:15360" ph="/// Searches the Controller Hierarchy for the Model Body and deactivates its Mesh Renderer Component so that we d ... " />
-                <marker date="1550244738774" expanded="true" signature="15445:15916" ph="{...}" />
-                <marker date="1550244738774" expanded="true" signature="15516:15894" ph="{...}" />
+                <marker date="1550246013890" expanded="false" signature="6:263" ph="..." />
+                <marker date="1550246013890" expanded="true" signature="281:15499" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="284:429" ph="/// Manages all Player Instantiation Issues in MUVRTK.  ... " />
+                <marker date="1550246013890" expanded="true" signature="481:15497" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="505:3009" ph="Private Serialize Fields" />
+                <marker date="1550246013890" expanded="true" signature="3019:3580" ph="Private Fields" />
+                <marker date="1550246013890" expanded="true" signature="3598:6706" ph="MonoBehaviour Callbacks" />
+                <marker date="1550246013890" expanded="true" signature="3660:4018" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="3694:3756" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="3937:4008" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="4041:6671" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="4196:4698" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="4251:4684" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="4347:4666" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="4426:4644" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="4743:5680" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="4944:5666" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="5018:5467" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="5139:5443" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="5492:5627" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="5738:6661" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="5939:6647" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="6014:6467" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="6136:6443" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="6492:6629" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="6725:12731" ph="Public Methods" />
+                <marker date="1550246013890" expanded="true" signature="6802:11413" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="6925:7050" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="7362:7671" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="7831:8856" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="7969:8340" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="8391:8841" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="8995:10558" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="9108:9529" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="9585:10006" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="10027:10147" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="10305:10527" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="10575:11142" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="10700:10814" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="10933:11111" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="11242:11402" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="11451:12711" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="11524:12701" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="11601:11720" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="11791:11880" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="12189:12294" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="12338:12670" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="12749:15491" ph="Private Methods" />
+                <marker date="1550246013890" expanded="true" signature="12790:13167" ph="/// Takes a Model Prefab, a vr-manager GameObject and a keyword and binds the model to the movements of the vrm. ... " />
+                <marker date="1550246013890" expanded="true" signature="13255:14554" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="13309:13474" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="13527:13955" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="13593:13773" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="13809:13924" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="14009:14410" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="14077:14258" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="14279:14395" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="14564:14906" ph="/// Searches the Controller Hierarchy for the Model Body and deactivates its Mesh Renderer Component so that we d ... " />
+                <marker date="1550246013890" expanded="true" signature="14991:15462" ph="{...}" />
+                <marker date="1550246013890" expanded="true" signature="15062:15440" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -225,10 +222,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager_base.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
+            <state relative-caret-position="624">
               <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
               <folding>
                 <marker date="1550245477038" expanded="false" signature="6:158" ph="..." />
@@ -394,8 +391,8 @@
         <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/getPhotonViewID.cs" />
         <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_PlayerNameInputField.cs" />
-        <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs" />
         <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager_base.cs" />
+        <option value="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs" />
       </list>
     </option>
   </component>
@@ -475,12 +472,12 @@
       <workItem from="1547743287139" duration="2452000" />
       <workItem from="1548242242857" duration="15661000" />
       <workItem from="1548867578384" duration="1342000" />
-      <workItem from="1550238731138" duration="3577000" />
+      <workItem from="1550238731138" duration="4114000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32889000" />
+    <option name="totallyTimeSpent" value="33426000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -722,78 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="227" column="44" selection-start-line="227" selection-start-column="20" selection-end-line="227" selection-end-column="44" />
-          <folding>
-            <marker date="1550244738774" expanded="false" signature="6:263" ph="..." />
-            <marker date="1550244738774" expanded="true" signature="281:15953" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="284:429" ph="/// Manages all Player Instantiation Issues in MUVRTK.  ... " />
-            <marker date="1550244738774" expanded="true" signature="481:15951" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="505:3009" ph="Private Serialize Fields" />
-            <marker date="1550244738774" expanded="true" signature="3019:3560" ph="Private Fields" />
-            <marker date="1550244738774" expanded="true" signature="3578:7160" ph="MonoBehaviour Callbacks" />
-            <marker date="1550244738774" expanded="true" signature="3642:3866" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="3706:3856" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="3888:4472" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="3965:4115" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="4148:4210" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="4391:4462" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="4495:7125" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="4650:5152" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="4705:5138" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="4801:5120" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="4880:5098" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="5197:6134" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="5398:6120" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="5472:5921" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="5593:5897" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="5946:6081" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="6192:7115" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="6393:7101" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="6468:6921" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="6590:6897" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="6946:7083" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="7179:13185" ph="Public Methods" />
-            <marker date="1550244738774" expanded="true" signature="7256:11867" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="7379:7504" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="7816:8125" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="8285:9310" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="8423:8794" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="8845:9295" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="9449:11012" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="9562:9983" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="10039:10460" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="10481:10601" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="10759:10981" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="11029:11596" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="11154:11268" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="11387:11565" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="11696:11856" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="11905:13165" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="11978:13155" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="12055:12174" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="12245:12334" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="12643:12748" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="12792:13124" ph="{...}" />
-            <marker date="1550244738774" expanded="false" signature="13203:15945" ph="Private Methods" />
-            <marker date="1550244738774" expanded="true" signature="13244:13621" ph="/// Takes a Model Prefab, a vr-manager GameObject and a keyword and binds the model to the movements of the vrm. ... " />
-            <marker date="1550244738774" expanded="true" signature="13709:15008" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="13763:13928" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="13981:14409" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="14047:14227" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="14263:14378" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="14463:14864" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="14531:14712" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="14733:14849" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="15018:15360" ph="/// Searches the Controller Hierarchy for the Model Body and deactivates its Mesh Renderer Component so that we d ... " />
-            <marker date="1550244738774" expanded="true" signature="15445:15916" ph="{...}" />
-            <marker date="1550244738774" expanded="true" signature="15516:15894" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Launcher.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -844,7 +769,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager_base.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
+        <state relative-caret-position="624">
           <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
           <folding>
             <marker date="1550245477038" expanded="false" signature="6:158" ph="..." />
@@ -874,6 +799,75 @@
             <marker date="1550245477038" expanded="true" signature="4825:5253" ph="{...}" />
             <marker date="1550245477038" expanded="true" signature="5299:5435" ph="Public Methods" />
             <marker date="1550245477038" expanded="true" signature="5355:5414" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="100" column="18" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
+          <folding>
+            <marker date="1550246013890" expanded="false" signature="6:263" ph="..." />
+            <marker date="1550246013890" expanded="true" signature="281:15499" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="284:429" ph="/// Manages all Player Instantiation Issues in MUVRTK.  ... " />
+            <marker date="1550246013890" expanded="true" signature="481:15497" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="505:3009" ph="Private Serialize Fields" />
+            <marker date="1550246013890" expanded="true" signature="3019:3580" ph="Private Fields" />
+            <marker date="1550246013890" expanded="true" signature="3598:6706" ph="MonoBehaviour Callbacks" />
+            <marker date="1550246013890" expanded="true" signature="3660:4018" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="3694:3756" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="3937:4008" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="4041:6671" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="4196:4698" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="4251:4684" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="4347:4666" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="4426:4644" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="4743:5680" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="4944:5666" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="5018:5467" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="5139:5443" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="5492:5627" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="5738:6661" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="5939:6647" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="6014:6467" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="6136:6443" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="6492:6629" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="6725:12731" ph="Public Methods" />
+            <marker date="1550246013890" expanded="true" signature="6802:11413" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="6925:7050" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="7362:7671" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="7831:8856" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="7969:8340" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="8391:8841" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="8995:10558" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="9108:9529" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="9585:10006" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="10027:10147" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="10305:10527" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="10575:11142" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="10700:10814" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="10933:11111" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="11242:11402" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="11451:12711" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="11524:12701" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="11601:11720" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="11791:11880" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="12189:12294" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="12338:12670" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="12749:15491" ph="Private Methods" />
+            <marker date="1550246013890" expanded="true" signature="12790:13167" ph="/// Takes a Model Prefab, a vr-manager GameObject and a keyword and binds the model to the movements of the vrm. ... " />
+            <marker date="1550246013890" expanded="true" signature="13255:14554" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="13309:13474" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="13527:13955" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="13593:13773" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="13809:13924" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="14009:14410" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="14077:14258" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="14279:14395" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="14564:14906" ph="/// Searches the Controller Hierarchy for the Model Body and deactivates its Mesh Renderer Component so that we d ... " />
+            <marker date="1550246013890" expanded="true" signature="14991:15462" ph="{...}" />
+            <marker date="1550246013890" expanded="true" signature="15062:15440" ph="{...}" />
           </folding>
         </state>
       </provider>
