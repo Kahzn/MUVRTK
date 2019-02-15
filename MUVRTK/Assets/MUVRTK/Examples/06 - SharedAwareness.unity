@@ -574,6 +574,12 @@ PrefabInstance:
       propertyPath: showControllersOverNetwork
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: sdkSetupSwitcher
+      value: 
+      objectReference: {fileID: 3617113462096005219, guid: fb25ccce0bc793847a714f038fd2763d,
+        type: 3}
     - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: m_LocalPosition.x
