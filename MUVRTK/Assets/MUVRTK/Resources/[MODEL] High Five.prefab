@@ -44,8 +44,8 @@ GameObject:
   - component: {fileID: 123113484284858873}
   - component: {fileID: 3658081444959411796}
   - component: {fileID: 969447118807200578}
-  - component: {fileID: 6901246286088748500}
-  - component: {fileID: 5623669227640064836}
+  - component: {fileID: 6754962208556726100}
+  - component: {fileID: 1567243719432122581}
   m_Layer: 0
   m_Name: body_group1
   m_TagString: Untagged
@@ -132,7 +132,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 969447118807200578}
   viewIdField: 0
-  InstantiationId: 7
+  InstantiationId: 15
   isRuntimeInstantiated: 0
 --- !u!114 &969447118807200578
 MonoBehaviour:
@@ -149,7 +149,20 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
---- !u!114 &6901246286088748500
+--- !u!65 &6754962208556726100
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8397352498912920139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14827992, y: 0.13216199, z: 0.42354614}
+  m_Center: {x: 0.0034120008, y: -0.009801008, z: -0.03825906}
+--- !u!114 &1567243719432122581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,47 +171,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8397352498912920139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 229330f3073aa834aa3aae69598c64bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 511ebc3074b8de54d869ef503110b454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 1
-  triggerInteraction: 0
-  playAudioClip: 1
-  audioClip: {fileID: 8300000, guid: 318e91dbcb0a86b4799043c5c7d4780d, type: 3}
-  triggerHapticPulse: 1
-  duration: 1
-  pulseInterval: 0.1
-  vibrationStrength: 10
---- !u!114 &5623669227640064836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8397352498912920139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disableWhenIdle: 1
-  allowedNearTouchControllers: 0
-  allowedTouchControllers: 0
-  ignoredColliders: []
-  isGrabbable: 0
-  holdButtonToGrab: 1
-  stayGrabbedOnTeleport: 1
-  validDrop: 1
-  grabOverrideButton: 0
-  allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 0}
-  secondaryGrabActionScript: {fileID: 0}
-  isUsable: 0
-  holdButtonToUse: 1
-  useOnlyIfGrabbed: 0
-  pointerActivatesUseAction: 0
-  useOverrideButton: 0
-  allowedUseControllers: 0
-  objectHighlighter: {fileID: 0}
-  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
-  usingState: 0
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}

@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_BackToLobby.cs" />
+    <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_BodyCollision.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_ControllerHaptics.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_GameManager.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_GameManager_base.cs" />
