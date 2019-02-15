@@ -739,13 +739,13 @@ PrefabInstance:
         type: 3}
       propertyPath: controllerModels.Array.data[0]
       value: 
-      objectReference: {fileID: 5905369102832125037, guid: 52be5c8dbdad2b04ba05254e82b04a8d,
+      objectReference: {fileID: 5905369102832125037, guid: eb018668f53a87e459055bde54b70919,
         type: 3}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: controllerScriptAliases.Array.data[0]
       value: 
-      objectReference: {fileID: 8623963408292656802, guid: d5f5ff9a82337ca4394cb861a0037cd9,
+      objectReference: {fileID: 8623963408292656802, guid: 0774db7a5d3532a4f86a4bbba7cb0618,
         type: 3}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
@@ -771,6 +771,11 @@ PrefabInstance:
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: showControllersOverNetwork
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: debug
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
