@@ -76,15 +76,26 @@ namespace MUVRTK
         
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.tag.Equals(collisionTag))
+            if (!other.gameObject.GetPhotonView().Equals(gameObject.GetPhotonView()))
             {
-                Player otherPlayer = other.gameObject.GetPhotonView().Owner;
-                if(playAudioClip)
-                pv.RPC("PlayAudioClip", otherPlayer);
                 
-                if(triggerHapticPulse)
-                    pv.RPC("HapticPulseOnCollidedController", otherPlayer);
+                if(debug)
+                    Debug.Log(pv.ViewID + " : Collided with something that is not myself") ;
+                if (other.gameObject.tag.Equals(collisionTag))
+                {
+                    if (debug)
+                        Debug.Log(pv.ViewID + " : tags fit! Triggering RPCs");
+                    
+                    Player otherPlayer = other.gameObject.GetPhotonView().Owner;
+                    if(playAudioClip)
+                        pv.RPC("PlayAudioClip", otherPlayer);
+                
+                    if(triggerHapticPulse)
+                        pv.RPC("HapticPulseOnCollidedController", otherPlayer);
+                }
             }
+            
+            
             
         }
         
