@@ -17,12 +17,13 @@ TagManager:
   - SnapCube
   - Arm
   - SnapCylinder
-  - Saucers
   - Torso
   - Head
   - View
   - Destroy
   - Backside
+  - SDK_Manager
+  - PlayAreaScript
   layers:
   - Default
   - TransparentFX

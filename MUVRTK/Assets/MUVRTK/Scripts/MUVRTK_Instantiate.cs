@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
@@ -8,6 +9,7 @@ using UnityEngine.Serialization;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 using VRTK;
+using Random = UnityEngine.Random;
 
 namespace MUVRTK
 {
@@ -24,12 +26,16 @@ namespace MUVRTK
         [SerializeField] private bool debug;
         
         [SerializeField] private bool testOffline;
+
+        [Header("VR Manager Section")] 
         
-        [Header("VR Manager Section")]
+        [SerializeField]
+        private bool instantiateSDKManager = true;
         
+        [FormerlySerializedAs("vr_Manager")]
         [Tooltip("The pure VR-Manager-Object without the Player Models. This needs to be instantiated locally because it is a singleton instance.")]
         [SerializeField] 
-        private GameObject vr_Manager;
+        private GameObject sdkManagerGameObject;
 
         [Tooltip("The SDK-Setup-Switcher Panel. Mandatory!")]
         [SerializeField]
@@ -86,12 +92,16 @@ namespace MUVRTK
         private bool leftControllerModelLoaded;
         private bool rightControllerModelLoaded;
         private bool playareascriptloaded;
+        private bool controllerScriptAliasesLoaded;
 
         private GameObject vrmInstance;
         private GameObject playerModelInstance;
         private GameObject leftControllerInstance;
         private GameObject rightControllerInstance;
         private GameObject[] controllerModelInstances = new GameObject[2];
+        private GameObject[] controllerScriptAliasInstances = new GameObject[2];
+        private GameObject playArea;
+
 
         private bool controllerModelContainerinitialized;
         
@@ -103,20 +113,27 @@ namespace MUVRTK
         void Start()
         {
 
-            if (enableTeleport)
-            {
-                TeleportEnable();
-            }
-
             //If you want to test offline, call Instantiate here. Else it will be called by the GameManager in the OnJoinedRoom-Method.
             if (testOffline)
             {
                 Instantiate_GameObjects();
             }
         }
+        
+        
 
         void Update()
         {
+            if (rightControllerInstance == null)
+            {
+                rightControllerInstance = GameObject.FindWithTag("RightController");
+            }
+
+            if (leftControllerInstance == null)
+            {
+                leftControllerInstance = GameObject.FindWithTag("LeftController");
+            }
+            
             // This waits for the vrm and model-instantiation and then binds the two together in holy matrimony. 
             if (!cameraLoaded)
             {
@@ -143,17 +160,14 @@ namespace MUVRTK
                     {
                         if (leftControllerInstance.transform.GetChild(0).transform.childCount > 0)
                         {
-                            BindModelToVRM(controllerModelInstances[0], vrmInstance, "LeftController");
-                            DeactivateCurrentControllerModel(leftControllerInstance);
-                            leftControllerModelLoaded = true;
+                            if (vrmInstance != null)
+                            {
+                                BindModelToVRM(controllerModelInstances[0], vrmInstance, "LeftController");
+                                DeactivateCurrentControllerModel(leftControllerInstance);
+                                leftControllerModelLoaded = true;
+                            }
                         }
- 
                     }
-                    else
-                    {
-                        leftControllerInstance = GameObject.FindWithTag("LeftController");
-                    }
-                    
                 }
             }
             
@@ -166,14 +180,55 @@ namespace MUVRTK
                     {
                         if (rightControllerInstance.transform.GetChild(0).transform.childCount > 0)
                         {
-                            BindModelToVRM(controllerModelInstances[1], vrmInstance, "RightController");
-                            DeactivateCurrentControllerModel(rightControllerInstance);
-                            rightControllerModelLoaded = true;
+                            if (vrmInstance != null)
+                            {
+                                BindModelToVRM(controllerModelInstances[1], vrmInstance, "RightController");
+                                DeactivateCurrentControllerModel(rightControllerInstance);
+                                rightControllerModelLoaded = true;   
+                            }
                         }  
                     }
-                    else
+
+                }    
+            }
+            
+            if (enableTeleport)
+            {
+                bool startedTeleportEnable = false;
+
+                if (!startedTeleportEnable)
+                {
+                    if (controllerScriptAliasesLoaded)
                     {
-                        rightControllerInstance = GameObject.FindWithTag("RightController");
+                        TeleportEnable();
+                        startedTeleportEnable = true;
+                    }
+                }
+                
+            }
+
+            if (!instantiateSDKManager)
+            {
+                if (controllerScriptAliasesLoaded)
+                {
+
+                    controllerScriptAliasInstances[0].transform.parent = leftControllerInstance.transform;
+                    controllerScriptAliasInstances[1].transform.parent = rightControllerInstance.transform;
+
+                }
+            }
+            
+            ///when everything else is loaded, then re-enable the BasicTeleport-Script to make it work.
+
+            if (playareascriptloaded)
+            {
+                if (cameraLoaded)
+                {
+                    if (controllerScriptAliasesLoaded)
+                    {
+                        // Making sure the OnEnable-Method is called in the Basic-Teleport-Script.
+                        playArea.SetActive(false);
+                        playArea.SetActive(true);
                     }
                 }
             }
@@ -189,12 +244,13 @@ namespace MUVRTK
         {
 
             // first: instantiate the sdk-manager and the correlated setup-switcher
-            if (spawnPoint)
-            {
-                vrmInstance = Instantiate(vr_Manager, spawnPoint.position, Quaternion.identity);
-            }
-            else vrmInstance = Instantiate(vr_Manager, new Vector3(Random.value * 5, 0f, Random.value * 5), Quaternion.identity);
-           Instantiate(sdkSetupSwitcher, transform.position, transform.rotation);
+            // if the flag is not set you have to set a SDK-Manager and Setup-Switcher manually in the scene for it to work!
+           if(instantiateSDKManager)
+               InstantiateSdkManager();
+           else
+           {
+               vrmInstance = GameObject.FindWithTag("SDK_Manager");
+           }
 
 
             //Player Model Instantiation
@@ -237,13 +293,20 @@ namespace MUVRTK
                 //Controler Script Aliases
                 if (controllerScriptAliases.Length > 1)
                 {
-                    vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasLeftController = PhotonNetwork.Instantiate(controllerScriptAliases[0].name, transform.position, transform.rotation);
-                    vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasRightController = PhotonNetwork.Instantiate(controllerScriptAliases[1].name, transform.position, transform.rotation);
+                    
+                    controllerScriptAliasInstances[0]  = PhotonNetwork.Instantiate(controllerScriptAliases[0].name, transform.position, transform.rotation);
+                    vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasLeftController = controllerScriptAliasInstances[0];
+                    controllerScriptAliasInstances[1] = PhotonNetwork.Instantiate(controllerScriptAliases[1].name, transform.position, transform.rotation);
+                    vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasRightController = controllerScriptAliasInstances[1];
+                    controllerScriptAliasesLoaded = true;
                 }
                 if(controllerScriptAliases.Length == 1)
                 {
-                    vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasLeftController = PhotonNetwork.Instantiate(controllerScriptAliases[0].name, transform.position, transform.rotation);
-                    vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasRightController = PhotonNetwork.Instantiate(controllerScriptAliases[0].name, transform.position, transform.rotation);
+                    controllerScriptAliasInstances[0]  = PhotonNetwork.Instantiate(controllerScriptAliases[0].name, transform.position, transform.rotation);
+                    vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasLeftController = controllerScriptAliasInstances[0];
+                    controllerScriptAliasInstances[1] = PhotonNetwork.Instantiate(controllerScriptAliases[0].name, transform.position, transform.rotation);
+                    vrmInstance.GetComponent<VRTK_SDKManager>().scriptAliasRightController = controllerScriptAliasInstances[1];
+                    controllerScriptAliasesLoaded = true;
                 }
                 else
                 {
@@ -284,9 +347,19 @@ namespace MUVRTK
 
         }
 
+        
+        /// <summary>
+        /// Enables Networked Teleportation on for the Player.
+        /// The ControllerScriptAlias needs three Components for this, if not already added:
+        ///  - VRTK_Controllerevents (in order to register Controller Input at all)
+        ///  - VRTK_Pointer (connecting the Controller Inputs to the Pointer Renderer and to the Teleporting - Logic)
+        ///  - VRTK_PointerRenderer (rendering the Pointer as a straight line or a Bezier Curve)
+        /// Additionally, you either need to have a PlayAreaScript in the scene that contains:
+        ///  - VRTK_BasicTeleport (Interacts with the Pointer and the SDK-Manager to teleport the Player around.
+        /// </summary>
         public void TeleportEnable()
         {
-            foreach (GameObject go in controllerScriptAliases)
+            foreach (GameObject go in controllerScriptAliasInstances)
             {
                 if (!go.GetComponent<VRTK_ControllerEvents>())
                 {
@@ -298,30 +371,62 @@ namespace MUVRTK
                 {
                     go.AddComponent<VRTK_Pointer>();
                 }
+                
                 VRTK_Pointer pointer = go.GetComponent<VRTK_Pointer>();
                 pointer.enableTeleport = true;
+                pointer.activationButton = VRTK_ControllerEvents.ButtonAlias.TouchpadPress;
                 pointer.holdButtonToActivate = true;
+                pointer.selectOnPress = false;
                 
+                //If no Pointer renderer can be found, add a Straight Pointer Renderer by default.
                 if (!go.GetComponent<VRTK_StraightPointerRenderer>() && !go.GetComponent<VRTK_BezierPointerRenderer>())
                 {
-                    go.AddComponent<VRTK_StraightPointerRenderer>();
+                    pointer.pointerRenderer = go.AddComponent<VRTK_StraightPointerRenderer>();
+                    
                 }
-
-                if (!playareascriptloaded)
+            }
+            
+            if (!playareascriptloaded)
+            {
+               
+                    
+                Debug.Log(name + " : Searching for PlayAreaScript.");
+                if ( GameObject.FindWithTag("PlayAreaScript") == null)
                 {
-                    GameObject PlayArea =
+                    playArea =
                         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/MUVRTK/Local_Resources/PlayAreaScript.prefab");
-                    Instantiate(PlayArea, transform.position, transform.rotation);
+                    Instantiate(playArea, transform.position, transform.rotation);
+                        
+                    Debug.Log(name + " : didn't find a PlayAreaScript, so instantiating one.");
+                        
                     playareascriptloaded = true;
                 }
+                else
+                {
+                    playArea = GameObject.FindWithTag("PlayAreaScript");
+                    Debug.Log(name + " : found PlayAreaScript!");
+                }
+                    
                
-
             }
         }
 
         #endregion
         
         #region Private Methods
+        
+        /// <summary>
+        /// Instantiates the SDK Manager and SDK Setup Switcher.
+        /// </summary>
+        private void InstantiateSdkManager()
+        {
+            if (spawnPoint)
+            {
+                vrmInstance = Instantiate(sdkManagerGameObject, spawnPoint.position, Quaternion.identity);
+            }
+            else vrmInstance = Instantiate(sdkManagerGameObject, new Vector3(Random.value * 5, 0f, Random.value * 5), Quaternion.identity);
+            Instantiate(sdkSetupSwitcher, transform.position, transform.rotation);
+        }
         
         /// <summary>
         /// Takes a Model Prefab, a vr-manager GameObject and a keyword and binds the model to the movements of the vrm.

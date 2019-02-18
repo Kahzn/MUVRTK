@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 5820988986614061052}
   - component: {fileID: 6271115699533533751}
   m_Layer: 0
-  m_Name: '[MODEL] PointerHapticsPlayer'
+  m_Name: '[PREFAB] PointerHapticsPlayer'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -233,7 +233,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 9134103080250105976}
-  viewIdField: 8
+  viewIdField: 0
   InstantiationId: 8
   isRuntimeInstantiated: 0
 --- !u!114 &9134103080250105976
