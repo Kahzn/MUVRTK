@@ -51,7 +51,7 @@ MonoBehaviour:
   dummyAvatar: {fileID: 0}
   personalSpaceShape: {fileID: 3627851747097573118, guid: 1877b662e247ba545a6e1a9fb9994f69,
     type: 3}
-  visibleToOtherPlayers: 0
+  visibleToOtherPlayers: 1
 --- !u!114 &7163333786500312807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3642333007352936769}
-  viewIdField: 17
+  viewIdField: 0
   InstantiationId: 17
   isRuntimeInstantiated: 0
 --- !u!114 &3642333007352936769
