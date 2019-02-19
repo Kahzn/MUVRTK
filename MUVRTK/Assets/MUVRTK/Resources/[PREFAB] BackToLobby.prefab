@@ -181,8 +181,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 9
-  InstantiationId: 9
+  viewIdField: 4
+  InstantiationId: 4
   isRuntimeInstantiated: 0
 --- !u!114 &8456280255822973219
 MonoBehaviour:
@@ -316,6 +316,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
+        type: 3}
+      propertyPath: viewIdField
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
+        type: 3}
+      propertyPath: InstantiationId
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104828319383060066, guid: 1eaef5e32e0bec740951a8fa881b1776,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -360,21 +375,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_margin.w
       value: 7.024746
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
-        type: 3}
-      propertyPath: viewIdField
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
-        type: 3}
-      propertyPath: InstantiationId
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104828319383060066, guid: 1eaef5e32e0bec740951a8fa881b1776,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eaef5e32e0bec740951a8fa881b1776, type: 3}

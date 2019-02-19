@@ -39,7 +39,7 @@
                 if (debug)
                     Debug.Log(name + " : ViewCount : " + viewerCount);
                 currentColor = renderer.material.color;
-                PhotonView.Get(this).RPC("ChangeColor", RpcTarget.All, viewId,  currentColor.r + 0.1f, currentColor.g +0.1f, currentColor.b +0.1f);
+                PhotonView.Get(this).RPC("ChangeColor", RpcTarget.All, viewId,  currentColor.r + 0.2f, currentColor.g +0.2f, currentColor.b + 0.2f);
             }
         }
 
@@ -53,7 +53,7 @@
                     Debug.Log(name + " : ViewCount : " + viewerCount);
 
                 currentColor = renderer.material.color;
-                PhotonView.Get(this).RPC("ChangeColor", RpcTarget.All, viewId, currentColor.r -0.1f, currentColor.g -0.1f, currentColor.b -0.1f);
+                PhotonView.Get(this).RPC("ChangeColor", RpcTarget.All, viewId, currentColor.r -0.2f, currentColor.g -0.2f, currentColor.b -0.2f);
             }
 
         }

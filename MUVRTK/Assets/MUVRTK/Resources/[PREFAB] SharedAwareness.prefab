@@ -148,8 +148,8 @@ MonoBehaviour:
   lifetimeInSeconds: -99
   points: 100
   health: 1
-  destroyInteraction: 5
-  triggerInteraction: 8
+  destroyInteraction: 6
+  triggerInteraction: 5
   playAudioClip: 0
   audioClip: {fileID: 0}
   triggerHapticPulse: 0

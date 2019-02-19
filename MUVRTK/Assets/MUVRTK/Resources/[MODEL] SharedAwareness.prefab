@@ -100,8 +100,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 505794638935597960}
-  viewIdField: 19
-  InstantiationId: 19
+  viewIdField: 11
+  InstantiationId: 11
   isRuntimeInstantiated: 0
 --- !u!114 &505794638935597960
 MonoBehaviour:
@@ -173,5 +173,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.07}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.016442936, y: 0.013516072, z: 0.07}
+  m_Center: {x: -0.0006947175, y: 0.0004207852, z: 1.876206e-18}
