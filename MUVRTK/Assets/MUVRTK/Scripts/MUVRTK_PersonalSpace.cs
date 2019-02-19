@@ -79,6 +79,7 @@ public class MUVRTK_PersonalSpace : MonoBehaviour
             if (!visibleToOtherPlayers)
             {
                 personalSpaceInstance.layer = 8;
+                personalSpaceInstance.transform.GetChild(0).gameObject.layer = 8;
             }
             
             personalSpaceInstanceCopyOnDummy = Instantiate(personalSpaceShape, dummyAvatar.transform.position,
