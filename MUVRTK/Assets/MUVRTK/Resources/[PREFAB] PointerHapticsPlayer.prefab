@@ -54,8 +54,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 4622942390585573535}
-  viewIdField: 0
-  InstantiationId: 5
+  viewIdField: 14
+  InstantiationId: 14
   isRuntimeInstantiated: 0
 --- !u!114 &4622942390585573535
 MonoBehaviour:
@@ -233,8 +233,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 9134103080250105976}
-  viewIdField: 0
-  InstantiationId: 8
+  viewIdField: 10
+  InstantiationId: 10
   isRuntimeInstantiated: 0
 --- !u!114 &9134103080250105976
 MonoBehaviour:
