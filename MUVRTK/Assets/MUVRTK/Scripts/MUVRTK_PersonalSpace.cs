@@ -34,6 +34,7 @@ public class MUVRTK_PersonalSpace : MonoBehaviour
     #region Private Fields
 
     private bool alreadyCreated;
+    private bool bindingCompleted;
 
     #endregion
     
@@ -47,9 +48,17 @@ public class MUVRTK_PersonalSpace : MonoBehaviour
 
     private void Update()
     {
-        if (avatarInstance)
+        if (alreadyCreated)
         {
-            BindPersonalSpaceToAvatar(avatarInstance);
+            if (avatarInstance)
+            {
+                if (!bindingCompleted)
+                {
+                    BindPersonalSpaceToAvatar(avatarInstance);
+                    bindingCompleted = true;
+                }
+
+            }
         }
     }
     
@@ -69,7 +78,7 @@ public class MUVRTK_PersonalSpace : MonoBehaviour
 
             if (!visibleToOtherPlayers)
             {
-                personalSpaceInstance.layer = SortingLayer.GetLayerValueFromName("Invisible");
+                personalSpaceInstance.layer = 8;
             }
             
             personalSpaceInstanceCopyOnDummy = Instantiate(personalSpaceShape, dummyAvatar.transform.position,

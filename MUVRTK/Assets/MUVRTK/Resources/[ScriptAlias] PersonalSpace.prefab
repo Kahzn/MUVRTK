@@ -51,7 +51,7 @@ MonoBehaviour:
   dummyAvatar: {fileID: 0}
   personalSpaceShape: {fileID: 3627851747097573118, guid: 1877b662e247ba545a6e1a9fb9994f69,
     type: 3}
-  visibleToOtherPlayers: 1
+  visibleToOtherPlayers: 0
 --- !u!114 &7163333786500312807
 MonoBehaviour:
   m_ObjectHideFlags: 0

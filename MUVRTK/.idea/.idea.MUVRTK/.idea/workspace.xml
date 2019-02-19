@@ -3,20 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a076696e-6859-467f-963a-9cb2af34b682" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Examples/10 - Personal Space - Range.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Examples/10 - Personal Space - Range.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[Avatar] PointerHaptics.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[Avatar] PointerHaptics.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[Avatar] Standard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[Avatar] Standard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[Interactable] Grabbable_Highlight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[Interactable] Grabbable_Highlight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[Interactable] InventoryObject.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[Interactable] InventoryObject.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[ScriptAlias] HighFive.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[ScriptAlias] HighFive.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[ScriptAlias] POI Spawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[ScriptAlias] POI Spawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[ScriptAlias] Simple_Interaction.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[ScriptAlias] Simple_Interaction.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[Spawnable] POI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[Spawnable] POI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_SimpleSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_SimpleSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[ScriptAlias] PersonalSpace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[ScriptAlias] PersonalSpace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_PersonalSpace.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_PersonalSpace.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,12 +44,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="5080" />
+          <entry key="cs" value="5150" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="5080" />
+          <entry key="C#" value="5150" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -228,44 +216,31 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_PersonalSpace.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="364">
+              <caret line="80" column="47" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
               <folding>
-                <marker date="1550595166642" expanded="true" signature="6:91" ph="..." />
-                <marker date="1550595166642" expanded="true" signature="109:2282" ph="{...}" />
-                <marker date="1550595166642" expanded="true" signature="118:190" ph="..." />
-                <marker date="1550595166642" expanded="true" signature="192:365" ph="/// This class handles the behaviour of the Personalspace-bubble around the avatar. ... " />
-                <marker date="1550595166642" expanded="true" signature="415:2279" ph="{...}" />
-                <marker date="1550595166642" expanded="true" signature="501:785" ph="Private Serialized Fields" />
-                <marker date="1550595166642" expanded="true" signature="795:867" ph="Private Fields" />
-                <marker date="1550595166642" expanded="true" signature="877:1195" ph="MonoBehaviour Callbacks" />
-                <marker date="1550595166642" expanded="true" signature="934:1033" ph="{...}" />
-                <marker date="1550595166642" expanded="true" signature="1060:1175" ph="{...}" />
-                <marker date="1550595166642" expanded="true" signature="1094:1169" ph="{...}" />
-                <marker date="1550595166642" expanded="true" signature="1205:2275" ph="Public Methods" />
-                <marker date="1550595166642" expanded="true" signature="1233:1355" ph="/// Spawns a Personal Space Bubble around the Player. ... " />
-                <marker date="1550595166642" expanded="true" signature="1385:1946" ph="{...}" />
-                <marker date="1550595166642" expanded="true" signature="1420:1940" ph="{...}" />
-                <marker date="1550595166642" expanded="true" signature="1599:1722" ph="{...}" />
-                <marker date="1550595166642" expanded="true" signature="2008:2259" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_PersonalSpaceSetter.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <marker date="1550592357326" expanded="true" signature="29:590" ph="{...}" />
-                <marker date="1550592357326" expanded="false" signature="42:122" ph="..." />
-                <marker date="1550592357326" expanded="true" signature="183:583" ph="{...}" />
-                <marker date="1550592357326" expanded="true" signature="418:575" ph="{...}" />
-                <marker date="1550592357326" expanded="true" signature="463:565" ph="{...}" />
+                <marker date="1550596230175" expanded="true" signature="6:91" ph="..." />
+                <marker date="1550596230175" expanded="true" signature="109:2460" ph="{...}" />
+                <marker date="1550596230175" expanded="true" signature="118:190" ph="..." />
+                <marker date="1550596230175" expanded="true" signature="192:365" ph="/// This class handles the behaviour of the Personalspace-bubble around the avatar. ... " />
+                <marker date="1550596230175" expanded="true" signature="415:2457" ph="{...}" />
+                <marker date="1550596230175" expanded="true" signature="501:785" ph="Private Serialized Fields" />
+                <marker date="1550596230175" expanded="true" signature="795:902" ph="Private Fields" />
+                <marker date="1550596230175" expanded="true" signature="912:1419" ph="MonoBehaviour Callbacks" />
+                <marker date="1550596230175" expanded="true" signature="969:1068" ph="{...}" />
+                <marker date="1550596230175" expanded="true" signature="1095:1399" ph="{...}" />
+                <marker date="1550596230175" expanded="true" signature="1129:1393" ph="{...}" />
+                <marker date="1550596230175" expanded="true" signature="1171:1383" ph="{...}" />
+                <marker date="1550596230175" expanded="true" signature="1224:1368" ph="{...}" />
+                <marker date="1550596230175" expanded="true" signature="1429:2453" ph="Public Methods" />
+                <marker date="1550596230175" expanded="true" signature="1457:1579" ph="/// Spawns a Personal Space Bubble around the Player. ... " />
+                <marker date="1550596230175" expanded="true" signature="1609:2124" ph="{...}" />
+                <marker date="1550596230175" expanded="true" signature="1644:2118" ph="{...}" />
+                <marker date="1550596230175" expanded="true" signature="1823:1900" ph="{...}" />
+                <marker date="1550596230175" expanded="true" signature="2186:2437" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -407,10 +382,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_GameManager_base.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/VRTK-master/Assets/VRTK/Source/Scripts/Pointers/VRTK_Pointer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/VRTK-master/Assets/VRTK/Source/Scripts/Pointers/VRTK_DestinationMarker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_PersonalSpaceShape.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_ObjectsToSpawn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/VRTK-master/Assets/VRTK/Source/Scripts/Utilities/SDK/VRTK_SDKSetup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_PersonalSpaceSetter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/VRTK-master/Assets/VRTK/Source/SDK/Simulator/SDK_InputSimulator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/VRTK-master/Assets/VRTK/Source/Scripts/Locomotion/VRTK_BasicTeleport.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_LobbyViewer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -526,12 +499,12 @@
       <workItem from="1548867578384" duration="1342000" />
       <workItem from="1550238731138" duration="19211000" />
       <workItem from="1550500899724" duration="25000" />
-      <workItem from="1550569167210" duration="16946000" />
+      <workItem from="1550569167210" duration="17673000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73109000" />
+    <option name="totallyTimeSpent" value="73836000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1182,13 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding>
-            <marker date="1550589648471" expanded="false" signature="6:78" ph="..." />
-            <marker date="1550589648471" expanded="true" signature="134:477" ph="{...}" />
-            <marker date="1550589648471" expanded="true" signature="141:308" ph="Private Serializable Fields" />
-            <marker date="1550589648471" expanded="true" signature="383:396" ph="{...}" />
-            <marker date="1550589648471" expanded="true" signature="454:475" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1371,41 +1337,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_PersonalSpaceSetter.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_PersonalSpace.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="364">
+          <caret line="80" column="47" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
           <folding>
-            <marker date="1550595166642" expanded="true" signature="6:91" ph="..." />
-            <marker date="1550595166642" expanded="true" signature="109:2282" ph="{...}" />
-            <marker date="1550595166642" expanded="true" signature="118:190" ph="..." />
-            <marker date="1550595166642" expanded="true" signature="192:365" ph="/// This class handles the behaviour of the Personalspace-bubble around the avatar. ... " />
-            <marker date="1550595166642" expanded="true" signature="415:2279" ph="{...}" />
-            <marker date="1550595166642" expanded="true" signature="501:785" ph="Private Serialized Fields" />
-            <marker date="1550595166642" expanded="true" signature="795:867" ph="Private Fields" />
-            <marker date="1550595166642" expanded="true" signature="877:1195" ph="MonoBehaviour Callbacks" />
-            <marker date="1550595166642" expanded="true" signature="934:1033" ph="{...}" />
-            <marker date="1550595166642" expanded="true" signature="1060:1175" ph="{...}" />
-            <marker date="1550595166642" expanded="true" signature="1094:1169" ph="{...}" />
-            <marker date="1550595166642" expanded="true" signature="1205:2275" ph="Public Methods" />
-            <marker date="1550595166642" expanded="true" signature="1233:1355" ph="/// Spawns a Personal Space Bubble around the Player. ... " />
-            <marker date="1550595166642" expanded="true" signature="1385:1946" ph="{...}" />
-            <marker date="1550595166642" expanded="true" signature="1420:1940" ph="{...}" />
-            <marker date="1550595166642" expanded="true" signature="1599:1722" ph="{...}" />
-            <marker date="1550595166642" expanded="true" signature="2008:2259" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_PersonalSpaceSetter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1550592357326" expanded="true" signature="29:590" ph="{...}" />
-            <marker date="1550592357326" expanded="false" signature="42:122" ph="..." />
-            <marker date="1550592357326" expanded="true" signature="183:583" ph="{...}" />
-            <marker date="1550592357326" expanded="true" signature="418:575" ph="{...}" />
-            <marker date="1550592357326" expanded="true" signature="463:565" ph="{...}" />
+            <marker date="1550596230175" expanded="true" signature="6:91" ph="..." />
+            <marker date="1550596230175" expanded="true" signature="109:2460" ph="{...}" />
+            <marker date="1550596230175" expanded="true" signature="118:190" ph="..." />
+            <marker date="1550596230175" expanded="true" signature="192:365" ph="/// This class handles the behaviour of the Personalspace-bubble around the avatar. ... " />
+            <marker date="1550596230175" expanded="true" signature="415:2457" ph="{...}" />
+            <marker date="1550596230175" expanded="true" signature="501:785" ph="Private Serialized Fields" />
+            <marker date="1550596230175" expanded="true" signature="795:902" ph="Private Fields" />
+            <marker date="1550596230175" expanded="true" signature="912:1419" ph="MonoBehaviour Callbacks" />
+            <marker date="1550596230175" expanded="true" signature="969:1068" ph="{...}" />
+            <marker date="1550596230175" expanded="true" signature="1095:1399" ph="{...}" />
+            <marker date="1550596230175" expanded="true" signature="1129:1393" ph="{...}" />
+            <marker date="1550596230175" expanded="true" signature="1171:1383" ph="{...}" />
+            <marker date="1550596230175" expanded="true" signature="1224:1368" ph="{...}" />
+            <marker date="1550596230175" expanded="true" signature="1429:2453" ph="Public Methods" />
+            <marker date="1550596230175" expanded="true" signature="1457:1579" ph="/// Spawns a Personal Space Bubble around the Player. ... " />
+            <marker date="1550596230175" expanded="true" signature="1609:2124" ph="{...}" />
+            <marker date="1550596230175" expanded="true" signature="1644:2118" ph="{...}" />
+            <marker date="1550596230175" expanded="true" signature="1823:1900" ph="{...}" />
+            <marker date="1550596230175" expanded="true" signature="2186:2437" ph="{...}" />
           </folding>
         </state>
       </provider>
