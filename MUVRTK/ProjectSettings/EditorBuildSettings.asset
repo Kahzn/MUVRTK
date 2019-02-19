@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MUVRTK/Examples/08 - High Five.unity
     guid: 9dcdd9139b0979f48a19582d9d437d2c
+  - enabled: 1
+    path: Assets/MUVRTK/Examples/09 - Personal Space - Backside.unity
+    guid: 96be059f5d77b3a44947dc5ebe943bc6
+  - enabled: 1
+    path: Assets/MUVRTK/Examples/10 - Personal Space - Range.unity
+    guid: d575618fed0c52340a867e8b337ce446
+  - enabled: 1
+    path: Assets/MUVRTK/Examples/11 - Networked Teleporting.unity
+    guid: 0928e91192210b64594d94d78b817eea
   m_configObjects: {}

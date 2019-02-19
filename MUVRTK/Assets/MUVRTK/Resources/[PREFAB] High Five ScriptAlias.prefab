@@ -57,8 +57,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3642333007352936769}
-  viewIdField: 0
-  InstantiationId: 5
+  viewIdField: 8
+  InstantiationId: 8
   isRuntimeInstantiated: 0
 --- !u!114 &3642333007352936769
 MonoBehaviour:
@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 1
+  collisionTag: 
   playAudioClip: 1
   audioClip: {fileID: 8300000, guid: 78ef28212799c574a815b50e9420cc4a, type: 3}
   triggerHapticPulse: 1
