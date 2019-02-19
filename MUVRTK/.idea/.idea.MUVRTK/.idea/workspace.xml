@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a076696e-6859-467f-963a-9cb2af34b682" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Examples/02 - Common Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Examples/02 - Common Room.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Examples/06 - SharedAwareness.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Examples/06 - SharedAwareness.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] SharedAwareness.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] SharedAwareness.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] BackToLobby.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] BackToLobby.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] SharedAwareness.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] SharedAwareness.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_SharedAwareness.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_SharedAwareness.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,12 +42,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="401" />
+          <entry key="cs" value="1191" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="401" />
+          <entry key="C#" value="1191" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -160,20 +154,37 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_SharedAwareness.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
-              <caret line="55" column="142" selection-start-line="55" selection-start-column="142" selection-end-line="55" selection-end-column="142" />
+            <state relative-caret-position="224">
+              <caret line="19" column="18" selection-end-line="173" />
               <folding>
-                <marker date="1550571555938" expanded="true" signature="16:2173" ph="{...}" />
-                <marker date="1550571555938" expanded="false" signature="29:131" ph="..." />
-                <marker date="1550571555938" expanded="true" signature="136:538" ph="/// This class describes the behaviour of a shared awareness object. ... " />
-                <marker date="1550571555938" expanded="true" signature="599:2171" ph="{...}" />
-                <marker date="1550571555938" expanded="true" signature="776:943" ph="{...}" />
-                <marker date="1550571555938" expanded="true" signature="997:1433" ph="{...}" />
-                <marker date="1550571555938" expanded="true" signature="1060:1423" ph="{...}" />
-                <marker date="1550571555938" expanded="true" signature="1485:1920" ph="{...}" />
-                <marker date="1550571555938" expanded="true" signature="1548:1909" ph="{...}" />
-                <marker date="1550571555938" expanded="true" signature="2013:2165" ph="{...}" />
-                <marker date="1550571555938" expanded="true" signature="2060:2155" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="50:5134" ph="{...}" />
+                <marker date="1550576963566" expanded="false" signature="63:165" ph="..." />
+                <marker date="1550576963566" expanded="true" signature="170:572" ph="/// This class describes the behaviour of a shared awareness object. ... " />
+                <marker date="1550576963566" expanded="true" signature="633:5132" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="648:1087" ph="Private Fields" />
+                <marker date="1550576963566" expanded="true" signature="1105:2307" ph="MonoBehaviour Callbacks" />
+                <marker date="1550576963566" expanded="true" signature="1169:1336" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="1390:1814" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="1453:1804" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="1866:2287" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="1929:2276" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="2324:5126" ph="Pun RPCs" />
+                <marker date="1550576963566" expanded="true" signature="2446:3758" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="2493:3748" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="2657:2788" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="2809:2948" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="3028:3138" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="3159:3298" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="3378:3488" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="3509:3648" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="3863:5098" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="3910:5088" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="3987:4093" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="4114:4274" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="4354:4460" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="4481:4620" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="4700:4806" ph="{...}" />
+                <marker date="1550576963566" expanded="true" signature="4827:4966" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -455,12 +466,12 @@
       <workItem from="1548867578384" duration="1342000" />
       <workItem from="1550238731138" duration="19211000" />
       <workItem from="1550500899724" duration="25000" />
-      <workItem from="1550569167210" duration="2387000" />
+      <workItem from="1550569167210" duration="4215000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58550000" />
+    <option name="totallyTimeSpent" value="60378000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -817,20 +828,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_SharedAwareness.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="55" column="142" selection-start-line="55" selection-start-column="142" selection-end-line="55" selection-end-column="142" />
+        <state relative-caret-position="224">
+          <caret line="19" column="18" selection-end-line="173" />
           <folding>
-            <marker date="1550571555938" expanded="true" signature="16:2173" ph="{...}" />
-            <marker date="1550571555938" expanded="false" signature="29:131" ph="..." />
-            <marker date="1550571555938" expanded="true" signature="136:538" ph="/// This class describes the behaviour of a shared awareness object. ... " />
-            <marker date="1550571555938" expanded="true" signature="599:2171" ph="{...}" />
-            <marker date="1550571555938" expanded="true" signature="776:943" ph="{...}" />
-            <marker date="1550571555938" expanded="true" signature="997:1433" ph="{...}" />
-            <marker date="1550571555938" expanded="true" signature="1060:1423" ph="{...}" />
-            <marker date="1550571555938" expanded="true" signature="1485:1920" ph="{...}" />
-            <marker date="1550571555938" expanded="true" signature="1548:1909" ph="{...}" />
-            <marker date="1550571555938" expanded="true" signature="2013:2165" ph="{...}" />
-            <marker date="1550571555938" expanded="true" signature="2060:2155" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="50:5134" ph="{...}" />
+            <marker date="1550576963566" expanded="false" signature="63:165" ph="..." />
+            <marker date="1550576963566" expanded="true" signature="170:572" ph="/// This class describes the behaviour of a shared awareness object. ... " />
+            <marker date="1550576963566" expanded="true" signature="633:5132" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="648:1087" ph="Private Fields" />
+            <marker date="1550576963566" expanded="true" signature="1105:2307" ph="MonoBehaviour Callbacks" />
+            <marker date="1550576963566" expanded="true" signature="1169:1336" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="1390:1814" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="1453:1804" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="1866:2287" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="1929:2276" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="2324:5126" ph="Pun RPCs" />
+            <marker date="1550576963566" expanded="true" signature="2446:3758" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="2493:3748" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="2657:2788" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="2809:2948" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="3028:3138" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="3159:3298" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="3378:3488" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="3509:3648" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="3863:5098" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="3910:5088" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="3987:4093" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="4114:4274" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="4354:4460" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="4481:4620" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="4700:4806" ph="{...}" />
+            <marker date="1550576963566" expanded="true" signature="4827:4966" ph="{...}" />
           </folding>
         </state>
       </provider>

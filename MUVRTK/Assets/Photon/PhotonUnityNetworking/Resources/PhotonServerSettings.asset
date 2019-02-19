@@ -54,4 +54,6 @@ MonoBehaviour:
   - HapticPulseOnBothOwnedControllers
   - PlayAudioClip
   - HapticPulseOnCollidedController
+  - MakeColorDarker
+  - MakeColorLighter
   DisableAutoOpenWizard: 1

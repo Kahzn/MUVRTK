@@ -961,7 +961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1375112423}
   m_Layer: 0
-  m_Name: SceneObjects
+  m_Name: '[MUVRTK_Objects]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1381,10 +1381,20 @@ PrefabInstance:
       propertyPath: debug
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 480424235493440384, guid: d799d8c39ac522e4bbd7809e292264c7,
+        type: 3}
+      propertyPath: sharedAwarenessHighlightStrength
+      value: 0.209
+      objectReference: {fileID: 0}
     - target: {fileID: 8973713126110459122, guid: d799d8c39ac522e4bbd7809e292264c7,
         type: 3}
       propertyPath: isGrabbable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973713126110459122, guid: d799d8c39ac522e4bbd7809e292264c7,
+        type: 3}
+      propertyPath: disableWhenIdle
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d799d8c39ac522e4bbd7809e292264c7, type: 3}
