@@ -74,13 +74,13 @@ public class MUVRTK_PersonalSpace : MonoBehaviour
     {
         if (!alreadyCreated)
         {
-            personalSpaceInstance = PhotonNetwork.Instantiate(personalSpaceShape.name, transform.position, transform.rotation);
-
             if (!visibleToOtherPlayers)
             {
-                personalSpaceInstance.layer = 8;
-                personalSpaceInstance.transform.GetChild(0).gameObject.layer = 8;
+                personalSpaceShape.layer = 8;
+                personalSpaceShape.transform.GetChild(0).gameObject.layer = 8;
             }
+            
+            personalSpaceInstance = PhotonNetwork.Instantiate(personalSpaceShape.name, transform.position, transform.rotation);
             
             personalSpaceInstanceCopyOnDummy = Instantiate(personalSpaceShape, dummyAvatar.transform.position,
                 dummyAvatar.transform.rotation);
@@ -98,6 +98,7 @@ public class MUVRTK_PersonalSpace : MonoBehaviour
 
     #endregion
 
+   
 
 }
 

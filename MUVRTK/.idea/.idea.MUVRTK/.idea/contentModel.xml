@@ -23,6 +23,7 @@
             <e p="MUVRTK_LobbyViewer.cs" t="Include" />
             <e p="MUVRTK_ObjectsToSpawn.cs" t="Include" />
             <e p="MUVRTK_PersonalSpace.cs" t="Include" />
+            <e p="MUVRTK_PersonalSpaceInstance.cs" t="Include" />
             <e p="MUVRTK_PhotonViewIDGetter.cs" t="Include" />
             <e p="MUVRTK_PlayerNameInputField.cs" t="Include" />
             <e p="MUVRTK_PlayerOwnedObject.cs" t="Include" />

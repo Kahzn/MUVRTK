@@ -48,10 +48,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 0
+  Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
-  viewIdField: 18
+  ObservedComponents:
+  - {fileID: 988511053174507177}
+  viewIdField: 0
   InstantiationId: 18
   isRuntimeInstantiated: 0
 --- !u!114 &988511053174507177
@@ -181,7 +182,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 2862197291959875953}
-  viewIdField: 13
+  viewIdField: 0
   InstantiationId: 13
   isRuntimeInstantiated: 0
 --- !u!114 &2862197291959875953
