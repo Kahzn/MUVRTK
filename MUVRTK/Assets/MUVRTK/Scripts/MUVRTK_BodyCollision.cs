@@ -1,5 +1,7 @@
 ﻿
 
+using UnityEngine.Experimental.UIElements;
+
 namespace MUVRTK
 {
     
@@ -51,6 +53,7 @@ namespace MUVRTK
 
         private PhotonView pv;
         private AudioSource audioSource;
+        private bool stillInCollider;
 
         #region MonoBehaviour Callbacks
 
@@ -81,24 +84,32 @@ namespace MUVRTK
                 
                 if(debug)
                     Debug.Log(pv.ViewID + " : Collided with something that is not myself. Other GameObject tag: " + other.gameObject.tag) ;
-                if (other.gameObject.tag.Equals(collisionTag))
+
+                if (!stillInCollider)
                 {
-                    if (debug)
-                        Debug.Log(pv.ViewID + " : tags fit! Triggering RPCs");
+                    if (other.gameObject.tag.Equals(collisionTag))
+                    {
+                        if (debug)
+                            Debug.Log(pv.ViewID + " : tags fit! Triggering RPCs");
                     
-                    Player otherPlayer = other.gameObject.GetPhotonView().Owner;
-                    if(playAudioClip)
-                        pv.RPC("PlayAudioClip", otherPlayer);
+                        Player otherPlayer = other.gameObject.GetPhotonView().Owner;
+                        if(playAudioClip)
+                            pv.RPC("PlayAudioClip", otherPlayer);
                 
-                    if(triggerHapticPulse)
-                        pv.RPC("HapticPulseOnCollidedController", otherPlayer);
+                        if(triggerHapticPulse)
+                            pv.RPC("HapticPulseOnCollidedControllers", otherPlayer);
+
+                        stillInCollider = true;
+                    }
                 }
             }
-            
-            
-            
         }
-        
+
+        private void OnCollisionExit(Collision other)
+        {
+            stillInCollider = false;
+        }
+
         #endregion
         
         #region PUN RPCs
@@ -112,7 +123,7 @@ namespace MUVRTK
         /// <param name="duration"></param>
         /// <param name="pulseInterval"></param>
         [PunRPC]
-        void HapticPulseOnCollidedController()
+        void HapticPulseOnCollidedControllers()
         {
                     VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(pv.gameObject), vibrationStrength, duration, pulseInterval);
                     Debug.Log(name + " : HapticPulseOnCollidedController-RPC worked as it should. Haptic Pulse Triggered on ViewID:" + pv.ViewID);

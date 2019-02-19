@@ -56,4 +56,5 @@ MonoBehaviour:
   - HapticPulseOnCollidedController
   - MakeColorDarker
   - MakeColorLighter
+  - HapticPulseOnCollidedControllers
   DisableAutoOpenWizard: 1

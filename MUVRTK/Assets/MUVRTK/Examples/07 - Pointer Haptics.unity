@@ -140,7 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 253311732}
   m_Layer: 0
-  m_Name: '[MUVRTK_SceneScripts]'
+  m_Name: '[MUVRTK_Scripts]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -697,7 +697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1488606472}
   m_Layer: 0
-  m_Name: '[MUVRTK_SceneObjects]'
+  m_Name: '[MUVRTK_Objects]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
