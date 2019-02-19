@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 505794638935597960}
   - component: {fileID: 8430875124236263946}
   m_Layer: 0
-  m_Name: '[Avatar] Standard'
+  m_Name: '[Avatar] PersonalSpace'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 505794638935597960}
-  viewIdField: 0
-  InstantiationId: 11
+  viewIdField: 14
+  InstantiationId: 14
   isRuntimeInstantiated: 0
 --- !u!114 &505794638935597960
 MonoBehaviour:

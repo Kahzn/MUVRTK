@@ -66,6 +66,7 @@
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_Launcher.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_LobbyViewer.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_ObjectsToSpawn.cs" />
+    <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_PersonalSpace.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_PhotonViewIDGetter.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_PlayerNameInputField.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_PlayerOwnedObject.cs" />

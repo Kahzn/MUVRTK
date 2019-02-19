@@ -12,19 +12,19 @@
     /// </summary>
     public class MUVRTK_SimpleSpawner : MonoBehaviour
     {
-        #region private Serializable Fields
+        #region Public Fields
 
         public bool debug;
         public GameObject objectToSpawn;
-
-
+        
         #endregion
+
 
         #region Public Methods
 
         public void Spawn()
         {
-            PhotonNetwork.Instantiate(objectToSpawn.name, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+                PhotonNetwork.Instantiate(objectToSpawn.name, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
 
             if (debug)
                 Debug.Log(name + " : Spawn(0) was called.");
@@ -32,7 +32,8 @@
 
         public void Spawn(GameObject objectToSpawn)
         {
-            PhotonNetwork.Instantiate(objectToSpawn.name, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+
+                PhotonNetwork.Instantiate(objectToSpawn.name, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
 
             if (debug)
                 Debug.Log(name + " : Spawn(1) was called.");
@@ -40,7 +41,8 @@
 
         public void Spawn(Vector3 position)
         {
-            PhotonNetwork.Instantiate(objectToSpawn.name, position, transform.rotation);
+
+                PhotonNetwork.Instantiate(objectToSpawn.name, position, transform.rotation);
 
             if (debug)
                 Debug.Log(name + " : Spawn(1) was called.");
@@ -48,7 +50,8 @@
 
         public void Spawn(Vector3 position, Quaternion rotation)
         {
-            PhotonNetwork.Instantiate(objectToSpawn.name, position, rotation);
+
+                PhotonNetwork.Instantiate(objectToSpawn.name, position, rotation);
 
             if (debug)
                 Debug.Log(name + " : Spawn(2) was called.");
@@ -56,9 +59,9 @@
 
         public void Spawn(GameObject go, Vector3 position, Quaternion rotation)
         {
-            PhotonNetwork.Instantiate(go.name, position, rotation);
 
-            if (debug)
+                PhotonNetwork.Instantiate(go.name, position, rotation);
+                if (debug)
                 Debug.Log(name + " : Spawn(3) was called.");
         }
 

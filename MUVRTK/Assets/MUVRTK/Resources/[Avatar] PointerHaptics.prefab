@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5820988986614061052}
   - component: {fileID: 6271115699533533751}
   m_Layer: 0
-  m_Name: '[PREFAB] PointerHapticsPlayer'
+  m_Name: '[Avatar] PointerHaptics'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

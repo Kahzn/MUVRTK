@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3588338923400512841}
   - component: {fileID: 8399150609148456266}
   m_Layer: 0
-  m_Name: '[PREFAB] Simple_Interact_ScriptAlias'
+  m_Name: '[ScriptAlias] Simple_Interaction'
   m_TagString: ScriptAlias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3642333007352936769}
-  viewIdField: 5
+  viewIdField: 0
   InstantiationId: 5
   isRuntimeInstantiated: 0
 --- !u!114 &3642333007352936769

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9061988219737395905}
   - component: {fileID: 623379717808352781}
   m_Layer: 0
-  m_Name: '[PREFAB] InventoryObject'
+  m_Name: '[Interactable] InventoryObject'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 623379717808352781}
-  viewIdField: 3
+  viewIdField: 0
   InstantiationId: 3
   isRuntimeInstantiated: 0
 --- !u!114 &623379717808352781

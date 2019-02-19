@@ -93,6 +93,7 @@ namespace MUVRTK
         private bool rightControllerModelLoaded;
         private bool playareascriptloaded;
         private bool controllerScriptAliasesLoaded;
+        private bool controllerModelContainerinitialized;
 
         private GameObject vrmInstance;
         private GameObject playerModelInstance;
@@ -102,9 +103,8 @@ namespace MUVRTK
         private GameObject[] controllerScriptAliasInstances = new GameObject[2];
         private GameObject playArea;
 
+        private MUVRTK_PersonalSpace personalSpace;
 
-        private bool controllerModelContainerinitialized;
-        
         
         #endregion
         
@@ -261,6 +261,7 @@ namespace MUVRTK
 
                 else playerModelInstance = Instantiate(playerAvatar, transform.position, transform.rotation);
             }
+            
 
             //Networked Controller Model Instantiation
             if (controllerModels.Length > 0 && showControllersOverNetwork && PhotonNetwork.IsConnected)
@@ -312,7 +313,16 @@ namespace MUVRTK
                 {
                     Debug.LogWarning(name + ": No ControllerScriptAliases found!");
                 }
-               
+
+                foreach (GameObject go in controllerScriptAliasInstances)
+                {
+                    if (go.GetComponent<MUVRTK_PersonalSpace>())
+                    {
+                        personalSpace = go.GetComponent<MUVRTK_PersonalSpace>();
+                        personalSpace.avatarInstance = playerModelInstance;
+                    }
+                }
+                
 
 
                 //All else (interactive objects and the like)

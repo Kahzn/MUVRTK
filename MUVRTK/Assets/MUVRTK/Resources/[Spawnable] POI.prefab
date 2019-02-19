@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 5178437080703599801}
   - component: {fileID: 5649980397574695545}
   m_Layer: 0
-  m_Name: '[PREFAB] POI'
+  m_Name: '[Spawnable] POI'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

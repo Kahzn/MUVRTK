@@ -24,6 +24,7 @@ TagManager:
   - Backside
   - SDK_Manager
   - PlayAreaScript
+  - Dummy
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - UI
   - 
   - 
-  - Nose
+  - Invisible
   - 
   - 
   - 
