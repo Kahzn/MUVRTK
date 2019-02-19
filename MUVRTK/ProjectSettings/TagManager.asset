@@ -25,6 +25,7 @@ TagManager:
   - SDK_Manager
   - PlayAreaScript
   - Dummy
+  - PanelMenuSlider
   layers:
   - Default
   - TransparentFX

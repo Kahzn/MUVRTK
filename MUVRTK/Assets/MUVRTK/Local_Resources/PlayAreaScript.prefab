@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7316797750302878616}
   - component: {fileID: 7316797750302878617}
+  - component: {fileID: 5789145079025540844}
   m_Layer: 0
   m_Name: PlayAreaScript
   m_TagString: PlayAreaScript
@@ -47,6 +48,22 @@ MonoBehaviour:
   blinkTransitionSpeed: 0.6
   distanceBlinkDelay: 0
   headsetPositionCompensation: 1
-  targetListPolicy: {fileID: 0}
+  targetListPolicy: {fileID: 5789145079025540844}
   navMeshData: {fileID: 0}
   navMeshLimitDistance: 0
+--- !u!114 &5789145079025540844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316797750302878619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  operation: 0
+  checkType: 1
+  identifiers:
+  - ExcludeTeleport

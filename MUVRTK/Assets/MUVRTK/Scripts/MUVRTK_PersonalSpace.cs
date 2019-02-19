@@ -18,17 +18,21 @@ public class MUVRTK_PersonalSpace : MonoBehaviour
 
     public GameObject avatarInstance;
     public GameObject dummyAvatar;
+   // public MUVRTK_PanelMenuSlider panelMenuSlider;
+    public MUVRTK_SliderResize sliderResize;
+    public GameObject personalSpaceInstance;
+    public GameObject personalSpaceInstanceCopyOnDummy;
     
     #region Private Serialized Fields
 
     [SerializeField]
     private GameObject personalSpaceShape;
+    
+    [SerializeField]
+    private GameObject localPersonalSpaceShapeForDummy;
 
     [SerializeField] private bool visibleToOtherPlayers;
-    
-    private GameObject personalSpaceInstance;
-    private GameObject personalSpaceInstanceCopyOnDummy;
-    
+
     #endregion
     
     #region Private Fields
@@ -44,6 +48,8 @@ public class MUVRTK_PersonalSpace : MonoBehaviour
     {
         alreadyCreated = false;
         dummyAvatar = GameObject.FindWithTag("Dummy");
+        //panelMenuSlider = GameObject.FindWithTag("PanelMenuSlider").GetComponent<MUVRTK_PanelMenuSlider>();
+        sliderResize = GameObject.FindWithTag("PanelMenuSlider").GetComponent<MUVRTK_SliderResize>();
     }
 
     private void Update()
@@ -74,18 +80,28 @@ public class MUVRTK_PersonalSpace : MonoBehaviour
     {
         if (!alreadyCreated)
         {
+            //toggle visibility for the Players' Personal Space
             if (!visibleToOtherPlayers)
             {
                 personalSpaceShape.layer = 8;
                 personalSpaceShape.transform.GetChild(0).gameObject.layer = 8;
             }
+            else
+            {
+                personalSpaceShape.layer = 0;
+                personalSpaceShape.transform.GetChild(0).gameObject.layer = 0;
+            }
             
             personalSpaceInstance = PhotonNetwork.Instantiate(personalSpaceShape.name, transform.position, transform.rotation);
             
-            personalSpaceInstanceCopyOnDummy = Instantiate(personalSpaceShape, dummyAvatar.transform.position,
+            
+            personalSpaceInstanceCopyOnDummy = Instantiate(localPersonalSpaceShapeForDummy, dummyAvatar.transform.position,
                 dummyAvatar.transform.rotation);
             alreadyCreated = true;
         }
+
+        sliderResize.objectToResize = personalSpaceInstance;
+        sliderResize.referenceObject = personalSpaceInstanceCopyOnDummy;
     }
 
     public void BindPersonalSpaceToAvatar(GameObject avatar)

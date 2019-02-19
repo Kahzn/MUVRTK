@@ -77,6 +77,7 @@
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SetViewIDAtRuntime.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SharedAwareness.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SimpleSpawner.cs" />
+    <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SliderResize.cs" />
     <Compile Include="Assets\MUVRTK\Scripts\MUVRTK_SpeechBubble.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
