@@ -73,6 +73,7 @@ namespace MUVRTK
                     audioSource = gameObject.AddComponent<AudioSource>();
                 }
 
+                audioSource.playOnAwake = false;
             }
         }
 

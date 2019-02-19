@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6948462156027482347}
   - component: {fileID: 3241504193412470695}
   m_Layer: 0
-  m_Name: '[PREFAB] High Five ScriptAlias'
+  m_Name: '[ScriptAlias] HighFive'
   m_TagString: ScriptAlias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ BoxCollider:
   m_GameObject: {fileID: 8623963408292656802}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.18752962, y: 0.12383132, z: 0.5898799}
   m_Center: {x: 0, y: 0, z: 0}
