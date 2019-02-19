@@ -2,44 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a076696e-6859-467f-963a-9cb2af34b682" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MUVRTK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Examples/01 - Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Examples/01 - Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Examples/09 - Personal Space.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Examples/09 - Personal Space.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Examples/10 - Networked_Teleporting.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Examples/10 - Networked_Teleporting.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Examples/03 - Interact Highlighter.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Examples/03 - Interact Highlighter.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] Controller.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] Controller.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] SharedAwareness.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[MODEL] SharedAwareness.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] InventoryObject.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] InventoryObject.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] POI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] POI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] POI_Pointer_Interact_ScripAlias.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] POI_Pointer_Interact_ScripAlias.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] Simple_Interact_ScriptAlias.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] Simple_Interact_ScriptAlias.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] Speech Bubbles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] Speech Bubbles.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] SpeechBubble_Pointer_Interact_ScripAlias.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Resources/[PREFAB] SpeechBubble_Pointer_Interact_ScripAlias.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Launcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Launcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonChat.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonChat.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonRealtime.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonRealtime.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.Culling.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.Culling.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonWebSocket.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonWebSocket.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonChat.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonChat.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonRealtime.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonRealtime.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Editor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Editor.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Utilities.Culling.Editor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Utilities.Culling.Editor.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Utilities.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.Utilities.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonUnityNetworking.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PhotonWebSocket.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PhotonWebSocket.csprojAssemblyReference.cache" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,11 +64,89 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3136">
-              <caret line="196" column="50" selection-start-line="196" selection-start-column="50" selection-end-line="196" selection-end-column="50" />
+            <state relative-caret-position="-1604">
+              <caret line="240" selection-start-line="240" selection-end-line="240" />
+              <folding>
+                <marker date="1550566477123" expanded="false" signature="6:312" ph="..." />
+                <marker date="1550566477123" expanded="true" signature="330:20004" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="333:478" ph="/// Manages all Player Instantiation Issues in MUVRTK.  ... " />
+                <marker date="1550566477123" expanded="true" signature="530:20002" ph="{...}" />
+                <marker date="1550566477123" expanded="false" signature="554:3251" ph="Private Serialize Fields" />
+                <marker date="1550566477123" expanded="false" signature="3261:3993" ph="Private Fields" />
+                <marker date="1550566477123" expanded="true" signature="4011:8619" ph="MonoBehaviour Callbacks" />
+                <marker date="1550566477123" expanded="true" signature="4064:4321" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="4240:4311" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="4362:8584" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="4421:4534" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="4583:4694" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="4852:5354" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="4907:5340" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="5003:5322" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="5082:5300" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="5399:6278" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="5600:6264" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="5674:6246" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="5795:6224" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="5874:6198" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="6336:7230" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="6537:7212" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="6612:7193" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="6734:7169" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="6813:7143" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="7275:7648" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="7386:7617" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="7459:7599" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="7689:8021" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="7754:8007" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="8177:8574" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="8225:8560" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="8298:8542" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="8638:16666" ph="Public Methods" />
+                <marker date="1550566477123" expanded="true" signature="8715:13757" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="8739:8935" ph="/* first: instantiate the sdk-manager and the correlated setup-switcher ... */" />
+                <marker date="1550566477123" expanded="true" signature="9028:9122" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="9203:9512" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="9672:10697" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="9810:10181" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="10232:10682" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="10836:12902" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="10949:11632" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="11688:12350" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="12371:12491" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="12649:12871" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="12919:13486" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="13044:13158" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="13277:13455" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="13586:13746" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="13776:14475" ph="/// Enables Networked Teleportation on for the Player. ... " />
+                <marker date="1550566477123" expanded="true" signature="14512:16646" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="14592:15678" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="14669:14788" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="14859:14948" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="15512:15664" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="15730:16636" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="15922:16389" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="16410:16585" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="16684:19996" ph="Private Methods" />
+                <marker date="1550566477123" expanded="true" signature="16725:16826" ph="/// Instantiates the SDK Manager and SDK Setup Switcher. ... " />
+                <marker date="1550566477123" expanded="true" signature="16871:17277" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="16909:17044" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="17295:17672" ph="/// Takes a Model Prefab, a vr-manager GameObject and a keyword and binds the model to the movements of the vrm. ... " />
+                <marker date="1550566477123" expanded="true" signature="17760:19059" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="17814:17979" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="18032:18460" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="18098:18278" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="18314:18429" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="18514:18915" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="18582:18763" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="18784:18900" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="19069:19411" ph="/// Searches the Controller Hierarchy for the Model Body and deactivates its Mesh Renderer Component so that we d ... " />
+                <marker date="1550566477123" expanded="true" signature="19496:19967" ph="{...}" />
+                <marker date="1550566477123" expanded="true" signature="19567:19945" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -180,7 +222,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Launcher.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="428">
@@ -383,12 +425,12 @@
       <workItem from="1548867578384" duration="1342000" />
       <workItem from="1550238731138" duration="19211000" />
       <workItem from="1550500899724" duration="25000" />
-      <workItem from="1550569167210" duration="1267000" />
+      <workItem from="1550569167210" duration="1651000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57430000" />
+    <option name="totallyTimeSpent" value="57814000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -588,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3136">
-          <caret line="196" column="50" selection-start-line="196" selection-start-column="50" selection-end-line="196" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_SimpleSpawner.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -661,6 +696,91 @@
             <marker date="1550570434882" expanded="true" signature="8581:8866" ph="{...}" />
             <marker date="1550570434882" expanded="true" signature="8905:9194" ph="{...}" />
             <marker date="1550570434882" expanded="true" signature="9242:9531" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/MUVRTK/Scripts/MUVRTK_Instantiate.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1604">
+          <caret line="240" selection-start-line="240" selection-end-line="240" />
+          <folding>
+            <marker date="1550566477123" expanded="false" signature="6:312" ph="..." />
+            <marker date="1550566477123" expanded="true" signature="330:20004" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="333:478" ph="/// Manages all Player Instantiation Issues in MUVRTK.  ... " />
+            <marker date="1550566477123" expanded="true" signature="530:20002" ph="{...}" />
+            <marker date="1550566477123" expanded="false" signature="554:3251" ph="Private Serialize Fields" />
+            <marker date="1550566477123" expanded="false" signature="3261:3993" ph="Private Fields" />
+            <marker date="1550566477123" expanded="true" signature="4011:8619" ph="MonoBehaviour Callbacks" />
+            <marker date="1550566477123" expanded="true" signature="4064:4321" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="4240:4311" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="4362:8584" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="4421:4534" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="4583:4694" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="4852:5354" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="4907:5340" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="5003:5322" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="5082:5300" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="5399:6278" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="5600:6264" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="5674:6246" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="5795:6224" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="5874:6198" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="6336:7230" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="6537:7212" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="6612:7193" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="6734:7169" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="6813:7143" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="7275:7648" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="7386:7617" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="7459:7599" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="7689:8021" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="7754:8007" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="8177:8574" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="8225:8560" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="8298:8542" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="8638:16666" ph="Public Methods" />
+            <marker date="1550566477123" expanded="true" signature="8715:13757" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="8739:8935" ph="/* first: instantiate the sdk-manager and the correlated setup-switcher ... */" />
+            <marker date="1550566477123" expanded="true" signature="9028:9122" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="9203:9512" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="9672:10697" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="9810:10181" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="10232:10682" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="10836:12902" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="10949:11632" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="11688:12350" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="12371:12491" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="12649:12871" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="12919:13486" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="13044:13158" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="13277:13455" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="13586:13746" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="13776:14475" ph="/// Enables Networked Teleportation on for the Player. ... " />
+            <marker date="1550566477123" expanded="true" signature="14512:16646" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="14592:15678" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="14669:14788" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="14859:14948" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="15512:15664" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="15730:16636" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="15922:16389" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="16410:16585" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="16684:19996" ph="Private Methods" />
+            <marker date="1550566477123" expanded="true" signature="16725:16826" ph="/// Instantiates the SDK Manager and SDK Setup Switcher. ... " />
+            <marker date="1550566477123" expanded="true" signature="16871:17277" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="16909:17044" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="17295:17672" ph="/// Takes a Model Prefab, a vr-manager GameObject and a keyword and binds the model to the movements of the vrm. ... " />
+            <marker date="1550566477123" expanded="true" signature="17760:19059" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="17814:17979" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="18032:18460" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="18098:18278" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="18314:18429" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="18514:18915" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="18582:18763" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="18784:18900" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="19069:19411" ph="/// Searches the Controller Hierarchy for the Model Body and deactivates its Mesh Renderer Component so that we d ... " />
+            <marker date="1550566477123" expanded="true" signature="19496:19967" ph="{...}" />
+            <marker date="1550566477123" expanded="true" signature="19567:19945" ph="{...}" />
           </folding>
         </state>
       </provider>
