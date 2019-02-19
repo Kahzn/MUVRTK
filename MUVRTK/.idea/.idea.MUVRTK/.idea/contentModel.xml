@@ -22,7 +22,6 @@
             <e p="MUVRTK_Launcher.cs" t="Include" />
             <e p="MUVRTK_LobbyViewer.cs" t="Include" />
             <e p="MUVRTK_ObjectsToSpawn.cs" t="Include" />
-            <e p="MUVRTK_PanelMenuSlider.cs" t="Include" />
             <e p="MUVRTK_PersonalSpace.cs" t="Include" />
             <e p="MUVRTK_PhotonViewIDGetter.cs" t="Include" />
             <e p="MUVRTK_PlayerNameInputField.cs" t="Include" />

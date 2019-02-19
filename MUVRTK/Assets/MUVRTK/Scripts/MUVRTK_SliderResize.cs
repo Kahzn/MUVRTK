@@ -25,8 +25,8 @@ namespace MUVRTK
         {
             if (objectToResize)
             {
-        
-                objectToResize.transform.localScale = new Vector3(slider.value, slider.value, slider.value);
+                //the factor is an approximation to make up for differences between the localscale of the dummy and the real avatar.
+                objectToResize.transform.localScale = new Vector3(slider.value*0.03f, slider.value*0.03f, slider.value*0.03f);
             }
             
             if (referenceObject)
