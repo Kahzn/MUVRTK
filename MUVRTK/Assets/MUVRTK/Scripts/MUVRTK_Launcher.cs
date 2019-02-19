@@ -1,5 +1,7 @@
 ﻿
 
+using UnityEngine.Serialization;
+
 namespace MUVRTK
 {
     using System.Collections;
@@ -28,7 +30,8 @@ namespace MUVRTK
         [Tooltip("The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
         [SerializeField]
         private byte maxPlayersPerRoom = 4;
-
+        
+        [Header("Standard Lobby UI")]
         [Tooltip("The Ui Panel to let the user enter name, connect and play")]
         [SerializeField]
         private GameObject controlPanel;
@@ -41,6 +44,19 @@ namespace MUVRTK
         [Tooltip("The viewport for the room lobby and UI input field for joining a room")]
         [SerializeField]
         private GameObject joinRoomPanel;
+        
+        [Header("Choose Scene UI")]
+        [Tooltip("The viewport for the scene list and UI input field for joining a room")]
+        [SerializeField]
+        private GameObject buttonPanel;
+        [Tooltip("The UI Label to inform the user that the connection to the lobby is in progress")]
+        [SerializeField]
+        private GameObject connectingLabel;
+        
+        [FormerlySerializedAs("sceneprogressLabel")]
+        [Tooltip("The UI Label to inform the user that the connectionto the scene is in progress")]
+        [SerializeField]
+        private GameObject sceneProgressLabel;
 
         #endregion
 
@@ -83,6 +99,7 @@ namespace MUVRTK
         {
 
             ControlUI();
+            WaitForRoomListUI();
             ConnectToMaster();
 
         }
@@ -105,6 +122,7 @@ namespace MUVRTK
             else
             {
                 PhotonNetwork.JoinLobby();
+                ShowSceneListUI();
                 if(debug)
                     Debug.Log("MUVRTK_Launcher: JoinLobby() was called by PUN");
             }
@@ -120,6 +138,8 @@ namespace MUVRTK
             controlPanel.SetActive(true);
             enterRoomName.SetActive(false);
             joinRoomPanel.SetActive(false);
+            
+            ShowSceneListUI();
 
             if (debug)
             Debug.LogWarningFormat("MUVRTK_Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
@@ -153,11 +173,13 @@ namespace MUVRTK
         public void ConnectToRoom()
         {
             isConnectingToRoom = true;
-
+            
             progressLabel.SetActive(true);
             controlPanel.SetActive(false);
             enterRoomName.SetActive(false);
             joinRoomPanel.SetActive(false);
+
+            ConnectToSceneUI();
 
             // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
             if (PhotonNetwork.IsConnected)
@@ -245,6 +267,43 @@ namespace MUVRTK
 
             joinRandomRoom = true;
         }
+
+        public void WaitForRoomListUI()
+        {
+            if(connectingLabel)
+            connectingLabel.SetActive(true);
+            
+            if(buttonPanel)
+                buttonPanel.SetActive(false);
+            
+            if(sceneProgressLabel)
+                sceneProgressLabel.SetActive(false);
+        }
+
+        public void ShowSceneListUI()
+        {
+            if(connectingLabel)
+                connectingLabel.SetActive(false);
+            
+            if(buttonPanel)
+                buttonPanel.SetActive(true);
+            
+            if(sceneProgressLabel)
+                sceneProgressLabel.SetActive(false);
+        }
+        
+        public void ConnectToSceneUI()
+        {
+            if(connectingLabel)
+                connectingLabel.SetActive(false);
+            
+            if(buttonPanel)
+                buttonPanel.SetActive(false);
+            
+            if(sceneProgressLabel)
+                sceneProgressLabel.SetActive(true);
+        }
+        
 
         #endregion
     }

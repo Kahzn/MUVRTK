@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 505794638935597960}
   - component: {fileID: 8430875124236263946}
   m_Layer: 0
-  m_Name: SharedAwareness
+  m_Name: '[MODEL] SharedAwareness'
   m_TagString: View
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
