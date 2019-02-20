@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5325105375723541551}
   - component: {fileID: 1794241305763765672}
   m_Layer: 0
-  m_Name: '[PREFAB] SpeechBubble_Pointer_Interact_ScripAlias'
+  m_Name: '[ScriptAlias] SpeechBubbles'
   m_TagString: ScriptAlias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
