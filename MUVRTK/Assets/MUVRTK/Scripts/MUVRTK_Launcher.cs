@@ -1,6 +1,7 @@
 ﻿
 
 using UnityEngine.Serialization;
+using WebSocketSharp;
 
 namespace MUVRTK
 {
@@ -159,6 +160,11 @@ namespace MUVRTK
 
             // #Critical
             // Load the Room Level.
+            if (sceneName.IsNullOrEmpty())
+            {
+                sceneName = "02 - Common Room";
+            }
+            
             PhotonNetwork.LoadLevel(sceneName);
 
             if(debug)

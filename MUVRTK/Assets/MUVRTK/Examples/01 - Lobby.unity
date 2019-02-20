@@ -3265,7 +3265,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 720554379}
-  - component: {fileID: 720554380}
   m_Layer: 0
   m_Name: '[MUVRTK_Eval]'
   m_TagString: Untagged
@@ -3287,22 +3286,6 @@ Transform:
   m_Father: {fileID: 408502064}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &720554380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 720554378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91f226e11e444c9408e71d822de97324, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trackTimeSpentInScene: 1
-  trackPositionData: 0
-  photonViewOfTrackedObject: {fileID: 0}
-  numberOfFrames: 0
 --- !u!1 &725009401
 GameObject:
   m_ObjectHideFlags: 0
@@ -11250,7 +11233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 1
-  sceneName: 
+  sceneName: 02 - Common Room
   maxPlayersPerRoom: 4
   controlPanel: {fileID: 1285760097}
   progressLabel: {fileID: 1647441577}
