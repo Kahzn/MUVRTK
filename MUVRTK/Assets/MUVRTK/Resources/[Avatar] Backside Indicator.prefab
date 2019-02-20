@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8430875124236263946}
   - component: {fileID: 1290371363696063414}
   m_Layer: 0
-  m_Name: '[MODEL] Backside Indicator'
+  m_Name: '[Avatar] Backside Indicator'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

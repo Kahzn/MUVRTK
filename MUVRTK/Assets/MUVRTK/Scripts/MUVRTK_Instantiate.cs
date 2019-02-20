@@ -27,6 +27,8 @@ namespace MUVRTK
         
         [SerializeField] private bool testOffline;
 
+        
+
         [Header("VR Manager Section")] 
         
         [SerializeField]
@@ -48,6 +50,8 @@ namespace MUVRTK
         [Tooltip("The Player Avatar that you need attached to your VR-Manager.")]
         [SerializeField] 
         private GameObject playerAvatar;
+        
+        [SerializeField] private bool evaluateAvatar;
        
 
 
@@ -63,6 +67,8 @@ namespace MUVRTK
         [Tooltip("The Array of Scriptaliases for the Controllers. If you want to use the same for both, add it only once. Otherwise: First Left, Second Right.")]
         [SerializeField]
         private GameObject[] controllerScriptAliases;
+        
+        [SerializeField] private bool evaluateControllers;
         
         [Tooltip("tick yes if you want to Basic Teleport on your controller Script Aliases.")]
         [SerializeField]
@@ -118,6 +124,8 @@ namespace MUVRTK
             {
                 Instantiate_GameObjects();
             }
+
+            
         }
         
         
@@ -164,6 +172,13 @@ namespace MUVRTK
                             {
                                 BindModelToVRM(controllerModelInstances[0], vrmInstance, "LeftController");
                                 DeactivateCurrentControllerModel(leftControllerInstance);
+                                
+                                if (evaluateControllers)
+                                {
+                                    MUVRTK_Evaluation leftControllerEvaluator = gameObject.AddComponent<MUVRTK_Evaluation>();
+                                    leftControllerEvaluator.trackPositionData = true;
+                                    leftControllerEvaluator.nonNetworkedGameObjectToTrack = leftControllerInstance;
+                                }
                                 leftControllerModelLoaded = true;
                             }
                         }
@@ -184,6 +199,12 @@ namespace MUVRTK
                             {
                                 BindModelToVRM(controllerModelInstances[1], vrmInstance, "RightController");
                                 DeactivateCurrentControllerModel(rightControllerInstance);
+                                if (evaluateControllers)
+                                {
+                                    MUVRTK_Evaluation rightControllerEvaluator = gameObject.AddComponent<MUVRTK_Evaluation>();
+                                    rightControllerEvaluator.trackPositionData = true;
+                                    rightControllerEvaluator.nonNetworkedGameObjectToTrack = rightControllerInstance;
+                                }
                                 rightControllerModelLoaded = true;   
                             }
                         }  
@@ -261,6 +282,14 @@ namespace MUVRTK
 
                 else playerModelInstance = Instantiate(playerAvatar, transform.position, transform.rotation);
             }
+
+            if (evaluateAvatar)
+            {
+                MUVRTK_Evaluation avatarEvaluator = gameObject.AddComponent<MUVRTK_Evaluation>();
+                avatarEvaluator.trackPositionData = true;
+                avatarEvaluator.photonViewOfTrackedObject = playerModelInstance.GetPhotonView();
+                
+            }
             
 
             //Networked Controller Model Instantiation
@@ -321,6 +350,7 @@ namespace MUVRTK
                         personalSpace = go.GetComponent<MUVRTK_PersonalSpace>();
                         personalSpace.avatarInstance = playerModelInstance;
                     }
+
                 }
                 
 

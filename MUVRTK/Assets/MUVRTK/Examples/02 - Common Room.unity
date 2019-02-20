@@ -1041,6 +1041,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 591052904}
     m_Modifications:
+    - target: {fileID: 3928964525218719673, guid: 4b18e1b2a57bf794597ad045ed5073fd,
+        type: 3}
+      propertyPath: m_Name
+      value: Simple_Game_Manager
+      objectReference: {fileID: 0}
     - target: {fileID: 3928964525218719675, guid: 4b18e1b2a57bf794597ad045ed5073fd,
         type: 3}
       propertyPath: instantiator
@@ -1055,11 +1060,6 @@ PrefabInstance:
         type: 3}
       propertyPath: gameVersion
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3928964525218719673, guid: 4b18e1b2a57bf794597ad045ed5073fd,
-        type: 3}
-      propertyPath: m_Name
-      value: Simple_Game_Manager
       objectReference: {fileID: 0}
     - target: {fileID: 3928964525218719672, guid: 4b18e1b2a57bf794597ad045ed5073fd,
         type: 3}
@@ -1340,6 +1340,16 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1743469756}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: evaluateControllers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
+        type: 3}
+      propertyPath: evaluateAvatar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1773877050947683943, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: m_LocalPosition.x
