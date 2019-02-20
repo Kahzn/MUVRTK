@@ -9,7 +9,7 @@ namespace MUVRTK
 
 
     /// <summary>
-    /// Player name input field. Let the user input his name, will appear above the player in the game.
+    /// Player name input field. Let the user input his name, will appear in the console when the player joins a room.
     /// </summary>
     [RequireComponent(typeof(InputField))]
     public class MUVRTK_PlayerNameInputField : MonoBehaviour

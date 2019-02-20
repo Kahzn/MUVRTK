@@ -1,7 +1,5 @@
 ﻿
 
-using UnityEngine.Experimental.UIElements;
-
 namespace MUVRTK
 {
     
@@ -12,6 +10,10 @@ namespace MUVRTK
     using Photon.Realtime;
     using VRTK;
 
+    /// <summary>
+    /// Listens to Collisions on predefined bodycolliders and triggers an audioclip and/or haptic pulse then.
+    /// <para>Created by Katharina Ziolkowski, 2019-02-15</para>
+    /// </summary>
     [RequireComponent(typeof(PhotonView))]
     public class MUVRTK_BodyCollision : MonoBehaviourPun
     {

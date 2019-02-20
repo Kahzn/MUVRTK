@@ -7,6 +7,10 @@ namespace MUVRTK
     using Photon.Pun;
     using Photon.Realtime;
 
+    /// <summary>
+    /// Manages the transition to specific rooms on the network.
+    /// <para>Created by Katharina Ziolkowski, 2019-01-03</para>
+    /// </summary>
     [RequireComponent(typeof(InputField))]
     public class MUVRTK_RoomNameInputField : MonoBehaviour
     {

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3588338923400512841}
   - component: {fileID: 8399150609148456266}
   m_Layer: 0
-  m_Name: '[ScriptAlias] Pointer_Interact'
+  m_Name: '[PREFAB] Pointer_Interact_ScriptAlias'
   m_TagString: ScriptAlias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,8 +1,4 @@
 ﻿
-
-using UnityEngine.Serialization;
-using WebSocketSharp;
-
 namespace MUVRTK
 {
     using System.Collections;
@@ -10,8 +6,13 @@ namespace MUVRTK
     using UnityEngine;
     using Photon.Pun;
     using Photon.Realtime;
+    using UnityEngine.Serialization;
+    using WebSocketSharp;
 
-
+    /// <summary>
+    /// Lobby-Script managing the connection to the Photon Server, Lobby-UI and the transition from Lobby to Scenes.
+    /// <para>Created by Katharina Ziolkowski,  2019-01-02</para>
+    /// </summary>
     public class MUVRTK_Launcher : MonoBehaviourPunCallbacks
     {
         #region Public Fields

@@ -7,7 +7,10 @@ namespace MUVRTK
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEngine.UI;
-
+/// <summary>
+/// Takes two GameObjects and resizes their scale according to a slider value.
+/// <para>Created by Katharina Ziolkowski, 2019-02-19</para>
+/// </summary>
     public class MUVRTK_SliderResize : MonoBehaviour
     {
         public GameObject objectToResize;
