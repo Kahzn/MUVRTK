@@ -57,8 +57,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3642333007352936769}
-  viewIdField: 18
-  InstantiationId: 18
+  viewIdField: 1
+  InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &3642333007352936769
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   holdButtonToActivate: 1
   activateOnEnable: 0
   activationDelay: 0
-  selectionButton: 7
+  selectionButton: 10
   selectOnPress: 1
   selectionDelay: 0
   selectAfterHoverDuration: 0

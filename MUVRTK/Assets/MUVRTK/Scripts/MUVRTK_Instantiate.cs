@@ -401,13 +401,13 @@ namespace MUVRTK
         {
             foreach (GameObject go in controllerScriptAliasInstances)
             {
-                if (!go.GetComponent<VRTK_ControllerEvents>())
+                if (go.GetComponent<VRTK_ControllerEvents>() == null)
                 {
                     go.AddComponent<VRTK_ControllerEvents>();
                     
                 }
                 
-                if (!go.GetComponent<VRTK_Pointer>())
+                if (go.GetComponent<VRTK_Pointer>() == null)
                 {
                     go.AddComponent<VRTK_Pointer>();
                 }

@@ -54,7 +54,8 @@ namespace MUVRTK
                     Debug.Log(name + " : ViewCount : " + viewerCount);
                 currentColor = renderer.material.color;
 
-                PhotonView.Get(this).RPC("MakeColorLighter", RpcTarget.All, viewId,  currentColor.r, currentColor.g , currentColor.b );
+                //PhotonView.Get(this).RPC("MakeColorLighter", RpcTarget.All, viewId,  currentColor.r, currentColor.g , currentColor.b );
+                MakeColorLighter(viewId, currentColor.r, currentColor.g, currentColor.b);
             }
         }
 
@@ -68,7 +69,8 @@ namespace MUVRTK
                     Debug.Log(name + " : ViewCount : " + viewerCount);
 
                 currentColor = renderer.material.color;
-                PhotonView.Get(this).RPC("MakeColorDarker", RpcTarget.All, viewId, currentColor.r, currentColor.g, currentColor.b);
+                //PhotonView.Get(this).RPC("MakeColorDarker", RpcTarget.All, viewId, currentColor.r, currentColor.g, currentColor.b);
+                MakeColorDarker(viewId, currentColor.r, currentColor.g, currentColor.b);
             }
 
         }

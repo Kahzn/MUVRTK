@@ -1058,21 +1058,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
-        type: 3}
-      propertyPath: viewIdField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
-        type: 3}
-      propertyPath: InstantiationId
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104828319383060066, guid: 1eaef5e32e0bec740951a8fa881b1776,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4104828319383060067, guid: 1eaef5e32e0bec740951a8fa881b1776,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -1117,6 +1102,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
+        type: 3}
+      propertyPath: viewIdField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104828319383060062, guid: 1eaef5e32e0bec740951a8fa881b1776,
+        type: 3}
+      propertyPath: InstantiationId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104828319383060066, guid: 1eaef5e32e0bec740951a8fa881b1776,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eaef5e32e0bec740951a8fa881b1776, type: 3}
 --- !u!224 &1213374147 stripped
@@ -1195,7 +1195,7 @@ PrefabInstance:
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
       propertyPath: enableTeleport
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1773877050947683942, guid: ef1df230d4c5a564bb2ba070eaa49ade,
         type: 3}
@@ -1323,16 +1323,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 253311732}
     m_Modifications:
-    - target: {fileID: 3928964525218719675, guid: 4b18e1b2a57bf794597ad045ed5073fd,
-        type: 3}
-      propertyPath: instantiator
-      value: 
-      objectReference: {fileID: 219793351}
     - target: {fileID: 3928964525218719673, guid: 4b18e1b2a57bf794597ad045ed5073fd,
         type: 3}
       propertyPath: m_Name
       value: Simple_Game_Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3928964525218719675, guid: 4b18e1b2a57bf794597ad045ed5073fd,
+        type: 3}
+      propertyPath: instantiator
+      value: 
+      objectReference: {fileID: 219793351}
     - target: {fileID: 3928964525218719672, guid: 4b18e1b2a57bf794597ad045ed5073fd,
         type: 3}
       propertyPath: m_LocalPosition.x
