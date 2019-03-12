@@ -1,15 +1,18 @@
 ﻿
-using System.Linq;
+
 
 namespace MUVRTK
 {
-    using System.Collections;
     using UnityEngine;
     using UnityEngine.UI;
     using Photon.Pun;
     using Photon.Realtime;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Manages the Content Lobby-UI in the Lobby scene. All available rooms, and players in them are listed there.
+    /// <para>Created by Katharina Ziolkowski, 2019-01-03</para>
+    /// </summary>
     public class MUVRTK_LobbyViewer : MonoBehaviourPunCallbacks
     {
         #region Private Fields

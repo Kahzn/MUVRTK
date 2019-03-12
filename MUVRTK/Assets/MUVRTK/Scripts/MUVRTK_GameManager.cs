@@ -12,6 +12,13 @@ namespace MUVRTK
     using Photon.Realtime;
     using VRTK;
 
+    /// <summary>
+    /// DEPRECATED!
+    /// use MUVRTK_GameManager_base and MUVRTK_Instantiator instead.
+    /// Combined script for basic networking and instantiating.
+    ///
+    /// <para>Created by Katharina Ziolkowski, 2019-01-02</para>
+    /// </summary>
     public class MUVRTK_GameManager : MonoBehaviourPunCallbacks
     {
         #region Private Serializable Fields

@@ -1,12 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEngine;
-using Photon.Pun;
-using Photon.Realtime;
+﻿
 
 namespace MUVRTK
 {
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.CompilerServices;
+    using UnityEngine;
+    using Photon.Pun;
+    using Photon.Realtime;
+    
+    /// <summary>
+    /// Manages the connection to Photon and triggers the instantiation of networked objects via the Instantiator.
+    /// <para>Created by Katharina Ziolkowski, 2019-01-24</para>
+    /// </summary>
     public class MUVRTK_GameManager_base : MonoBehaviourPunCallbacks
     {
         
