@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3205234968986710374}
   - component: {fileID: 8009069589760836418}
   m_Layer: 0
-  m_Name: '[PREFAB] Teleport_ScriptAlias'
+  m_Name: '[ScriptAlias] Teleport'
   m_TagString: ScriptAlias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,8 +57,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3642333007352936769}
-  viewIdField: 0
-  InstantiationId: 15
+  viewIdField: 21
+  InstantiationId: 21
   isRuntimeInstantiated: 0
 --- !u!114 &3642333007352936769
 MonoBehaviour:

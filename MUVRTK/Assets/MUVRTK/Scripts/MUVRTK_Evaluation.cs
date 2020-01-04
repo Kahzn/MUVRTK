@@ -105,13 +105,15 @@ namespace MUVRTK{
             //Write some text to the test.txt file   
             StreamWriter writer = new StreamWriter(path, true);   
             writer.WriteLine(text);                                                                                                           
-            writer.Close();                                                                                                                     
-                                                                                                                                                
+            writer.Close();
+
+#if UNITY_EDITOR
             //Re-import the file to update the reference in the editor                                                                          
-            AssetDatabase.ImportAsset(path);                                                                                                    
-            TextAsset asset = (TextAsset) Resources.Load(path);                                                                               
-                                                                                                                                                                                                                                                    
-                                                                                                          
+            AssetDatabase.ImportAsset(path);
+#endif
+            TextAsset asset = (TextAsset) Resources.Load(path);
+                                                                                                                                                                                                                        
+
         }
 
     }

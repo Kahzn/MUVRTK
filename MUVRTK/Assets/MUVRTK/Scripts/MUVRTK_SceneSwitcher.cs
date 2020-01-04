@@ -1,7 +1,4 @@
 ﻿
-
-using WebSocketSharp;
-
 namespace MUVRTK
 {
     using System.Collections;
@@ -28,7 +25,7 @@ namespace MUVRTK
 
         public void SwitchScene()
         {
-            if (!sceneName.IsNullOrEmpty())
+            if (!string.IsNullOrEmpty(sceneName))
             {
                 if (launcher)
                 {

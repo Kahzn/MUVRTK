@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7163333786500312807}
   - component: {fileID: 3642333007352936769}
   m_Layer: 0
-  m_Name: '[PREFAB] Test_ScriptAlias'
+  m_Name: '[ScriptAlias] Empty'
   m_TagString: ScriptAlias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

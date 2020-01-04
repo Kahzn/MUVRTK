@@ -74,6 +74,10 @@ namespace MUVRTK
         [SerializeField]
         private bool enableTeleport;
 
+        [Tooltip("If teleport shall be enabled, add a Playarea-Script to the scene or add a reference to the prefab here.")]
+        [SerializeField]
+        private GameObject playArea;
+
         [Tooltip("All networked player objects. NOTE: Every networked Prefab needs a Photon View!")]
         [SerializeField]
         private GameObject [] objectsToInstantiateOverTheNetwork;
@@ -107,7 +111,7 @@ namespace MUVRTK
         private GameObject rightControllerInstance;
         private GameObject[] controllerModelInstances = new GameObject[2];
         private GameObject[] controllerScriptAliasInstances = new GameObject[2];
-        private GameObject playArea;
+
 
         private MUVRTK_PersonalSpace personalSpace;
 
@@ -433,9 +437,11 @@ namespace MUVRTK
                 Debug.Log(name + " : Searching for PlayAreaScript.");
                 if ( GameObject.FindWithTag("PlayAreaScript") == null)
                 {
-                    playArea =
-                        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/MUVRTK/Local_Resources/PlayAreaScript.prefab");
-                    Instantiate(playArea, transform.position, transform.rotation);
+                    if(playArea != null)
+                    {
+                        Instantiate(playArea, transform.position, transform.rotation);
+                    }
+
                         
                     Debug.Log(name + " : didn't find a PlayAreaScript, so instantiating one.");
                         

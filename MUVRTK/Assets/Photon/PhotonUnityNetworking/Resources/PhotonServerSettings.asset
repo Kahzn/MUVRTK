@@ -25,37 +25,24 @@ MonoBehaviour:
     EnableLobbyStatistics: 0
     NetworkLogging: 1
   StartInOfflineMode: 0
-  PunLogging: 2
+  PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   RpcList:
+  - BroadcastHapticPulse
+  - BroadcastHapticPulseOnViewID
   - DestroySpaceship
   - Fire
-  - RespawnSpaceship
-  - CallTriggerHapticPulse
-  - BroadcastHapticPulse
-  - TouchHighlightObject
-  - TouchUnHighlightObject
-  - TouchHighlightObject_RPC
-  - TouchUnHighlightObject_RPC
-  - NearTouchHighlightObject_RPC
-  - NearTouchUnHighlightObject_RPC
   - GrabHighlightObject_RPC
-  - GrabUnHighlightObject_RPC
-  - UseHighlightObject_RPC
-  - UseUnHighlightObject_RPC
-  - BroadcastHapticPulseOnViewID
-  - New_TouchHighlighObject_RPC
-  - New_UnhighlightObject_RPC
-  - New_GrabHighlightObject_RPC
-  - UnHighlightObject_RPC
-  - SetSpeechBubbleText
-  - ChangeColor
   - HapticPulseOnBothOwnedControllers
-  - PlayAudioClip
-  - HapticPulseOnCollidedController
+  - HapticPulseOnCollidedControllers
   - MakeColorDarker
   - MakeColorLighter
-  - HapticPulseOnCollidedControllers
-  - MakePersonalSpaceInvisible
+  - NearTouchHighlightObject_RPC
+  - PlayAudioClip
+  - RespawnSpaceship
+  - SetSpeechBubbleText
+  - TouchHighlightObject_RPC
+  - UnHighlightObject_RPC
+  - UseHighlightObject_RPC
   DisableAutoOpenWizard: 1

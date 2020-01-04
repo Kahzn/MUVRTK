@@ -7,7 +7,6 @@ namespace MUVRTK
     using Photon.Pun;
     using Photon.Realtime;
     using UnityEngine.Serialization;
-    using WebSocketSharp;
 
     /// <summary>
     /// Lobby-Script managing the connection to the Photon Server, Lobby-UI and the transition from Lobby to Scenes.
@@ -161,7 +160,7 @@ namespace MUVRTK
 
             // #Critical
             // Load the Room Level.
-            if (sceneName.IsNullOrEmpty())
+            if (string.IsNullOrEmpty(sceneName))
             {
                 sceneName = "02 - Common Room";
             }
